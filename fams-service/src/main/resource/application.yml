@@ -7,7 +7,7 @@ server:
 fams:
     framework:
         server:
-            serviceName: TestService
+            serviceName: ${ServiceName}_${Env}_${Instance}
       
 spring:
     application:

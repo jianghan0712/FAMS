@@ -8,7 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.purefun</groupId>
   <artifactId>fams-framework</artifactId>
   <name>fams-framework</name>
   <packaging>pom</packaging>
@@ -19,6 +18,31 @@
     <module>fams-framework-cache</module>
     <module>fams-framework-service</module>
   </modules>
+  
+  <dependencyManagement>
+  	<dependencies>
+		<dependency>
+		    <groupId>org.apache.ignite</groupId>
+		    <artifactId>ignite-core</artifactId>
+		    <version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.ignite</groupId>
+		    <artifactId>ignite-spring</artifactId>
+		    <version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.ignite</groupId>
+		    <artifactId>ignite-indexing</artifactId>
+		    <version>${ignite.version}</version>
+		</dependency>
+		<dependency>
+			  <groupId>org.apache.ignite</groupId>
+			  <artifactId>ignite-log4j2</artifactId>
+			  <version>${ignite.version}</version>
+		</dependency>
+	</dependencies>
+  </dependencyManagement>
   
   <dependencies>
 		<dependency>

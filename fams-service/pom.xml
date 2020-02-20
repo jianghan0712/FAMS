@@ -7,16 +7,29 @@
     <artifactId>fams</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.purefun</groupId>
   <artifactId>fams-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>fams-service</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
+   	<dependency>
+	    <groupId>com.h2database</groupId>
+	    <artifactId>h2</artifactId>
+	    <version>1.4.197</version>
+	</dependency>
+	<dependency>
 	   <groupId>com.purefun</groupId>
-	   <artifactId>fams-framework-core</artifactId>
+	   <artifactId>fams-framework-cache</artifactId>
 	   <version>${fams.version}</version>
+	   <exclusions>
+	        <exclusion>
+	            <groupId>com.h2database</groupId>
+	            <artifactId>h2</artifactId>
+	        </exclusion>
+	        <exclusion>
+	        	<groupId>commons-logging</groupId>
+  				<artifactId>commons-logging</artifactId>
+  			</exclusion>
+	   </exclusions>
     </dependency>
   </dependencies>
 </project>
