@@ -1,11 +1,5 @@
 package com.purefun.fams.service;
 
-import org.apache.ignite.Ignite;
-import org.apache.ignite.IgniteCache;
-import org.apache.ignite.IgniteLogger;
-import org.apache.ignite.Ignition;
-import org.apache.ignite.configuration.CacheConfiguration;
-import org.apache.ignite.configuration.IgniteConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +7,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.purefun.fams.core.bo.TestBO;
-import com.purefun.fams.core.bo.TestBO2;
-import com.purefun.fams.core.bo.otw.TestBO2_OTW;
-import com.purefun.fams.core.bo.otw.TestBO_OTW;
-import com.purefun.fams.core.bo.tool.BoFactory;
 import com.purefun.fams.framework.core.communication.FAMSProducer;
 import com.purefun.fams.framework.core.communication.KafkaConsumer;
 import com.purefun.fams.framework.core.util.SpringUtil;
@@ -36,19 +25,12 @@ public class ApplicationInit implements ApplicationRunner {
 	private KafkaConsumer consumer;
 	
 	@Autowired
-	private IgniteConfiguration config;
-	
-	@Autowired
-	private CacheConfiguration cacheCfg;
+	private com.purefun.fams.framework.ignite.cache.IgniteCache cache;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		logger.info("serviceName:{}", util.getBean(FAMSProducer.class));
+		logger.info("serviceName:{}", cache);
 		
-		logger.info("config:{}", config);
-
-		Ignite ignite = Ignition.start(config);
-		IgniteCache<String, String> cache = ignite.getOrCreateCache(cacheCfg);
 		cache.put("1", "jianghan");
 		cache.put("2", "cuiqing");
 		

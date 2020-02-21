@@ -15,7 +15,7 @@
   <modules>
     <module>fams-framework-core</module>
     <module>fams-framework-common</module>
-    <module>fams-framework-cache</module>
+    <module>fams-framework-ignite</module>
     <module>fams-framework-service</module>
   </modules>
   

@@ -18,7 +18,7 @@
 	</dependency>
 	<dependency>
 	   <groupId>com.purefun</groupId>
-	   <artifactId>fams-framework-cache</artifactId>
+	   <artifactId>fams-framework-ignite</artifactId>
 	   <version>${fams.version}</version>
 	   <exclusions>
 	        <exclusion>

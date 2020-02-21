@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>fams-framework-ignite</artifactId>
+  <artifactId>fams-framework-cache</artifactId>
   <packaging>jar</packaging>
 
   <name>fams-framework-cache</name>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="fieldcomment_context" deleted="false" description="类字段注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.fieldcomment" name="fieldcomment">/**
+ * @Fields: 
+ */</template><template autoinsert="true" context="overridecomment_context" deleted="false" description="重写方法注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.overridecomment" name="overridecomment">
+/**
+ * (non-Javadoc)
+ * ${see_to_overridden}
+ * ${tags}
+ */
+</template><template autoinsert="false" context="filecomment_context" deleted="false" description="文件(java)注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.filecomment" name="filecomment">/**
+ * FAMS
+ * Copyright (c) 1990-2020 All Rights Reserved.
+ */</template><template autoinsert="false" context="methodcomment_context" deleted="false" description="方法体注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.methodcomment" name="methodcomment">/**
+ * @MethodName: ${enclosing_method}
+ * @author ${user}
+ * @date ${currentDate:date('yyyy-MM-dd HH:mm:ss')}
+ * ${tags} 
+ */</template><template autoinsert="true" context="constructorcomment_context" deleted="false" description="构造方法注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.constructorcomment" name="constructorcomment">
+/**
+ * ${tags}
+ */
+</template><template autoinsert="true" context="modulecomment_context" deleted="false" description="Comment for modules" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.modulecomment" name="modulecomment">/**
+ * @author ${user}
+ *
+ * ${tags}
+ */</template><template autoinsert="true" context="gettercomment_context" deleted="false" description="get方法注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.gettercomment" name="gettercomment">
+/**
+ * @return the ${bare_field_name}
+ */
+</template><template autoinsert="false" context="typecomment_context" deleted="false" description="类(java)注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**
+ * @Classname: ${type_name}
+ * @Description: 
+ * @author ${user}
+ * @date ${currentDate:date('yyyy-MM-dd HH:mm:ss')}
+ */</template><template autoinsert="true" context="delegatecomment_context" deleted="false" description="代理方法注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.delegatecomment" name="delegatecomment">
+/**
+ * ${tags}
+ * ${see_to_target}
+ */
+</template><template autoinsert="true" context="settercomment_context" deleted="false" description="set方法注释" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.settercomment" name="settercomment">
+/**
+ * @param ${param} the ${bare_field_name} to set
+ */
+</template></templates>
