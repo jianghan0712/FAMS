@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.purefun.fams.framework.server.annotation.EnableFAMS;
+import com.purefun.fams.framework.register.annotation.EnableFAMSServerRegister;
 
-//@EnableFAMSServerRegister
-@EnableFAMS
+@EnableFAMSServerRegister
+//@EnableFAMS
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.purefun.fams.service" })
 //@ImportResource(locations="classpath:config/${ServiceName}/${Env}/${Instance}/Ignite.xml")
