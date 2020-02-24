@@ -49,10 +49,15 @@
 		    <groupId>com.lmax</groupId>
 		    <artifactId>disruptor</artifactId>
 		</dependency>
-				
+		
 		<dependency>
 		    <groupId>com.purefun</groupId>
 		    <artifactId>fams-bo</artifactId>
+		    <version>${fams.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.purefun</groupId>
+		    <artifactId>fams-common</artifactId>
 		    <version>${fams.version}</version>
 		</dependency>
   </dependencies>

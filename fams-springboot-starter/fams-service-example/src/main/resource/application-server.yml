@@ -1,0 +1,27 @@
+logging:
+    file= src/main/resource/log4j2.xml 
+    
+server:
+    port: 8888
+
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        registerWithEureka: false
+        fetch-registry: false
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+      enable-self-preservation: false
+      eviction-interval-timer-in-second: 60
+
+fams:
+    framework:
+        ignite:
+            path: classpath:Ignite.xml
+            cache:
+                cacheList:
+                    - {name: jianghan, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.String, com.purefun.fams.core.bo.TestBO]}
+                    - {name: jianghan2, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.String, com.purefun.fams.core.bo.TestBO]}  
+                               

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.purefun</groupId>
+  <artifactId>fams-framework-springboot-starter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>fams-framework-springboot-starter</name>
+  <url>http://maven.apache.org</url>
+  
+  <modules>
+    <module>fams-service-example</module>
+    <module>fams-framework-ignite-springboot-starter</module>   
+    <module>fams-framework-service-springboot-starter</module>
+  </modules>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <fams.framework.version>0.0.1-SNAPSHOT</fams.framework.version>
+    <spring-framework-boot.version>2.2.0.RELEASE</spring-framework-boot.version>
+  </properties>
+
+  <dependencyManagement>
+  	<dependencies>
+		<dependency>
+	       <groupId>com.purefun</groupId>
+		   <artifactId>fams-framework-ignite</artifactId>
+		   <version>${fams.framework.version}</version>
+		   <exclusions>
+		        <exclusion>
+		            <groupId>com.h2database</groupId>
+		            <artifactId>h2</artifactId>
+		        </exclusion>
+		        <exclusion>
+		        	<groupId>commons-logging</groupId>
+	  				<artifactId>commons-logging</artifactId>
+	  			</exclusion>
+		   </exclusions>
+	    </dependency>
+	    <dependency>
+		    <groupId>com.purefun</groupId>
+		    <artifactId>fams-framework-core</artifactId>
+		    <version>${fams.framework.version}</version>
+		</dependency>
+  	</dependencies>
+  	
+  </dependencyManagement>
+
+  <build>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-compiler-plugin</artifactId>  
+                <version>3.1</version>  
+                <configuration>  
+                    <source>1.8</source>  
+                    <target>1.8</target>  
+                    <downloadSources>false</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                </configuration>  
+            </plugin>        
+        </plugins>        
+  </build> 
+</project>

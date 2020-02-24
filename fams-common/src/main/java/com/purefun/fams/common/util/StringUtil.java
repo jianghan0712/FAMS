@@ -76,9 +76,4 @@ public class StringUtil {
 		return discordLastSlash ? ret.substring(0, ret.length() - 1) : ret;
 	}
 
-	public static void main(String[] args) {
-		String[] a = { "d:", "software", "apache" };
-		System.out.println(StringUtil.append(a));
-		System.out.println(StringUtil.appendFilePath(".", true, a));
-	}
 }

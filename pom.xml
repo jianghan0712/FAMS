@@ -9,11 +9,10 @@
   <name>fams</name>
   <url>http://maven.apache.org</url>
     
-  <modules>
+  <modules> 	
   	<module>fams-common</module>
   	<module>fams-bo</module>
     <module>fams-framework</module>
-    <module>fams-service</module>
   </modules>
   
    <properties>
@@ -44,6 +43,8 @@
 	  	<kafka.version>2.3.0.RELEASE</kafka.version>
 	  	<!-- fams.version -->
 	  	<fams.version>0.0.1-SNAPSHOT</fams.version>
+	  	<!-- test.version -->
+	  	<junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
   </properties>
   
   <dependencyManagement>
@@ -85,13 +86,20 @@
 		            <artifactId>spring-boot-starter-logging</artifactId>
 		        </exclusion>
 		    </exclusions>
-        </dependency>
+        </dependency>      
         <dependency> 
 		   <groupId>org.springframework.boot</groupId>
 		   <artifactId>spring-boot-starter-log4j2</artifactId>
 		   <version>${spring-framework-boot.version}</version>
 		</dependency>
-		
+		<!--  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<version>${spring-framework-boot.version}</version>
+		</dependency>
+-->
 		<!-- spring-cloud -->
  		<dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -231,7 +239,7 @@
 		  </dependency>		    
      </dependencies>
   </dependencyManagement>
-
+  
   <build>  
         <plugins>  
             <plugin>  

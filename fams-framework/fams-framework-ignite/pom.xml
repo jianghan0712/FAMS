@@ -8,10 +8,10 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>fams-framework-cache</artifactId>
+  <artifactId>fams-framework-ignite</artifactId>
   <packaging>jar</packaging>
 
-  <name>fams-framework-cache</name>
+  <name>fams-framework-ignite</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -26,6 +26,36 @@
 		<dependency>
 		    <groupId>org.apache.ignite</groupId>
 		    <artifactId>ignite-spring</artifactId>
+		    <exclusions>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-core</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-aop</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-context</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-beans</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-expression</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-jdbc</artifactId>
+		        </exclusion>
+		        <exclusion>
+		          <groupId>org.springframework</groupId>
+				  <artifactId>spring-tx</artifactId>
+		        </exclusion>		        		        
+		    </exclusions>
 		</dependency>
 		<dependency>
 		    <groupId>org.apache.ignite</groupId>

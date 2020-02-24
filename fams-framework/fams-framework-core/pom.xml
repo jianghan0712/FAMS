@@ -9,7 +9,6 @@
   </parent>
   
   <artifactId>fams-framework-core</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>fams-framework-core</name>
@@ -17,20 +16,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jackson.version>2.10.0</jackson.version>
   </properties>
+  <dependencyManagement>
+  	 
+  </dependencyManagement>
 
-  <dependencies>
-       <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-		        <exclusion>
-		            <groupId>org.springframework.boot</groupId>
-		            <artifactId>spring-boot-starter-logging</artifactId>
-		        </exclusion>
-		    </exclusions>
-     	</dependency>
-     	<dependency>
+  <dependencies> 
+  		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
             <version>${spring-framework-boot.version}</version>
@@ -43,6 +36,17 @@
 		        </exclusion>
 		    </exclusions>
      	</dependency> 
+     
+       <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+		        <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-logging</artifactId>
+		        </exclusion>
+		    </exclusions>
+     	</dependency>
      	  
      	<dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -52,6 +56,18 @@
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-starter-logging</artifactId>
 		        </exclusion>
+		        <exclusion>
+		            <groupId>com.fasterxml.jackson</groupId>
+    				<artifactId>jackson-core</artifactId>
+    			</exclusion>
+    			<exclusion>
+				    <groupId>com.fasterxml.jackson.core</groupId>
+				    <artifactId>jackson-annotations</artifactId>
+				</exclusion>
+			    <exclusion>
+			      <groupId>com.fasterxml.jackson.core</groupId>
+			      <artifactId>jackson-databind</artifactId>
+			    </exclusion>
 		    </exclusions>
         </dependency>             
         <dependency>
@@ -75,6 +91,24 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+		<dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-annotations</artifactId>
+	      <version>${jackson.version}</version>
+	      <scope>runtime</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-core</artifactId>
+	      <version>${jackson.version}</version>
+	      <scope>runtime</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.fasterxml.jackson.core</groupId>
+	      <artifactId>jackson-databind</artifactId>
+	      <version>${jackson.version}</version>
+	      <scope>runtime</scope>
+	    </dependency>
 		
 		<dependency>
 		    <groupId>com.purefun</groupId>
