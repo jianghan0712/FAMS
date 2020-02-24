@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.purefun.fams.common.util.ClassHandleUtil;
+import com.purefun.fams.framework.ignite.expose.IgniteCache;
 
 /**
  * @Classname: IgniteCacheAutoConfigure
@@ -39,7 +40,7 @@ public class IgniteCacheAutoConfigure {
 
 	@Bean
 	public IgniteCache getCache() {
-		IgniteCache cache = new IgniteCache();
+		IgniteCache cache = new IgniteCacheImpl();
 		cache.initCache(mainIgniteContainer, getCacheConfigs());
 		return cache;
 	}

@@ -18,6 +18,7 @@ import com.purefun.fams.core.bo.TestBO2;
 import com.purefun.fams.core.bo.otw.TestBO2_OTW;
 import com.purefun.fams.core.bo.otw.TestBO_OTW;
 import com.purefun.fams.core.bo.tool.BoFactory;
+import com.purefun.fams.framework.ignite.expose.IgniteCache;
 
 /**
  * @Classname: KafkaTest
@@ -31,7 +32,7 @@ import com.purefun.fams.core.bo.tool.BoFactory;
 public class IgniteCacheTest {
 
 	@Autowired
-	private com.purefun.fams.framework.ignite.cache.IgniteCache cache;
+	private IgniteCache cache;
 
 	@SuppressWarnings("unchecked")
 	@Test

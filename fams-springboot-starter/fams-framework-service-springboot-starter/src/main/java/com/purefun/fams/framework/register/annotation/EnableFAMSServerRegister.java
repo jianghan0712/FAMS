@@ -10,6 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 
 import com.purefun.fams.framework.ignite.cache.EnableIgniteCache;
@@ -27,6 +28,7 @@ import com.purefun.fams.framework.register.config.FAMSServerAutoConfigure;
 @Import({ FAMSServerAutoConfigure.class })
 @EnableEurekaServer
 @EnableIgniteCache
+@EnableFeignClients
 public @interface EnableFAMSServerRegister {
 
 }

@@ -8,7 +8,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.purefun.fams.framework.ignite.cache.IgniteCache;
+import com.purefun.fams.framework.ignite.expose.IgniteCache;
 
 @Component
 public class ApplicationInit implements ApplicationRunner {
