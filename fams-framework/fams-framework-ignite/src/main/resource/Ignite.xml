@@ -9,7 +9,18 @@
 		      <constructor-arg type="java.net.URL" value="classpath:log4j2.xml"/>
 		    </bean>
 		</property>
-  		<property name="peerClassLoadingEnabled" value="false"></property> 
+	    <!-- Set to true to enable distributed class loading for examples, default is false. -->
+        <property name="peerClassLoadingEnabled" value="true"/>		
+		<!-- Set deployment mode. -->
+        <property name="deploymentMode" value="CONTINUOUS"/>		
+		<!-- Disable missed resources caching. -->
+        <property name="peerClassLoadingMissedResourcesCacheSize" value="0"/>
+        <!-- config client mode -->
+        <property name="clientMode" value="false"/> 
+  		<!-- Configure internal thread pool. -->
+        <property name="publicThreadPoolSize" value="64"/>
+        <!-- Configure system thread pool. -->
+        <property name="systemThreadPoolSize" value="32"/>
         <property name="discoverySpi">  
             <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">  
                 <property name="joinTimeout" value="200"/>  <!-- 服务端不存就立刻退出-->  

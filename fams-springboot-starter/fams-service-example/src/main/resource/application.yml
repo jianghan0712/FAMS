@@ -22,4 +22,15 @@ spring:
             enable-auto-commit: true
             auto-commit-interval: 1000
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-            value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer  
+            value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer 
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/fams?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+        username: root
+        password: jianghan0712
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        initial-size: 5
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
