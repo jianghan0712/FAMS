@@ -15,7 +15,7 @@ import com.purefun.fams.framework.common.enums.ExpireEnum;
 import com.purefun.fams.framework.core.dao.FamsGlobalParamMapper;
 import com.purefun.fams.framework.core.domain.FamsGlobalParam;
 import com.purefun.fams.framework.core.service.GlobalParamService;
-import com.purefun.fams.framework.core.util.RedisUtil;
+import com.purefun.fams.framework.core.service.RedisService;
 import com.purefun.fams.framework.core.util.constant.RedisConstant;
 
 /**
@@ -26,7 +26,7 @@ import com.purefun.fams.framework.core.util.constant.RedisConstant;
  */
 public class GlobalParamServiceImpl implements GlobalParamService {
 	@Autowired
-	private RedisUtil redisCache;
+	private RedisService redisCache;
 
 	@Autowired
 	private FamsGlobalParamMapper globalParamMapper;

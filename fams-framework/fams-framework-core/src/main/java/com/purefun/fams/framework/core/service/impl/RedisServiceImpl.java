@@ -1,4 +1,4 @@
-package com.purefun.fams.framework.core.util;
+package com.purefun.fams.framework.core.service.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -9,6 +9,8 @@ import org.springframework.data.redis.core.BoundListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.CollectionUtils;
 
+import com.purefun.fams.framework.core.service.RedisService;
+
 /**
  * redis工具类，封装对redis的操作
  * 
@@ -17,11 +19,11 @@ import org.springframework.util.CollectionUtils;
  * @author jianghan
  * @date 2020-02-26 18:43:28
  */
-public class RedisUtil {
+public class RedisServiceImpl implements RedisService {
 
 	private RedisTemplate<String, Object> redisTemplate;
 
-	public RedisUtil(RedisTemplate<String, Object> redisTemplate) {
+	public RedisServiceImpl(RedisTemplate<String, Object> redisTemplate) {
 		this.redisTemplate = redisTemplate;
 	}
 

@@ -15,7 +15,7 @@ import com.purefun.fams.common.util.ClassHandleUtil;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.framework.common.enums.ExpireEnum;
 import com.purefun.fams.framework.core.service.CacheLoaderService;
-import com.purefun.fams.framework.core.util.RedisUtil;
+import com.purefun.fams.framework.core.service.RedisService;
 
 /**
  * @Classname: RedisCacheLoaderServiceImpl
@@ -26,7 +26,7 @@ import com.purefun.fams.framework.core.util.RedisUtil;
 public class RedisCacheLoaderServiceImpl extends CacheLoaderService {
 	private static final Logger logger = LogManager.getLogger(RedisCacheLoaderServiceImpl.class);
 	@Autowired
-	private RedisUtil redisOp;
+	private RedisService redisOp;
 
 	@Override
 	public <V> void loadData2Cache(List<V> list, String cacheName, String... keyFieldName) {

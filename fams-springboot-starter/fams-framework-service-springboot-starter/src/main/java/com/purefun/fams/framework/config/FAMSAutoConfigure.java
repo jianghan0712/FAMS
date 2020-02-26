@@ -10,7 +10,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
 
 import com.purefun.fams.framework.core.communication.FAMSProducer;
-import com.purefun.fams.framework.core.util.RedisUtil;
+import com.purefun.fams.framework.core.service.RedisService;
+import com.purefun.fams.framework.core.service.impl.RedisServiceImpl;
 
 /**
  * @Classname: FAMSAutoConfigure
@@ -41,9 +42,8 @@ public class FAMSAutoConfigure {
 	 * @return
 	 */
 	@Bean
-	public RedisUtil getRedis() {
-		RedisUtil redisUtil = new RedisUtil(redisTemplate);
-		return redisUtil;
+	public RedisService getRedis() {
+		return new RedisServiceImpl(redisTemplate);
 	}
 
 }
