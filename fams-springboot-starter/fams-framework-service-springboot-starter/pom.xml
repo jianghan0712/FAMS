@@ -16,10 +16,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>com.purefun</groupId>
-      <artifactId>fams-framework-ignite-springboot-starter</artifactId>
-      <version>${fams.framework.version}</version>
+     <dependency>
+       <groupId>com.purefun</groupId>
+	   <artifactId>fams-framework-core</artifactId>
     </dependency>
   </dependencies>
 </project>

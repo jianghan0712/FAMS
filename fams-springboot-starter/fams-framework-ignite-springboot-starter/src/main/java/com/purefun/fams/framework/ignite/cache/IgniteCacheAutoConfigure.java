@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.purefun.fams.common.util.ClassHandleUtil;
+import com.purefun.fams.framework.ignite.beanfactory.IgniteBeanFactory;
 import com.purefun.fams.framework.ignite.expose.IgniteCache;
 
 /**
@@ -27,7 +28,7 @@ import com.purefun.fams.framework.ignite.expose.IgniteCache;
  */
 
 @Configuration
-@EnableConfigurationProperties({ IgniteCacheProperties.class })
+@EnableConfigurationProperties({ IgniteCacheProperties.class, IgniteBeanFactory.class })
 @SuppressWarnings("rawtypes")
 public class IgniteCacheAutoConfigure {
 	private static final Logger logger = LogManager.getLogger(IgniteCacheAutoConfigure.class);

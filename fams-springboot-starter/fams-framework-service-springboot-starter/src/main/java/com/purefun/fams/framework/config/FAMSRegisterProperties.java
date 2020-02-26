@@ -2,7 +2,7 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.framework.register.config;
+package com.purefun.fams.framework.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -13,7 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2020-02-11 14:41:39
  */
 @ConfigurationProperties(prefix = "fams.framework.server")
-public class FAMSServerProperties {
+public class FAMSRegisterProperties {
 	public static final String SERVER_PREFIX = "fams.framework.server";
 
 	private String serviceName;

@@ -27,6 +27,7 @@ public interface CommonUtil {
 		String semicolon = ";";
 		String empty = "";
 		String underline = "_";
+		String caret = "^";
 	}
 
 	/**

@@ -23,5 +23,5 @@ fams:
             cache:
                 cacheList:
                     - {name: jianghan, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.String, com.purefun.fams.core.bo.TestBO]}
-                    - {name: jianghan2, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.String, com.purefun.fams.core.bo.TestBO]}  
+                    - {name: student, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.Long, com.purefun.fams.core.bo.TestBO]}  
                                

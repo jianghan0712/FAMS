@@ -2,84 +2,64 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.framework.ignite.cache;
+package com.purefun.fams.framework.core.service.impl;
 
 import java.util.List;
 
-import org.apache.ignite.Ignite;
-import org.apache.ignite.IgniteDataStreamer;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.purefun.fams.common.util.ClassHandleUtil;
 import com.purefun.fams.common.util.CommonUtil;
+import com.purefun.fams.framework.common.enums.ExpireEnum;
 import com.purefun.fams.framework.core.service.CacheLoaderService;
+import com.purefun.fams.framework.core.util.RedisUtil;
 
 /**
- * 数据加载实现类
- * 
- * @Classname: IgniteCacheLoaderService
- * @Description:
+ * @Classname: RedisCacheLoaderServiceImpl
+ * @Description: 将指定的数据从db加载到redis中，主要针对不易变化的数据
  * @author jianghan
- * @date 2020-02-25 19:34:46
+ * @date 2020-02-26 20:03:13
  */
-public class IgniteCacheLoaderServiceImpl extends CacheLoaderService {
-	private static final Logger logger = LogManager.getLogger(IgniteCacheImpl.class);
-
+public class RedisCacheLoaderServiceImpl extends CacheLoaderService {
+	private static final Logger logger = LogManager.getLogger(RedisCacheLoaderServiceImpl.class);
 	@Autowired
-	private Ignite ignite;
+	private RedisUtil redisOp;
 
-	/**
-	 * 使用ignite.IgniteDataStreamer将已经获取到的list数据存入cache
-	 * 
-	 * @MethodName: loadDBdata2CacheImp
-	 * @author jianghan
-	 * @date 2020-02-25 22:27:46
-	 * @param <V>       domin
-	 * @param list      数据list
-	 * @param cacheName ignite对应的cache
-	 */
-	@SuppressWarnings("rawtypes")
 	@Override
 	public <V> void loadData2Cache(List<V> list, String cacheName, String... keyFieldName) {
-		if (list == null || list.size() <= 0 || ignite.cache(cacheName) == null) {
+		if (list == null || list.size() <= 0 || StringUtils.isBlank(cacheName)) {
 			return;
 		}
+
+		// 先清空该cache
+		redisOp.del(cacheName);
 		V first = list.get(0);
 		Class<?> vClass = first.getClass();
+
 		try {
-			// 取出keyFieldName数组，并检查
 			checkKeyFields(keyFieldName, vClass);
 			StringBuilder key = new StringBuilder();
-			IgniteDataStreamer streamer = ignite.dataStreamer(cacheName);
-			// key=各个keyFieldName之间用^拼接，如 paramScope^paramName
 			for (V eachValue : list) {
+				// key=各个keyFieldName之间用^拼接，如 paramScope^paramName
 				for (String eachKey : keyFieldName) {
 					Object keyValue = ClassHandleUtil.getFieldValue(eachValue, eachKey);
 					key.append(keyValue.toString()).append(CommonUtil.CharUtil.caret);
 				}
-				// 去掉最后的^
 				key.deleteCharAt(key.length() - 1);
-				streamer.addData(key.toString(), eachValue);
+				redisOp.hset(cacheName, key.toString(), eachValue, ExpireEnum.REDIS_CACHE_EXPIRE.getTime());
 				key.delete(0, key.length());
 			}
+
 			logger.info("加载cache成功，cacheName:{},数据量：{}", cacheName, list.size());
 		} catch (Exception e) {
 			logger.info("加载cache失败，cacheName:{},失败原因：{}", cacheName, e);
 		}
+
 	}
 
-	/**
-	 * 用户自己实现数据加载方法，如果不需要实现自己的方法，可以不实现此方法
-	 * 
-	 * @MethodName: loadData2CacheBySelf
-	 * @author jianghan
-	 * @date 2020-02-25 23:04:40
-	 * @param <V>
-	 * @param list
-	 * @param cacheName
-	 */
 	@Override
 	public <V> void loadData2CacheBySelf(List<V> list, String cacheName, String... keyFieldName) {
 		loadData2Cache(list, cacheName, keyFieldName);

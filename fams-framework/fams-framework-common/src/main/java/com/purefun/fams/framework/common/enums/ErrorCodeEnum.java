@@ -15,6 +15,8 @@ import org.apache.commons.lang3.StringUtils;
 public enum ErrorCodeEnum {
 	SUCCESS("SUCCESS", "成功"),
 
+	PARAM_EXCEPTION("PARAM_EXCEPTION", "参数错误"),
+
 	UNKNOWN_EXCEPTION("UNKNOWN_EXCEPTION", "未知错误"),
 
 	;
