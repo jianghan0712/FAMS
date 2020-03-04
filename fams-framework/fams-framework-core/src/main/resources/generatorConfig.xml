@@ -11,7 +11,7 @@
         </commentGenerator>
         <!-- 数据库连接信息 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/fams?serverTimezone=UTC" userId="root"
+                        connectionURL="jdbc:mysql://122.51.159.32:3306/fams?serverTimezone=UTC&amp;nullCatalogMeansCurrent=true" userId="root"
                         password="jianghan0712"/>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -30,7 +30,13 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="fams_global_param" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="fams_exchange" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="fams_holiday" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="fams_security_basicinfo" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
     </context>

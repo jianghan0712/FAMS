@@ -65,20 +65,9 @@ public class GlobalParamServiceImpl implements GlobalParamService {
 	}
 
 	@Override
-	public boolean updateParamValue(String paramName, String paramValue) {
+	public boolean updateParamValue(String paramScope, String paramName, String paramValue) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public void refresh(String key) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void put(String key, String value) {
-		// TODO Auto-generated method stub
-
-	}
 }

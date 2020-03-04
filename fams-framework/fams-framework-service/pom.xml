@@ -18,11 +18,10 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+   		<dependency>
+		    <groupId>com.purefun</groupId>
+		    <artifactId>fams-framework-core</artifactId>
+		    <version>${fams.version}</version>
+		</dependency>
   </dependencies>
 </project>

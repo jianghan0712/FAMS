@@ -25,7 +25,6 @@ import com.purefun.fams.framework.config.FAMSRegisterAutoConfigure;
 @Target({ java.lang.annotation.ElementType.TYPE })
 @Documented
 @Import({ FAMSRegisterAutoConfigure.class })
-//@ComponentScan(basePackages = { "com.purefun.fams.core.framework" })
 @EnableEurekaServer
 @EnableFeignClients
 public @interface EnableFAMSRegisterCenter {

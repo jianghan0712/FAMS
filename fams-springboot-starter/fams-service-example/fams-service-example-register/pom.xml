@@ -4,21 +4,21 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.purefun</groupId>
-    <artifactId>fams-framework-springboot-starter</artifactId>
+    <artifactId>fams-service-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>fams-framework-service-springboot-starter</artifactId>
-  <name>fams-framework-service-springboot-starter</name>
+  <artifactId>fams-service-example-monitor</artifactId>
+  <name>fams-service-example-monitor</name>
   <url>http://maven.apache.org</url>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-     <dependency>
-       <groupId>com.purefun</groupId>
-	   <artifactId>fams-framework-service</artifactId>
-    </dependency>
+      <dependency>
+	  	  <groupId>com.purefun</groupId>
+	  	  <artifactId>fams-framework-service-springboot-starter</artifactId>
+	  	  <version>${fams.framework.version}</version>
+	  </dependency>
   </dependencies>
 </project>

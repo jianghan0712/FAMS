@@ -41,7 +41,7 @@
 	    </dependency>
 	    <dependency>
 		    <groupId>com.purefun</groupId>
-		    <artifactId>fams-framework-core</artifactId>
+		    <artifactId>fams-framework-service</artifactId>
 		    <version>${fams.framework.version}</version>
 		</dependency>
   	</dependencies>

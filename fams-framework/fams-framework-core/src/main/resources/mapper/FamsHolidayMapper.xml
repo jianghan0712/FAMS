@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.purefun.fams.framework.core.dao.FamsHolidayMapper">
+  <resultMap id="BaseResultMap" type="com.purefun.fams.framework.core.domain.FamsHoliday">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="exch" jdbcType="VARCHAR" property="exch" />
+    <result column="open_flag" jdbcType="VARCHAR" property="openFlag" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, date, exch, open_flag, modify_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from fams_holiday
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from fams_holiday
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.purefun.fams.framework.core.domain.FamsHoliday">
+    insert into fams_holiday (id, date, exch, 
+      open_flag, modify_time, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{date,jdbcType=VARCHAR}, #{exch,jdbcType=VARCHAR}, 
+      #{openFlag,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.purefun.fams.framework.core.domain.FamsHoliday">
+    insert into fams_holiday
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="exch != null">
+        exch,
+      </if>
+      <if test="openFlag != null">
+        open_flag,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="exch != null">
+        #{exch,jdbcType=VARCHAR},
+      </if>
+      <if test="openFlag != null">
+        #{openFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.framework.core.domain.FamsHoliday">
+    update fams_holiday
+    <set>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="exch != null">
+        exch = #{exch,jdbcType=VARCHAR},
+      </if>
+      <if test="openFlag != null">
+        open_flag = #{openFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.framework.core.domain.FamsHoliday">
+    update fams_holiday
+    set date = #{date,jdbcType=VARCHAR},
+      exch = #{exch,jdbcType=VARCHAR},
+      open_flag = #{openFlag,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

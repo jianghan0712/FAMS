@@ -2,74 +2,81 @@ package com.purefun.fams.framework.core.domain;
 
 import java.util.Date;
 
-public class FamsGlobalParam {
-    private Long id;
+import com.purefun.fams.common.domain.BaseDomain;
 
-    private String paramName;
+public class FamsGlobalParam extends BaseDomain {
+	/**
+	 * @Fields:
+	 */
+	private static final long serialVersionUID = -1206838149770312589L;
 
-    private String paramValue;
+	private Long id;
 
-    private String paramScope;
+	private String paramName;
 
-    private String paramDescribe;
+	private String paramValue;
 
-    private Date modifyTime;
+	private String paramScope;
 
-    private Date createTime;
+	private String paramDescribe;
 
-    public Long getId() {
-        return id;
-    }
+	private Date modifyTime;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private Date createTime;
 
-    public String getParamName() {
-        return paramName;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setParamName(String paramName) {
-        this.paramName = paramName == null ? null : paramName.trim();
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getParamValue() {
-        return paramValue;
-    }
+	public String getParamName() {
+		return paramName;
+	}
 
-    public void setParamValue(String paramValue) {
-        this.paramValue = paramValue == null ? null : paramValue.trim();
-    }
+	public void setParamName(String paramName) {
+		this.paramName = paramName == null ? null : paramName.trim();
+	}
 
-    public String getParamScope() {
-        return paramScope;
-    }
+	public String getParamValue() {
+		return paramValue;
+	}
 
-    public void setParamScope(String paramScope) {
-        this.paramScope = paramScope == null ? null : paramScope.trim();
-    }
+	public void setParamValue(String paramValue) {
+		this.paramValue = paramValue == null ? null : paramValue.trim();
+	}
 
-    public String getParamDescribe() {
-        return paramDescribe;
-    }
+	public String getParamScope() {
+		return paramScope;
+	}
 
-    public void setParamDescribe(String paramDescribe) {
-        this.paramDescribe = paramDescribe == null ? null : paramDescribe.trim();
-    }
+	public void setParamScope(String paramScope) {
+		this.paramScope = paramScope == null ? null : paramScope.trim();
+	}
 
-    public Date getModifyTime() {
-        return modifyTime;
-    }
+	public String getParamDescribe() {
+		return paramDescribe;
+	}
 
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
-    }
+	public void setParamDescribe(String paramDescribe) {
+		this.paramDescribe = paramDescribe == null ? null : paramDescribe.trim();
+	}
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+	public Date getModifyTime() {
+		return modifyTime;
+	}
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+	public void setModifyTime(Date modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 }
