@@ -44,8 +44,7 @@ public class FAMSServiceStateListener {
 	@EventListener
 	public void listen(EurekaInstanceCanceledEvent event) {
 		String serverFullName = event.getAppName();
-		String serverName = event.getServerId().substring(event.getServerId().indexOf(":"),
-				event.getServerId().lastIndexOf(":"));
+		String serverName = event.getServerId();
 
 		logger.info("[HB] service {} status change to offline", serverName);
 	}

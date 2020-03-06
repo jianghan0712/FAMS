@@ -6,8 +6,14 @@ server:
     
 fams:
     framework:
-        server:
+        service:
             serviceName: ${ServiceName}-${Env}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: service-registry
       
 spring:
     main:

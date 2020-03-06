@@ -12,8 +12,10 @@ import com.purefun.fams.framework.annotation.EnableFAMS;
 @ComponentScan(basePackages = { "com.purefun.fams.example.rpc.server" })
 @MapperScan(basePackages = { "com.purefun.fams.framework.core.dao" })
 public class FAMSrpcServer {
+
 	public static void main(String[] args) {
-		SpringApplication application = new SpringApplication(FAMSrpcServer.class);
-		application.run(args);
+		SpringApplication app = new SpringApplication(FAMSrpcServer.class);
+		app.run(args);
 	}
+
 }

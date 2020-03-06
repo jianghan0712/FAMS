@@ -28,6 +28,9 @@ public interface CommonUtil {
 		String empty = "";
 		String underline = "_";
 		String caret = "^";
+		String blank = " ";
+		String colon = ":";
+		String question = "?";
 	}
 
 	/**

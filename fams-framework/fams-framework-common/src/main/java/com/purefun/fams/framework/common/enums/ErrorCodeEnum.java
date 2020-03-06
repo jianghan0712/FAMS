@@ -17,6 +17,8 @@ public enum ErrorCodeEnum {
 
 	PARAM_EXCEPTION("PARAM_EXCEPTION", "参数错误"),
 
+	COMMOND_UNKNOWN("COMMOND_UNKNOWN", "无法识别的命令"),
+
 	UNKNOWN_EXCEPTION("UNKNOWN_EXCEPTION", "未知错误"),
 
 	;

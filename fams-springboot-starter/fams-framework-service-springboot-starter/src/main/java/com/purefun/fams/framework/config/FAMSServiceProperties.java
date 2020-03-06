@@ -12,9 +12,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author jiang
  * @date 2020-02-11 14:41:39
  */
-@ConfigurationProperties(prefix = "fams.framework.client")
+@ConfigurationProperties(prefix = "fams.framework.service")
 public class FAMSServiceProperties {
-	public static final String SERVER_PREFIX = "fams.framework.client";
+	public static final String SERVER_PREFIX = "fams.framework.service";
 
 	private String serviceName;
 

@@ -7,8 +7,11 @@ package com.purefun.fams.framework.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+import com.purefun.fams.framework.core.service.impl.CommondServiceImpl;
 import com.purefun.fams.framework.core.service.impl.GlobalParamServiceImpl;
 import com.purefun.fams.framework.core.service.impl.RedisCacheLoaderServiceImpl;
+import com.purefun.fams.framework.core.thread.CommondThread;
+import com.purefun.fams.framework.core.thread.FAMSCoreThreadPool;
 
 /**
  * @Classname: FAMSServiceBeanFactory
@@ -44,4 +47,51 @@ public class FAMSServiceBeanFactory {
 	public GlobalParamServiceImpl getGlobalParamServiceImpl() {
 		return new GlobalParamServiceImpl();
 	}
+
+	/**
+	 * fams的core线程池，非用户线程池
+	 * 
+	 * @MethodName: taskExecutro
+	 * @author jianghan
+	 * @date 2020-03-04 17:45:59
+	 * @return
+	 */
+	@Bean
+	public FAMSCoreThreadPool taskExecutro() {
+		FAMSCoreThreadPool taskExecutor = new FAMSCoreThreadPool();
+		taskExecutor.setCorePoolSize(10);
+		taskExecutor.setMaxPoolSize(50);
+		taskExecutor.setQueueCapacity(200);
+		taskExecutor.setKeepAliveSeconds(60);
+		taskExecutor.setThreadNamePrefix("FAMS-core-thread-");
+		taskExecutor.initPool();
+		return taskExecutor;
+	}
+
+	/**
+	 * 
+	 * @MethodName: getSelfTemplate
+	 * @author jianghan
+	 * @date 2020-03-05 23:32:09
+	 * @return
+	 */
+//	@Bean
+//	public RestTemplate getSelfTemplate() {
+//		RestTemplate restTemplate = new RestTemplate();
+//		restTemplate.getInterceptors().add(new LogInterceptor());
+//		restTemplate.getInterceptors().add(new SelfHttpHeadInterceptor());
+//
+//		return restTemplate;
+//	}
+
+	@Bean
+	public CommondThread commondThread() {
+		return new CommondThread();
+	}
+
+	@Bean
+	public CommondServiceImpl commondService() {
+		return new CommondServiceImpl();
+	}
+
 }

@@ -7,6 +7,7 @@ eureka:
         hostname: localhost
         lease-renewal-interval-in-seconds: 10
         lease-expiration-duration-in-seconds: 20
+        instance-id: ${spring.application.name}-${Instance}:${server.port}
     client:
         registerWithEureka: true
         fetch-registry: true
