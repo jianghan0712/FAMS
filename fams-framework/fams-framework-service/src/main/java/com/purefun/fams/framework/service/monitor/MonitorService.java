@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.purefun.fams.framework.service.monitor.domain.ServiceInstance;
+import com.purefun.fams.framework.core.domain.ServiceInstance;
 
 /**
  * @Classname: MonitorService
@@ -20,7 +20,6 @@ import com.purefun.fams.framework.service.monitor.domain.ServiceInstance;
  * @author jianghan
  * @date 2020-03-03 12:53:00
  */
-@Service
 public class MonitorService {
 	private Map<String, HashSet<ServiceInstance>> onlineServerMap;
 

@@ -8,7 +8,13 @@ fams:
     framework:
         register:
             serviceName: ${ServiceName}-${Env}-${Instance}
-      
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: service-registry
+             
 spring:
     main:
         allow-bean-definition-overriding: true

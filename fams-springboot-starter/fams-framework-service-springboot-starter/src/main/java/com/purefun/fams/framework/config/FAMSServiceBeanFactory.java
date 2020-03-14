@@ -7,6 +7,9 @@ package com.purefun.fams.framework.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+import com.purefun.fams.framework.core.domain.ServiceInstance;
+import com.purefun.fams.framework.core.service.CacheService;
+import com.purefun.fams.framework.core.service.impl.CacheServiceImpl;
 import com.purefun.fams.framework.core.service.impl.CommondServiceImpl;
 import com.purefun.fams.framework.core.service.impl.GlobalParamServiceImpl;
 import com.purefun.fams.framework.core.service.impl.RedisCacheLoaderServiceImpl;
@@ -68,21 +71,10 @@ public class FAMSServiceBeanFactory {
 		return taskExecutor;
 	}
 
-	/**
-	 * 
-	 * @MethodName: getSelfTemplate
-	 * @author jianghan
-	 * @date 2020-03-05 23:32:09
-	 * @return
-	 */
-//	@Bean
-//	public RestTemplate getSelfTemplate() {
-//		RestTemplate restTemplate = new RestTemplate();
-//		restTemplate.getInterceptors().add(new LogInterceptor());
-//		restTemplate.getInterceptors().add(new SelfHttpHeadInterceptor());
-//
-//		return restTemplate;
-//	}
+	@Bean
+	public ServiceInstance initServiceInstance() {
+		return new ServiceInstance();
+	}
 
 	@Bean
 	public CommondThread commondThread() {
@@ -92,6 +84,11 @@ public class FAMSServiceBeanFactory {
 	@Bean
 	public CommondServiceImpl commondService() {
 		return new CommondServiceImpl();
+	}
+
+	@Bean
+	public CacheService cacheService() {
+		return new CacheServiceImpl();
 	}
 
 }

@@ -31,6 +31,7 @@ public interface CommonUtil {
 		String blank = " ";
 		String colon = ":";
 		String question = "?";
+		String rod = "-";
 	}
 
 	/**
