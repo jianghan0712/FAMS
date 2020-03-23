@@ -30,6 +30,7 @@ class StrategyContainer(object):
         self.stock_pool = {}
         self.savePath = None
         self.mysql = mysql    
+        self.resultMap = pd.DataFrame(columns=('行业', '股票代码', '交易次数', '最长持有天数','平均每次收益' ,'单次最大盈利','单次最大回撤'))
         
         extra_configs = set(configs).difference(self.DEFAULT_CONFIG)
         
@@ -160,7 +161,7 @@ class StrategyContainer(object):
         stock_data.ix[0, 'capital_perday'] = 0
         stock_data.ix[(stock_data['position']==1) & (stock_data['position'].shift(1)==0), 'capital_perday'] = (stock_data['close'] / stock_data['open'] - 1) 
         stock_data.ix[(stock_data['position']==0) & (stock_data['position'].shift(1)==1), 'capital_perday'] = (stock_data['open'] / stock_data['close'].shift(1) - 1)  
-        stock_data.ix[stock_data['position'] == stock_data['position'].shift(1) , 'capital_perday'] = (stock_data['change']) * stock_data['position']
+        stock_data.ix[stock_data['position'] == stock_data['position'].shift(1) , 'capital_perday'] = (stock_data['pct_chg']/100) * stock_data['position']
    
         stock_data['capital'] = (stock_data['capital_perday'] + 1).cumprod()   
         ####    计算每次交易盈亏率
@@ -249,6 +250,8 @@ class StrategyContainer(object):
         print( '|年均买卖次数为：%f' % trade_per_year)
         print( '|最大连续盈利次数为：%d  最大连续亏损次数为：%d' % (max_successive_gain, max_successive_loss))
         
+#         columns=('行业', '股票代码', '交易次数', '最长持有天数','平均每次收益' ,'单次最大盈利','单次最大回撤')
+        self.resultMap = self.resultMap.append([{'行业':industry, '股票代码':code, '交易次数':trade_num, '最长持有天数':max_holdtime,'平均每次收益' :average_change,'单次最大盈利':max_gain,'单次最大回撤':max_loss}], ignore_index=True)
         #    保存交易信息
         self.saveResult(stock_data, trade, industry, code)        
  
