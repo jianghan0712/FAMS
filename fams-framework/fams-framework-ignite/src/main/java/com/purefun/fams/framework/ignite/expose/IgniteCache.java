@@ -1,5 +1,7 @@
 package com.purefun.fams.framework.ignite.expose;
 
+import java.util.List;
+
 import org.apache.ignite.Ignite;
 import org.apache.ignite.configuration.CacheConfiguration;
 
@@ -19,7 +21,7 @@ public interface IgniteCache<K, V> {
 	 * @param ignite   主ignite
 	 * @param cacheCfg cache config
 	 */
-	void initCache(Ignite ignite, CacheConfiguration<K, V>[] cacheCfg);
+	public void initCache(Ignite ignite, CacheConfiguration<K, V>... cacheCfg);
 
 	/**
 	 ** 输出底层cache
@@ -64,5 +66,39 @@ public interface IgniteCache<K, V> {
 	 * @return
 	 */
 	public V get(K key);
+
+	/**
+	 * 获取ignite实例
+	 * 
+	 * @MethodName: getIgnite
+	 * @author 015979
+	 * @date 2020-03-16 16:23:31
+	 * @return
+	 */
+	public Ignite getIgnite();
+
+	/**
+	 * 判断当前是否有cacheName对应的cache
+	 * 
+	 * @MethodName: contain
+	 * @author 015979
+	 * @date 2020-03-17 13:38:02
+	 * @param cacheName
+	 * @return
+	 */
+	public boolean contain(String cacheName);
+
+	/**
+	 * 获取cacheName下所有的缓存
+	 * 
+	 * @MethodName: getAll
+	 * @author 015979
+	 * @date 2020-03-17 15:28:28
+	 * @param cacheName
+	 * @return
+	 */
+	public List<List<?>> getAll(String cacheName);
+
+	public List<List<?>> getBySQL(String cacheName, String sql);
 
 }

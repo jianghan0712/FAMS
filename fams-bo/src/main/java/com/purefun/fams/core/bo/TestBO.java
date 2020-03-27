@@ -3,6 +3,8 @@
  */
 package com.purefun.fams.core.bo;
 
+import org.apache.ignite.cache.query.annotations.QuerySqlField;
+
 import com.purefun.fams.core.bo.tool.fstpbo;
 
 /**
@@ -13,7 +15,9 @@ import com.purefun.fams.core.bo.tool.fstpbo;
 public class TestBO extends BaseBO {
 	private static final long serialVersionUID = 8124112870144768L;
 
+	@QuerySqlField
 	public String username;
 
-	public String age;
+	@QuerySqlField
+	public int age;
 }

@@ -33,7 +33,7 @@ public class KafkaTest {
 	public void testPublish() {
 		TestBO_OTW bo = (TestBO_OTW) BoFactory.createBo(TestBO.class);
 		bo.setUsername("jianghan");
-		bo.setAge("20");
+		bo.setAge(20);
 		TestBO2_OTW bo2 = (TestBO2_OTW) BoFactory.createBo(TestBO2.class);
 		bo2.setWorkid("zhangjunqing");
 		bo2.setHomeaddress("31231");

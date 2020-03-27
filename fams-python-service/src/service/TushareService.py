@@ -10,11 +10,12 @@ import pymysql as mysql
 import talib as ta
 import numpy as np
 
+from src.com.purefun.fams.md.model.MdBarDataBO import MdBarDataBO
 from src.core.PService.PyService import PyService
 from src.core.log.PyPLogger import PyPLogger
 from src.core.db.MySQLHandler import MySQLHandler
 from src.core.db.MongoDBHandler import MongoDBHandler
-from src.core.md.MdData import MdBarData
+# from src.core.md.MdData import MdBarData
 
 
 
@@ -99,9 +100,12 @@ class TuShareService(PyService):
         df.ix[df['exchange']=='SSE','exch']='sh'
         df.ix[df['exchange']=='SZSE','exch']='sz'
         for row in df.iterrows():
-            sql = ("insert into fams_security_basicinfo(exch,security_id,ts_id,exchange_id,security_name,area,industry,market_type,currency,status,list_date,ht_flag) "     
-                " values ('" + row['exch'] + "','" +row['security_id'] + "','" + row['ts_code']  + "','" +  row['symbol'] + "','" + row['name']+ "','" + row['area']+ "','" +row['industry'] + "','" + 
-                               row['market'] + "','" + row['curr_type']  + "','" + row['list_status'] + "','" + row['list_date'] + "','" + row['is_hs'] + "')") 
+            # print('获取行索引:', row[0])
+            # print('\n获取该行全部字段:\n', row[1])
+            sql = ("insert into fams_security_basicinfo(exch,security_id,ts_id,exchange_id,security_name,area,industry,market_type,currency,status,list_date,ht_flag) "
+                " values ('" + row[1]['exch'] + "','" +
+                   row[1]['security_id'] + "','" + row[1]['ts_code']  + "','" +  row[1]['symbol'] + "','" + row[1]['name']+ "','" + row[1]['area']+ "','" +row[1]['industry'] + "','" +
+                               row[1]['market'] + "','" + row[1]['curr_type'] + "','" + row[1]['list_status'] + "','" + row[1]['list_date'] + "','" + row[1]['is_hs'] + "')")
             print(sql)
             self.mysql.executeMySQL(sql)
     
@@ -138,8 +142,12 @@ class TuShareService(PyService):
             data = ts.pro_bar(ts_code=stock_code, adj='qfq',start_date=start_date,end_date=end_date)
             collection = self.__mongoClient['fams_stock_bar_' + industry][stock_code]
             collection.ensure_index([('date', mgdb.ASCENDING)], unique=True)
+            exch = stock_code[-2:]
             for i in range(len(data)):
-                bar = MdBarData()  
+                bar = MdBarDataBO()
+                bar.exch = exch
+                bar.security_code = stock_code
+                bar.security_type = 'stock'
                 bar.date = data.iloc[i].trade_date    
                 bar.open = data.iloc[i].open
                 bar.high = data.iloc[i].high
@@ -160,7 +168,6 @@ class TuShareService(PyService):
         i = 0
         for value in industList: 
             industryName = value[0]
-            print(industryName)
             sql = "insert into fams_industry(industry,pull_flag,last_update_date) values ('" + industryName + "','N','" +today+"')"
             self.mysql.executeMySQL(sql)
     
@@ -194,8 +201,8 @@ class TuShareService(PyService):
             
             stockCodeList = self.mysql.getData("select ts_id from fams_security_basicinfo where industry='" + industryName + "'")
             for eachStockCode in stockCodeList:
-#                 if stock_code is None:
-#                     start_flag = True
+                if stock_code is None:
+                    start_flag = True
                 if start_flag==False and eachStockCode[0] != stock_code  :
                     self.log.info('jump stockcode {}',eachStockCode[0])
                     continue
@@ -209,7 +216,7 @@ class TuShareService(PyService):
                     else:
                         self._getStockHisBarFromTushare(industryName, eachStockCode[0], data.ix[0,'date'], end_date)                 
                     
-                    time.sleep(5)
+                    time.sleep(3)
             self.mysql.getData("update fams_industry set pull_flag='N'  where industry='" + industryName + "'")
         
         
@@ -221,14 +228,19 @@ class TuShareService(PyService):
 service = TuShareService(serviceName='TuShareService', env='DEV', instance='1')
 service.initService()
 service.startService()
+
+# service.querySecurityBasicInfo()
+# service.initIndustry()
+# service.getStockHisBarFromTushare()
 # data = service.getLastBarFromMongo(industry='塑料',stock_code='000859.SZ')
-service.updateBarFromTS(stock_code='300805.SZ')
+service.updateBarFromTS()
 # data = service.getBarFromMongo(industry='塑料',stock_code='000859.SZ')
 # print(data.ix[0,'date'])
-# service.initIndustry()
-#service.getStockHisBarFromTushare(stock_code='300452.SZ')
+
 # service.queryHoliday()
 # service.querySecurityBasicInfo()
+# service.initIndustry()
+# service.getStockHisBarFromTushare()
 
 
 

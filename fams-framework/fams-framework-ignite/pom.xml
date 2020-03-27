@@ -22,7 +22,7 @@
 		<dependency>
 		    <groupId>org.apache.ignite</groupId>
 		    <artifactId>ignite-core</artifactId>
-		    </dependency>
+		</dependency>
 		<dependency>
 		    <groupId>org.apache.ignite</groupId>
 		    <artifactId>ignite-spring</artifactId>
@@ -82,5 +82,6 @@
 		    <artifactId>fams-framework-core</artifactId>
 		    <version>${fams.version}</version>
 		</dependency>
+
   </dependencies>
 </project>

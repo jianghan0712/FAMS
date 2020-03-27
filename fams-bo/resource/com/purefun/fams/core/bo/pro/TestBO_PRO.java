@@ -81,21 +81,15 @@ public final class TestBO_PRO {
         getUsernameBytes();
 
     /**
-     * <code>optional string age = 5;</code>
+     * <code>optional int32 age = 5;</code>
      * @return Whether the age field is set.
      */
     boolean hasAge();
     /**
-     * <code>optional string age = 5;</code>
+     * <code>optional int32 age = 5;</code>
      * @return The age.
      */
-    java.lang.String getAge();
-    /**
-     * <code>optional string age = 5;</code>
-     * @return The bytes for age.
-     */
-    com.google.protobuf.ByteString
-        getAgeBytes();
+    int getAge();
   }
   /**
    * Protobuf type {@code TestBO}
@@ -113,7 +107,6 @@ public final class TestBO_PRO {
       uuid_ = "";
       destination_ = "";
       username_ = "";
-      age_ = "";
     }
 
     @java.lang.Override
@@ -170,10 +163,9 @@ public final class TestBO_PRO {
               username_ = bs;
               break;
             }
-            case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+            case 40: {
               bitField0_ |= 0x00000010;
-              age_ = bs;
+              age_ = input.readInt32();
               break;
             }
             default: {
@@ -362,48 +354,20 @@ public final class TestBO_PRO {
     }
 
     public static final int AGE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object age_;
+    private int age_;
     /**
-     * <code>optional string age = 5;</code>
+     * <code>optional int32 age = 5;</code>
      * @return Whether the age field is set.
      */
     public boolean hasAge() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string age = 5;</code>
+     * <code>optional int32 age = 5;</code>
      * @return The age.
      */
-    public java.lang.String getAge() {
-      java.lang.Object ref = age_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          age_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string age = 5;</code>
-     * @return The bytes for age.
-     */
-    public com.google.protobuf.ByteString
-        getAgeBytes() {
-      java.lang.Object ref = age_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        age_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getAge() {
+      return age_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -433,7 +397,7 @@ public final class TestBO_PRO {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, username_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, age_);
+        output.writeInt32(5, age_);
       }
       unknownFields.writeTo(output);
     }
@@ -458,7 +422,8 @@ public final class TestBO_PRO {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, username_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, age_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, age_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -497,8 +462,8 @@ public final class TestBO_PRO {
       }
       if (hasAge() != other.hasAge()) return false;
       if (hasAge()) {
-        if (!getAge()
-            .equals(other.getAge())) return false;
+        if (getAge()
+            != other.getAge()) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -530,7 +495,7 @@ public final class TestBO_PRO {
       }
       if (hasAge()) {
         hash = (37 * hash) + AGE_FIELD_NUMBER;
-        hash = (53 * hash) + getAge().hashCode();
+        hash = (53 * hash) + getAge();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -673,7 +638,7 @@ public final class TestBO_PRO {
         bitField0_ = (bitField0_ & ~0x00000004);
         username_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        age_ = "";
+        age_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
@@ -720,9 +685,9 @@ public final class TestBO_PRO {
         }
         result.username_ = username_;
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.age_ = age_;
           to_bitField0_ |= 0x00000010;
         }
-        result.age_ = age_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -791,9 +756,7 @@ public final class TestBO_PRO {
           onChanged();
         }
         if (other.hasAge()) {
-          bitField0_ |= 0x00000010;
-          age_ = other.age_;
-          onChanged();
+          setAge(other.getAge());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1114,86 +1077,39 @@ public final class TestBO_PRO {
         return this;
       }
 
-      private java.lang.Object age_ = "";
+      private int age_ ;
       /**
-       * <code>optional string age = 5;</code>
+       * <code>optional int32 age = 5;</code>
        * @return Whether the age field is set.
        */
       public boolean hasAge() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional string age = 5;</code>
+       * <code>optional int32 age = 5;</code>
        * @return The age.
        */
-      public java.lang.String getAge() {
-        java.lang.Object ref = age_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            age_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getAge() {
+        return age_;
       }
       /**
-       * <code>optional string age = 5;</code>
-       * @return The bytes for age.
-       */
-      public com.google.protobuf.ByteString
-          getAgeBytes() {
-        java.lang.Object ref = age_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          age_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string age = 5;</code>
+       * <code>optional int32 age = 5;</code>
        * @param value The age to set.
        * @return This builder for chaining.
        */
-      public Builder setAge(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+      public Builder setAge(int value) {
+        bitField0_ |= 0x00000010;
         age_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string age = 5;</code>
+       * <code>optional int32 age = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAge() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        age_ = getDefaultInstance().getAge();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string age = 5;</code>
-       * @param value The bytes for age to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAgeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        age_ = value;
+        age_ = 0;
         onChanged();
         return this;
       }
@@ -1267,7 +1183,7 @@ public final class TestBO_PRO {
       "\n\014TestBO.proto\032\031google/protobuf/any.prot" +
       "o\"X\n\006TestBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022" +
       "\023\n\013destination\030\003 \001(\t\022\020\n\010username\030\004 \001(\t\022\013" +
-      "\n\003age\030\005 \001(\tB*\n\034com.purefun.fams.core.bo." +
+      "\n\003age\030\005 \001(\005B*\n\034com.purefun.fams.core.bo." +
       "proB\nTestBO_PRO"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

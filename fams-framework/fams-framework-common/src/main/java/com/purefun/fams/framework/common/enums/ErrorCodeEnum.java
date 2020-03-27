@@ -15,11 +15,17 @@ import org.apache.commons.lang3.StringUtils;
 public enum ErrorCodeEnum {
 	SUCCESS("SUCCESS", "成功"),
 
+	// ------------通用错误码----------------//
 	PARAM_EXCEPTION("PARAM_EXCEPTION", "参数错误"),
+
+	UNKNOWN_EXCEPTION("UNKNOWN_EXCEPTION", "未知错误"),
+
+	// -------------命令service错误码
 
 	COMMOND_UNKNOWN("COMMOND_UNKNOWN", "无法识别的命令"),
 
-	UNKNOWN_EXCEPTION("UNKNOWN_EXCEPTION", "未知错误"),
+	// ---------------ignite-Service错误码
+	IGNITE_NO_CACHE("IGNITE_NO_CACHE", "没有找到对应的ignite"),
 
 	;
 

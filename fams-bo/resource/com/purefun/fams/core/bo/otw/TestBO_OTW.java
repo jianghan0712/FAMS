@@ -62,11 +62,11 @@ public class TestBO_OTW implements ICommon_OTW {
         builder.setUsername(username);
     }
 
-    public java.lang.String getAge() {
+    public int getAge() {
         return builder.getAge();
     }
 
-    public void setAge(java.lang.String age) {
+    public void setAge(int age) {
         bo.age = age;
         builder.setAge(age);
     }

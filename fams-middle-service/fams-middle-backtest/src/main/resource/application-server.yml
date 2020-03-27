@@ -1,0 +1,31 @@
+
+server:
+    port: 10100
+    #port: ${random.int[10000,19999]}
+
+eureka:
+    instance:
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 20
+        instance-id: ${spring.application.name}-${Instance}:${server.port}
+    client:
+        registerWithEureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+
+mongodb:
+    host: localhost
+    port: 27017
+    
+fams:
+    middle:
+        strategy:
+            initCount: 14
+    framework:
+        ignite:
+            path: classpath:Ignite.xml
+            cache:
+                cacheList:
+                    - {name: MdBarDataBO, atomicityMode: TRANSACTIONAL, cacheMode: REPLICATED, indexedTypes: [java.lang.String, com.purefun.fams.md.MdBarDataBO]}

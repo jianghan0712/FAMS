@@ -70,5 +70,6 @@
   <modules>
     <module>fams-service-example-rpc</module>
     <module>fams-service-example-register</module>
+    <module>fams-service-example-ignite</module>
   </modules>
 </project>

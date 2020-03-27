@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.common.util.StringUtil;
@@ -163,7 +164,7 @@ public class GenerateJAVABOFiles {
 			StringBuilder fin = new StringBuilder(TAB).append("optional ");
 			if (e.getType().equals(java.lang.String.class)) {
 				fin.append("string ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
-			} else if (e.getType().equals(double.class)) {
+			} else if (e.getType().equals(double.class) || e.getType().equals(BigDecimal.class)) {
 				fin.append("double ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
 			} else if (e.getType().equals(long.class)) {
 				fin.append("sint64 ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
@@ -190,7 +191,7 @@ public class GenerateJAVABOFiles {
 	 */
 	private void genBuildFile(String fileName) {
 //		String strCmd = "./resource/protoc.exe -I=./" + protofileDirectory + " --java_out=./resource/ ./" + protofileDirectory + fileName;  		
-		String strCmd = "D:\\software\\protoc-3.11.3-win64\\bin\\protoc.exe -I=./" + protofileDirectory
+		String strCmd = "D:\\software\\protoc-3.11.4-win64\\bin\\protoc.exe -I=./" + protofileDirectory
 				+ " --java_out=./resource/ ./" + protofileDirectory + fileName;
 		try {
 			Runtime.getRuntime().exec(strCmd);

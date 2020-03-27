@@ -57,7 +57,7 @@ class StrategyContainer(object):
         pass
         
     #---------------------------------------------------------------------- 
-    def Command(self, command:str,key=None,pdData=None):  
+    def Command(self, command:str,key=None,pdData=None):
         event = Event(type_=command, key=key, data=pdData)
         self.__eventEnginer.SendEvent(event)
     
@@ -149,7 +149,7 @@ class StrategyContainer(object):
             return
         for k,v in self.stock_pool.items(): 
             for s in v:
-                self.Command(command=EVENT_COMMAND_NEXT_STOCK,key={'industry':k,'stockcode':s})
+                self.Command(command=EVENT_COMMAND_NEXT_STOCK,key={'industry':k,'stockcode':s,'startDate': self.config['timebegin']})
 
     
     #----------------------------------------------------------------------             
@@ -203,8 +203,12 @@ class StrategyContainer(object):
         trade_num = len(trade)  # 计算交易次数
         max_holdtime = trade['hold_time'].max()  # 计算最长持有天数
         average_change = trade['trade_return'].mean()  # 计算每次平均涨幅
-        max_gain = trade['trade_return'].max()  # 计算单笔最大盈利
-        max_loss = trade['trade_return'].min()  # 计算单笔最大亏损
+        max_gain = trade.loc[trade['trade_return'] > 0].max()
+        max_gain = max_gain['trade_return']
+        # max_loss = trade[trade['trade_return'] < 0].min()
+        # max_gain = trade['trade_return'].max()  # 计算单笔最大盈利
+        max_loss = trade.loc[trade['trade_return'] < 0].min()  # 计算单笔最大亏损
+        max_loss = max_loss['trade_return']
         # 计算年均买卖次数
         trade_per_year = trade_num / ((pd.to_datetime(trade['end_date'].iloc[-1]) - pd.to_datetime(trade['start_date'].iloc[0])).days / 365)      
         # 计算连续盈利亏损的次数
