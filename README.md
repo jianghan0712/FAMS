@@ -75,8 +75,8 @@
       - [x] ignite
 
 
-- [ ] fams-middle-service 交易中台
-  - [ ] Middle-Component 交易中台公共组件
+- [ ] fams-king 交易中台
+  - [ ] King-Component 交易中台公共组件
     - [x] MarketDataContainer 行情容器
     - [x] StrategyContainer 策略容器
     - [ ] TradeAnalysisContainer 交易分析容器
@@ -91,13 +91,13 @@
   - [ ] MarketDataService 行情服务
 
 
-- [ ] fams-ace-service 交易前台
+- [ ] fams-ace 交易前台
   - [ ] Ace-Component 交易前台公共组件
   - [ ] OrderManagerService 订单管理服务
 
 
-- [ ] fams-back-service 交易后台
-  - [ ] Back-Component 交易后台公共组件
+- [ ] fams-queen 交易后台
+  - [ ] Queen-Component 交易后台公共组件
   - [ ] ProductService 产品库
   - [ ] AcctService 客户账户管理服务
   - [ ] OrderFlowService 指令流转服务
