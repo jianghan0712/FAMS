@@ -13,7 +13,7 @@
   	<module>fams-common</module>
   	<module>fams-bo</module>
     <module>fams-framework</module>
-    <module>fams-middle-service</module>
+    <module>fams-king</module>
   </modules>
   
    <properties>
