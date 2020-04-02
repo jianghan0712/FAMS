@@ -4,49 +4,49 @@
  */
 package com.purefun.fams.king.component.strategy.model;
 
+import java.math.BigDecimal;
+
 import com.purefun.fams.common.domain.BaseDomain;
-import com.purefun.fams.king.constant.DirectionEnum;
 
 /**
- * @Classname: TradeDetail
- * @Description:
+ * @Classname: PositionDetail
+ * @Description: 持仓详情
  * @author 015979
- * @date 2020-03-27 14:04:22
+ * @date 2020-03-30 15:16:18
  */
 public class TradeDetail extends BaseDomain {
+
 	/**
 	 * @Fields:
 	 */
-	private static final long serialVersionUID = -8506942371189779041L;
+	private static final long serialVersionUID = -3242609833492842469L;
 
-	public String tradeDate;
+	private String account;
 
-	public DirectionEnum direction;
+	private String exch;
 
-	public String exch;
+	private String securityCode;
 
-	public String securityCode;
+	private String openDate;// 建仓日期
 
-	public double price;
+	private String closeDate;// 清仓日期
 
-	public double amount;
+	private BigDecimal openPrice;// 成本价格
 
-	public int volume;
+	private BigDecimal closePrice;// 平仓价格
 
-	public String getTradeDate() {
-		return tradeDate;
+	private long volume = 0l;// 持仓数量
+
+	private long freezeVolume = 0l;// 其中冻结数量
+
+	private BigDecimal cash;// 当次周期未投入的现金额
+
+	public String getAccount() {
+		return account;
 	}
 
-	public void setTradeDate(String tradeDate) {
-		this.tradeDate = tradeDate;
-	}
-
-	public DirectionEnum getDirection() {
-		return direction;
-	}
-
-	public void setDirection(DirectionEnum direction) {
-		this.direction = direction;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getExch() {
@@ -65,28 +65,60 @@ public class TradeDetail extends BaseDomain {
 		this.securityCode = securityCode;
 	}
 
-	public double getPrice() {
-		return price;
+	public String getOpenDate() {
+		return openDate;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setOpenDate(String openDate) {
+		this.openDate = openDate;
 	}
 
-	public double getAmount() {
-		return amount;
+	public String getCloseDate() {
+		return closeDate;
 	}
 
-	public void setAmount(double amount) {
-		this.amount = amount;
+	public void setCloseDate(String closeDate) {
+		this.closeDate = closeDate;
 	}
 
-	public int getVolume() {
+	public BigDecimal getOpenPrice() {
+		return openPrice;
+	}
+
+	public void setOpenPrice(BigDecimal openPrice) {
+		this.openPrice = openPrice;
+	}
+
+	public BigDecimal getClosePrice() {
+		return closePrice;
+	}
+
+	public void setClosePrice(BigDecimal closePrice) {
+		this.closePrice = closePrice;
+	}
+
+	public long getVolume() {
 		return volume;
 	}
 
-	public void setVolume(int volume) {
+	public void setVolume(long volume) {
 		this.volume = volume;
+	}
+
+	public long getFreezeVolume() {
+		return freezeVolume;
+	}
+
+	public void setFreezeVolume(long freezeVolume) {
+		this.freezeVolume = freezeVolume;
+	}
+
+	public BigDecimal getCash() {
+		return cash;
+	}
+
+	public void setCash(BigDecimal cash) {
+		this.cash = cash;
 	}
 
 }

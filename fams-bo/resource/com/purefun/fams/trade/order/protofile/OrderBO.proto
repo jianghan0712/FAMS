@@ -11,8 +11,15 @@ message OrderBO {
     optional string security_code = 5;
     optional string exch = 6;
     optional string security_type = 7;
-    optional string direction = 8;
-    optional double price = 9;
-    optional sint64 volume = 10;
-    optional bool withdrawFlag = 11;
+    optional string tradeDate = 8;
+    optional string orderId = 9;
+    optional string orderStatus = 10;
+    optional string orderRejectedReson = 11;
+    optional string orderType = 12;
+    optional double orderPrice = 13;
+    optional sint64 orderVolume = 14;
+    optional string direction = 15;
+    optional string execStatus = 16;
+    optional bool withdrawFlag = 17;
+    optional sint64 withdrawVolume = 18;
 }

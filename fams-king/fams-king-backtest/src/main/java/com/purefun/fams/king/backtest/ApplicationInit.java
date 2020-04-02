@@ -11,8 +11,6 @@ import com.purefun.fams.framework.core.thread.CommondThread;
 import com.purefun.fams.framework.core.thread.FAMSCoreThreadPool;
 import com.purefun.fams.king.component.mdcontainer.MarketDataContainer;
 import com.purefun.fams.king.component.strategy.DoubleMAStrategy;
-import com.purefun.fams.king.component.strategy.analysis.TradeAnalysisContainer;
-import com.purefun.fams.king.constant.EventTypeEnum;
 import com.purefun.fams.king.constant.KingConstant;
 import com.purefun.fams.king.constant.MDTypeEnum;
 import com.purefun.fams.king.request.MDRequest;
@@ -36,11 +34,6 @@ public class ApplicationInit implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		pool.execute(commondThread);
-
-		// 给策略容器添加分析容器
-		strategy.register(new EventTypeEnum[] { EventTypeEnum.EVENT_TRADE_NEW_ORDER,
-				EventTypeEnum.EVENT_TRADE_CANCEL_ORDER, EventTypeEnum.EVENT_TRADE_INIT, EventTypeEnum.EVENT_TRADE_START,
-				EventTypeEnum.EVENT_TRADE_END, }, new TradeAnalysisContainer());
 
 		mdContainer.addObserver(strategy);
 		MDRequest mdRequest = new MDRequest();

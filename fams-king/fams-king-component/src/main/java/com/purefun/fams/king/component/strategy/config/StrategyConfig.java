@@ -20,6 +20,8 @@ public class StrategyConfig {
 
 	public String name = "anonymous-strategy";
 
+	public String account = "test-backtest-account";
+
 	/** 用于初始化策略的行情数据个数 */
 	public int initCount = 20;
 	/** */
@@ -57,6 +59,14 @@ public class StrategyConfig {
 
 	public void setCash(double cash) {
 		this.cash = cash;
+	}
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 }

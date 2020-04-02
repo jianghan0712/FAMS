@@ -27,6 +27,13 @@ public enum ErrorCodeEnum {
 	// ---------------ignite-Service错误码
 	IGNITE_NO_CACHE("IGNITE_NO_CACHE", "没有找到对应的ignite"),
 
+	// -------------KING交易中台错误码--------------
+	KING_ILLEGAL_TRADE("KING_ILLEGAL_TRADE", "非法交易"),
+
+	KING_ACCOUNT_NOT_FOUNT("KING_ACCOUNT_NOT_FOUNT", "找不到对应的资金账户"),
+
+	KING_ACCOUNT_CAPITAL_NOT_ENOUGH("KING_ACCOUNT_CAPITAL_NOT_ENOUGH", "账户资金不足"),
+
 	;
 
 	/** 枚举代码 */

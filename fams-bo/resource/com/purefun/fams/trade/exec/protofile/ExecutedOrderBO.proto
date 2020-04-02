@@ -1,0 +1,20 @@
+import "google/protobuf/any.proto";
+
+option java_outer_classname = "ExecutedOrderBO_PRO";
+option java_package = "com.purefun.fams.trade.exec.pro";
+
+message ExecutedOrderBO {
+    optional string uuid = 1;
+    optional sint64 boid = 2;
+    optional string destination = 3;
+    optional string account = 4;
+    optional string security_code = 5;
+    optional string exch = 6;
+    optional string security_type = 7;
+    optional string direction = 8;
+    optional string orderId = 9;
+    optional string tradeDate = 10;
+    optional string executeId = 11;
+    optional double executePrice = 12;
+    optional sint64 executeVolume = 13;
+}

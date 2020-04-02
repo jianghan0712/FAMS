@@ -51,4 +51,17 @@ public interface CommonUtil {
 		String proto = ".proto";
 		String java = ".java";
 	}
+
+	/**
+	 * BigDecimal的保存位数
+	 * 
+	 * @Classname: ScaleUtil
+	 * @Description:
+	 * @author 015979
+	 * @date 2020-03-31 21:57:06
+	 */
+	interface ScaleUtil {
+		int CASH_SCALE = 2;
+		int RATE_SCALE = 6;
+	}
 }

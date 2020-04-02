@@ -32,12 +32,27 @@ public class OrderBO extends BaseBO {
 	@QuerySqlField
 	public String security_type;
 
-	public String direction;
+	public String tradeDate;
 
-	public double price;
+	@QuerySqlField
+	public String orderId;// 委托单号
 
-	public long volume;
+	public String orderStatus;// 新委托NEW /
+
+	public String orderRejectedReson;// 订单被拒绝原因
+
+	public String orderType;// 委托类型：LIMIT等
+
+	public double orderPrice;// 委托价格
+
+	public long orderVolume;// 委托数量
+
+	public String direction;// 交易方向
+
+	public String execStatus;// 成交状态：无成交PENDING /全部成交FULL/ 部分成交PARTIAL /全部撤回 WITHDRAW /部分撤回 PART-WITHDRAW
 
 	public boolean withdrawFlag;
+
+	public long withdrawVolume;// 撤单数量
 
 }

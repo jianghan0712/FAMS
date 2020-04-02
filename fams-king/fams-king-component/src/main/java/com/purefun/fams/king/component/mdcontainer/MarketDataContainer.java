@@ -69,13 +69,14 @@ public class MarketDataContainer extends Observable {
 		if (barList == null || barList.size() == 0) {
 			logger.error("没有找到对应证券的历史行情");
 		}
+		String stockCode = barList.get(0).security_code;
 		for (MdBarDataBO each : barList) {
 			setChanged();
 			Object[] param = { EventTypeEnum.EVENT_MD_BAR, each };
 			notifyObservers(param);
 		}
 		// 回放行情结束
-		notifyEnd();
+		notifyEnd(barList.get(barList.size() - 1));
 	}
 
 	/**
@@ -85,9 +86,9 @@ public class MarketDataContainer extends Observable {
 	 * @author jianghan
 	 * @date 2020-03-29 20:28:59
 	 */
-	private void notifyEnd() {
+	private void notifyEnd(MdBarDataBO lastMarketData) {
 		setChanged();
-		Object[] param = { EventTypeEnum.EVENT_MD_END, "" };
+		Object[] param = { EventTypeEnum.EVENT_MD_END, lastMarketData };
 		notifyObservers(param);
 	}
 

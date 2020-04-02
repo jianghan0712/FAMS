@@ -4,8 +4,8 @@
  */
 package com.purefun.fams.king.component.strategy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Map;
 import java.util.Observable;
@@ -15,10 +15,23 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.purefun.fams.king.component.strategy.analysis.TradeEventListener;
+import com.purefun.fams.common.util.CommonUtil;
+import com.purefun.fams.core.bo.tool.BoFactory;
+import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
+import com.purefun.fams.framework.common.exception.FAMSException;
+import com.purefun.fams.king.component.account.AccountContainer;
+import com.purefun.fams.king.component.strategy.analysis.BacktestExecutorContainer;
+import com.purefun.fams.king.component.strategy.analysis.DefaultTradeAnalysisContainer;
+import com.purefun.fams.king.component.strategy.analysis.OrderExecutor;
 import com.purefun.fams.king.component.strategy.config.StrategyConfig;
+import com.purefun.fams.king.component.strategy.model.Account;
+import com.purefun.fams.king.component.strategy.model.TradeDetail;
+import com.purefun.fams.king.constant.DirectionEnum;
 import com.purefun.fams.king.constant.EventTypeEnum;
+import com.purefun.fams.king.constant.KingConstant;
+import com.purefun.fams.king.constant.OrderStatusEnum;
 import com.purefun.fams.md.MdBarDataBO;
+import com.purefun.fams.trade.order.OrderBO;
 import com.purefun.fams.trade.order.otw.OrderBO_OTW;
 
 /**
@@ -33,11 +46,21 @@ public abstract class StrategyContainer implements Observer {
 	@Autowired
 	StrategyConfig straConfig;
 
+	/** 运行环境，是回测还是真实交易 */
+	protected String runType;
+
+	/** 委托、持仓、持仓处理机 */
+	protected OrderExecutor orderEecutor;
+
+	/** 账户管理容器 */
+	protected AccountContainer accountContainer;
+
+	/** 交易结果分析容器 */
+	protected DefaultTradeAnalysisContainer analysisContainer;
+
+	protected String acct;
 	/** 当前已加载的行情数 */
 	int currentCount = 0;
-
-	/** 后续事件监听器 */
-	Map<EventTypeEnum, List<TradeEventListener>> eventListenerMap = new HashMap<EventTypeEnum, List<TradeEventListener>>();;
 
 	@Override
 	public void update(Observable o, Object arg) {
@@ -49,94 +72,93 @@ public abstract class StrategyContainer implements Observer {
 		if (eventType.equals(EventTypeEnum.EVENT_MD_BAR)) {
 			onBar((MdBarDataBO) paramValue);
 		} else if (eventType.equals(EventTypeEnum.EVENT_MD_END)) {
-			onStop();
+			onStop((MdBarDataBO) paramValue);
 		}
 	}
 
 	/**
-	 ** 向下游注册， 将eventType到指定的下游listener EVENT_TRADE_CANCEL_ORDER：撤单
+	 * 检查上一周期是否有触发交易信号，如果有，按照当前的行情进行委托
 	 * 
-	 * @MethodName: register
+	 * @MethodName: checkNewOrderSet
 	 * @author 015979
-	 * @date 2020-03-27 19:34:54
-	 * @param eventType: EVENT_TRADE_NEW_ORDER/ EVENT_TRADE_CANCEL_ORDER
-	 * @param listener
+	 * @date 2020-03-30 18:09:12
+	 * @param barData
 	 */
-	public void register(EventTypeEnum[] eventType, TradeEventListener listener) {
-		for (EventTypeEnum eachEventType : eventType) {
-			List<TradeEventListener> listenerList = eventListenerMap.get(eachEventType);
-			if (listenerList == null) {
-				listenerList = new ArrayList<TradeEventListener>();
+	protected void checkNewOrderSet(MdBarDataBO barData) throws FAMSException {
+		Map<String, OrderBO_OTW> orderMap = orderEecutor.getNeworderMap();
+		if (orderMap.isEmpty()) {
+			return;
+		}
+
+		for (Map.Entry<String, OrderBO_OTW> each : orderMap.entrySet()) {
+			OrderBO_OTW order = each.getValue();
+			// 找到所有new状态的委托，进行发送
+			if (!order.getOrderStatus().equalsIgnoreCase(OrderStatusEnum.NEW.getCode())) {
+				continue;
 			}
-			listenerList.add(listener);
-			eventListenerMap.put(eachEventType, listenerList);
-		}
-	}
+			BigDecimal cash = accountContainer.getAccount(acct).getAvailableCapital();
 
-	/**
-	 ** 取消某种类型的监听器
-	 * 
-	 * @MethodName: unregister
-	 * @author jianghan
-	 * @date 2020-03-29 20:37:54
-	 * @param eventType
-	 * @param listenerClass
-	 */
-	public void unregister(EventTypeEnum eventType, Class<?> listenerClass) {
-		List<TradeEventListener> listenerList = eventListenerMap.get(eventType);
-		if (listenerList == null) {
-			;
-			return;
-		}
-
-		listenerList.forEach(item -> {
-			if (item.getClass().equals(listenerClass)) {
-				listenerList.remove(item);
+			BigDecimal price = new BigDecimal(barData.open).setScale(CommonUtil.ScaleUtil.CASH_SCALE,
+					BigDecimal.ROUND_DOWN);
+			String side = order.getDirection();
+			order.setTradeDate(barData.date);
+			order.setOrderPrice(barData.open);
+			if (side.equalsIgnoreCase(DirectionEnum.BUY.getCode())) {
+				// 如果是买入，现金减少，持仓增加
+				BigDecimal position = cash.divide(price, 2, RoundingMode.DOWN).divide(new BigDecimal("100"), 0,
+						RoundingMode.DOWN);
+				long l = position.multiply(new BigDecimal("100")).setScale(0, BigDecimal.ROUND_DOWN).longValue(); // 向下取整
+				order.setOrderVolume(l);
+				// 冻结资金
+				BigDecimal freezeCash = new BigDecimal(l).multiply(price).setScale(2, BigDecimal.ROUND_FLOOR);
+				accountContainer.freeze(acct, freezeCash);
+				// 更新股份：在收到明确成交回报后才进行
+			} else if (side.equalsIgnoreCase(DirectionEnum.SELL.getCode())) {
+				// 卖出订单时，找到持仓，进行冻结操作
+				List<TradeDetail> positionList = orderEecutor.getPositionMap().get(order.getSecurity_code());
+				if (positionList == null || positionList.isEmpty()) {
+					logger.error("账户没有持仓，无法进行卖出操作，stockcode={}", order.getSecurity_code());
+					throw new FAMSException(ErrorCodeEnum.KING_ILLEGAL_TRADE);
+				}
+				// 计算可用数量，默认全部卖出
+				long totalVolume = 0l;
+				for (TradeDetail eachPostion : positionList) {
+					long avaliablVolume = eachPostion.getVolume() - eachPostion.getFreezeVolume();
+					if (avaliablVolume > 0) {
+						totalVolume += avaliablVolume;
+						eachPostion.setFreezeVolume(eachPostion.getFreezeVolume() + avaliablVolume);
+					}
+				}
+				if (totalVolume <= 0) {
+					logger.error("账户股份均已冻结，无法进行卖出操作");
+					throw new FAMSException(ErrorCodeEnum.KING_ILLEGAL_TRADE);
+				}
+				// 设置交易量
+				order.setOrderVolume(totalVolume);
+				order.setOrderStatus(OrderStatusEnum.PENDING.getCode());
 			}
-		});
-
-	}
-
-	/**
-	 ** 发信号给下游
-	 * 
-	 * @MethodName: notifyEvent
-	 * @author jianghan
-	 * @date 2020-03-29 20:36:19
-	 * @param eventType
-	 * @param order
-	 */
-	public void notifyOrderEvent(EventTypeEnum eventType, OrderBO_OTW order) {
-		List<TradeEventListener> listenerList = eventListenerMap.get(eventType);
-		if (listenerList == null) {
-			logger.warn("当前没有listener注册到{}事件", eventType.getEventType());
-			return;
-		}
-
-		for (TradeEventListener each : listenerList) {
-			each.handlerOrder(order);
+			sendNewOrder(order);
 		}
 	}
 
 	/**
-	 ** 处理非交易类的事件
+	 * 当前周期出现了交易信号，等待下一周期开始时完成创建委托
 	 * 
-	 * @MethodName: notifyOtherEvent
-	 * @author jianghan
-	 * @date 2020-03-29 21:11:35
-	 * @param eventType
-	 * @param event
+	 * @MethodName: signalNotify
+	 * @author 015979
+	 * @date 2020-03-30 18:06:32
+	 * @param side
+	 * @param securityCoe
 	 */
-	private void notifyOtherEvent(EventTypeEnum eventType, Object event) {
-		List<TradeEventListener> listenerList = eventListenerMap.get(eventType);
-		if (listenerList == null) {
-			logger.warn("当前没有listener注册到{}事件", eventType.getEventType());
-			return;
-		}
+	protected void signalNotify(DirectionEnum side, String securityCoe) {
+		OrderBO_OTW order = (OrderBO_OTW) BoFactory.createBo(OrderBO.class);
+		order.setSecurity_code(securityCoe);
+		order.setDirection(side.getCode());
+		order.setOrderId(order.getUuid());
+		order.setOrderStatus(OrderStatusEnum.NEW.getCode());
+		order.setAccount(acct);
 
-		for (TradeEventListener each : listenerList) {
-			each.handlerEvent(event);
-		}
+		orderEecutor.getNeworderMap().put(order.getOrderId(), order);
 	}
 
 	/**
@@ -148,7 +170,32 @@ public abstract class StrategyContainer implements Observer {
 	 * @param initCount
 	 */
 	public void onInit() {
-		notifyOtherEvent(EventTypeEnum.EVENT_TRADE_INIT, straConfig);
+		runType = straConfig.getRunType();
+		acct = straConfig.getAccount();
+		initAccount(straConfig);
+		if (straConfig.getRunType().equalsIgnoreCase(KingConstant.RunType.BACKTEST)) {
+			analysisContainer = new DefaultTradeAnalysisContainer();
+			orderEecutor = new BacktestExecutorContainer(straConfig, accountContainer, analysisContainer);
+		}
+	}
+
+	/**
+	 * 初始化资金账户
+	 * 
+	 * @MethodName: initAccount
+	 * @author 015979
+	 * @date 2020-03-31 22:03:16
+	 * @param straConfig
+	 */
+	private void initAccount(StrategyConfig straConfig) {
+		accountContainer = new AccountContainer();
+		Account account = new Account();
+		account.setAcct(straConfig.getAccount());
+		account.setAvailableCapital(new BigDecimal(straConfig.cash).setScale(CommonUtil.ScaleUtil.CASH_SCALE));
+		account.setTotalCapital(new BigDecimal(straConfig.cash).setScale(CommonUtil.ScaleUtil.CASH_SCALE));
+		account.setFreezeCapital(BigDecimal.ZERO.setScale(CommonUtil.ScaleUtil.CASH_SCALE));
+
+		accountContainer.addAccount(account);
 	}
 
 	/**
@@ -159,7 +206,7 @@ public abstract class StrategyContainer implements Observer {
 	 * @date 2020-03-27 10:37:14
 	 */
 	public void onStart() {
-		notifyOtherEvent(EventTypeEnum.EVENT_TRADE_START, null);
+
 	}
 
 	/**
@@ -169,8 +216,20 @@ public abstract class StrategyContainer implements Observer {
 	 * @author 015979
 	 * @date 2020-03-27 10:37:31
 	 */
-	public void onStop() {
-		notifyOtherEvent(EventTypeEnum.EVENT_TRADE_END, null);
+	public void onStop(MdBarDataBO lastMarketData) {
+		orderEecutor.genTradingResult(lastMarketData);
+		currentCount = 0;
+	}
+
+	/**
+	 * 发送新订单到oms
+	 * 
+	 * @MethodName: sendNewOrder
+	 * @author 015979
+	 * @date 2020-03-27 10:33:10
+	 */
+	public void sendNewOrder(OrderBO_OTW order) {
+		orderEecutor.handlerOrder(order);
 	}
 
 	/**
@@ -191,15 +250,6 @@ public abstract class StrategyContainer implements Observer {
 	 * @date 2020-03-27 10:32:56
 	 */
 	public abstract void onTick();
-
-	/**
-	 * 发送新订单到oms
-	 * 
-	 * @MethodName: sendNewOrder
-	 * @author 015979
-	 * @date 2020-03-27 10:33:10
-	 */
-	public abstract void sendNewOrder(OrderBO_OTW order);
 
 	/**
 	 * 发送取消订单到oms

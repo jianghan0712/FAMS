@@ -26,10 +26,17 @@ public class OrderBO_OTW implements ICommon_OTW {
         setSecurity_code(receive.getSecurityCode());
         setExch(receive.getExch());
         setSecurity_type(receive.getSecurityType());
+        setTradeDate(receive.getTradeDate());
+        setOrderId(receive.getOrderId());
+        setOrderStatus(receive.getOrderStatus());
+        setOrderRejectedReson(receive.getOrderRejectedReson());
+        setOrderType(receive.getOrderType());
+        setOrderPrice(receive.getOrderPrice());
+        setOrderVolume(receive.getOrderVolume());
         setDirection(receive.getDirection());
-        setPrice(receive.getPrice());
-        setVolume(receive.getVolume());
+        setExecStatus(receive.getExecStatus());
         setWithdrawFlag(receive.getWithdrawFlag());
+        setWithdrawVolume(receive.getWithdrawVolume());
         setUuid(receive.getUuid());
         setBoid(receive.getBoid());
         setDestination(receive.getDestination());
@@ -42,10 +49,17 @@ public class OrderBO_OTW implements ICommon_OTW {
         setSecurity_code(bofrom.security_code);
         setExch(bofrom.exch);
         setSecurity_type(bofrom.security_type);
+        setTradeDate(bofrom.tradeDate);
+        setOrderId(bofrom.orderId);
+        setOrderStatus(bofrom.orderStatus);
+        setOrderRejectedReson(bofrom.orderRejectedReson);
+        setOrderType(bofrom.orderType);
+        setOrderPrice(bofrom.orderPrice);
+        setOrderVolume(bofrom.orderVolume);
         setDirection(bofrom.direction);
-        setPrice(bofrom.price);
-        setVolume(bofrom.volume);
+        setExecStatus(bofrom.execStatus);
         setWithdrawFlag(bofrom.withdrawFlag);
+        setWithdrawVolume(bofrom.withdrawVolume);
         setUuid(bofrom.uuid);
         setBoid(bofrom.boid);
         setDestination(bofrom.destination);
@@ -101,6 +115,69 @@ public class OrderBO_OTW implements ICommon_OTW {
         builder.setSecurityType(security_type);
     }
 
+    public java.lang.String getTradeDate() {
+        return builder.getTradeDate();
+    }
+
+    public void setTradeDate(java.lang.String tradeDate) {
+        bo.tradeDate = tradeDate;
+        builder.setTradeDate(tradeDate);
+    }
+
+    public java.lang.String getOrderId() {
+        return builder.getOrderId();
+    }
+
+    public void setOrderId(java.lang.String orderId) {
+        bo.orderId = orderId;
+        builder.setOrderId(orderId);
+    }
+
+    public java.lang.String getOrderStatus() {
+        return builder.getOrderStatus();
+    }
+
+    public void setOrderStatus(java.lang.String orderStatus) {
+        bo.orderStatus = orderStatus;
+        builder.setOrderStatus(orderStatus);
+    }
+
+    public java.lang.String getOrderRejectedReson() {
+        return builder.getOrderRejectedReson();
+    }
+
+    public void setOrderRejectedReson(java.lang.String orderRejectedReson) {
+        bo.orderRejectedReson = orderRejectedReson;
+        builder.setOrderRejectedReson(orderRejectedReson);
+    }
+
+    public java.lang.String getOrderType() {
+        return builder.getOrderType();
+    }
+
+    public void setOrderType(java.lang.String orderType) {
+        bo.orderType = orderType;
+        builder.setOrderType(orderType);
+    }
+
+    public double getOrderPrice() {
+        return builder.getOrderPrice();
+    }
+
+    public void setOrderPrice(double orderPrice) {
+        bo.orderPrice = orderPrice;
+        builder.setOrderPrice(orderPrice);
+    }
+
+    public long getOrderVolume() {
+        return builder.getOrderVolume();
+    }
+
+    public void setOrderVolume(long orderVolume) {
+        bo.orderVolume = orderVolume;
+        builder.setOrderVolume(orderVolume);
+    }
+
     public java.lang.String getDirection() {
         return builder.getDirection();
     }
@@ -110,22 +187,13 @@ public class OrderBO_OTW implements ICommon_OTW {
         builder.setDirection(direction);
     }
 
-    public double getPrice() {
-        return builder.getPrice();
+    public java.lang.String getExecStatus() {
+        return builder.getExecStatus();
     }
 
-    public void setPrice(double price) {
-        bo.price = price;
-        builder.setPrice(price);
-    }
-
-    public long getVolume() {
-        return builder.getVolume();
-    }
-
-    public void setVolume(long volume) {
-        bo.volume = volume;
-        builder.setVolume(volume);
+    public void setExecStatus(java.lang.String execStatus) {
+        bo.execStatus = execStatus;
+        builder.setExecStatus(execStatus);
     }
 
     public boolean getWithdrawFlag() {
@@ -135,6 +203,15 @@ public class OrderBO_OTW implements ICommon_OTW {
     public void setWithdrawFlag(boolean withdrawFlag) {
         bo.withdrawFlag = withdrawFlag;
         builder.setWithdrawFlag(withdrawFlag);
+    }
+
+    public long getWithdrawVolume() {
+        return builder.getWithdrawVolume();
+    }
+
+    public void setWithdrawVolume(long withdrawVolume) {
+        bo.withdrawVolume = withdrawVolume;
+        builder.setWithdrawVolume(withdrawVolume);
     }
 
     public java.lang.String getUuid() {
@@ -173,10 +250,17 @@ public class OrderBO_OTW implements ICommon_OTW {
             "security_code = " + getSecurity_code() +"," +
             "exch = " + getExch() +"," +
             "security_type = " + getSecurity_type() +"," +
+            "tradeDate = " + getTradeDate() +"," +
+            "orderId = " + getOrderId() +"," +
+            "orderStatus = " + getOrderStatus() +"," +
+            "orderRejectedReson = " + getOrderRejectedReson() +"," +
+            "orderType = " + getOrderType() +"," +
+            "orderPrice = " + getOrderPrice() +"," +
+            "orderVolume = " + getOrderVolume() +"," +
             "direction = " + getDirection() +"," +
-            "price = " + getPrice() +"," +
-            "volume = " + getVolume() +"," +
+            "execStatus = " + getExecStatus() +"," +
             "withdrawFlag = " + getWithdrawFlag() +"," +
+            "withdrawVolume = " + getWithdrawVolume() +"," +
          "]";
     }
 }

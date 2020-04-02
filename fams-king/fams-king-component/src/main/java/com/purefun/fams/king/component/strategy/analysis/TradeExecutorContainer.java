@@ -5,6 +5,7 @@
 package com.purefun.fams.king.component.strategy.analysis;
 
 import com.purefun.fams.king.constant.DirectionEnum;
+import com.purefun.fams.trade.exec.otw.ExecutedOrderBO_OTW;
 import com.purefun.fams.trade.order.otw.OrderBO_OTW;
 
 /**
@@ -13,7 +14,7 @@ import com.purefun.fams.trade.order.otw.OrderBO_OTW;
  * @author 015979
  * @date 2020-03-27 15:52:12
  */
-public class TradeAnalysisContainer implements TradeEventListener {
+public class TradeExecutorContainer extends OrderExecutor {
 
 	@Override
 	public void handlerOrder(OrderBO_OTW orderEvent) {
@@ -25,17 +26,32 @@ public class TradeAnalysisContainer implements TradeEventListener {
 		}
 	}
 
-	@Override
-	public void handlerEvent(Object event) {
-		System.out.println("收到非交易事件：" + event);
-	}
-
-	public void buy(OrderBO_OTW orderEvent) {
+	/**
+	 * 处理买入方向的订单
+	 * 
+	 * @MethodName: buy
+	 * @author 015979
+	 * @date 2020-03-30 13:37:28
+	 * @param orderEvent
+	 */
+	private void buy(OrderBO_OTW orderEvent) {
 		System.out.println("收到买入订单：" + orderEvent);
 	}
 
-	public void sell(OrderBO_OTW orderEvent) {
+	/**
+	 * 处理卖出方向的订单
+	 * 
+	 * @MethodName: sell
+	 * @author 015979
+	 * @date 2020-03-30 13:37:41
+	 * @param orderEvent
+	 */
+	private void sell(OrderBO_OTW orderEvent) {
 		System.out.println("收到卖出订单：" + orderEvent);
+	}
+
+	@Override
+	public void handlerExecutor(ExecutedOrderBO_OTW executedOrder) {
 	}
 
 }
