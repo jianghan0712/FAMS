@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.purefun</groupId>
+    <artifactId>fams-ace</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>fams-ace-mdc</artifactId>
+  <name>fams-ace-mdc</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+   	<dependency>
+	  	  <groupId>com.purefun</groupId>
+	  	  <artifactId>fams-framework-service-springboot-starter</artifactId>
+	</dependency>
+	<dependency>
+      <groupId>com.zts.xtp</groupId>
+      <artifactId>xtpapi</artifactId>
+      <version>1.1.18.13</version>
+      <scope>system</scope>
+      <systemPath>C:/Users/A/Downloads/xtp_api_java-master/build/libs/xtpapi-1.1.19.2.jar</systemPath>
+    </dependency><!--$NO-MVN-MAN-VER$-->
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.zts.xtp.demo.Application</mainClass>
+            </manifest>
+            <manifestEntries>
+              <Class-Path>lib/xtpapi-1.1.18.13.jar</Class-Path>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <outputDirectory>${project.build.directory}/lib</outputDirectory>
+          <excludeTransitive>false</excludeTransitive>
+          <stripVersion>false</stripVersion>
+        </configuration>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/lib</outputDirectory>
+              <excludeTransitive>false</excludeTransitive>
+              <stripVersion>false</stripVersion>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

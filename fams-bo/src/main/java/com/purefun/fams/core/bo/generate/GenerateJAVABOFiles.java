@@ -9,7 +9,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.common.util.StringUtil;
@@ -133,8 +135,8 @@ public class GenerateJAVABOFiles {
 		InputStream input = new FileInputStream(f);
 		InputStreamReader inp = new InputStreamReader(input, "UTF-8");
 		BufferedReader br = new BufferedReader(inp);
-
-		println(new StringBuilder().append("import \"google/protobuf/any.proto\";").toString());
+		println(new StringBuilder().append("syntax = \"proto3\";").toString());
+//		println(new StringBuilder().append("import \"google/protobuf/any.proto\";").toString());
 		println("");
 		println(new StringBuilder().append("option java_outer_classname = \"").append(className).append("_PRO\";")
 				.toString());
@@ -153,15 +155,15 @@ public class GenerateJAVABOFiles {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		println(new StringBuilder(TAB).append("optional string uuid = 1;").toString());
-		println(new StringBuilder(TAB).append("optional sint64 boid = 2;").toString());
-		println(new StringBuilder(TAB).append("optional string destination = 3;").toString());
+		println(new StringBuilder(TAB).append(" string uuid = 1;").toString());
+		println(new StringBuilder(TAB).append(" sint64 boid = 2;").toString());
+		println(new StringBuilder(TAB).append(" string destination = 3;").toString());
 
 		for (Field e : fileds) {
 			if (e.getName().equalsIgnoreCase("uuid") || e.getName().equalsIgnoreCase("boid")
 					|| e.getName().equalsIgnoreCase("destination"))
 				continue;// 先设了该值
-			StringBuilder fin = new StringBuilder(TAB).append("optional ");
+			StringBuilder fin = new StringBuilder(TAB);
 			if (e.getType().equals(java.lang.String.class)) {
 				fin.append("string ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
 			} else if (e.getType().equals(double.class) || e.getType().equals(BigDecimal.class)) {
@@ -173,7 +175,38 @@ public class GenerateJAVABOFiles {
 			} else if (e.getType().equals(float.class)) {
 				fin.append("float ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
 			} else if (e.getType().equals(int.class)) {
-				fin.append("int32 ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
+				fin.append("sint32 ").append(e.getName()).append(" = ").append(String.valueOf(count++)).append(";");
+			} else if (e.getType().equals(int[].class)) {
+				fin.append("repeated sint32 ").append(e.getName()).append(" = ").append(String.valueOf(count++))
+						.append(";");
+			} else if (e.getType().equals(double[].class)) {
+				fin.append("repeated double ").append(e.getName()).append(" = ").append(String.valueOf(count++))
+						.append(";");
+			} else if (e.getType().equals(long[].class)) {
+				fin.append("repeated sint64 ").append(e.getName()).append(" = ").append(String.valueOf(count++))
+						.append(";");
+			} else if (e.getType().equals(List.class)) {
+				if (e.getGenericType() instanceof ParameterizedType) {
+					ParameterizedType pt = (ParameterizedType) e.getGenericType();
+					if (pt.getRawType().equals(List.class)) {
+						if (pt.getActualTypeArguments()[0].equals(String.class)) {
+							fin.append("repeated  string ").append(e.getName()).append(" = ")
+									.append(String.valueOf(count++)).append(";");
+						} else if (pt.getActualTypeArguments()[0].equals(int.class)
+								|| pt.getActualTypeArguments()[0].equals(Integer.class)) {
+							fin.append("repeated  sint32 ").append(e.getName()).append(" = ")
+									.append(String.valueOf(count++)).append(";");
+						} else if (pt.getActualTypeArguments()[0].equals(double.class)
+								|| pt.getActualTypeArguments()[0].equals(Double.class)) {
+							fin.append("repeated  double ").append(e.getName()).append(" = ")
+									.append(String.valueOf(count++)).append(";");
+						} else if (pt.getActualTypeArguments()[0].equals(long.class)
+								|| pt.getActualTypeArguments()[0].equals(Long.class)) {
+							fin.append("repeated  sint64 ").append(e.getName()).append(" = ")
+									.append(String.valueOf(count++)).append(";");
+						}
+					}
+				}
 			}
 			println(fin.toString());
 		}
@@ -190,9 +223,13 @@ public class GenerateJAVABOFiles {
 	 * @param fileName proto文件名
 	 */
 	private void genBuildFile(String fileName) {
-//		String strCmd = "./resource/protoc.exe -I=./" + protofileDirectory + " --java_out=./resource/ ./" + protofileDirectory + fileName;  		
+//		String strCmd = "./resource/protoc.exe -I=./" + protofileDirectory + " --java_out=./resource/ ./"
+//				+ protofileDirectory + fileName;
 		String strCmd = "D:\\software\\protoc-3.11.4-win64\\bin\\protoc.exe -I=./" + protofileDirectory
 				+ " --java_out=./resource/ ./" + protofileDirectory + fileName;
+		if (fileName.equalsIgnoreCase("MdStockSnapshotTempBO.proto")) {
+			System.out.println(fileName);
+		}
 		try {
 			Runtime.getRuntime().exec(strCmd);
 		} catch (IOException e) {
@@ -381,7 +418,7 @@ public class GenerateJAVABOFiles {
 			setmethodName.append(first).append(last);
 
 			if (str.length == 1) {// 没有 _
-				getmethodName = setmethodName;
+				getmethodName = getmethodName.append(setmethodName);
 			} else {
 				StringBuilder all = new StringBuilder();
 				for (String each : str) {
@@ -389,6 +426,10 @@ public class GenerateJAVABOFiles {
 					all.append(each.substring(1).toString());
 				}
 				getmethodName.append(all);
+			}
+
+			if (field.getType().equals(List.class)) {
+				getmethodName.append("List");
 			}
 
 			println(new StringBuilder(TAB).append(TAB).append("set").append(setmethodName).append("(")
@@ -429,8 +470,10 @@ public class GenerateJAVABOFiles {
 		StringBuilder all = new StringBuilder("set");
 
 		String[] str = fieldName.split("_");
+		boolean flag = false;
 		if (str.length == 1) {// 没有 _
-			methodName = all;
+			methodName = methodName.append(all);
+			flag = true;
 		} else {
 			StringBuilder first = new StringBuilder(fieldName.substring(0, 1).toUpperCase());
 			StringBuilder last = new StringBuilder(fieldName.substring(1));
@@ -439,6 +482,17 @@ public class GenerateJAVABOFiles {
 		for (String each : str) {
 			all.append(each.substring(0, 1).toUpperCase());
 			all.append(each.substring(1).toString());
+			if (flag) {
+				methodName.append(each.substring(0, 1).toUpperCase());
+				methodName.append(each.substring(1).toString());
+			}
+
+		}
+
+		if (field.getType().equals(List.class)) {
+			String temp = all.toString().substring(3);
+			all = new StringBuilder();
+			all.append("addAll").append(temp);
 		}
 
 		println(new StringBuilder(TAB).append("public void ").append(methodName).append("(").append(type.getName())
@@ -468,8 +522,10 @@ public class GenerateJAVABOFiles {
 		StringBuilder all = new StringBuilder("get");
 
 		String[] str = fieldName.split("_");
+		boolean flag = false;
 		if (str.length == 1) {// 没有 _
-			methodName = all;
+			methodName = methodName.append(all);
+			flag = true;
 		} else {
 			StringBuilder first = new StringBuilder(fieldName.substring(0, 1).toUpperCase());
 			StringBuilder last = new StringBuilder(fieldName.substring(1));
@@ -479,7 +535,16 @@ public class GenerateJAVABOFiles {
 		for (String each : str) {
 			all.append(each.substring(0, 1).toUpperCase());
 			all.append(each.substring(1).toString());
+			if (flag) {
+				methodName.append(each.substring(0, 1).toUpperCase());
+				methodName.append(each.substring(1).toString());
+			}
 		}
+
+		if (field.getType().equals(List.class)) {
+			all.append("List");
+		}
+
 		println(new StringBuilder(TAB).append("public ").append(type.getName()).append(" ").append(methodName)
 				.append("() {").toString());
 		println(new StringBuilder(TAB).append(TAB).append("return ").append(BUILDER).append(".").append(all)

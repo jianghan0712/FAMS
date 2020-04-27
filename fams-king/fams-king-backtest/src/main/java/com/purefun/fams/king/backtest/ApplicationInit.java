@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.purefun.fams.framework.core.thread.CommondThread;
 import com.purefun.fams.framework.core.thread.FAMSCoreThreadPool;
 import com.purefun.fams.king.component.mdcontainer.MarketDataContainer;
-import com.purefun.fams.king.component.strategy.DoubleMAStrategy;
+import com.purefun.fams.king.component.strategy.DoubleRSIStrategy;
 import com.purefun.fams.king.constant.KingConstant;
 import com.purefun.fams.king.constant.MDTypeEnum;
 import com.purefun.fams.king.request.MDRequest;
@@ -28,8 +28,11 @@ public class ApplicationInit implements ApplicationRunner {
 	@Autowired
 	private MarketDataContainer mdContainer;
 
+//	@Autowired
+//	private DoubleMAStrategy strategy;
+
 	@Autowired
-	private DoubleMAStrategy strategy;
+	private DoubleRSIStrategy strategy;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -41,7 +44,7 @@ public class ApplicationInit implements ApplicationRunner {
 		mdRequest.setMdType(MDTypeEnum.BAR.getCode());
 		mdRequest.setRequestType(KingConstant.RunType.BACKTEST);
 		mdRequest.setStockCode("000001.SZ");
-		mdRequest.setStartDate("20190101");
+		mdRequest.setStartDate("20200101");
 
 		mdContainer.subscribe(mdRequest);
 		mdContainer.runHisBar();

@@ -32,6 +32,7 @@ public interface CommonUtil {
 		String colon = ":";
 		String question = "?";
 		String rod = "-";
+		String comma = ",";
 	}
 
 	/**

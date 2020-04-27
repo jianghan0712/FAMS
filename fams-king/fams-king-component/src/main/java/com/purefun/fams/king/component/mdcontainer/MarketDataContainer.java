@@ -52,6 +52,7 @@ public class MarketDataContainer extends Observable {
 			barList.clear();
 			barList = mongodb.getValues("fams_stock_bar_" + request.getIndustry(), request.getStockCode(),
 					Filters.gte("date", request.getStartDate()), MdBarDataBO.class);
+
 		} else if (requestType.equalsIgnoreCase(KingConstant.RunType.TRADING)) {
 			// 订阅实时交易行情
 

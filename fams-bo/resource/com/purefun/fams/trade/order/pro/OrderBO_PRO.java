@@ -19,277 +19,187 @@ public final class OrderBO_PRO {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    boolean hasUuid();
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     java.lang.String getUuid();
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
         getUuidBytes();
 
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    boolean hasBoid();
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     long getBoid();
 
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    boolean hasDestination();
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     java.lang.String getDestination();
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     com.google.protobuf.ByteString
         getDestinationBytes();
 
     /**
-     * <code>optional string account = 4;</code>
-     * @return Whether the account field is set.
-     */
-    boolean hasAccount();
-    /**
-     * <code>optional string account = 4;</code>
+     * <code>string account = 4;</code>
      * @return The account.
      */
     java.lang.String getAccount();
     /**
-     * <code>optional string account = 4;</code>
+     * <code>string account = 4;</code>
      * @return The bytes for account.
      */
     com.google.protobuf.ByteString
         getAccountBytes();
 
     /**
-     * <code>optional string security_code = 5;</code>
-     * @return Whether the securityCode field is set.
-     */
-    boolean hasSecurityCode();
-    /**
-     * <code>optional string security_code = 5;</code>
+     * <code>string security_code = 5;</code>
      * @return The securityCode.
      */
     java.lang.String getSecurityCode();
     /**
-     * <code>optional string security_code = 5;</code>
+     * <code>string security_code = 5;</code>
      * @return The bytes for securityCode.
      */
     com.google.protobuf.ByteString
         getSecurityCodeBytes();
 
     /**
-     * <code>optional string exch = 6;</code>
-     * @return Whether the exch field is set.
-     */
-    boolean hasExch();
-    /**
-     * <code>optional string exch = 6;</code>
+     * <code>string exch = 6;</code>
      * @return The exch.
      */
     java.lang.String getExch();
     /**
-     * <code>optional string exch = 6;</code>
+     * <code>string exch = 6;</code>
      * @return The bytes for exch.
      */
     com.google.protobuf.ByteString
         getExchBytes();
 
     /**
-     * <code>optional string security_type = 7;</code>
-     * @return Whether the securityType field is set.
-     */
-    boolean hasSecurityType();
-    /**
-     * <code>optional string security_type = 7;</code>
+     * <code>string security_type = 7;</code>
      * @return The securityType.
      */
     java.lang.String getSecurityType();
     /**
-     * <code>optional string security_type = 7;</code>
+     * <code>string security_type = 7;</code>
      * @return The bytes for securityType.
      */
     com.google.protobuf.ByteString
         getSecurityTypeBytes();
 
     /**
-     * <code>optional string tradeDate = 8;</code>
-     * @return Whether the tradeDate field is set.
-     */
-    boolean hasTradeDate();
-    /**
-     * <code>optional string tradeDate = 8;</code>
+     * <code>string tradeDate = 8;</code>
      * @return The tradeDate.
      */
     java.lang.String getTradeDate();
     /**
-     * <code>optional string tradeDate = 8;</code>
+     * <code>string tradeDate = 8;</code>
      * @return The bytes for tradeDate.
      */
     com.google.protobuf.ByteString
         getTradeDateBytes();
 
     /**
-     * <code>optional string orderId = 9;</code>
-     * @return Whether the orderId field is set.
-     */
-    boolean hasOrderId();
-    /**
-     * <code>optional string orderId = 9;</code>
+     * <code>string orderId = 9;</code>
      * @return The orderId.
      */
     java.lang.String getOrderId();
     /**
-     * <code>optional string orderId = 9;</code>
+     * <code>string orderId = 9;</code>
      * @return The bytes for orderId.
      */
     com.google.protobuf.ByteString
         getOrderIdBytes();
 
     /**
-     * <code>optional string orderStatus = 10;</code>
-     * @return Whether the orderStatus field is set.
-     */
-    boolean hasOrderStatus();
-    /**
-     * <code>optional string orderStatus = 10;</code>
+     * <code>string orderStatus = 10;</code>
      * @return The orderStatus.
      */
     java.lang.String getOrderStatus();
     /**
-     * <code>optional string orderStatus = 10;</code>
+     * <code>string orderStatus = 10;</code>
      * @return The bytes for orderStatus.
      */
     com.google.protobuf.ByteString
         getOrderStatusBytes();
 
     /**
-     * <code>optional string orderRejectedReson = 11;</code>
-     * @return Whether the orderRejectedReson field is set.
-     */
-    boolean hasOrderRejectedReson();
-    /**
-     * <code>optional string orderRejectedReson = 11;</code>
+     * <code>string orderRejectedReson = 11;</code>
      * @return The orderRejectedReson.
      */
     java.lang.String getOrderRejectedReson();
     /**
-     * <code>optional string orderRejectedReson = 11;</code>
+     * <code>string orderRejectedReson = 11;</code>
      * @return The bytes for orderRejectedReson.
      */
     com.google.protobuf.ByteString
         getOrderRejectedResonBytes();
 
     /**
-     * <code>optional string orderType = 12;</code>
-     * @return Whether the orderType field is set.
-     */
-    boolean hasOrderType();
-    /**
-     * <code>optional string orderType = 12;</code>
+     * <code>string orderType = 12;</code>
      * @return The orderType.
      */
     java.lang.String getOrderType();
     /**
-     * <code>optional string orderType = 12;</code>
+     * <code>string orderType = 12;</code>
      * @return The bytes for orderType.
      */
     com.google.protobuf.ByteString
         getOrderTypeBytes();
 
     /**
-     * <code>optional double orderPrice = 13;</code>
-     * @return Whether the orderPrice field is set.
-     */
-    boolean hasOrderPrice();
-    /**
-     * <code>optional double orderPrice = 13;</code>
+     * <code>double orderPrice = 13;</code>
      * @return The orderPrice.
      */
     double getOrderPrice();
 
     /**
-     * <code>optional sint64 orderVolume = 14;</code>
-     * @return Whether the orderVolume field is set.
-     */
-    boolean hasOrderVolume();
-    /**
-     * <code>optional sint64 orderVolume = 14;</code>
+     * <code>sint64 orderVolume = 14;</code>
      * @return The orderVolume.
      */
     long getOrderVolume();
 
     /**
-     * <code>optional string direction = 15;</code>
-     * @return Whether the direction field is set.
-     */
-    boolean hasDirection();
-    /**
-     * <code>optional string direction = 15;</code>
+     * <code>string direction = 15;</code>
      * @return The direction.
      */
     java.lang.String getDirection();
     /**
-     * <code>optional string direction = 15;</code>
+     * <code>string direction = 15;</code>
      * @return The bytes for direction.
      */
     com.google.protobuf.ByteString
         getDirectionBytes();
 
     /**
-     * <code>optional string execStatus = 16;</code>
-     * @return Whether the execStatus field is set.
-     */
-    boolean hasExecStatus();
-    /**
-     * <code>optional string execStatus = 16;</code>
+     * <code>string execStatus = 16;</code>
      * @return The execStatus.
      */
     java.lang.String getExecStatus();
     /**
-     * <code>optional string execStatus = 16;</code>
+     * <code>string execStatus = 16;</code>
      * @return The bytes for execStatus.
      */
     com.google.protobuf.ByteString
         getExecStatusBytes();
 
     /**
-     * <code>optional bool withdrawFlag = 17;</code>
-     * @return Whether the withdrawFlag field is set.
-     */
-    boolean hasWithdrawFlag();
-    /**
-     * <code>optional bool withdrawFlag = 17;</code>
+     * <code>bool withdrawFlag = 17;</code>
      * @return The withdrawFlag.
      */
     boolean getWithdrawFlag();
 
     /**
-     * <code>optional sint64 withdrawVolume = 18;</code>
-     * @return Whether the withdrawVolume field is set.
-     */
-    boolean hasWithdrawVolume();
-    /**
-     * <code>optional sint64 withdrawVolume = 18;</code>
+     * <code>sint64 withdrawVolume = 18;</code>
      * @return The withdrawVolume.
      */
     long getWithdrawVolume();
@@ -342,7 +252,6 @@ public final class OrderBO_PRO {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -354,105 +263,105 @@ public final class OrderBO_PRO {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              uuid_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
               break;
             }
             case 16: {
-              bitField0_ |= 0x00000002;
+
               boid_ = input.readSInt64();
               break;
             }
             case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              destination_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              destination_ = s;
               break;
             }
             case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              account_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              account_ = s;
               break;
             }
             case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              securityCode_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityCode_ = s;
               break;
             }
             case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              exch_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              exch_ = s;
               break;
             }
             case 58: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
-              securityType_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityType_ = s;
               break;
             }
             case 66: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000080;
-              tradeDate_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tradeDate_ = s;
               break;
             }
             case 74: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000100;
-              orderId_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderId_ = s;
               break;
             }
             case 82: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000200;
-              orderStatus_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderStatus_ = s;
               break;
             }
             case 90: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000400;
-              orderRejectedReson_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderRejectedReson_ = s;
               break;
             }
             case 98: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000800;
-              orderType_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderType_ = s;
               break;
             }
             case 105: {
-              bitField0_ |= 0x00001000;
+
               orderPrice_ = input.readDouble();
               break;
             }
             case 112: {
-              bitField0_ |= 0x00002000;
+
               orderVolume_ = input.readSInt64();
               break;
             }
             case 122: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00004000;
-              direction_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              direction_ = s;
               break;
             }
             case 130: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00008000;
-              execStatus_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              execStatus_ = s;
               break;
             }
             case 136: {
-              bitField0_ |= 0x00010000;
+
               withdrawFlag_ = input.readBool();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00020000;
+
               withdrawVolume_ = input.readSInt64();
               break;
             }
@@ -488,18 +397,10 @@ public final class OrderBO_PRO {
               com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO.class, com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO.Builder.class);
     }
 
-    private int bitField0_;
     public static final int UUID_FIELD_NUMBER = 1;
     private volatile java.lang.Object uuid_;
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    public boolean hasUuid() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     public java.lang.String getUuid() {
@@ -510,14 +411,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          uuid_ = s;
-        }
+        uuid_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     public com.google.protobuf.ByteString
@@ -537,14 +436,7 @@ public final class OrderBO_PRO {
     public static final int BOID_FIELD_NUMBER = 2;
     private long boid_;
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    public boolean hasBoid() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     public long getBoid() {
@@ -554,14 +446,7 @@ public final class OrderBO_PRO {
     public static final int DESTINATION_FIELD_NUMBER = 3;
     private volatile java.lang.Object destination_;
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     public java.lang.String getDestination() {
@@ -572,14 +457,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          destination_ = s;
-        }
+        destination_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     public com.google.protobuf.ByteString
@@ -599,14 +482,7 @@ public final class OrderBO_PRO {
     public static final int ACCOUNT_FIELD_NUMBER = 4;
     private volatile java.lang.Object account_;
     /**
-     * <code>optional string account = 4;</code>
-     * @return Whether the account field is set.
-     */
-    public boolean hasAccount() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional string account = 4;</code>
+     * <code>string account = 4;</code>
      * @return The account.
      */
     public java.lang.String getAccount() {
@@ -617,14 +493,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          account_ = s;
-        }
+        account_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string account = 4;</code>
+     * <code>string account = 4;</code>
      * @return The bytes for account.
      */
     public com.google.protobuf.ByteString
@@ -644,14 +518,7 @@ public final class OrderBO_PRO {
     public static final int SECURITY_CODE_FIELD_NUMBER = 5;
     private volatile java.lang.Object securityCode_;
     /**
-     * <code>optional string security_code = 5;</code>
-     * @return Whether the securityCode field is set.
-     */
-    public boolean hasSecurityCode() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional string security_code = 5;</code>
+     * <code>string security_code = 5;</code>
      * @return The securityCode.
      */
     public java.lang.String getSecurityCode() {
@@ -662,14 +529,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          securityCode_ = s;
-        }
+        securityCode_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string security_code = 5;</code>
+     * <code>string security_code = 5;</code>
      * @return The bytes for securityCode.
      */
     public com.google.protobuf.ByteString
@@ -689,14 +554,7 @@ public final class OrderBO_PRO {
     public static final int EXCH_FIELD_NUMBER = 6;
     private volatile java.lang.Object exch_;
     /**
-     * <code>optional string exch = 6;</code>
-     * @return Whether the exch field is set.
-     */
-    public boolean hasExch() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional string exch = 6;</code>
+     * <code>string exch = 6;</code>
      * @return The exch.
      */
     public java.lang.String getExch() {
@@ -707,14 +565,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          exch_ = s;
-        }
+        exch_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string exch = 6;</code>
+     * <code>string exch = 6;</code>
      * @return The bytes for exch.
      */
     public com.google.protobuf.ByteString
@@ -734,14 +590,7 @@ public final class OrderBO_PRO {
     public static final int SECURITY_TYPE_FIELD_NUMBER = 7;
     private volatile java.lang.Object securityType_;
     /**
-     * <code>optional string security_type = 7;</code>
-     * @return Whether the securityType field is set.
-     */
-    public boolean hasSecurityType() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional string security_type = 7;</code>
+     * <code>string security_type = 7;</code>
      * @return The securityType.
      */
     public java.lang.String getSecurityType() {
@@ -752,14 +601,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          securityType_ = s;
-        }
+        securityType_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string security_type = 7;</code>
+     * <code>string security_type = 7;</code>
      * @return The bytes for securityType.
      */
     public com.google.protobuf.ByteString
@@ -779,14 +626,7 @@ public final class OrderBO_PRO {
     public static final int TRADEDATE_FIELD_NUMBER = 8;
     private volatile java.lang.Object tradeDate_;
     /**
-     * <code>optional string tradeDate = 8;</code>
-     * @return Whether the tradeDate field is set.
-     */
-    public boolean hasTradeDate() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional string tradeDate = 8;</code>
+     * <code>string tradeDate = 8;</code>
      * @return The tradeDate.
      */
     public java.lang.String getTradeDate() {
@@ -797,14 +637,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          tradeDate_ = s;
-        }
+        tradeDate_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string tradeDate = 8;</code>
+     * <code>string tradeDate = 8;</code>
      * @return The bytes for tradeDate.
      */
     public com.google.protobuf.ByteString
@@ -824,14 +662,7 @@ public final class OrderBO_PRO {
     public static final int ORDERID_FIELD_NUMBER = 9;
     private volatile java.lang.Object orderId_;
     /**
-     * <code>optional string orderId = 9;</code>
-     * @return Whether the orderId field is set.
-     */
-    public boolean hasOrderId() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional string orderId = 9;</code>
+     * <code>string orderId = 9;</code>
      * @return The orderId.
      */
     public java.lang.String getOrderId() {
@@ -842,14 +673,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          orderId_ = s;
-        }
+        orderId_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string orderId = 9;</code>
+     * <code>string orderId = 9;</code>
      * @return The bytes for orderId.
      */
     public com.google.protobuf.ByteString
@@ -869,14 +698,7 @@ public final class OrderBO_PRO {
     public static final int ORDERSTATUS_FIELD_NUMBER = 10;
     private volatile java.lang.Object orderStatus_;
     /**
-     * <code>optional string orderStatus = 10;</code>
-     * @return Whether the orderStatus field is set.
-     */
-    public boolean hasOrderStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional string orderStatus = 10;</code>
+     * <code>string orderStatus = 10;</code>
      * @return The orderStatus.
      */
     public java.lang.String getOrderStatus() {
@@ -887,14 +709,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          orderStatus_ = s;
-        }
+        orderStatus_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string orderStatus = 10;</code>
+     * <code>string orderStatus = 10;</code>
      * @return The bytes for orderStatus.
      */
     public com.google.protobuf.ByteString
@@ -914,14 +734,7 @@ public final class OrderBO_PRO {
     public static final int ORDERREJECTEDRESON_FIELD_NUMBER = 11;
     private volatile java.lang.Object orderRejectedReson_;
     /**
-     * <code>optional string orderRejectedReson = 11;</code>
-     * @return Whether the orderRejectedReson field is set.
-     */
-    public boolean hasOrderRejectedReson() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional string orderRejectedReson = 11;</code>
+     * <code>string orderRejectedReson = 11;</code>
      * @return The orderRejectedReson.
      */
     public java.lang.String getOrderRejectedReson() {
@@ -932,14 +745,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          orderRejectedReson_ = s;
-        }
+        orderRejectedReson_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string orderRejectedReson = 11;</code>
+     * <code>string orderRejectedReson = 11;</code>
      * @return The bytes for orderRejectedReson.
      */
     public com.google.protobuf.ByteString
@@ -959,14 +770,7 @@ public final class OrderBO_PRO {
     public static final int ORDERTYPE_FIELD_NUMBER = 12;
     private volatile java.lang.Object orderType_;
     /**
-     * <code>optional string orderType = 12;</code>
-     * @return Whether the orderType field is set.
-     */
-    public boolean hasOrderType() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional string orderType = 12;</code>
+     * <code>string orderType = 12;</code>
      * @return The orderType.
      */
     public java.lang.String getOrderType() {
@@ -977,14 +781,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          orderType_ = s;
-        }
+        orderType_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string orderType = 12;</code>
+     * <code>string orderType = 12;</code>
      * @return The bytes for orderType.
      */
     public com.google.protobuf.ByteString
@@ -1004,14 +806,7 @@ public final class OrderBO_PRO {
     public static final int ORDERPRICE_FIELD_NUMBER = 13;
     private double orderPrice_;
     /**
-     * <code>optional double orderPrice = 13;</code>
-     * @return Whether the orderPrice field is set.
-     */
-    public boolean hasOrderPrice() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional double orderPrice = 13;</code>
+     * <code>double orderPrice = 13;</code>
      * @return The orderPrice.
      */
     public double getOrderPrice() {
@@ -1021,14 +816,7 @@ public final class OrderBO_PRO {
     public static final int ORDERVOLUME_FIELD_NUMBER = 14;
     private long orderVolume_;
     /**
-     * <code>optional sint64 orderVolume = 14;</code>
-     * @return Whether the orderVolume field is set.
-     */
-    public boolean hasOrderVolume() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional sint64 orderVolume = 14;</code>
+     * <code>sint64 orderVolume = 14;</code>
      * @return The orderVolume.
      */
     public long getOrderVolume() {
@@ -1038,14 +826,7 @@ public final class OrderBO_PRO {
     public static final int DIRECTION_FIELD_NUMBER = 15;
     private volatile java.lang.Object direction_;
     /**
-     * <code>optional string direction = 15;</code>
-     * @return Whether the direction field is set.
-     */
-    public boolean hasDirection() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional string direction = 15;</code>
+     * <code>string direction = 15;</code>
      * @return The direction.
      */
     public java.lang.String getDirection() {
@@ -1056,14 +837,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          direction_ = s;
-        }
+        direction_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string direction = 15;</code>
+     * <code>string direction = 15;</code>
      * @return The bytes for direction.
      */
     public com.google.protobuf.ByteString
@@ -1083,14 +862,7 @@ public final class OrderBO_PRO {
     public static final int EXECSTATUS_FIELD_NUMBER = 16;
     private volatile java.lang.Object execStatus_;
     /**
-     * <code>optional string execStatus = 16;</code>
-     * @return Whether the execStatus field is set.
-     */
-    public boolean hasExecStatus() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional string execStatus = 16;</code>
+     * <code>string execStatus = 16;</code>
      * @return The execStatus.
      */
     public java.lang.String getExecStatus() {
@@ -1101,14 +873,12 @@ public final class OrderBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          execStatus_ = s;
-        }
+        execStatus_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string execStatus = 16;</code>
+     * <code>string execStatus = 16;</code>
      * @return The bytes for execStatus.
      */
     public com.google.protobuf.ByteString
@@ -1128,14 +898,7 @@ public final class OrderBO_PRO {
     public static final int WITHDRAWFLAG_FIELD_NUMBER = 17;
     private boolean withdrawFlag_;
     /**
-     * <code>optional bool withdrawFlag = 17;</code>
-     * @return Whether the withdrawFlag field is set.
-     */
-    public boolean hasWithdrawFlag() {
-      return ((bitField0_ & 0x00010000) != 0);
-    }
-    /**
-     * <code>optional bool withdrawFlag = 17;</code>
+     * <code>bool withdrawFlag = 17;</code>
      * @return The withdrawFlag.
      */
     public boolean getWithdrawFlag() {
@@ -1145,14 +908,7 @@ public final class OrderBO_PRO {
     public static final int WITHDRAWVOLUME_FIELD_NUMBER = 18;
     private long withdrawVolume_;
     /**
-     * <code>optional sint64 withdrawVolume = 18;</code>
-     * @return Whether the withdrawVolume field is set.
-     */
-    public boolean hasWithdrawVolume() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-    /**
-     * <code>optional sint64 withdrawVolume = 18;</code>
+     * <code>sint64 withdrawVolume = 18;</code>
      * @return The withdrawVolume.
      */
     public long getWithdrawVolume() {
@@ -1173,58 +929,58 @@ public final class OrderBO_PRO {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getAccountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, account_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (!getSecurityCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, securityCode_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (!getExchBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, exch_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (!getSecurityTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, securityType_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (!getTradeDateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tradeDate_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (!getOrderIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, orderId_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (!getOrderStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, orderStatus_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (!getOrderRejectedResonBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, orderRejectedReson_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (!getOrderTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, orderType_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (orderPrice_ != 0D) {
         output.writeDouble(13, orderPrice_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (orderVolume_ != 0L) {
         output.writeSInt64(14, orderVolume_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (!getDirectionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, direction_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (!getExecStatusBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 16, execStatus_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (withdrawFlag_ != false) {
         output.writeBool(17, withdrawFlag_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (withdrawVolume_ != 0L) {
         output.writeSInt64(18, withdrawVolume_);
       }
       unknownFields.writeTo(output);
@@ -1236,62 +992,62 @@ public final class OrderBO_PRO {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getAccountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, account_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (!getSecurityCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, securityCode_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (!getExchBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, exch_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (!getSecurityTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, securityType_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (!getTradeDateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, tradeDate_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (!getOrderIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, orderId_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (!getOrderStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, orderStatus_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (!getOrderRejectedResonBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, orderRejectedReson_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (!getOrderTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, orderType_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (orderPrice_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(13, orderPrice_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (orderVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(14, orderVolume_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (!getDirectionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, direction_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (!getExecStatusBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, execStatus_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (withdrawFlag_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(17, withdrawFlag_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (withdrawVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(18, withdrawVolume_);
       }
@@ -1310,97 +1066,43 @@ public final class OrderBO_PRO {
       }
       com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO other = (com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO) obj;
 
-      if (hasUuid() != other.hasUuid()) return false;
-      if (hasUuid()) {
-        if (!getUuid()
-            .equals(other.getUuid())) return false;
-      }
-      if (hasBoid() != other.hasBoid()) return false;
-      if (hasBoid()) {
-        if (getBoid()
-            != other.getBoid()) return false;
-      }
-      if (hasDestination() != other.hasDestination()) return false;
-      if (hasDestination()) {
-        if (!getDestination()
-            .equals(other.getDestination())) return false;
-      }
-      if (hasAccount() != other.hasAccount()) return false;
-      if (hasAccount()) {
-        if (!getAccount()
-            .equals(other.getAccount())) return false;
-      }
-      if (hasSecurityCode() != other.hasSecurityCode()) return false;
-      if (hasSecurityCode()) {
-        if (!getSecurityCode()
-            .equals(other.getSecurityCode())) return false;
-      }
-      if (hasExch() != other.hasExch()) return false;
-      if (hasExch()) {
-        if (!getExch()
-            .equals(other.getExch())) return false;
-      }
-      if (hasSecurityType() != other.hasSecurityType()) return false;
-      if (hasSecurityType()) {
-        if (!getSecurityType()
-            .equals(other.getSecurityType())) return false;
-      }
-      if (hasTradeDate() != other.hasTradeDate()) return false;
-      if (hasTradeDate()) {
-        if (!getTradeDate()
-            .equals(other.getTradeDate())) return false;
-      }
-      if (hasOrderId() != other.hasOrderId()) return false;
-      if (hasOrderId()) {
-        if (!getOrderId()
-            .equals(other.getOrderId())) return false;
-      }
-      if (hasOrderStatus() != other.hasOrderStatus()) return false;
-      if (hasOrderStatus()) {
-        if (!getOrderStatus()
-            .equals(other.getOrderStatus())) return false;
-      }
-      if (hasOrderRejectedReson() != other.hasOrderRejectedReson()) return false;
-      if (hasOrderRejectedReson()) {
-        if (!getOrderRejectedReson()
-            .equals(other.getOrderRejectedReson())) return false;
-      }
-      if (hasOrderType() != other.hasOrderType()) return false;
-      if (hasOrderType()) {
-        if (!getOrderType()
-            .equals(other.getOrderType())) return false;
-      }
-      if (hasOrderPrice() != other.hasOrderPrice()) return false;
-      if (hasOrderPrice()) {
-        if (java.lang.Double.doubleToLongBits(getOrderPrice())
-            != java.lang.Double.doubleToLongBits(
-                other.getOrderPrice())) return false;
-      }
-      if (hasOrderVolume() != other.hasOrderVolume()) return false;
-      if (hasOrderVolume()) {
-        if (getOrderVolume()
-            != other.getOrderVolume()) return false;
-      }
-      if (hasDirection() != other.hasDirection()) return false;
-      if (hasDirection()) {
-        if (!getDirection()
-            .equals(other.getDirection())) return false;
-      }
-      if (hasExecStatus() != other.hasExecStatus()) return false;
-      if (hasExecStatus()) {
-        if (!getExecStatus()
-            .equals(other.getExecStatus())) return false;
-      }
-      if (hasWithdrawFlag() != other.hasWithdrawFlag()) return false;
-      if (hasWithdrawFlag()) {
-        if (getWithdrawFlag()
-            != other.getWithdrawFlag()) return false;
-      }
-      if (hasWithdrawVolume() != other.hasWithdrawVolume()) return false;
-      if (hasWithdrawVolume()) {
-        if (getWithdrawVolume()
-            != other.getWithdrawVolume()) return false;
-      }
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (getBoid()
+          != other.getBoid()) return false;
+      if (!getDestination()
+          .equals(other.getDestination())) return false;
+      if (!getAccount()
+          .equals(other.getAccount())) return false;
+      if (!getSecurityCode()
+          .equals(other.getSecurityCode())) return false;
+      if (!getExch()
+          .equals(other.getExch())) return false;
+      if (!getSecurityType()
+          .equals(other.getSecurityType())) return false;
+      if (!getTradeDate()
+          .equals(other.getTradeDate())) return false;
+      if (!getOrderId()
+          .equals(other.getOrderId())) return false;
+      if (!getOrderStatus()
+          .equals(other.getOrderStatus())) return false;
+      if (!getOrderRejectedReson()
+          .equals(other.getOrderRejectedReson())) return false;
+      if (!getOrderType()
+          .equals(other.getOrderType())) return false;
+      if (java.lang.Double.doubleToLongBits(getOrderPrice())
+          != java.lang.Double.doubleToLongBits(
+              other.getOrderPrice())) return false;
+      if (getOrderVolume()
+          != other.getOrderVolume()) return false;
+      if (!getDirection()
+          .equals(other.getDirection())) return false;
+      if (!getExecStatus()
+          .equals(other.getExecStatus())) return false;
+      if (getWithdrawFlag()
+          != other.getWithdrawFlag()) return false;
+      if (getWithdrawVolume()
+          != other.getWithdrawVolume()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1412,83 +1114,47 @@ public final class OrderBO_PRO {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUuid()) {
-        hash = (37 * hash) + UUID_FIELD_NUMBER;
-        hash = (53 * hash) + getUuid().hashCode();
-      }
-      if (hasBoid()) {
-        hash = (37 * hash) + BOID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getBoid());
-      }
-      if (hasDestination()) {
-        hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-        hash = (53 * hash) + getDestination().hashCode();
-      }
-      if (hasAccount()) {
-        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + getAccount().hashCode();
-      }
-      if (hasSecurityCode()) {
-        hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
-        hash = (53 * hash) + getSecurityCode().hashCode();
-      }
-      if (hasExch()) {
-        hash = (37 * hash) + EXCH_FIELD_NUMBER;
-        hash = (53 * hash) + getExch().hashCode();
-      }
-      if (hasSecurityType()) {
-        hash = (37 * hash) + SECURITY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getSecurityType().hashCode();
-      }
-      if (hasTradeDate()) {
-        hash = (37 * hash) + TRADEDATE_FIELD_NUMBER;
-        hash = (53 * hash) + getTradeDate().hashCode();
-      }
-      if (hasOrderId()) {
-        hash = (37 * hash) + ORDERID_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderId().hashCode();
-      }
-      if (hasOrderStatus()) {
-        hash = (37 * hash) + ORDERSTATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderStatus().hashCode();
-      }
-      if (hasOrderRejectedReson()) {
-        hash = (37 * hash) + ORDERREJECTEDRESON_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderRejectedReson().hashCode();
-      }
-      if (hasOrderType()) {
-        hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderType().hashCode();
-      }
-      if (hasOrderPrice()) {
-        hash = (37 * hash) + ORDERPRICE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getOrderPrice()));
-      }
-      if (hasOrderVolume()) {
-        hash = (37 * hash) + ORDERVOLUME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getOrderVolume());
-      }
-      if (hasDirection()) {
-        hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-        hash = (53 * hash) + getDirection().hashCode();
-      }
-      if (hasExecStatus()) {
-        hash = (37 * hash) + EXECSTATUS_FIELD_NUMBER;
-        hash = (53 * hash) + getExecStatus().hashCode();
-      }
-      if (hasWithdrawFlag()) {
-        hash = (37 * hash) + WITHDRAWFLAG_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getWithdrawFlag());
-      }
-      if (hasWithdrawVolume()) {
-        hash = (37 * hash) + WITHDRAWVOLUME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getWithdrawVolume());
-      }
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + BOID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBoid());
+      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDestination().hashCode();
+      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityCode().hashCode();
+      hash = (37 * hash) + EXCH_FIELD_NUMBER;
+      hash = (53 * hash) + getExch().hashCode();
+      hash = (37 * hash) + SECURITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityType().hashCode();
+      hash = (37 * hash) + TRADEDATE_FIELD_NUMBER;
+      hash = (53 * hash) + getTradeDate().hashCode();
+      hash = (37 * hash) + ORDERID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderId().hashCode();
+      hash = (37 * hash) + ORDERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderStatus().hashCode();
+      hash = (37 * hash) + ORDERREJECTEDRESON_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderRejectedReson().hashCode();
+      hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderType().hashCode();
+      hash = (37 * hash) + ORDERPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getOrderPrice()));
+      hash = (37 * hash) + ORDERVOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOrderVolume());
+      hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDirection().hashCode();
+      hash = (37 * hash) + EXECSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getExecStatus().hashCode();
+      hash = (37 * hash) + WITHDRAWFLAG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getWithdrawFlag());
+      hash = (37 * hash) + WITHDRAWVOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getWithdrawVolume());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1623,41 +1289,41 @@ public final class OrderBO_PRO {
       public Builder clear() {
         super.clear();
         uuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
+
         boid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
+
         destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+
         account_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+
         securityCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
+
         exch_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
+
         securityType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
+
         tradeDate_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
+
         orderId_ = "";
-        bitField0_ = (bitField0_ & ~0x00000100);
+
         orderStatus_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
+
         orderRejectedReson_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+
         orderType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000800);
+
         orderPrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00001000);
+
         orderVolume_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00002000);
+
         direction_ = "";
-        bitField0_ = (bitField0_ & ~0x00004000);
+
         execStatus_ = "";
-        bitField0_ = (bitField0_ & ~0x00008000);
+
         withdrawFlag_ = false;
-        bitField0_ = (bitField0_ & ~0x00010000);
+
         withdrawVolume_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00020000);
+
         return this;
       }
 
@@ -1684,81 +1350,24 @@ public final class OrderBO_PRO {
       @java.lang.Override
       public com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO buildPartial() {
         com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO result = new com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
         result.uuid_ = uuid_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.boid_ = boid_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
+        result.boid_ = boid_;
         result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          to_bitField0_ |= 0x00000008;
-        }
         result.account_ = account_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          to_bitField0_ |= 0x00000010;
-        }
         result.securityCode_ = securityCode_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          to_bitField0_ |= 0x00000020;
-        }
         result.exch_ = exch_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          to_bitField0_ |= 0x00000040;
-        }
         result.securityType_ = securityType_;
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          to_bitField0_ |= 0x00000080;
-        }
         result.tradeDate_ = tradeDate_;
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          to_bitField0_ |= 0x00000100;
-        }
         result.orderId_ = orderId_;
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          to_bitField0_ |= 0x00000200;
-        }
         result.orderStatus_ = orderStatus_;
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          to_bitField0_ |= 0x00000400;
-        }
         result.orderRejectedReson_ = orderRejectedReson_;
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          to_bitField0_ |= 0x00000800;
-        }
         result.orderType_ = orderType_;
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.orderPrice_ = orderPrice_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.orderVolume_ = orderVolume_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          to_bitField0_ |= 0x00004000;
-        }
+        result.orderPrice_ = orderPrice_;
+        result.orderVolume_ = orderVolume_;
         result.direction_ = direction_;
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          to_bitField0_ |= 0x00008000;
-        }
         result.execStatus_ = execStatus_;
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.withdrawFlag_ = withdrawFlag_;
-          to_bitField0_ |= 0x00010000;
-        }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.withdrawVolume_ = withdrawVolume_;
-          to_bitField0_ |= 0x00020000;
-        }
-        result.bitField0_ = to_bitField0_;
+        result.withdrawFlag_ = withdrawFlag_;
+        result.withdrawVolume_ = withdrawVolume_;
         onBuilt();
         return result;
       }
@@ -1807,84 +1416,71 @@ public final class OrderBO_PRO {
 
       public Builder mergeFrom(com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO other) {
         if (other == com.purefun.fams.trade.order.pro.OrderBO_PRO.OrderBO.getDefaultInstance()) return this;
-        if (other.hasUuid()) {
-          bitField0_ |= 0x00000001;
+        if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           onChanged();
         }
-        if (other.hasBoid()) {
+        if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
         }
-        if (other.hasDestination()) {
-          bitField0_ |= 0x00000004;
+        if (!other.getDestination().isEmpty()) {
           destination_ = other.destination_;
           onChanged();
         }
-        if (other.hasAccount()) {
-          bitField0_ |= 0x00000008;
+        if (!other.getAccount().isEmpty()) {
           account_ = other.account_;
           onChanged();
         }
-        if (other.hasSecurityCode()) {
-          bitField0_ |= 0x00000010;
+        if (!other.getSecurityCode().isEmpty()) {
           securityCode_ = other.securityCode_;
           onChanged();
         }
-        if (other.hasExch()) {
-          bitField0_ |= 0x00000020;
+        if (!other.getExch().isEmpty()) {
           exch_ = other.exch_;
           onChanged();
         }
-        if (other.hasSecurityType()) {
-          bitField0_ |= 0x00000040;
+        if (!other.getSecurityType().isEmpty()) {
           securityType_ = other.securityType_;
           onChanged();
         }
-        if (other.hasTradeDate()) {
-          bitField0_ |= 0x00000080;
+        if (!other.getTradeDate().isEmpty()) {
           tradeDate_ = other.tradeDate_;
           onChanged();
         }
-        if (other.hasOrderId()) {
-          bitField0_ |= 0x00000100;
+        if (!other.getOrderId().isEmpty()) {
           orderId_ = other.orderId_;
           onChanged();
         }
-        if (other.hasOrderStatus()) {
-          bitField0_ |= 0x00000200;
+        if (!other.getOrderStatus().isEmpty()) {
           orderStatus_ = other.orderStatus_;
           onChanged();
         }
-        if (other.hasOrderRejectedReson()) {
-          bitField0_ |= 0x00000400;
+        if (!other.getOrderRejectedReson().isEmpty()) {
           orderRejectedReson_ = other.orderRejectedReson_;
           onChanged();
         }
-        if (other.hasOrderType()) {
-          bitField0_ |= 0x00000800;
+        if (!other.getOrderType().isEmpty()) {
           orderType_ = other.orderType_;
           onChanged();
         }
-        if (other.hasOrderPrice()) {
+        if (other.getOrderPrice() != 0D) {
           setOrderPrice(other.getOrderPrice());
         }
-        if (other.hasOrderVolume()) {
+        if (other.getOrderVolume() != 0L) {
           setOrderVolume(other.getOrderVolume());
         }
-        if (other.hasDirection()) {
-          bitField0_ |= 0x00004000;
+        if (!other.getDirection().isEmpty()) {
           direction_ = other.direction_;
           onChanged();
         }
-        if (other.hasExecStatus()) {
-          bitField0_ |= 0x00008000;
+        if (!other.getExecStatus().isEmpty()) {
           execStatus_ = other.execStatus_;
           onChanged();
         }
-        if (other.hasWithdrawFlag()) {
+        if (other.getWithdrawFlag() != false) {
           setWithdrawFlag(other.getWithdrawFlag());
         }
-        if (other.hasWithdrawVolume()) {
+        if (other.getWithdrawVolume() != 0L) {
           setWithdrawVolume(other.getWithdrawVolume());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1915,18 +1511,10 @@ public final class OrderBO_PRO {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object uuid_ = "";
       /**
-       * <code>optional string uuid = 1;</code>
-       * @return Whether the uuid field is set.
-       */
-      public boolean hasUuid() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The uuid.
        */
       public java.lang.String getUuid() {
@@ -1935,16 +1523,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            uuid_ = s;
-          }
+          uuid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
@@ -1961,7 +1547,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The uuid to set.
        * @return This builder for chaining.
        */
@@ -1970,23 +1556,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
         uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The bytes for uuid to set.
        * @return This builder for chaining.
        */
@@ -1995,7 +1581,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+        
         uuid_ = value;
         onChanged();
         return this;
@@ -2003,36 +1590,29 @@ public final class OrderBO_PRO {
 
       private long boid_ ;
       /**
-       * <code>optional sint64 boid = 2;</code>
-       * @return Whether the boid field is set.
-       */
-      public boolean hasBoid() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return The boid.
        */
       public long getBoid() {
         return boid_;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @param value The boid to set.
        * @return This builder for chaining.
        */
       public Builder setBoid(long value) {
-        bitField0_ |= 0x00000002;
+        
         boid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBoid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         boid_ = 0L;
         onChanged();
         return this;
@@ -2040,14 +1620,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object destination_ = "";
       /**
-       * <code>optional string destination = 3;</code>
-       * @return Whether the destination field is set.
-       */
-      public boolean hasDestination() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The destination.
        */
       public java.lang.String getDestination() {
@@ -2056,16 +1629,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            destination_ = s;
-          }
+          destination_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The bytes for destination.
        */
       public com.google.protobuf.ByteString
@@ -2082,7 +1653,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The destination to set.
        * @return This builder for chaining.
        */
@@ -2091,23 +1662,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
         destination_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDestination() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The bytes for destination to set.
        * @return This builder for chaining.
        */
@@ -2116,7 +1687,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+        
         destination_ = value;
         onChanged();
         return this;
@@ -2124,14 +1696,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object account_ = "";
       /**
-       * <code>optional string account = 4;</code>
-       * @return Whether the account field is set.
-       */
-      public boolean hasAccount() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional string account = 4;</code>
+       * <code>string account = 4;</code>
        * @return The account.
        */
       public java.lang.String getAccount() {
@@ -2140,16 +1705,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            account_ = s;
-          }
+          account_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string account = 4;</code>
+       * <code>string account = 4;</code>
        * @return The bytes for account.
        */
       public com.google.protobuf.ByteString
@@ -2166,7 +1729,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string account = 4;</code>
+       * <code>string account = 4;</code>
        * @param value The account to set.
        * @return This builder for chaining.
        */
@@ -2175,23 +1738,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
         account_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string account = 4;</code>
+       * <code>string account = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccount() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         account_ = getDefaultInstance().getAccount();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string account = 4;</code>
+       * <code>string account = 4;</code>
        * @param value The bytes for account to set.
        * @return This builder for chaining.
        */
@@ -2200,7 +1763,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+        
         account_ = value;
         onChanged();
         return this;
@@ -2208,14 +1772,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object securityCode_ = "";
       /**
-       * <code>optional string security_code = 5;</code>
-       * @return Whether the securityCode field is set.
-       */
-      public boolean hasSecurityCode() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional string security_code = 5;</code>
+       * <code>string security_code = 5;</code>
        * @return The securityCode.
        */
       public java.lang.String getSecurityCode() {
@@ -2224,16 +1781,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            securityCode_ = s;
-          }
+          securityCode_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string security_code = 5;</code>
+       * <code>string security_code = 5;</code>
        * @return The bytes for securityCode.
        */
       public com.google.protobuf.ByteString
@@ -2250,7 +1805,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string security_code = 5;</code>
+       * <code>string security_code = 5;</code>
        * @param value The securityCode to set.
        * @return This builder for chaining.
        */
@@ -2259,23 +1814,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
         securityCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_code = 5;</code>
+       * <code>string security_code = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSecurityCode() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         securityCode_ = getDefaultInstance().getSecurityCode();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_code = 5;</code>
+       * <code>string security_code = 5;</code>
        * @param value The bytes for securityCode to set.
        * @return This builder for chaining.
        */
@@ -2284,7 +1839,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+        
         securityCode_ = value;
         onChanged();
         return this;
@@ -2292,14 +1848,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object exch_ = "";
       /**
-       * <code>optional string exch = 6;</code>
-       * @return Whether the exch field is set.
-       */
-      public boolean hasExch() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>optional string exch = 6;</code>
+       * <code>string exch = 6;</code>
        * @return The exch.
        */
       public java.lang.String getExch() {
@@ -2308,16 +1857,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            exch_ = s;
-          }
+          exch_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string exch = 6;</code>
+       * <code>string exch = 6;</code>
        * @return The bytes for exch.
        */
       public com.google.protobuf.ByteString
@@ -2334,7 +1881,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string exch = 6;</code>
+       * <code>string exch = 6;</code>
        * @param value The exch to set.
        * @return This builder for chaining.
        */
@@ -2343,23 +1890,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  
         exch_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string exch = 6;</code>
+       * <code>string exch = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearExch() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         exch_ = getDefaultInstance().getExch();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string exch = 6;</code>
+       * <code>string exch = 6;</code>
        * @param value The bytes for exch to set.
        * @return This builder for chaining.
        */
@@ -2368,7 +1915,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  checkByteStringIsUtf8(value);
+        
         exch_ = value;
         onChanged();
         return this;
@@ -2376,14 +1924,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object securityType_ = "";
       /**
-       * <code>optional string security_type = 7;</code>
-       * @return Whether the securityType field is set.
-       */
-      public boolean hasSecurityType() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>optional string security_type = 7;</code>
+       * <code>string security_type = 7;</code>
        * @return The securityType.
        */
       public java.lang.String getSecurityType() {
@@ -2392,16 +1933,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            securityType_ = s;
-          }
+          securityType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string security_type = 7;</code>
+       * <code>string security_type = 7;</code>
        * @return The bytes for securityType.
        */
       public com.google.protobuf.ByteString
@@ -2418,7 +1957,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string security_type = 7;</code>
+       * <code>string security_type = 7;</code>
        * @param value The securityType to set.
        * @return This builder for chaining.
        */
@@ -2427,23 +1966,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
         securityType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_type = 7;</code>
+       * <code>string security_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSecurityType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         securityType_ = getDefaultInstance().getSecurityType();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_type = 7;</code>
+       * <code>string security_type = 7;</code>
        * @param value The bytes for securityType to set.
        * @return This builder for chaining.
        */
@@ -2452,7 +1991,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+        
         securityType_ = value;
         onChanged();
         return this;
@@ -2460,14 +2000,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object tradeDate_ = "";
       /**
-       * <code>optional string tradeDate = 8;</code>
-       * @return Whether the tradeDate field is set.
-       */
-      public boolean hasTradeDate() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>optional string tradeDate = 8;</code>
+       * <code>string tradeDate = 8;</code>
        * @return The tradeDate.
        */
       public java.lang.String getTradeDate() {
@@ -2476,16 +2009,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            tradeDate_ = s;
-          }
+          tradeDate_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string tradeDate = 8;</code>
+       * <code>string tradeDate = 8;</code>
        * @return The bytes for tradeDate.
        */
       public com.google.protobuf.ByteString
@@ -2502,7 +2033,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string tradeDate = 8;</code>
+       * <code>string tradeDate = 8;</code>
        * @param value The tradeDate to set.
        * @return This builder for chaining.
        */
@@ -2511,23 +2042,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  
         tradeDate_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string tradeDate = 8;</code>
+       * <code>string tradeDate = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTradeDate() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         tradeDate_ = getDefaultInstance().getTradeDate();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string tradeDate = 8;</code>
+       * <code>string tradeDate = 8;</code>
        * @param value The bytes for tradeDate to set.
        * @return This builder for chaining.
        */
@@ -2536,7 +2067,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  checkByteStringIsUtf8(value);
+        
         tradeDate_ = value;
         onChanged();
         return this;
@@ -2544,14 +2076,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object orderId_ = "";
       /**
-       * <code>optional string orderId = 9;</code>
-       * @return Whether the orderId field is set.
-       */
-      public boolean hasOrderId() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional string orderId = 9;</code>
+       * <code>string orderId = 9;</code>
        * @return The orderId.
        */
       public java.lang.String getOrderId() {
@@ -2560,16 +2085,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            orderId_ = s;
-          }
+          orderId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string orderId = 9;</code>
+       * <code>string orderId = 9;</code>
        * @return The bytes for orderId.
        */
       public com.google.protobuf.ByteString
@@ -2586,7 +2109,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string orderId = 9;</code>
+       * <code>string orderId = 9;</code>
        * @param value The orderId to set.
        * @return This builder for chaining.
        */
@@ -2595,23 +2118,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  
         orderId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 9;</code>
+       * <code>string orderId = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderId() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderId = 9;</code>
+       * <code>string orderId = 9;</code>
        * @param value The bytes for orderId to set.
        * @return This builder for chaining.
        */
@@ -2620,7 +2143,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  checkByteStringIsUtf8(value);
+        
         orderId_ = value;
         onChanged();
         return this;
@@ -2628,14 +2152,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object orderStatus_ = "";
       /**
-       * <code>optional string orderStatus = 10;</code>
-       * @return Whether the orderStatus field is set.
-       */
-      public boolean hasOrderStatus() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional string orderStatus = 10;</code>
+       * <code>string orderStatus = 10;</code>
        * @return The orderStatus.
        */
       public java.lang.String getOrderStatus() {
@@ -2644,16 +2161,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            orderStatus_ = s;
-          }
+          orderStatus_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string orderStatus = 10;</code>
+       * <code>string orderStatus = 10;</code>
        * @return The bytes for orderStatus.
        */
       public com.google.protobuf.ByteString
@@ -2670,7 +2185,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string orderStatus = 10;</code>
+       * <code>string orderStatus = 10;</code>
        * @param value The orderStatus to set.
        * @return This builder for chaining.
        */
@@ -2679,23 +2194,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  
         orderStatus_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderStatus = 10;</code>
+       * <code>string orderStatus = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderStatus() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         orderStatus_ = getDefaultInstance().getOrderStatus();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderStatus = 10;</code>
+       * <code>string orderStatus = 10;</code>
        * @param value The bytes for orderStatus to set.
        * @return This builder for chaining.
        */
@@ -2704,7 +2219,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  checkByteStringIsUtf8(value);
+        
         orderStatus_ = value;
         onChanged();
         return this;
@@ -2712,14 +2228,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object orderRejectedReson_ = "";
       /**
-       * <code>optional string orderRejectedReson = 11;</code>
-       * @return Whether the orderRejectedReson field is set.
-       */
-      public boolean hasOrderRejectedReson() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional string orderRejectedReson = 11;</code>
+       * <code>string orderRejectedReson = 11;</code>
        * @return The orderRejectedReson.
        */
       public java.lang.String getOrderRejectedReson() {
@@ -2728,16 +2237,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            orderRejectedReson_ = s;
-          }
+          orderRejectedReson_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string orderRejectedReson = 11;</code>
+       * <code>string orderRejectedReson = 11;</code>
        * @return The bytes for orderRejectedReson.
        */
       public com.google.protobuf.ByteString
@@ -2754,7 +2261,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string orderRejectedReson = 11;</code>
+       * <code>string orderRejectedReson = 11;</code>
        * @param value The orderRejectedReson to set.
        * @return This builder for chaining.
        */
@@ -2763,23 +2270,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  
         orderRejectedReson_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderRejectedReson = 11;</code>
+       * <code>string orderRejectedReson = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderRejectedReson() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         orderRejectedReson_ = getDefaultInstance().getOrderRejectedReson();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderRejectedReson = 11;</code>
+       * <code>string orderRejectedReson = 11;</code>
        * @param value The bytes for orderRejectedReson to set.
        * @return This builder for chaining.
        */
@@ -2788,7 +2295,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  checkByteStringIsUtf8(value);
+        
         orderRejectedReson_ = value;
         onChanged();
         return this;
@@ -2796,14 +2304,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object orderType_ = "";
       /**
-       * <code>optional string orderType = 12;</code>
-       * @return Whether the orderType field is set.
-       */
-      public boolean hasOrderType() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string orderType = 12;</code>
+       * <code>string orderType = 12;</code>
        * @return The orderType.
        */
       public java.lang.String getOrderType() {
@@ -2812,16 +2313,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            orderType_ = s;
-          }
+          orderType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string orderType = 12;</code>
+       * <code>string orderType = 12;</code>
        * @return The bytes for orderType.
        */
       public com.google.protobuf.ByteString
@@ -2838,7 +2337,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string orderType = 12;</code>
+       * <code>string orderType = 12;</code>
        * @param value The orderType to set.
        * @return This builder for chaining.
        */
@@ -2847,23 +2346,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  
         orderType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderType = 12;</code>
+       * <code>string orderType = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         orderType_ = getDefaultInstance().getOrderType();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string orderType = 12;</code>
+       * <code>string orderType = 12;</code>
        * @param value The bytes for orderType to set.
        * @return This builder for chaining.
        */
@@ -2872,7 +2371,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  checkByteStringIsUtf8(value);
+        
         orderType_ = value;
         onChanged();
         return this;
@@ -2880,36 +2380,29 @@ public final class OrderBO_PRO {
 
       private double orderPrice_ ;
       /**
-       * <code>optional double orderPrice = 13;</code>
-       * @return Whether the orderPrice field is set.
-       */
-      public boolean hasOrderPrice() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional double orderPrice = 13;</code>
+       * <code>double orderPrice = 13;</code>
        * @return The orderPrice.
        */
       public double getOrderPrice() {
         return orderPrice_;
       }
       /**
-       * <code>optional double orderPrice = 13;</code>
+       * <code>double orderPrice = 13;</code>
        * @param value The orderPrice to set.
        * @return This builder for chaining.
        */
       public Builder setOrderPrice(double value) {
-        bitField0_ |= 0x00001000;
+        
         orderPrice_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double orderPrice = 13;</code>
+       * <code>double orderPrice = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderPrice() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         orderPrice_ = 0D;
         onChanged();
         return this;
@@ -2917,36 +2410,29 @@ public final class OrderBO_PRO {
 
       private long orderVolume_ ;
       /**
-       * <code>optional sint64 orderVolume = 14;</code>
-       * @return Whether the orderVolume field is set.
-       */
-      public boolean hasOrderVolume() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional sint64 orderVolume = 14;</code>
+       * <code>sint64 orderVolume = 14;</code>
        * @return The orderVolume.
        */
       public long getOrderVolume() {
         return orderVolume_;
       }
       /**
-       * <code>optional sint64 orderVolume = 14;</code>
+       * <code>sint64 orderVolume = 14;</code>
        * @param value The orderVolume to set.
        * @return This builder for chaining.
        */
       public Builder setOrderVolume(long value) {
-        bitField0_ |= 0x00002000;
+        
         orderVolume_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 orderVolume = 14;</code>
+       * <code>sint64 orderVolume = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderVolume() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         orderVolume_ = 0L;
         onChanged();
         return this;
@@ -2954,14 +2440,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object direction_ = "";
       /**
-       * <code>optional string direction = 15;</code>
-       * @return Whether the direction field is set.
-       */
-      public boolean hasDirection() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional string direction = 15;</code>
+       * <code>string direction = 15;</code>
        * @return The direction.
        */
       public java.lang.String getDirection() {
@@ -2970,16 +2449,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            direction_ = s;
-          }
+          direction_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string direction = 15;</code>
+       * <code>string direction = 15;</code>
        * @return The bytes for direction.
        */
       public com.google.protobuf.ByteString
@@ -2996,7 +2473,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string direction = 15;</code>
+       * <code>string direction = 15;</code>
        * @param value The direction to set.
        * @return This builder for chaining.
        */
@@ -3005,23 +2482,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  
         direction_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string direction = 15;</code>
+       * <code>string direction = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearDirection() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         direction_ = getDefaultInstance().getDirection();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string direction = 15;</code>
+       * <code>string direction = 15;</code>
        * @param value The bytes for direction to set.
        * @return This builder for chaining.
        */
@@ -3030,7 +2507,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00004000;
+  checkByteStringIsUtf8(value);
+        
         direction_ = value;
         onChanged();
         return this;
@@ -3038,14 +2516,7 @@ public final class OrderBO_PRO {
 
       private java.lang.Object execStatus_ = "";
       /**
-       * <code>optional string execStatus = 16;</code>
-       * @return Whether the execStatus field is set.
-       */
-      public boolean hasExecStatus() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional string execStatus = 16;</code>
+       * <code>string execStatus = 16;</code>
        * @return The execStatus.
        */
       public java.lang.String getExecStatus() {
@@ -3054,16 +2525,14 @@ public final class OrderBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            execStatus_ = s;
-          }
+          execStatus_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string execStatus = 16;</code>
+       * <code>string execStatus = 16;</code>
        * @return The bytes for execStatus.
        */
       public com.google.protobuf.ByteString
@@ -3080,7 +2549,7 @@ public final class OrderBO_PRO {
         }
       }
       /**
-       * <code>optional string execStatus = 16;</code>
+       * <code>string execStatus = 16;</code>
        * @param value The execStatus to set.
        * @return This builder for chaining.
        */
@@ -3089,23 +2558,23 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  
         execStatus_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string execStatus = 16;</code>
+       * <code>string execStatus = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearExecStatus() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         execStatus_ = getDefaultInstance().getExecStatus();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string execStatus = 16;</code>
+       * <code>string execStatus = 16;</code>
        * @param value The bytes for execStatus to set.
        * @return This builder for chaining.
        */
@@ -3114,7 +2583,8 @@ public final class OrderBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00008000;
+  checkByteStringIsUtf8(value);
+        
         execStatus_ = value;
         onChanged();
         return this;
@@ -3122,36 +2592,29 @@ public final class OrderBO_PRO {
 
       private boolean withdrawFlag_ ;
       /**
-       * <code>optional bool withdrawFlag = 17;</code>
-       * @return Whether the withdrawFlag field is set.
-       */
-      public boolean hasWithdrawFlag() {
-        return ((bitField0_ & 0x00010000) != 0);
-      }
-      /**
-       * <code>optional bool withdrawFlag = 17;</code>
+       * <code>bool withdrawFlag = 17;</code>
        * @return The withdrawFlag.
        */
       public boolean getWithdrawFlag() {
         return withdrawFlag_;
       }
       /**
-       * <code>optional bool withdrawFlag = 17;</code>
+       * <code>bool withdrawFlag = 17;</code>
        * @param value The withdrawFlag to set.
        * @return This builder for chaining.
        */
       public Builder setWithdrawFlag(boolean value) {
-        bitField0_ |= 0x00010000;
+        
         withdrawFlag_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool withdrawFlag = 17;</code>
+       * <code>bool withdrawFlag = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearWithdrawFlag() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        
         withdrawFlag_ = false;
         onChanged();
         return this;
@@ -3159,36 +2622,29 @@ public final class OrderBO_PRO {
 
       private long withdrawVolume_ ;
       /**
-       * <code>optional sint64 withdrawVolume = 18;</code>
-       * @return Whether the withdrawVolume field is set.
-       */
-      public boolean hasWithdrawVolume() {
-        return ((bitField0_ & 0x00020000) != 0);
-      }
-      /**
-       * <code>optional sint64 withdrawVolume = 18;</code>
+       * <code>sint64 withdrawVolume = 18;</code>
        * @return The withdrawVolume.
        */
       public long getWithdrawVolume() {
         return withdrawVolume_;
       }
       /**
-       * <code>optional sint64 withdrawVolume = 18;</code>
+       * <code>sint64 withdrawVolume = 18;</code>
        * @param value The withdrawVolume to set.
        * @return This builder for chaining.
        */
       public Builder setWithdrawVolume(long value) {
-        bitField0_ |= 0x00020000;
+        
         withdrawVolume_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 withdrawVolume = 18;</code>
+       * <code>sint64 withdrawVolume = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearWithdrawVolume() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        
         withdrawVolume_ = 0L;
         onChanged();
         return this;
@@ -3219,7 +2675,7 @@ public final class OrderBO_PRO {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<OrderBO>
+    private static final com.google.protobuf.Parser<OrderBO>
         PARSER = new com.google.protobuf.AbstractParser<OrderBO>() {
       @java.lang.Override
       public OrderBO parsePartialFrom(
@@ -3260,23 +2716,21 @@ public final class OrderBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rOrderBO.proto\032\031google/protobuf/any.pro" +
-      "to\"\355\002\n\007OrderBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001" +
-      "(\022\022\023\n\013destination\030\003 \001(\t\022\017\n\007account\030\004 \001(\t" +
-      "\022\025\n\rsecurity_code\030\005 \001(\t\022\014\n\004exch\030\006 \001(\t\022\025\n" +
-      "\rsecurity_type\030\007 \001(\t\022\021\n\ttradeDate\030\010 \001(\t\022" +
-      "\017\n\007orderId\030\t \001(\t\022\023\n\013orderStatus\030\n \001(\t\022\032\n" +
-      "\022orderRejectedReson\030\013 \001(\t\022\021\n\torderType\030\014" +
-      " \001(\t\022\022\n\norderPrice\030\r \001(\001\022\023\n\013orderVolume\030" +
-      "\016 \001(\022\022\021\n\tdirection\030\017 \001(\t\022\022\n\nexecStatus\030\020" +
-      " \001(\t\022\024\n\014withdrawFlag\030\021 \001(\010\022\026\n\016withdrawVo" +
-      "lume\030\022 \001(\022B/\n com.purefun.fams.trade.ord" +
-      "er.proB\013OrderBO_PRO"
+      "\n\rOrderBO.proto\"\355\002\n\007OrderBO\022\014\n\004uuid\030\001 \001(" +
+      "\t\022\014\n\004boid\030\002 \001(\022\022\023\n\013destination\030\003 \001(\t\022\017\n\007" +
+      "account\030\004 \001(\t\022\025\n\rsecurity_code\030\005 \001(\t\022\014\n\004" +
+      "exch\030\006 \001(\t\022\025\n\rsecurity_type\030\007 \001(\t\022\021\n\ttra" +
+      "deDate\030\010 \001(\t\022\017\n\007orderId\030\t \001(\t\022\023\n\013orderSt" +
+      "atus\030\n \001(\t\022\032\n\022orderRejectedReson\030\013 \001(\t\022\021" +
+      "\n\torderType\030\014 \001(\t\022\022\n\norderPrice\030\r \001(\001\022\023\n" +
+      "\013orderVolume\030\016 \001(\022\022\021\n\tdirection\030\017 \001(\t\022\022\n" +
+      "\nexecStatus\030\020 \001(\t\022\024\n\014withdrawFlag\030\021 \001(\010\022" +
+      "\026\n\016withdrawVolume\030\022 \001(\022B/\n com.purefun.f" +
+      "ams.trade.order.proB\013OrderBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_OrderBO_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3284,7 +2738,6 @@ public final class OrderBO_PRO {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OrderBO_descriptor,
         new java.lang.String[] { "Uuid", "Boid", "Destination", "Account", "SecurityCode", "Exch", "SecurityType", "TradeDate", "OrderId", "OrderStatus", "OrderRejectedReson", "OrderType", "OrderPrice", "OrderVolume", "Direction", "ExecStatus", "WithdrawFlag", "WithdrawVolume", });
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

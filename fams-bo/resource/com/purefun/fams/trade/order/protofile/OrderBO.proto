@@ -1,25 +1,25 @@
-import "google/protobuf/any.proto";
+syntax = "proto3";
 
 option java_outer_classname = "OrderBO_PRO";
 option java_package = "com.purefun.fams.trade.order.pro";
 
 message OrderBO {
-    optional string uuid = 1;
-    optional sint64 boid = 2;
-    optional string destination = 3;
-    optional string account = 4;
-    optional string security_code = 5;
-    optional string exch = 6;
-    optional string security_type = 7;
-    optional string tradeDate = 8;
-    optional string orderId = 9;
-    optional string orderStatus = 10;
-    optional string orderRejectedReson = 11;
-    optional string orderType = 12;
-    optional double orderPrice = 13;
-    optional sint64 orderVolume = 14;
-    optional string direction = 15;
-    optional string execStatus = 16;
-    optional bool withdrawFlag = 17;
-    optional sint64 withdrawVolume = 18;
+     string uuid = 1;
+     sint64 boid = 2;
+     string destination = 3;
+    string account = 4;
+    string security_code = 5;
+    string exch = 6;
+    string security_type = 7;
+    string tradeDate = 8;
+    string orderId = 9;
+    string orderStatus = 10;
+    string orderRejectedReson = 11;
+    string orderType = 12;
+    double orderPrice = 13;
+    sint64 orderVolume = 14;
+    string direction = 15;
+    string execStatus = 16;
+    bool withdrawFlag = 17;
+    sint64 withdrawVolume = 18;
 }

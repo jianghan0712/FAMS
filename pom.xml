@@ -14,6 +14,7 @@
   	<module>fams-bo</module>
     <module>fams-framework</module>
     <module>fams-king</module>
+    <module>fams-ace</module>
   </modules>
   
    <properties>

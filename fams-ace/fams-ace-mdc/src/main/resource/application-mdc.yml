@@ -1,0 +1,32 @@
+
+server:
+    port: 8901
+    #port: ${random.int[10000,19999]}
+    max-http-header-size: 8MB
+
+eureka:
+    instance:
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 20
+        instance-id: ${spring.application.name}-${Instance}:${server.port}
+    client:
+        registerWithEureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+
+fams:
+    ace:
+        xtp:
+            trade:
+                ip: 120.27.164.69
+                port: 6001
+                key: b8aa7173bba3470e390d787219b2112e
+            quote:
+                ip: 120.27.164.138
+                port: 6002
+            account: 53191000937
+            password: OUr8sGgh
+            clientid: 18
+            log: log/                  

@@ -19,213 +19,133 @@ public final class MdBarDataBO_PRO {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    boolean hasUuid();
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     java.lang.String getUuid();
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
         getUuidBytes();
 
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    boolean hasBoid();
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     long getBoid();
 
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    boolean hasDestination();
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     java.lang.String getDestination();
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     com.google.protobuf.ByteString
         getDestinationBytes();
 
     /**
-     * <code>optional string security_code = 4;</code>
-     * @return Whether the securityCode field is set.
-     */
-    boolean hasSecurityCode();
-    /**
-     * <code>optional string security_code = 4;</code>
+     * <code>string security_code = 4;</code>
      * @return The securityCode.
      */
     java.lang.String getSecurityCode();
     /**
-     * <code>optional string security_code = 4;</code>
+     * <code>string security_code = 4;</code>
      * @return The bytes for securityCode.
      */
     com.google.protobuf.ByteString
         getSecurityCodeBytes();
 
     /**
-     * <code>optional string exch = 5;</code>
-     * @return Whether the exch field is set.
-     */
-    boolean hasExch();
-    /**
-     * <code>optional string exch = 5;</code>
+     * <code>string exch = 5;</code>
      * @return The exch.
      */
     java.lang.String getExch();
     /**
-     * <code>optional string exch = 5;</code>
+     * <code>string exch = 5;</code>
      * @return The bytes for exch.
      */
     com.google.protobuf.ByteString
         getExchBytes();
 
     /**
-     * <code>optional string security_type = 6;</code>
-     * @return Whether the securityType field is set.
-     */
-    boolean hasSecurityType();
-    /**
-     * <code>optional string security_type = 6;</code>
+     * <code>string security_type = 6;</code>
      * @return The securityType.
      */
     java.lang.String getSecurityType();
     /**
-     * <code>optional string security_type = 6;</code>
+     * <code>string security_type = 6;</code>
      * @return The bytes for securityType.
      */
     com.google.protobuf.ByteString
         getSecurityTypeBytes();
 
     /**
-     * <code>optional string date = 7;</code>
-     * @return Whether the date field is set.
-     */
-    boolean hasDate();
-    /**
-     * <code>optional string date = 7;</code>
+     * <code>string date = 7;</code>
      * @return The date.
      */
     java.lang.String getDate();
     /**
-     * <code>optional string date = 7;</code>
+     * <code>string date = 7;</code>
      * @return The bytes for date.
      */
     com.google.protobuf.ByteString
         getDateBytes();
 
     /**
-     * <code>optional double open = 8;</code>
-     * @return Whether the open field is set.
-     */
-    boolean hasOpen();
-    /**
-     * <code>optional double open = 8;</code>
+     * <code>double open = 8;</code>
      * @return The open.
      */
     double getOpen();
 
     /**
-     * <code>optional double high = 9;</code>
-     * @return Whether the high field is set.
-     */
-    boolean hasHigh();
-    /**
-     * <code>optional double high = 9;</code>
+     * <code>double high = 9;</code>
      * @return The high.
      */
     double getHigh();
 
     /**
-     * <code>optional double low = 10;</code>
-     * @return Whether the low field is set.
-     */
-    boolean hasLow();
-    /**
-     * <code>optional double low = 10;</code>
+     * <code>double low = 10;</code>
      * @return The low.
      */
     double getLow();
 
     /**
-     * <code>optional double close = 11;</code>
-     * @return Whether the close field is set.
-     */
-    boolean hasClose();
-    /**
-     * <code>optional double close = 11;</code>
+     * <code>double close = 11;</code>
      * @return The close.
      */
     double getClose();
 
     /**
-     * <code>optional sint64 volume = 12;</code>
-     * @return Whether the volume field is set.
-     */
-    boolean hasVolume();
-    /**
-     * <code>optional sint64 volume = 12;</code>
+     * <code>sint64 volume = 12;</code>
      * @return The volume.
      */
     long getVolume();
 
     /**
-     * <code>optional double change = 13;</code>
-     * @return Whether the change field is set.
-     */
-    boolean hasChange();
-    /**
-     * <code>optional double change = 13;</code>
+     * <code>double change = 13;</code>
      * @return The change.
      */
     double getChange();
 
     /**
-     * <code>optional double pre_close = 14;</code>
-     * @return Whether the preClose field is set.
-     */
-    boolean hasPreClose();
-    /**
-     * <code>optional double pre_close = 14;</code>
+     * <code>double pre_close = 14;</code>
      * @return The preClose.
      */
     double getPreClose();
 
     /**
-     * <code>optional double pct_chg = 15;</code>
-     * @return Whether the pctChg field is set.
-     */
-    boolean hasPctChg();
-    /**
-     * <code>optional double pct_chg = 15;</code>
+     * <code>double pct_chg = 15;</code>
      * @return The pctChg.
      */
     double getPctChg();
 
     /**
-     * <code>optional double amount = 16;</code>
-     * @return Whether the amount field is set.
-     */
-    boolean hasAmount();
-    /**
-     * <code>optional double amount = 16;</code>
+     * <code>double amount = 16;</code>
      * @return The amount.
      */
     double getAmount();
@@ -271,7 +191,6 @@ public final class MdBarDataBO_PRO {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -283,88 +202,88 @@ public final class MdBarDataBO_PRO {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              uuid_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
               break;
             }
             case 16: {
-              bitField0_ |= 0x00000002;
+
               boid_ = input.readSInt64();
               break;
             }
             case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              destination_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              destination_ = s;
               break;
             }
             case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              securityCode_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityCode_ = s;
               break;
             }
             case 42: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000010;
-              exch_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              exch_ = s;
               break;
             }
             case 50: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000020;
-              securityType_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securityType_ = s;
               break;
             }
             case 58: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
-              date_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              date_ = s;
               break;
             }
             case 65: {
-              bitField0_ |= 0x00000080;
+
               open_ = input.readDouble();
               break;
             }
             case 73: {
-              bitField0_ |= 0x00000100;
+
               high_ = input.readDouble();
               break;
             }
             case 81: {
-              bitField0_ |= 0x00000200;
+
               low_ = input.readDouble();
               break;
             }
             case 89: {
-              bitField0_ |= 0x00000400;
+
               close_ = input.readDouble();
               break;
             }
             case 96: {
-              bitField0_ |= 0x00000800;
+
               volume_ = input.readSInt64();
               break;
             }
             case 105: {
-              bitField0_ |= 0x00001000;
+
               change_ = input.readDouble();
               break;
             }
             case 113: {
-              bitField0_ |= 0x00002000;
+
               preClose_ = input.readDouble();
               break;
             }
             case 121: {
-              bitField0_ |= 0x00004000;
+
               pctChg_ = input.readDouble();
               break;
             }
             case 129: {
-              bitField0_ |= 0x00008000;
+
               amount_ = input.readDouble();
               break;
             }
@@ -400,18 +319,10 @@ public final class MdBarDataBO_PRO {
               com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO.class, com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO.Builder.class);
     }
 
-    private int bitField0_;
     public static final int UUID_FIELD_NUMBER = 1;
     private volatile java.lang.Object uuid_;
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    public boolean hasUuid() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     public java.lang.String getUuid() {
@@ -422,14 +333,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          uuid_ = s;
-        }
+        uuid_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     public com.google.protobuf.ByteString
@@ -449,14 +358,7 @@ public final class MdBarDataBO_PRO {
     public static final int BOID_FIELD_NUMBER = 2;
     private long boid_;
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    public boolean hasBoid() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     public long getBoid() {
@@ -466,14 +368,7 @@ public final class MdBarDataBO_PRO {
     public static final int DESTINATION_FIELD_NUMBER = 3;
     private volatile java.lang.Object destination_;
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     public java.lang.String getDestination() {
@@ -484,14 +379,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          destination_ = s;
-        }
+        destination_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     public com.google.protobuf.ByteString
@@ -511,14 +404,7 @@ public final class MdBarDataBO_PRO {
     public static final int SECURITY_CODE_FIELD_NUMBER = 4;
     private volatile java.lang.Object securityCode_;
     /**
-     * <code>optional string security_code = 4;</code>
-     * @return Whether the securityCode field is set.
-     */
-    public boolean hasSecurityCode() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional string security_code = 4;</code>
+     * <code>string security_code = 4;</code>
      * @return The securityCode.
      */
     public java.lang.String getSecurityCode() {
@@ -529,14 +415,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          securityCode_ = s;
-        }
+        securityCode_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string security_code = 4;</code>
+     * <code>string security_code = 4;</code>
      * @return The bytes for securityCode.
      */
     public com.google.protobuf.ByteString
@@ -556,14 +440,7 @@ public final class MdBarDataBO_PRO {
     public static final int EXCH_FIELD_NUMBER = 5;
     private volatile java.lang.Object exch_;
     /**
-     * <code>optional string exch = 5;</code>
-     * @return Whether the exch field is set.
-     */
-    public boolean hasExch() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional string exch = 5;</code>
+     * <code>string exch = 5;</code>
      * @return The exch.
      */
     public java.lang.String getExch() {
@@ -574,14 +451,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          exch_ = s;
-        }
+        exch_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string exch = 5;</code>
+     * <code>string exch = 5;</code>
      * @return The bytes for exch.
      */
     public com.google.protobuf.ByteString
@@ -601,14 +476,7 @@ public final class MdBarDataBO_PRO {
     public static final int SECURITY_TYPE_FIELD_NUMBER = 6;
     private volatile java.lang.Object securityType_;
     /**
-     * <code>optional string security_type = 6;</code>
-     * @return Whether the securityType field is set.
-     */
-    public boolean hasSecurityType() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional string security_type = 6;</code>
+     * <code>string security_type = 6;</code>
      * @return The securityType.
      */
     public java.lang.String getSecurityType() {
@@ -619,14 +487,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          securityType_ = s;
-        }
+        securityType_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string security_type = 6;</code>
+     * <code>string security_type = 6;</code>
      * @return The bytes for securityType.
      */
     public com.google.protobuf.ByteString
@@ -646,14 +512,7 @@ public final class MdBarDataBO_PRO {
     public static final int DATE_FIELD_NUMBER = 7;
     private volatile java.lang.Object date_;
     /**
-     * <code>optional string date = 7;</code>
-     * @return Whether the date field is set.
-     */
-    public boolean hasDate() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-    /**
-     * <code>optional string date = 7;</code>
+     * <code>string date = 7;</code>
      * @return The date.
      */
     public java.lang.String getDate() {
@@ -664,14 +523,12 @@ public final class MdBarDataBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          date_ = s;
-        }
+        date_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string date = 7;</code>
+     * <code>string date = 7;</code>
      * @return The bytes for date.
      */
     public com.google.protobuf.ByteString
@@ -691,14 +548,7 @@ public final class MdBarDataBO_PRO {
     public static final int OPEN_FIELD_NUMBER = 8;
     private double open_;
     /**
-     * <code>optional double open = 8;</code>
-     * @return Whether the open field is set.
-     */
-    public boolean hasOpen() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional double open = 8;</code>
+     * <code>double open = 8;</code>
      * @return The open.
      */
     public double getOpen() {
@@ -708,14 +558,7 @@ public final class MdBarDataBO_PRO {
     public static final int HIGH_FIELD_NUMBER = 9;
     private double high_;
     /**
-     * <code>optional double high = 9;</code>
-     * @return Whether the high field is set.
-     */
-    public boolean hasHigh() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional double high = 9;</code>
+     * <code>double high = 9;</code>
      * @return The high.
      */
     public double getHigh() {
@@ -725,14 +568,7 @@ public final class MdBarDataBO_PRO {
     public static final int LOW_FIELD_NUMBER = 10;
     private double low_;
     /**
-     * <code>optional double low = 10;</code>
-     * @return Whether the low field is set.
-     */
-    public boolean hasLow() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional double low = 10;</code>
+     * <code>double low = 10;</code>
      * @return The low.
      */
     public double getLow() {
@@ -742,14 +578,7 @@ public final class MdBarDataBO_PRO {
     public static final int CLOSE_FIELD_NUMBER = 11;
     private double close_;
     /**
-     * <code>optional double close = 11;</code>
-     * @return Whether the close field is set.
-     */
-    public boolean hasClose() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional double close = 11;</code>
+     * <code>double close = 11;</code>
      * @return The close.
      */
     public double getClose() {
@@ -759,14 +588,7 @@ public final class MdBarDataBO_PRO {
     public static final int VOLUME_FIELD_NUMBER = 12;
     private long volume_;
     /**
-     * <code>optional sint64 volume = 12;</code>
-     * @return Whether the volume field is set.
-     */
-    public boolean hasVolume() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional sint64 volume = 12;</code>
+     * <code>sint64 volume = 12;</code>
      * @return The volume.
      */
     public long getVolume() {
@@ -776,14 +598,7 @@ public final class MdBarDataBO_PRO {
     public static final int CHANGE_FIELD_NUMBER = 13;
     private double change_;
     /**
-     * <code>optional double change = 13;</code>
-     * @return Whether the change field is set.
-     */
-    public boolean hasChange() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional double change = 13;</code>
+     * <code>double change = 13;</code>
      * @return The change.
      */
     public double getChange() {
@@ -793,14 +608,7 @@ public final class MdBarDataBO_PRO {
     public static final int PRE_CLOSE_FIELD_NUMBER = 14;
     private double preClose_;
     /**
-     * <code>optional double pre_close = 14;</code>
-     * @return Whether the preClose field is set.
-     */
-    public boolean hasPreClose() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional double pre_close = 14;</code>
+     * <code>double pre_close = 14;</code>
      * @return The preClose.
      */
     public double getPreClose() {
@@ -810,14 +618,7 @@ public final class MdBarDataBO_PRO {
     public static final int PCT_CHG_FIELD_NUMBER = 15;
     private double pctChg_;
     /**
-     * <code>optional double pct_chg = 15;</code>
-     * @return Whether the pctChg field is set.
-     */
-    public boolean hasPctChg() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional double pct_chg = 15;</code>
+     * <code>double pct_chg = 15;</code>
      * @return The pctChg.
      */
     public double getPctChg() {
@@ -827,14 +628,7 @@ public final class MdBarDataBO_PRO {
     public static final int AMOUNT_FIELD_NUMBER = 16;
     private double amount_;
     /**
-     * <code>optional double amount = 16;</code>
-     * @return Whether the amount field is set.
-     */
-    public boolean hasAmount() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional double amount = 16;</code>
+     * <code>double amount = 16;</code>
      * @return The amount.
      */
     public double getAmount() {
@@ -855,52 +649,52 @@ public final class MdBarDataBO_PRO {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getSecurityCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityCode_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (!getExchBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, exch_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (!getSecurityTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, securityType_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (!getDateBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, date_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (open_ != 0D) {
         output.writeDouble(8, open_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (high_ != 0D) {
         output.writeDouble(9, high_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (low_ != 0D) {
         output.writeDouble(10, low_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (close_ != 0D) {
         output.writeDouble(11, close_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (volume_ != 0L) {
         output.writeSInt64(12, volume_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (change_ != 0D) {
         output.writeDouble(13, change_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (preClose_ != 0D) {
         output.writeDouble(14, preClose_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (pctChg_ != 0D) {
         output.writeDouble(15, pctChg_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (amount_ != 0D) {
         output.writeDouble(16, amount_);
       }
       unknownFields.writeTo(output);
@@ -912,61 +706,61 @@ public final class MdBarDataBO_PRO {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getSecurityCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityCode_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (!getExchBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, exch_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (!getSecurityTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, securityType_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (!getDateBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, date_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (open_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, open_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (high_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(9, high_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (low_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(10, low_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (close_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(11, close_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (volume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(12, volume_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (change_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(13, change_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (preClose_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(14, preClose_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (pctChg_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(15, pctChg_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (amount_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(16, amount_);
       }
@@ -985,94 +779,46 @@ public final class MdBarDataBO_PRO {
       }
       com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO other = (com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO) obj;
 
-      if (hasUuid() != other.hasUuid()) return false;
-      if (hasUuid()) {
-        if (!getUuid()
-            .equals(other.getUuid())) return false;
-      }
-      if (hasBoid() != other.hasBoid()) return false;
-      if (hasBoid()) {
-        if (getBoid()
-            != other.getBoid()) return false;
-      }
-      if (hasDestination() != other.hasDestination()) return false;
-      if (hasDestination()) {
-        if (!getDestination()
-            .equals(other.getDestination())) return false;
-      }
-      if (hasSecurityCode() != other.hasSecurityCode()) return false;
-      if (hasSecurityCode()) {
-        if (!getSecurityCode()
-            .equals(other.getSecurityCode())) return false;
-      }
-      if (hasExch() != other.hasExch()) return false;
-      if (hasExch()) {
-        if (!getExch()
-            .equals(other.getExch())) return false;
-      }
-      if (hasSecurityType() != other.hasSecurityType()) return false;
-      if (hasSecurityType()) {
-        if (!getSecurityType()
-            .equals(other.getSecurityType())) return false;
-      }
-      if (hasDate() != other.hasDate()) return false;
-      if (hasDate()) {
-        if (!getDate()
-            .equals(other.getDate())) return false;
-      }
-      if (hasOpen() != other.hasOpen()) return false;
-      if (hasOpen()) {
-        if (java.lang.Double.doubleToLongBits(getOpen())
-            != java.lang.Double.doubleToLongBits(
-                other.getOpen())) return false;
-      }
-      if (hasHigh() != other.hasHigh()) return false;
-      if (hasHigh()) {
-        if (java.lang.Double.doubleToLongBits(getHigh())
-            != java.lang.Double.doubleToLongBits(
-                other.getHigh())) return false;
-      }
-      if (hasLow() != other.hasLow()) return false;
-      if (hasLow()) {
-        if (java.lang.Double.doubleToLongBits(getLow())
-            != java.lang.Double.doubleToLongBits(
-                other.getLow())) return false;
-      }
-      if (hasClose() != other.hasClose()) return false;
-      if (hasClose()) {
-        if (java.lang.Double.doubleToLongBits(getClose())
-            != java.lang.Double.doubleToLongBits(
-                other.getClose())) return false;
-      }
-      if (hasVolume() != other.hasVolume()) return false;
-      if (hasVolume()) {
-        if (getVolume()
-            != other.getVolume()) return false;
-      }
-      if (hasChange() != other.hasChange()) return false;
-      if (hasChange()) {
-        if (java.lang.Double.doubleToLongBits(getChange())
-            != java.lang.Double.doubleToLongBits(
-                other.getChange())) return false;
-      }
-      if (hasPreClose() != other.hasPreClose()) return false;
-      if (hasPreClose()) {
-        if (java.lang.Double.doubleToLongBits(getPreClose())
-            != java.lang.Double.doubleToLongBits(
-                other.getPreClose())) return false;
-      }
-      if (hasPctChg() != other.hasPctChg()) return false;
-      if (hasPctChg()) {
-        if (java.lang.Double.doubleToLongBits(getPctChg())
-            != java.lang.Double.doubleToLongBits(
-                other.getPctChg())) return false;
-      }
-      if (hasAmount() != other.hasAmount()) return false;
-      if (hasAmount()) {
-        if (java.lang.Double.doubleToLongBits(getAmount())
-            != java.lang.Double.doubleToLongBits(
-                other.getAmount())) return false;
-      }
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (getBoid()
+          != other.getBoid()) return false;
+      if (!getDestination()
+          .equals(other.getDestination())) return false;
+      if (!getSecurityCode()
+          .equals(other.getSecurityCode())) return false;
+      if (!getExch()
+          .equals(other.getExch())) return false;
+      if (!getSecurityType()
+          .equals(other.getSecurityType())) return false;
+      if (!getDate()
+          .equals(other.getDate())) return false;
+      if (java.lang.Double.doubleToLongBits(getOpen())
+          != java.lang.Double.doubleToLongBits(
+              other.getOpen())) return false;
+      if (java.lang.Double.doubleToLongBits(getHigh())
+          != java.lang.Double.doubleToLongBits(
+              other.getHigh())) return false;
+      if (java.lang.Double.doubleToLongBits(getLow())
+          != java.lang.Double.doubleToLongBits(
+              other.getLow())) return false;
+      if (java.lang.Double.doubleToLongBits(getClose())
+          != java.lang.Double.doubleToLongBits(
+              other.getClose())) return false;
+      if (getVolume()
+          != other.getVolume()) return false;
+      if (java.lang.Double.doubleToLongBits(getChange())
+          != java.lang.Double.doubleToLongBits(
+              other.getChange())) return false;
+      if (java.lang.Double.doubleToLongBits(getPreClose())
+          != java.lang.Double.doubleToLongBits(
+              other.getPreClose())) return false;
+      if (java.lang.Double.doubleToLongBits(getPctChg())
+          != java.lang.Double.doubleToLongBits(
+              other.getPctChg())) return false;
+      if (java.lang.Double.doubleToLongBits(getAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getAmount())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1084,80 +830,48 @@ public final class MdBarDataBO_PRO {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUuid()) {
-        hash = (37 * hash) + UUID_FIELD_NUMBER;
-        hash = (53 * hash) + getUuid().hashCode();
-      }
-      if (hasBoid()) {
-        hash = (37 * hash) + BOID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getBoid());
-      }
-      if (hasDestination()) {
-        hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-        hash = (53 * hash) + getDestination().hashCode();
-      }
-      if (hasSecurityCode()) {
-        hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
-        hash = (53 * hash) + getSecurityCode().hashCode();
-      }
-      if (hasExch()) {
-        hash = (37 * hash) + EXCH_FIELD_NUMBER;
-        hash = (53 * hash) + getExch().hashCode();
-      }
-      if (hasSecurityType()) {
-        hash = (37 * hash) + SECURITY_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getSecurityType().hashCode();
-      }
-      if (hasDate()) {
-        hash = (37 * hash) + DATE_FIELD_NUMBER;
-        hash = (53 * hash) + getDate().hashCode();
-      }
-      if (hasOpen()) {
-        hash = (37 * hash) + OPEN_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getOpen()));
-      }
-      if (hasHigh()) {
-        hash = (37 * hash) + HIGH_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getHigh()));
-      }
-      if (hasLow()) {
-        hash = (37 * hash) + LOW_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getLow()));
-      }
-      if (hasClose()) {
-        hash = (37 * hash) + CLOSE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getClose()));
-      }
-      if (hasVolume()) {
-        hash = (37 * hash) + VOLUME_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getVolume());
-      }
-      if (hasChange()) {
-        hash = (37 * hash) + CHANGE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getChange()));
-      }
-      if (hasPreClose()) {
-        hash = (37 * hash) + PRE_CLOSE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getPreClose()));
-      }
-      if (hasPctChg()) {
-        hash = (37 * hash) + PCT_CHG_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getPctChg()));
-      }
-      if (hasAmount()) {
-        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAmount()));
-      }
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + BOID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBoid());
+      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDestination().hashCode();
+      hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityCode().hashCode();
+      hash = (37 * hash) + EXCH_FIELD_NUMBER;
+      hash = (53 * hash) + getExch().hashCode();
+      hash = (37 * hash) + SECURITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityType().hashCode();
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
+      hash = (37 * hash) + OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getOpen()));
+      hash = (37 * hash) + HIGH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getHigh()));
+      hash = (37 * hash) + LOW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getLow()));
+      hash = (37 * hash) + CLOSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getClose()));
+      hash = (37 * hash) + VOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVolume());
+      hash = (37 * hash) + CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getChange()));
+      hash = (37 * hash) + PRE_CLOSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPreClose()));
+      hash = (37 * hash) + PCT_CHG_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPctChg()));
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAmount()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1292,37 +1006,37 @@ public final class MdBarDataBO_PRO {
       public Builder clear() {
         super.clear();
         uuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
+
         boid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
+
         destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+
         securityCode_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+
         exch_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
+
         securityType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
+
         date_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
+
         open_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000080);
+
         high_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000100);
+
         low_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000200);
+
         close_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000400);
+
         volume_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000800);
+
         change_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00001000);
+
         preClose_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00002000);
+
         pctChg_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00004000);
+
         amount_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00008000);
+
         return this;
       }
 
@@ -1349,73 +1063,22 @@ public final class MdBarDataBO_PRO {
       @java.lang.Override
       public com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO buildPartial() {
         com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO result = new com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
         result.uuid_ = uuid_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.boid_ = boid_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
+        result.boid_ = boid_;
         result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          to_bitField0_ |= 0x00000008;
-        }
         result.securityCode_ = securityCode_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          to_bitField0_ |= 0x00000010;
-        }
         result.exch_ = exch_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          to_bitField0_ |= 0x00000020;
-        }
         result.securityType_ = securityType_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          to_bitField0_ |= 0x00000040;
-        }
         result.date_ = date_;
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.open_ = open_;
-          to_bitField0_ |= 0x00000080;
-        }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.high_ = high_;
-          to_bitField0_ |= 0x00000100;
-        }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.low_ = low_;
-          to_bitField0_ |= 0x00000200;
-        }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.close_ = close_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.volume_ = volume_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.change_ = change_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.preClose_ = preClose_;
-          to_bitField0_ |= 0x00002000;
-        }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.pctChg_ = pctChg_;
-          to_bitField0_ |= 0x00004000;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.amount_ = amount_;
-          to_bitField0_ |= 0x00008000;
-        }
-        result.bitField0_ = to_bitField0_;
+        result.open_ = open_;
+        result.high_ = high_;
+        result.low_ = low_;
+        result.close_ = close_;
+        result.volume_ = volume_;
+        result.change_ = change_;
+        result.preClose_ = preClose_;
+        result.pctChg_ = pctChg_;
+        result.amount_ = amount_;
         onBuilt();
         return result;
       }
@@ -1464,64 +1127,58 @@ public final class MdBarDataBO_PRO {
 
       public Builder mergeFrom(com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO other) {
         if (other == com.purefun.fams.md.pro.MdBarDataBO_PRO.MdBarDataBO.getDefaultInstance()) return this;
-        if (other.hasUuid()) {
-          bitField0_ |= 0x00000001;
+        if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           onChanged();
         }
-        if (other.hasBoid()) {
+        if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
         }
-        if (other.hasDestination()) {
-          bitField0_ |= 0x00000004;
+        if (!other.getDestination().isEmpty()) {
           destination_ = other.destination_;
           onChanged();
         }
-        if (other.hasSecurityCode()) {
-          bitField0_ |= 0x00000008;
+        if (!other.getSecurityCode().isEmpty()) {
           securityCode_ = other.securityCode_;
           onChanged();
         }
-        if (other.hasExch()) {
-          bitField0_ |= 0x00000010;
+        if (!other.getExch().isEmpty()) {
           exch_ = other.exch_;
           onChanged();
         }
-        if (other.hasSecurityType()) {
-          bitField0_ |= 0x00000020;
+        if (!other.getSecurityType().isEmpty()) {
           securityType_ = other.securityType_;
           onChanged();
         }
-        if (other.hasDate()) {
-          bitField0_ |= 0x00000040;
+        if (!other.getDate().isEmpty()) {
           date_ = other.date_;
           onChanged();
         }
-        if (other.hasOpen()) {
+        if (other.getOpen() != 0D) {
           setOpen(other.getOpen());
         }
-        if (other.hasHigh()) {
+        if (other.getHigh() != 0D) {
           setHigh(other.getHigh());
         }
-        if (other.hasLow()) {
+        if (other.getLow() != 0D) {
           setLow(other.getLow());
         }
-        if (other.hasClose()) {
+        if (other.getClose() != 0D) {
           setClose(other.getClose());
         }
-        if (other.hasVolume()) {
+        if (other.getVolume() != 0L) {
           setVolume(other.getVolume());
         }
-        if (other.hasChange()) {
+        if (other.getChange() != 0D) {
           setChange(other.getChange());
         }
-        if (other.hasPreClose()) {
+        if (other.getPreClose() != 0D) {
           setPreClose(other.getPreClose());
         }
-        if (other.hasPctChg()) {
+        if (other.getPctChg() != 0D) {
           setPctChg(other.getPctChg());
         }
-        if (other.hasAmount()) {
+        if (other.getAmount() != 0D) {
           setAmount(other.getAmount());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1552,18 +1209,10 @@ public final class MdBarDataBO_PRO {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object uuid_ = "";
       /**
-       * <code>optional string uuid = 1;</code>
-       * @return Whether the uuid field is set.
-       */
-      public boolean hasUuid() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The uuid.
        */
       public java.lang.String getUuid() {
@@ -1572,16 +1221,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            uuid_ = s;
-          }
+          uuid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
@@ -1598,7 +1245,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The uuid to set.
        * @return This builder for chaining.
        */
@@ -1607,23 +1254,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
         uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The bytes for uuid to set.
        * @return This builder for chaining.
        */
@@ -1632,7 +1279,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+        
         uuid_ = value;
         onChanged();
         return this;
@@ -1640,36 +1288,29 @@ public final class MdBarDataBO_PRO {
 
       private long boid_ ;
       /**
-       * <code>optional sint64 boid = 2;</code>
-       * @return Whether the boid field is set.
-       */
-      public boolean hasBoid() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return The boid.
        */
       public long getBoid() {
         return boid_;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @param value The boid to set.
        * @return This builder for chaining.
        */
       public Builder setBoid(long value) {
-        bitField0_ |= 0x00000002;
+        
         boid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBoid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         boid_ = 0L;
         onChanged();
         return this;
@@ -1677,14 +1318,7 @@ public final class MdBarDataBO_PRO {
 
       private java.lang.Object destination_ = "";
       /**
-       * <code>optional string destination = 3;</code>
-       * @return Whether the destination field is set.
-       */
-      public boolean hasDestination() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The destination.
        */
       public java.lang.String getDestination() {
@@ -1693,16 +1327,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            destination_ = s;
-          }
+          destination_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The bytes for destination.
        */
       public com.google.protobuf.ByteString
@@ -1719,7 +1351,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The destination to set.
        * @return This builder for chaining.
        */
@@ -1728,23 +1360,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
         destination_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDestination() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The bytes for destination to set.
        * @return This builder for chaining.
        */
@@ -1753,7 +1385,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+        
         destination_ = value;
         onChanged();
         return this;
@@ -1761,14 +1394,7 @@ public final class MdBarDataBO_PRO {
 
       private java.lang.Object securityCode_ = "";
       /**
-       * <code>optional string security_code = 4;</code>
-       * @return Whether the securityCode field is set.
-       */
-      public boolean hasSecurityCode() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional string security_code = 4;</code>
+       * <code>string security_code = 4;</code>
        * @return The securityCode.
        */
       public java.lang.String getSecurityCode() {
@@ -1777,16 +1403,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            securityCode_ = s;
-          }
+          securityCode_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string security_code = 4;</code>
+       * <code>string security_code = 4;</code>
        * @return The bytes for securityCode.
        */
       public com.google.protobuf.ByteString
@@ -1803,7 +1427,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string security_code = 4;</code>
+       * <code>string security_code = 4;</code>
        * @param value The securityCode to set.
        * @return This builder for chaining.
        */
@@ -1812,23 +1436,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
         securityCode_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_code = 4;</code>
+       * <code>string security_code = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSecurityCode() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         securityCode_ = getDefaultInstance().getSecurityCode();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_code = 4;</code>
+       * <code>string security_code = 4;</code>
        * @param value The bytes for securityCode to set.
        * @return This builder for chaining.
        */
@@ -1837,7 +1461,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+        
         securityCode_ = value;
         onChanged();
         return this;
@@ -1845,14 +1470,7 @@ public final class MdBarDataBO_PRO {
 
       private java.lang.Object exch_ = "";
       /**
-       * <code>optional string exch = 5;</code>
-       * @return Whether the exch field is set.
-       */
-      public boolean hasExch() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional string exch = 5;</code>
+       * <code>string exch = 5;</code>
        * @return The exch.
        */
       public java.lang.String getExch() {
@@ -1861,16 +1479,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            exch_ = s;
-          }
+          exch_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string exch = 5;</code>
+       * <code>string exch = 5;</code>
        * @return The bytes for exch.
        */
       public com.google.protobuf.ByteString
@@ -1887,7 +1503,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string exch = 5;</code>
+       * <code>string exch = 5;</code>
        * @param value The exch to set.
        * @return This builder for chaining.
        */
@@ -1896,23 +1512,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  
         exch_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string exch = 5;</code>
+       * <code>string exch = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearExch() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         exch_ = getDefaultInstance().getExch();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string exch = 5;</code>
+       * <code>string exch = 5;</code>
        * @param value The bytes for exch to set.
        * @return This builder for chaining.
        */
@@ -1921,7 +1537,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  checkByteStringIsUtf8(value);
+        
         exch_ = value;
         onChanged();
         return this;
@@ -1929,14 +1546,7 @@ public final class MdBarDataBO_PRO {
 
       private java.lang.Object securityType_ = "";
       /**
-       * <code>optional string security_type = 6;</code>
-       * @return Whether the securityType field is set.
-       */
-      public boolean hasSecurityType() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>optional string security_type = 6;</code>
+       * <code>string security_type = 6;</code>
        * @return The securityType.
        */
       public java.lang.String getSecurityType() {
@@ -1945,16 +1555,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            securityType_ = s;
-          }
+          securityType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string security_type = 6;</code>
+       * <code>string security_type = 6;</code>
        * @return The bytes for securityType.
        */
       public com.google.protobuf.ByteString
@@ -1971,7 +1579,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string security_type = 6;</code>
+       * <code>string security_type = 6;</code>
        * @param value The securityType to set.
        * @return This builder for chaining.
        */
@@ -1980,23 +1588,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  
         securityType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_type = 6;</code>
+       * <code>string security_type = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSecurityType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        
         securityType_ = getDefaultInstance().getSecurityType();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string security_type = 6;</code>
+       * <code>string security_type = 6;</code>
        * @param value The bytes for securityType to set.
        * @return This builder for chaining.
        */
@@ -2005,7 +1613,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  checkByteStringIsUtf8(value);
+        
         securityType_ = value;
         onChanged();
         return this;
@@ -2013,14 +1622,7 @@ public final class MdBarDataBO_PRO {
 
       private java.lang.Object date_ = "";
       /**
-       * <code>optional string date = 7;</code>
-       * @return Whether the date field is set.
-       */
-      public boolean hasDate() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>optional string date = 7;</code>
+       * <code>string date = 7;</code>
        * @return The date.
        */
       public java.lang.String getDate() {
@@ -2029,16 +1631,14 @@ public final class MdBarDataBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            date_ = s;
-          }
+          date_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string date = 7;</code>
+       * <code>string date = 7;</code>
        * @return The bytes for date.
        */
       public com.google.protobuf.ByteString
@@ -2055,7 +1655,7 @@ public final class MdBarDataBO_PRO {
         }
       }
       /**
-       * <code>optional string date = 7;</code>
+       * <code>string date = 7;</code>
        * @param value The date to set.
        * @return This builder for chaining.
        */
@@ -2064,23 +1664,23 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  
         date_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string date = 7;</code>
+       * <code>string date = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearDate() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        
         date_ = getDefaultInstance().getDate();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string date = 7;</code>
+       * <code>string date = 7;</code>
        * @param value The bytes for date to set.
        * @return This builder for chaining.
        */
@@ -2089,7 +1689,8 @@ public final class MdBarDataBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  checkByteStringIsUtf8(value);
+        
         date_ = value;
         onChanged();
         return this;
@@ -2097,36 +1698,29 @@ public final class MdBarDataBO_PRO {
 
       private double open_ ;
       /**
-       * <code>optional double open = 8;</code>
-       * @return Whether the open field is set.
-       */
-      public boolean hasOpen() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>optional double open = 8;</code>
+       * <code>double open = 8;</code>
        * @return The open.
        */
       public double getOpen() {
         return open_;
       }
       /**
-       * <code>optional double open = 8;</code>
+       * <code>double open = 8;</code>
        * @param value The open to set.
        * @return This builder for chaining.
        */
       public Builder setOpen(double value) {
-        bitField0_ |= 0x00000080;
+        
         open_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double open = 8;</code>
+       * <code>double open = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpen() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        
         open_ = 0D;
         onChanged();
         return this;
@@ -2134,36 +1728,29 @@ public final class MdBarDataBO_PRO {
 
       private double high_ ;
       /**
-       * <code>optional double high = 9;</code>
-       * @return Whether the high field is set.
-       */
-      public boolean hasHigh() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional double high = 9;</code>
+       * <code>double high = 9;</code>
        * @return The high.
        */
       public double getHigh() {
         return high_;
       }
       /**
-       * <code>optional double high = 9;</code>
+       * <code>double high = 9;</code>
        * @param value The high to set.
        * @return This builder for chaining.
        */
       public Builder setHigh(double value) {
-        bitField0_ |= 0x00000100;
+        
         high_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double high = 9;</code>
+       * <code>double high = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearHigh() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        
         high_ = 0D;
         onChanged();
         return this;
@@ -2171,36 +1758,29 @@ public final class MdBarDataBO_PRO {
 
       private double low_ ;
       /**
-       * <code>optional double low = 10;</code>
-       * @return Whether the low field is set.
-       */
-      public boolean hasLow() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional double low = 10;</code>
+       * <code>double low = 10;</code>
        * @return The low.
        */
       public double getLow() {
         return low_;
       }
       /**
-       * <code>optional double low = 10;</code>
+       * <code>double low = 10;</code>
        * @param value The low to set.
        * @return This builder for chaining.
        */
       public Builder setLow(double value) {
-        bitField0_ |= 0x00000200;
+        
         low_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double low = 10;</code>
+       * <code>double low = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearLow() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        
         low_ = 0D;
         onChanged();
         return this;
@@ -2208,36 +1788,29 @@ public final class MdBarDataBO_PRO {
 
       private double close_ ;
       /**
-       * <code>optional double close = 11;</code>
-       * @return Whether the close field is set.
-       */
-      public boolean hasClose() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional double close = 11;</code>
+       * <code>double close = 11;</code>
        * @return The close.
        */
       public double getClose() {
         return close_;
       }
       /**
-       * <code>optional double close = 11;</code>
+       * <code>double close = 11;</code>
        * @param value The close to set.
        * @return This builder for chaining.
        */
       public Builder setClose(double value) {
-        bitField0_ |= 0x00000400;
+        
         close_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double close = 11;</code>
+       * <code>double close = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearClose() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        
         close_ = 0D;
         onChanged();
         return this;
@@ -2245,36 +1818,29 @@ public final class MdBarDataBO_PRO {
 
       private long volume_ ;
       /**
-       * <code>optional sint64 volume = 12;</code>
-       * @return Whether the volume field is set.
-       */
-      public boolean hasVolume() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional sint64 volume = 12;</code>
+       * <code>sint64 volume = 12;</code>
        * @return The volume.
        */
       public long getVolume() {
         return volume_;
       }
       /**
-       * <code>optional sint64 volume = 12;</code>
+       * <code>sint64 volume = 12;</code>
        * @param value The volume to set.
        * @return This builder for chaining.
        */
       public Builder setVolume(long value) {
-        bitField0_ |= 0x00000800;
+        
         volume_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 volume = 12;</code>
+       * <code>sint64 volume = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearVolume() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        
         volume_ = 0L;
         onChanged();
         return this;
@@ -2282,36 +1848,29 @@ public final class MdBarDataBO_PRO {
 
       private double change_ ;
       /**
-       * <code>optional double change = 13;</code>
-       * @return Whether the change field is set.
-       */
-      public boolean hasChange() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional double change = 13;</code>
+       * <code>double change = 13;</code>
        * @return The change.
        */
       public double getChange() {
         return change_;
       }
       /**
-       * <code>optional double change = 13;</code>
+       * <code>double change = 13;</code>
        * @param value The change to set.
        * @return This builder for chaining.
        */
       public Builder setChange(double value) {
-        bitField0_ |= 0x00001000;
+        
         change_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double change = 13;</code>
+       * <code>double change = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearChange() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        
         change_ = 0D;
         onChanged();
         return this;
@@ -2319,36 +1878,29 @@ public final class MdBarDataBO_PRO {
 
       private double preClose_ ;
       /**
-       * <code>optional double pre_close = 14;</code>
-       * @return Whether the preClose field is set.
-       */
-      public boolean hasPreClose() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional double pre_close = 14;</code>
+       * <code>double pre_close = 14;</code>
        * @return The preClose.
        */
       public double getPreClose() {
         return preClose_;
       }
       /**
-       * <code>optional double pre_close = 14;</code>
+       * <code>double pre_close = 14;</code>
        * @param value The preClose to set.
        * @return This builder for chaining.
        */
       public Builder setPreClose(double value) {
-        bitField0_ |= 0x00002000;
+        
         preClose_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double pre_close = 14;</code>
+       * <code>double pre_close = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreClose() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        
         preClose_ = 0D;
         onChanged();
         return this;
@@ -2356,36 +1908,29 @@ public final class MdBarDataBO_PRO {
 
       private double pctChg_ ;
       /**
-       * <code>optional double pct_chg = 15;</code>
-       * @return Whether the pctChg field is set.
-       */
-      public boolean hasPctChg() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional double pct_chg = 15;</code>
+       * <code>double pct_chg = 15;</code>
        * @return The pctChg.
        */
       public double getPctChg() {
         return pctChg_;
       }
       /**
-       * <code>optional double pct_chg = 15;</code>
+       * <code>double pct_chg = 15;</code>
        * @param value The pctChg to set.
        * @return This builder for chaining.
        */
       public Builder setPctChg(double value) {
-        bitField0_ |= 0x00004000;
+        
         pctChg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double pct_chg = 15;</code>
+       * <code>double pct_chg = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearPctChg() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        
         pctChg_ = 0D;
         onChanged();
         return this;
@@ -2393,36 +1938,29 @@ public final class MdBarDataBO_PRO {
 
       private double amount_ ;
       /**
-       * <code>optional double amount = 16;</code>
-       * @return Whether the amount field is set.
-       */
-      public boolean hasAmount() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional double amount = 16;</code>
+       * <code>double amount = 16;</code>
        * @return The amount.
        */
       public double getAmount() {
         return amount_;
       }
       /**
-       * <code>optional double amount = 16;</code>
+       * <code>double amount = 16;</code>
        * @param value The amount to set.
        * @return This builder for chaining.
        */
       public Builder setAmount(double value) {
-        bitField0_ |= 0x00008000;
+        
         amount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional double amount = 16;</code>
+       * <code>double amount = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearAmount() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        
         amount_ = 0D;
         onChanged();
         return this;
@@ -2453,7 +1991,7 @@ public final class MdBarDataBO_PRO {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<MdBarDataBO>
+    private static final com.google.protobuf.Parser<MdBarDataBO>
         PARSER = new com.google.protobuf.AbstractParser<MdBarDataBO>() {
       @java.lang.Override
       public MdBarDataBO parsePartialFrom(
@@ -2494,21 +2032,19 @@ public final class MdBarDataBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MdBarDataBO.proto\032\031google/protobuf/any" +
-      ".proto\"\224\002\n\013MdBarDataBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004" +
-      "boid\030\002 \001(\022\022\023\n\013destination\030\003 \001(\t\022\025\n\rsecur" +
-      "ity_code\030\004 \001(\t\022\014\n\004exch\030\005 \001(\t\022\025\n\rsecurity" +
-      "_type\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022\014\n\004open\030\010 \001(\001\022" +
-      "\014\n\004high\030\t \001(\001\022\013\n\003low\030\n \001(\001\022\r\n\005close\030\013 \001(" +
-      "\001\022\016\n\006volume\030\014 \001(\022\022\016\n\006change\030\r \001(\001\022\021\n\tpre" +
-      "_close\030\016 \001(\001\022\017\n\007pct_chg\030\017 \001(\001\022\016\n\006amount\030" +
-      "\020 \001(\001B*\n\027com.purefun.fams.md.proB\017MdBarD" +
-      "ataBO_PRO"
+      "\n\021MdBarDataBO.proto\"\224\002\n\013MdBarDataBO\022\014\n\004u" +
+      "uid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022\023\n\013destination\030\003" +
+      " \001(\t\022\025\n\rsecurity_code\030\004 \001(\t\022\014\n\004exch\030\005 \001(" +
+      "\t\022\025\n\rsecurity_type\030\006 \001(\t\022\014\n\004date\030\007 \001(\t\022\014" +
+      "\n\004open\030\010 \001(\001\022\014\n\004high\030\t \001(\001\022\013\n\003low\030\n \001(\001\022" +
+      "\r\n\005close\030\013 \001(\001\022\016\n\006volume\030\014 \001(\022\022\016\n\006change" +
+      "\030\r \001(\001\022\021\n\tpre_close\030\016 \001(\001\022\017\n\007pct_chg\030\017 \001" +
+      "(\001\022\016\n\006amount\030\020 \001(\001B*\n\027com.purefun.fams.m" +
+      "d.proB\017MdBarDataBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_MdBarDataBO_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2516,7 +2052,6 @@ public final class MdBarDataBO_PRO {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MdBarDataBO_descriptor,
         new java.lang.String[] { "Uuid", "Boid", "Destination", "SecurityCode", "Exch", "SecurityType", "Date", "Open", "High", "Low", "Close", "Volume", "Change", "PreClose", "PctChg", "Amount", });
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

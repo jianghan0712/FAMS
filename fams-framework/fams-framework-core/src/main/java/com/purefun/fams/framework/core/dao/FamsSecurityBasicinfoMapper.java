@@ -1,5 +1,7 @@
 package com.purefun.fams.framework.core.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo;
@@ -17,4 +19,6 @@ public interface FamsSecurityBasicinfoMapper {
 	int updateByPrimaryKeySelective(FamsSecurityBasicinfo record);
 
 	int updateByPrimaryKey(FamsSecurityBasicinfo record);
+
+	List<FamsSecurityBasicinfo> selectAll();
 }

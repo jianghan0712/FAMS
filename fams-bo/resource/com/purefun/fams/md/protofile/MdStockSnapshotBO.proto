@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_outer_classname = "MdStockSnapshotBO_PRO";
+option java_package = "com.purefun.fams.md.pro";
+
+message MdStockSnapshotBO {
+     string uuid = 1;
+     sint64 boid = 2;
+     string destination = 3;
+    string security_code = 4;
+    string exch = 5;
+    string security_type = 6;
+    string cnName = 7;
+    string dateTime = 8;
+    double open = 9;
+    double preClose = 10;
+    double lastPrice = 11;
+    double high = 12;
+    double low = 13;
+    double change = 14;
+    double changePer = 15;
+    string buyPriceList = 16;
+    string buyQtyList = 17;
+    string sellPriceList = 18;
+    string sellQtyList = 19;
+    sint64 totalVolume = 20;
+    double totalAmont = 21;
+}

@@ -19,74 +19,49 @@ public final class TestBO_PRO {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    boolean hasUuid();
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     java.lang.String getUuid();
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     com.google.protobuf.ByteString
         getUuidBytes();
 
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    boolean hasBoid();
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     long getBoid();
 
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    boolean hasDestination();
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     java.lang.String getDestination();
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     com.google.protobuf.ByteString
         getDestinationBytes();
 
     /**
-     * <code>optional string username = 4;</code>
-     * @return Whether the username field is set.
-     */
-    boolean hasUsername();
-    /**
-     * <code>optional string username = 4;</code>
+     * <code>string username = 4;</code>
      * @return The username.
      */
     java.lang.String getUsername();
     /**
-     * <code>optional string username = 4;</code>
+     * <code>string username = 4;</code>
      * @return The bytes for username.
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
     /**
-     * <code>optional int32 age = 5;</code>
-     * @return Whether the age field is set.
-     */
-    boolean hasAge();
-    /**
-     * <code>optional int32 age = 5;</code>
+     * <code>sint32 age = 5;</code>
      * @return The age.
      */
     int getAge();
@@ -129,7 +104,6 @@ public final class TestBO_PRO {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -141,31 +115,31 @@ public final class TestBO_PRO {
               done = true;
               break;
             case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              uuid_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uuid_ = s;
               break;
             }
             case 16: {
-              bitField0_ |= 0x00000002;
+
               boid_ = input.readSInt64();
               break;
             }
             case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              destination_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              destination_ = s;
               break;
             }
             case 34: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000008;
-              username_ = bs;
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000010;
-              age_ = input.readInt32();
+
+              age_ = input.readSInt32();
               break;
             }
             default: {
@@ -200,18 +174,10 @@ public final class TestBO_PRO {
               com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO.class, com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO.Builder.class);
     }
 
-    private int bitField0_;
     public static final int UUID_FIELD_NUMBER = 1;
     private volatile java.lang.Object uuid_;
     /**
-     * <code>optional string uuid = 1;</code>
-     * @return Whether the uuid field is set.
-     */
-    public boolean hasUuid() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The uuid.
      */
     public java.lang.String getUuid() {
@@ -222,14 +188,12 @@ public final class TestBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          uuid_ = s;
-        }
+        uuid_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string uuid = 1;</code>
+     * <code>string uuid = 1;</code>
      * @return The bytes for uuid.
      */
     public com.google.protobuf.ByteString
@@ -249,14 +213,7 @@ public final class TestBO_PRO {
     public static final int BOID_FIELD_NUMBER = 2;
     private long boid_;
     /**
-     * <code>optional sint64 boid = 2;</code>
-     * @return Whether the boid field is set.
-     */
-    public boolean hasBoid() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional sint64 boid = 2;</code>
+     * <code>sint64 boid = 2;</code>
      * @return The boid.
      */
     public long getBoid() {
@@ -266,14 +223,7 @@ public final class TestBO_PRO {
     public static final int DESTINATION_FIELD_NUMBER = 3;
     private volatile java.lang.Object destination_;
     /**
-     * <code>optional string destination = 3;</code>
-     * @return Whether the destination field is set.
-     */
-    public boolean hasDestination() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The destination.
      */
     public java.lang.String getDestination() {
@@ -284,14 +234,12 @@ public final class TestBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          destination_ = s;
-        }
+        destination_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string destination = 3;</code>
+     * <code>string destination = 3;</code>
      * @return The bytes for destination.
      */
     public com.google.protobuf.ByteString
@@ -311,14 +259,7 @@ public final class TestBO_PRO {
     public static final int USERNAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object username_;
     /**
-     * <code>optional string username = 4;</code>
-     * @return Whether the username field is set.
-     */
-    public boolean hasUsername() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional string username = 4;</code>
+     * <code>string username = 4;</code>
      * @return The username.
      */
     public java.lang.String getUsername() {
@@ -329,14 +270,12 @@ public final class TestBO_PRO {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          username_ = s;
-        }
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string username = 4;</code>
+     * <code>string username = 4;</code>
      * @return The bytes for username.
      */
     public com.google.protobuf.ByteString
@@ -356,14 +295,7 @@ public final class TestBO_PRO {
     public static final int AGE_FIELD_NUMBER = 5;
     private int age_;
     /**
-     * <code>optional int32 age = 5;</code>
-     * @return Whether the age field is set.
-     */
-    public boolean hasAge() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional int32 age = 5;</code>
+     * <code>sint32 age = 5;</code>
      * @return The age.
      */
     public int getAge() {
@@ -384,20 +316,20 @@ public final class TestBO_PRO {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getUsernameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, username_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeInt32(5, age_);
+      if (age_ != 0) {
+        output.writeSInt32(5, age_);
       }
       unknownFields.writeTo(output);
     }
@@ -408,22 +340,22 @@ public final class TestBO_PRO {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (!getUuidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uuid_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (!getDestinationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (!getUsernameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, username_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (age_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, age_);
+          .computeSInt32Size(5, age_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -440,31 +372,16 @@ public final class TestBO_PRO {
       }
       com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO other = (com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO) obj;
 
-      if (hasUuid() != other.hasUuid()) return false;
-      if (hasUuid()) {
-        if (!getUuid()
-            .equals(other.getUuid())) return false;
-      }
-      if (hasBoid() != other.hasBoid()) return false;
-      if (hasBoid()) {
-        if (getBoid()
-            != other.getBoid()) return false;
-      }
-      if (hasDestination() != other.hasDestination()) return false;
-      if (hasDestination()) {
-        if (!getDestination()
-            .equals(other.getDestination())) return false;
-      }
-      if (hasUsername() != other.hasUsername()) return false;
-      if (hasUsername()) {
-        if (!getUsername()
-            .equals(other.getUsername())) return false;
-      }
-      if (hasAge() != other.hasAge()) return false;
-      if (hasAge()) {
-        if (getAge()
-            != other.getAge()) return false;
-      }
+      if (!getUuid()
+          .equals(other.getUuid())) return false;
+      if (getBoid()
+          != other.getBoid()) return false;
+      if (!getDestination()
+          .equals(other.getDestination())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
+      if (getAge()
+          != other.getAge()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -476,27 +393,17 @@ public final class TestBO_PRO {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUuid()) {
-        hash = (37 * hash) + UUID_FIELD_NUMBER;
-        hash = (53 * hash) + getUuid().hashCode();
-      }
-      if (hasBoid()) {
-        hash = (37 * hash) + BOID_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getBoid());
-      }
-      if (hasDestination()) {
-        hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-        hash = (53 * hash) + getDestination().hashCode();
-      }
-      if (hasUsername()) {
-        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getUsername().hashCode();
-      }
-      if (hasAge()) {
-        hash = (37 * hash) + AGE_FIELD_NUMBER;
-        hash = (53 * hash) + getAge();
-      }
+      hash = (37 * hash) + UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getUuid().hashCode();
+      hash = (37 * hash) + BOID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBoid());
+      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDestination().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + AGE_FIELD_NUMBER;
+      hash = (53 * hash) + getAge();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -631,15 +538,15 @@ public final class TestBO_PRO {
       public Builder clear() {
         super.clear();
         uuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
+
         boid_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
+
         destination_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
+
         username_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
+
         age_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+
         return this;
       }
 
@@ -666,29 +573,11 @@ public final class TestBO_PRO {
       @java.lang.Override
       public com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO buildPartial() {
         com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO result = new com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
-        }
         result.uuid_ = uuid_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.boid_ = boid_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
+        result.boid_ = boid_;
         result.destination_ = destination_;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          to_bitField0_ |= 0x00000008;
-        }
         result.username_ = username_;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.age_ = age_;
-          to_bitField0_ |= 0x00000010;
-        }
-        result.bitField0_ = to_bitField0_;
+        result.age_ = age_;
         onBuilt();
         return result;
       }
@@ -737,25 +626,22 @@ public final class TestBO_PRO {
 
       public Builder mergeFrom(com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO other) {
         if (other == com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO.getDefaultInstance()) return this;
-        if (other.hasUuid()) {
-          bitField0_ |= 0x00000001;
+        if (!other.getUuid().isEmpty()) {
           uuid_ = other.uuid_;
           onChanged();
         }
-        if (other.hasBoid()) {
+        if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
         }
-        if (other.hasDestination()) {
-          bitField0_ |= 0x00000004;
+        if (!other.getDestination().isEmpty()) {
           destination_ = other.destination_;
           onChanged();
         }
-        if (other.hasUsername()) {
-          bitField0_ |= 0x00000008;
+        if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           onChanged();
         }
-        if (other.hasAge()) {
+        if (other.getAge() != 0) {
           setAge(other.getAge());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -786,18 +672,10 @@ public final class TestBO_PRO {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object uuid_ = "";
       /**
-       * <code>optional string uuid = 1;</code>
-       * @return Whether the uuid field is set.
-       */
-      public boolean hasUuid() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The uuid.
        */
       public java.lang.String getUuid() {
@@ -806,16 +684,14 @@ public final class TestBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            uuid_ = s;
-          }
+          uuid_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return The bytes for uuid.
        */
       public com.google.protobuf.ByteString
@@ -832,7 +708,7 @@ public final class TestBO_PRO {
         }
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The uuid to set.
        * @return This builder for chaining.
        */
@@ -841,23 +717,23 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  
         uuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUuid() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
         uuid_ = getDefaultInstance().getUuid();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string uuid = 1;</code>
+       * <code>string uuid = 1;</code>
        * @param value The bytes for uuid to set.
        * @return This builder for chaining.
        */
@@ -866,7 +742,8 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000001;
+  checkByteStringIsUtf8(value);
+        
         uuid_ = value;
         onChanged();
         return this;
@@ -874,36 +751,29 @@ public final class TestBO_PRO {
 
       private long boid_ ;
       /**
-       * <code>optional sint64 boid = 2;</code>
-       * @return Whether the boid field is set.
-       */
-      public boolean hasBoid() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return The boid.
        */
       public long getBoid() {
         return boid_;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @param value The boid to set.
        * @return This builder for chaining.
        */
       public Builder setBoid(long value) {
-        bitField0_ |= 0x00000002;
+        
         boid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional sint64 boid = 2;</code>
+       * <code>sint64 boid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearBoid() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        
         boid_ = 0L;
         onChanged();
         return this;
@@ -911,14 +781,7 @@ public final class TestBO_PRO {
 
       private java.lang.Object destination_ = "";
       /**
-       * <code>optional string destination = 3;</code>
-       * @return Whether the destination field is set.
-       */
-      public boolean hasDestination() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The destination.
        */
       public java.lang.String getDestination() {
@@ -927,16 +790,14 @@ public final class TestBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            destination_ = s;
-          }
+          destination_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return The bytes for destination.
        */
       public com.google.protobuf.ByteString
@@ -953,7 +814,7 @@ public final class TestBO_PRO {
         }
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The destination to set.
        * @return This builder for chaining.
        */
@@ -962,23 +823,23 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  
         destination_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearDestination() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        
         destination_ = getDefaultInstance().getDestination();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string destination = 3;</code>
+       * <code>string destination = 3;</code>
        * @param value The bytes for destination to set.
        * @return This builder for chaining.
        */
@@ -987,7 +848,8 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  checkByteStringIsUtf8(value);
+        
         destination_ = value;
         onChanged();
         return this;
@@ -995,14 +857,7 @@ public final class TestBO_PRO {
 
       private java.lang.Object username_ = "";
       /**
-       * <code>optional string username = 4;</code>
-       * @return Whether the username field is set.
-       */
-      public boolean hasUsername() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional string username = 4;</code>
+       * <code>string username = 4;</code>
        * @return The username.
        */
       public java.lang.String getUsername() {
@@ -1011,16 +866,14 @@ public final class TestBO_PRO {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            username_ = s;
-          }
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string username = 4;</code>
+       * <code>string username = 4;</code>
        * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
@@ -1037,7 +890,7 @@ public final class TestBO_PRO {
         }
       }
       /**
-       * <code>optional string username = 4;</code>
+       * <code>string username = 4;</code>
        * @param value The username to set.
        * @return This builder for chaining.
        */
@@ -1046,23 +899,23 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  
         username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string username = 4;</code>
+       * <code>string username = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearUsername() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string username = 4;</code>
+       * <code>string username = 4;</code>
        * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
@@ -1071,7 +924,8 @@ public final class TestBO_PRO {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  checkByteStringIsUtf8(value);
+        
         username_ = value;
         onChanged();
         return this;
@@ -1079,36 +933,29 @@ public final class TestBO_PRO {
 
       private int age_ ;
       /**
-       * <code>optional int32 age = 5;</code>
-       * @return Whether the age field is set.
-       */
-      public boolean hasAge() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional int32 age = 5;</code>
+       * <code>sint32 age = 5;</code>
        * @return The age.
        */
       public int getAge() {
         return age_;
       }
       /**
-       * <code>optional int32 age = 5;</code>
+       * <code>sint32 age = 5;</code>
        * @param value The age to set.
        * @return This builder for chaining.
        */
       public Builder setAge(int value) {
-        bitField0_ |= 0x00000010;
+        
         age_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 age = 5;</code>
+       * <code>sint32 age = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAge() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        
         age_ = 0;
         onChanged();
         return this;
@@ -1139,7 +986,7 @@ public final class TestBO_PRO {
       return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Deprecated public static final com.google.protobuf.Parser<TestBO>
+    private static final com.google.protobuf.Parser<TestBO>
         PARSER = new com.google.protobuf.AbstractParser<TestBO>() {
       @java.lang.Override
       public TestBO parsePartialFrom(
@@ -1180,16 +1027,14 @@ public final class TestBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014TestBO.proto\032\031google/protobuf/any.prot" +
-      "o\"X\n\006TestBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022" +
-      "\023\n\013destination\030\003 \001(\t\022\020\n\010username\030\004 \001(\t\022\013" +
-      "\n\003age\030\005 \001(\005B*\n\034com.purefun.fams.core.bo." +
-      "proB\nTestBO_PRO"
+      "\n\014TestBO.proto\"X\n\006TestBO\022\014\n\004uuid\030\001 \001(\t\022\014" +
+      "\n\004boid\030\002 \001(\022\022\023\n\013destination\030\003 \001(\t\022\020\n\010use" +
+      "rname\030\004 \001(\t\022\013\n\003age\030\005 \001(\021B*\n\034com.purefun." +
+      "fams.core.bo.proB\nTestBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_TestBO_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1197,7 +1042,6 @@ public final class TestBO_PRO {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TestBO_descriptor,
         new java.lang.String[] { "Uuid", "Boid", "Destination", "Username", "Age", });
-    com.google.protobuf.AnyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

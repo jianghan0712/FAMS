@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoException;
@@ -71,7 +72,8 @@ public class MongoDBServiceImpl {
 	}
 
 	public <T> List<T> getValues(String databaseName, String collectionName, Bson filter, Class<T> clazz) {
-		FindIterable<Document> documents = getcollection(databaseName, collectionName).find(filter);
+		FindIterable<Document> documents = getcollection(databaseName, collectionName).find(filter)
+				.sort(new BasicDBObject("date", 1));
 
 		MongoCursor<Document> iterator = documents.iterator();
 		List<T> ret = new ArrayList<T>();

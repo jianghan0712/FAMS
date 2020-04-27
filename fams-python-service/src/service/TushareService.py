@@ -225,15 +225,16 @@ class TuShareService(PyService):
         pass
         
 
-service = TuShareService(serviceName='TuShareService', env='DEV', instance='1')
-service.initService()
-service.startService()
+# service = TuShareService(serviceName='TuShareService', env='DEV', instance='1')
+# service.initService()
+# service.startService()
+# service.updateBarFromTS()
 
 # service.querySecurityBasicInfo()
 # service.initIndustry()
 # service.getStockHisBarFromTushare()
 # data = service.getLastBarFromMongo(industry='塑料',stock_code='000859.SZ')
-service.updateBarFromTS()
+
 # data = service.getBarFromMongo(industry='塑料',stock_code='000859.SZ')
 # print(data.ix[0,'date'])
 
@@ -250,7 +251,8 @@ service.updateBarFromTS()
 # data['RSI']=ta.RSI(np.array(data['close']), timeperiod=14)
 # print(data)
 
+data = ts.pro_bar(ts_code='000001.SZ', adj='qfq',start_date='20200101').sort_values(by="trade_date" , ascending=True)
 
+data["rsi"] = ta.RSI(data['close'], timeperiod=14)
+print(data)
 
-
-        
