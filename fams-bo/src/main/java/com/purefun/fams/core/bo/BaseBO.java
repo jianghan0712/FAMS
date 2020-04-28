@@ -13,5 +13,5 @@ public class BaseBO extends BaseDomain {
 
 	public long boid;
 
-	public String destination;
+//	public String destination;
 }

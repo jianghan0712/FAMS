@@ -7,10 +7,16 @@ package com.purefun.fams.ace.mdc.service.impl;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,14 +26,14 @@ import com.purefun.fams.ace.mdc.config.SinaConfig;
 import com.purefun.fams.ace.mdc.service.SinaMarketDataService;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.core.bo.tool.BoFactory;
+import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
+import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.core.communication.FAMSProducer;
 import com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper;
 import com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo;
 import com.purefun.fams.framework.core.http.LogInterceptor;
-import com.purefun.fams.md.MdStockSnapshotTempBO;
-import com.purefun.fams.md.MdStockSnapshotTempletBO;
-import com.purefun.fams.md.otw.MdStockSnapshotTempBO_OTW;
-import com.purefun.fams.md.otw.MdStockSnapshotTempletBO_OTW;
+import com.purefun.fams.md.MdStockSnapshotBO;
+import com.purefun.fams.md.otw.MdStockSnapshotBO_OTW;
 
 /**
  * @Classname: SinaMarketDataServiceImpl
@@ -37,7 +43,7 @@ import com.purefun.fams.md.otw.MdStockSnapshotTempletBO_OTW;
  */
 @Service
 public class SinaMarketDataServiceImpl implements SinaMarketDataService {
-
+	private static final Logger logger = LogManager.getLogger(SinaMarketDataServiceImpl.class);
 	/** 向sina发起restful请求 */
 	private RestTemplate sinaTemplate;
 
@@ -52,6 +58,8 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	@Autowired
 	private FAMSProducer producer;
 
+	ScheduledExecutorService pool = Executors.newScheduledThreadPool(1);
+
 	long size = 0l;
 
 	@PostConstruct
@@ -59,14 +67,35 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getInterceptors().add(new LogInterceptor());
 		this.sinaTemplate = restTemplate;
-
 	}
 
-	public void initSet() {
-		List<FamsSecurityBasicinfo> list = mapper.selectAll();
-		for (FamsSecurityBasicinfo each : list) {
-			stockSet.add(each.getExch() + each.getExchangeId());
+	/**
+	 * 
+	 * @MethodName: initSet
+	 * @author jianghan
+	 * @date 2020-04-28 22:37:38
+	 * @param stockSet 自定义codelist，如果没有指定，则订阅全市场行情
+	 */
+	public void initSet(HashSet<String> stockSet) {
+		if (stockSet == null || stockSet.size() == 0) {
+			List<FamsSecurityBasicinfo> list = mapper.selectAll();
+			for (FamsSecurityBasicinfo each : list) {
+				this.stockSet.add(each.getExch() + each.getExchangeId());
+			}
+		} else {
+			this.stockSet = stockSet;
 		}
+	}
+
+	/**
+	 * 启动服务
+	 * 
+	 * @MethodName: start
+	 * @author jianghan
+	 * @date 2020-04-28 22:31:49
+	 */
+	public void start() {
+		pool.scheduleAtFixedRate(new QueryMDThread(), 0, config.getInterval(), TimeUnit.SECONDS);
 	}
 
 	/**
@@ -77,26 +106,41 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 * @date 2020-04-27 21:08:44
 	 */
 	public void subMarketDate() {
-		// TODO Auto-generated method stub
-		initSet();
-		StringBuffer stockList = new StringBuffer();
-		int i = 0;
-		for (String each : stockSet) {
-			stockList.append(each).append(CommonUtil.CharUtil.comma);
-			i++;
-			if (i == 500)
-				break;
+		size = 0;
+		StringBuffer stockList = null;
+		/** 如果调用方还没有初始化codelist，则默认为订阅全部行情 */
+		if (stockSet == null || stockSet.size() == 0) {
+			initSet(null);
 		}
 
-		ResponseEntity<String> response = sinaTemplate.getForEntity("http://hq.sinajs.cn/list=" + stockList.toString(),
-				String.class);
+		Iterator<String> it = stockSet.iterator();
+		/** 订阅行情，stockSet中的都会请求，也可以使用自定义的方式 ，如果要自定义 */
+		while (it.hasNext()) {
+			stockList = new StringBuffer();
+			int i = 0;
+			/** 一次请求maxnum只 */
+			while (it.hasNext() && i++ < config.getMaxnum()) {
+				stockList.append(it.next()).append(CommonUtil.CharUtil.comma);
+			}
 
-		String body[] = response.getBody().trim().replace("\n", "").replace("\"", "").replace("=", ",").split(";");
-		for (String e : body) {
-			parseMDAndPublish(e.substring(e.indexOf("str_") + 4).split(","));
+			try {
+				ResponseEntity<String> response = sinaTemplate
+						.getForEntity(config.getUrl() + "list=" + stockList.toString(), String.class);
+				if (response == null) {
+					throw new FAMSException(ErrorCodeEnum.ACE_MARKETDATA_SUBSCRIBE_FAIL);
+				}
+				String body[] = response.getBody().trim().replace("\n", "").replace("\"", "").replace("=", ",")
+						.split(";");
+				for (String e : body) {
+					parseMDAndPublish(e.substring(e.indexOf("str_") + 4).split(","));
+				}
+				logger.info("条数：{}，字节长度：{}", body.length, size);
+			} catch (Exception e) {
+				// TODO: handle exception
+				logger.error("行情请求失败：{}", e.getMessage());
+			}
 		}
-		System.out.println(body.length);
-		System.out.println(size);
+
 	}
 
 	/**
@@ -107,14 +151,13 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 */
 	private void parseMDAndPublish(String[] eachDetail) {
 		// TODO Auto-generated method stub
-		MdStockSnapshotTempBO_OTW bo = (MdStockSnapshotTempBO_OTW) BoFactory.createBo(MdStockSnapshotTempBO.class);
+		MdStockSnapshotBO_OTW bo = (MdStockSnapshotBO_OTW) BoFactory.createBo(MdStockSnapshotBO.class, false);
 		int i = 0;
 		String code = eachDetail[i].substring(2);
 		String exch = eachDetail[i].substring(0, 2).toUpperCase();
 		bo.setSecurity_code(code + CommonUtil.CharUtil.point + exch);
 		bo.setExch(exch);
-		i++;
-//		bo.setCnName(eachDetail[++i]);
+		i++; // 跳过中文名称
 		bo.setOpen(Double.valueOf(eachDetail[++i]));
 		bo.setPreClose(Double.valueOf(eachDetail[++i]));
 		bo.setLastPrice(Double.valueOf(eachDetail[++i]));
@@ -141,84 +184,15 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 		i += 20;// 跳过买1-买5,卖1-卖5
 		bo.setDateTime(Long.valueOf(eachDetail[++i].replace(CommonUtil.CharUtil.rod, "") + "000000")
 				+ Long.valueOf(eachDetail[++i].replace(CommonUtil.CharUtil.colon, "")));
-		System.out.println(bo);
 		byte[] bytes = bo.getBuilder().build().toByteArray();
 		size += bytes.length;
+//		producer.publish(bo);
 	}
 
-	private void parseMDAndPublish2(String[] eachDetail) {
-		// TODO Auto-generated method stub
-		MdStockSnapshotTempletBO_OTW bo = (MdStockSnapshotTempletBO_OTW) BoFactory
-				.createBo(MdStockSnapshotTempletBO.class);
-		int i = 0;
-		String code = eachDetail[i].substring(2);
-		String exch = eachDetail[i].substring(0, 2).toUpperCase();
-//		bo.setSecurity_code(code + CommonUtil.CharUtil.point + exch);
-//		bo.setExch(exch);
-		i++;
-//		bo.setCnName(eachDetail[++i]);
-		bo.setOpen(Double.valueOf(eachDetail[++i]));
-		bo.setPreClose(Double.valueOf(eachDetail[++i]));
-		bo.setLastPrice(Double.valueOf(eachDetail[++i]));
-		bo.setHigh(Double.valueOf(eachDetail[++i]));
-		bo.setLow(Double.valueOf(eachDetail[++i]));
-		i = i + 2;// 跳过 竞买价 和 竞卖价
-		bo.setTotalVolume(Long.valueOf(eachDetail[++i]));
-		bo.setTotalAmont(new BigDecimal(eachDetail[++i]).doubleValue());
-		bo.setBuy1Qty(Long.valueOf(eachDetail[++i]));
-		bo.setBuy1Price(Double.valueOf(eachDetail[++i]));
-		bo.setBuy2Qty(Long.valueOf(eachDetail[++i]));
-		bo.setBuy2Price(Double.valueOf(eachDetail[++i]));
-		bo.setBuy3Qty(Long.valueOf(eachDetail[++i]));
-		bo.setBuy3Price(Double.valueOf(eachDetail[++i]));
-		bo.setBuy4Qty(Long.valueOf(eachDetail[++i]));
-		bo.setBuy4Price(Double.valueOf(eachDetail[++i]));
-		bo.setBuy5Qty(Long.valueOf(eachDetail[++i]));
-		bo.setBuy5Price(Double.valueOf(eachDetail[++i]));
-
-		bo.setSell1Qty(Long.valueOf(eachDetail[++i]));
-		bo.setSell1Price(Double.valueOf(eachDetail[++i]));
-		bo.setSell2Qty(Long.valueOf(eachDetail[++i]));
-		bo.setSell2Price(Double.valueOf(eachDetail[++i]));
-		bo.setSell3Qty(Long.valueOf(eachDetail[++i]));
-		bo.setSell3Price(Double.valueOf(eachDetail[++i]));
-		bo.setSell4Qty(Long.valueOf(eachDetail[++i]));
-		bo.setSell4Price(Double.valueOf(eachDetail[++i]));
-		bo.setSell5Qty(Long.valueOf(eachDetail[++i]));
-		bo.setSell5Price(Double.valueOf(eachDetail[++i]));
-
-		bo.setDateTime(Long.valueOf(eachDetail[++i].replace(CommonUtil.CharUtil.rod, "") + "000000")
-				+ Long.valueOf(eachDetail[++i].replace(CommonUtil.CharUtil.colon, "")));
-		System.out.println(bo);
-		byte[] bytes = bo.getBuilder().build().toByteArray();
-		size += bytes.length;
+	private class QueryMDThread implements Runnable {
+		@Override
+		public void run() {
+			subMarketDate();
+		}
 	}
-//
-//	0：”大秦铁路”，股票名字；
-//	1：”27.55″，今日开盘价；
-//	2：”27.25″，昨日收盘价；
-//	3：”26.91″，当前价格；
-//	4：”27.55″，今日最高价；
-//	5：”26.20″，今日最低价；
-//	6：”26.91″，竞买价，即“买一”报价；
-//	7：”26.92″，竞卖价，即“卖一”报价；
-//	8：”22114263″，成交的股票数，由于股票交易以一百股为基本单位，所以在使用时，通常把该值除以一百；
-//	9：”589824680″，成交金额，单位为“元”，为了一目了然，通常以“万元”为成交金额的单位，所以通常把该值除以一万；
-//	10：”4695″，“买一”申请4695股，即47手；
-//	11：”26.91″，“买一”报价；
-//	12：”57590″，“买二”
-//	13：”26.90″，“买二”
-//	14：”14700″，“买三”
-//	15：”26.89″，“买三”
-//	16：”14300″，“买四”
-//	17：”26.88″，“买四”
-//	18：”15100″，“买五”
-//	19：”26.87″，“买五”
-//	20：”3100″，“卖一”申报3100股，即31手；
-//	21：”26.92″，“卖一”报价
-//	(22,
-//	23), (24, 25), (26,27), (28,
-//	29)分别为“卖二”至“卖四的情况”
-//	30：”2008-01-11″，日期；
-//	31：”15:05:32″，时间；
 }

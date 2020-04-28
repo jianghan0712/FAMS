@@ -157,7 +157,7 @@ public class GenerateJAVABOFiles {
 		}
 		println(new StringBuilder(TAB).append(" string uuid = 1;").toString());
 		println(new StringBuilder(TAB).append(" sint64 boid = 2;").toString());
-		println(new StringBuilder(TAB).append(" string destination = 3;").toString());
+//		println(new StringBuilder(TAB).append(" string destination = 3;").toString());
 
 		for (Field e : fileds) {
 			if (e.getName().equalsIgnoreCase("uuid") || e.getName().equalsIgnoreCase("boid")
@@ -283,8 +283,8 @@ public class GenerateJAVABOFiles {
 		println(new StringBuilder(TAB).append(TAB).append(BO).append("= new ").append(boName).append("();").toString());
 		println(new StringBuilder(TAB).append(TAB).append(BUILDER).append(".setUuid(bo.uuid);").toString());
 		println(new StringBuilder(TAB).append(TAB).append(BUILDER).append(".setBoid(bo.boid);").toString());
-		println(new StringBuilder(TAB).append(TAB).append(BUILDER).append(".setDestination(bo.destination);")
-				.toString());
+//		println(new StringBuilder(TAB).append(TAB).append(BUILDER).append(".setDestination(bo.destination);")
+//				.toString());
 		println(new StringBuilder(TAB).append("}").toString());
 		println("");
 
@@ -377,8 +377,8 @@ public class GenerateJAVABOFiles {
 				.append("getUuid").append("() +").append("\",\" +").toString());
 		println(new StringBuilder(TAB).append(TAB).append(TAB).append("\"").append("boid").append(" = \" + ")
 				.append("getBoid").append("() +").append("\",\" +").toString());
-		println(new StringBuilder(TAB).append(TAB).append(TAB).append("\"").append("destination").append(" = \" + ")
-				.append("getDestination").append("() +").append("\",\" +").toString());
+//		println(new StringBuilder(TAB).append(TAB).append(TAB).append("\"").append("destination").append(" = \" + ")
+//				.append("getDestination").append("() +").append("\",\" +").toString());
 
 		for (Field field : fields) {
 			if (field.getName().equalsIgnoreCase("uuid") || field.getName().equalsIgnoreCase("boid")

@@ -20,6 +20,9 @@ public enum ErrorCodeEnum {
 
 	UNKNOWN_EXCEPTION("UNKNOWN_EXCEPTION", "未知错误"),
 
+	// ------------framework错误码----------------//
+	BOANNOTION_EXCEPTION("BOANNOTION_EXCEPTION", "bo的注解缺失或无法解析"),
+
 	// -------------命令service错误码
 
 	COMMOND_UNKNOWN("COMMOND_UNKNOWN", "无法识别的命令"),
@@ -33,6 +36,9 @@ public enum ErrorCodeEnum {
 	KING_ACCOUNT_NOT_FOUNT("KING_ACCOUNT_NOT_FOUNT", "找不到对应的资金账户"),
 
 	KING_ACCOUNT_CAPITAL_NOT_ENOUGH("KING_ACCOUNT_CAPITAL_NOT_ENOUGH", "账户资金不足"),
+
+	// -------------ACE交易前台错误码--------------
+	ACE_MARKETDATA_SUBSCRIBE_FAIL("ACE_MARKETDATA_SUBSCRIBE_FAIL", "行情订阅失败"),
 
 	;
 

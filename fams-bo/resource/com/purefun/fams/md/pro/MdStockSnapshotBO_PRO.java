@@ -37,18 +37,6 @@ public final class MdStockSnapshotBO_PRO {
     long getBoid();
 
     /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    java.lang.String getDestination();
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    com.google.protobuf.ByteString
-        getDestinationBytes();
-
-    /**
      * <code>string security_code = 4;</code>
      * @return The securityCode.
      */
@@ -73,139 +61,117 @@ public final class MdStockSnapshotBO_PRO {
         getExchBytes();
 
     /**
-     * <code>string security_type = 6;</code>
-     * @return The securityType.
-     */
-    java.lang.String getSecurityType();
-    /**
-     * <code>string security_type = 6;</code>
-     * @return The bytes for securityType.
-     */
-    com.google.protobuf.ByteString
-        getSecurityTypeBytes();
-
-    /**
-     * <code>string cnName = 7;</code>
-     * @return The cnName.
-     */
-    java.lang.String getCnName();
-    /**
-     * <code>string cnName = 7;</code>
-     * @return The bytes for cnName.
-     */
-    com.google.protobuf.ByteString
-        getCnNameBytes();
-
-    /**
-     * <code>string dateTime = 8;</code>
+     * <code>sint64 dateTime = 6;</code>
      * @return The dateTime.
      */
-    java.lang.String getDateTime();
-    /**
-     * <code>string dateTime = 8;</code>
-     * @return The bytes for dateTime.
-     */
-    com.google.protobuf.ByteString
-        getDateTimeBytes();
+    long getDateTime();
 
     /**
-     * <code>double open = 9;</code>
+     * <code>double open = 7;</code>
      * @return The open.
      */
     double getOpen();
 
     /**
-     * <code>double preClose = 10;</code>
+     * <code>double preClose = 8;</code>
      * @return The preClose.
      */
     double getPreClose();
 
     /**
-     * <code>double lastPrice = 11;</code>
+     * <code>double lastPrice = 9;</code>
      * @return The lastPrice.
      */
     double getLastPrice();
 
     /**
-     * <code>double high = 12;</code>
+     * <code>double high = 10;</code>
      * @return The high.
      */
     double getHigh();
 
     /**
-     * <code>double low = 13;</code>
+     * <code>double low = 11;</code>
      * @return The low.
      */
     double getLow();
 
     /**
-     * <code>double change = 14;</code>
-     * @return The change.
+     * <code>repeated double buyPriceList = 12;</code>
+     * @return A list containing the buyPriceList.
      */
-    double getChange();
+    java.util.List<java.lang.Double> getBuyPriceListList();
+    /**
+     * <code>repeated double buyPriceList = 12;</code>
+     * @return The count of buyPriceList.
+     */
+    int getBuyPriceListCount();
+    /**
+     * <code>repeated double buyPriceList = 12;</code>
+     * @param index The index of the element to return.
+     * @return The buyPriceList at the given index.
+     */
+    double getBuyPriceList(int index);
 
     /**
-     * <code>double changePer = 15;</code>
-     * @return The changePer.
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @return A list containing the buyQtyList.
      */
-    double getChangePer();
+    java.util.List<java.lang.Long> getBuyQtyListList();
+    /**
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @return The count of buyQtyList.
+     */
+    int getBuyQtyListCount();
+    /**
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @param index The index of the element to return.
+     * @return The buyQtyList at the given index.
+     */
+    long getBuyQtyList(int index);
 
     /**
-     * <code>string buyPriceList = 16;</code>
-     * @return The buyPriceList.
+     * <code>repeated double sellPriceList = 14;</code>
+     * @return A list containing the sellPriceList.
      */
-    java.lang.String getBuyPriceList();
+    java.util.List<java.lang.Double> getSellPriceListList();
     /**
-     * <code>string buyPriceList = 16;</code>
-     * @return The bytes for buyPriceList.
+     * <code>repeated double sellPriceList = 14;</code>
+     * @return The count of sellPriceList.
      */
-    com.google.protobuf.ByteString
-        getBuyPriceListBytes();
+    int getSellPriceListCount();
+    /**
+     * <code>repeated double sellPriceList = 14;</code>
+     * @param index The index of the element to return.
+     * @return The sellPriceList at the given index.
+     */
+    double getSellPriceList(int index);
 
     /**
-     * <code>string buyQtyList = 17;</code>
-     * @return The buyQtyList.
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @return A list containing the sellQtyList.
      */
-    java.lang.String getBuyQtyList();
+    java.util.List<java.lang.Long> getSellQtyListList();
     /**
-     * <code>string buyQtyList = 17;</code>
-     * @return The bytes for buyQtyList.
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @return The count of sellQtyList.
      */
-    com.google.protobuf.ByteString
-        getBuyQtyListBytes();
+    int getSellQtyListCount();
+    /**
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @param index The index of the element to return.
+     * @return The sellQtyList at the given index.
+     */
+    long getSellQtyList(int index);
 
     /**
-     * <code>string sellPriceList = 18;</code>
-     * @return The sellPriceList.
-     */
-    java.lang.String getSellPriceList();
-    /**
-     * <code>string sellPriceList = 18;</code>
-     * @return The bytes for sellPriceList.
-     */
-    com.google.protobuf.ByteString
-        getSellPriceListBytes();
-
-    /**
-     * <code>string sellQtyList = 19;</code>
-     * @return The sellQtyList.
-     */
-    java.lang.String getSellQtyList();
-    /**
-     * <code>string sellQtyList = 19;</code>
-     * @return The bytes for sellQtyList.
-     */
-    com.google.protobuf.ByteString
-        getSellQtyListBytes();
-
-    /**
-     * <code>sint64 totalVolume = 20;</code>
+     * <code>sint64 totalVolume = 16;</code>
      * @return The totalVolume.
      */
     long getTotalVolume();
 
     /**
-     * <code>double totalAmont = 21;</code>
+     * <code>double totalAmont = 17;</code>
      * @return The totalAmont.
      */
     double getTotalAmont();
@@ -224,16 +190,12 @@ public final class MdStockSnapshotBO_PRO {
     }
     private MdStockSnapshotBO() {
       uuid_ = "";
-      destination_ = "";
       securityCode_ = "";
       exch_ = "";
-      securityType_ = "";
-      cnName_ = "";
-      dateTime_ = "";
-      buyPriceList_ = "";
-      buyQtyList_ = "";
-      sellPriceList_ = "";
-      sellQtyList_ = "";
+      buyPriceList_ = emptyDoubleList();
+      buyQtyList_ = emptyLongList();
+      sellPriceList_ = emptyDoubleList();
+      sellQtyList_ = emptyLongList();
     }
 
     @java.lang.Override
@@ -256,6 +218,7 @@ public final class MdStockSnapshotBO_PRO {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -277,12 +240,6 @@ public final class MdStockSnapshotBO_PRO {
               boid_ = input.readSInt64();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destination_ = s;
-              break;
-            }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -295,89 +252,126 @@ public final class MdStockSnapshotBO_PRO {
               exch_ = s;
               break;
             }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
 
-              securityType_ = s;
+              dateTime_ = input.readSInt64();
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cnName_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dateTime_ = s;
-              break;
-            }
-            case 73: {
+            case 57: {
 
               open_ = input.readDouble();
               break;
             }
-            case 81: {
+            case 65: {
 
               preClose_ = input.readDouble();
               break;
             }
-            case 89: {
+            case 73: {
 
               lastPrice_ = input.readDouble();
               break;
             }
-            case 97: {
+            case 81: {
 
               high_ = input.readDouble();
               break;
             }
-            case 105: {
+            case 89: {
 
               low_ = input.readDouble();
               break;
             }
+            case 97: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                buyPriceList_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              buyPriceList_.addDouble(input.readDouble());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                buyPriceList_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                buyPriceList_.addDouble(input.readDouble());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                buyQtyList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              buyQtyList_.addLong(input.readSInt64());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                buyQtyList_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                buyQtyList_.addLong(input.readSInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
             case 113: {
-
-              change_ = input.readDouble();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                sellPriceList_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              sellPriceList_.addDouble(input.readDouble());
               break;
             }
-            case 121: {
-
-              changePer_ = input.readDouble();
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                sellPriceList_ = newDoubleList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                sellPriceList_.addDouble(input.readDouble());
+              }
+              input.popLimit(limit);
               break;
             }
-            case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              buyPriceList_ = s;
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                sellQtyList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              sellQtyList_.addLong(input.readSInt64());
               break;
             }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              buyQtyList_ = s;
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                sellQtyList_ = newLongList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                sellQtyList_.addLong(input.readSInt64());
+              }
+              input.popLimit(limit);
               break;
             }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sellPriceList_ = s;
-              break;
-            }
-            case 154: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sellQtyList_ = s;
-              break;
-            }
-            case 160: {
+            case 128: {
 
               totalVolume_ = input.readSInt64();
               break;
             }
-            case 169: {
+            case 137: {
 
               totalAmont_ = input.readDouble();
               break;
@@ -397,6 +391,18 @@ public final class MdStockSnapshotBO_PRO {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          buyPriceList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          buyQtyList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          sellPriceList_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          sellQtyList_.makeImmutable(); // C
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -458,42 +464,6 @@ public final class MdStockSnapshotBO_PRO {
      */
     public long getBoid() {
       return boid_;
-    }
-
-    public static final int DESTINATION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object destination_;
-    /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    public java.lang.String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        destination_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    public com.google.protobuf.ByteString
-        getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int SECURITY_CODE_FIELD_NUMBER = 4;
@@ -568,342 +538,188 @@ public final class MdStockSnapshotBO_PRO {
       }
     }
 
-    public static final int SECURITY_TYPE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object securityType_;
+    public static final int DATETIME_FIELD_NUMBER = 6;
+    private long dateTime_;
     /**
-     * <code>string security_type = 6;</code>
-     * @return The securityType.
-     */
-    public java.lang.String getSecurityType() {
-      java.lang.Object ref = securityType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        securityType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string security_type = 6;</code>
-     * @return The bytes for securityType.
-     */
-    public com.google.protobuf.ByteString
-        getSecurityTypeBytes() {
-      java.lang.Object ref = securityType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        securityType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CNNAME_FIELD_NUMBER = 7;
-    private volatile java.lang.Object cnName_;
-    /**
-     * <code>string cnName = 7;</code>
-     * @return The cnName.
-     */
-    public java.lang.String getCnName() {
-      java.lang.Object ref = cnName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cnName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cnName = 7;</code>
-     * @return The bytes for cnName.
-     */
-    public com.google.protobuf.ByteString
-        getCnNameBytes() {
-      java.lang.Object ref = cnName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cnName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DATETIME_FIELD_NUMBER = 8;
-    private volatile java.lang.Object dateTime_;
-    /**
-     * <code>string dateTime = 8;</code>
+     * <code>sint64 dateTime = 6;</code>
      * @return The dateTime.
      */
-    public java.lang.String getDateTime() {
-      java.lang.Object ref = dateTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dateTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string dateTime = 8;</code>
-     * @return The bytes for dateTime.
-     */
-    public com.google.protobuf.ByteString
-        getDateTimeBytes() {
-      java.lang.Object ref = dateTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dateTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getDateTime() {
+      return dateTime_;
     }
 
-    public static final int OPEN_FIELD_NUMBER = 9;
+    public static final int OPEN_FIELD_NUMBER = 7;
     private double open_;
     /**
-     * <code>double open = 9;</code>
+     * <code>double open = 7;</code>
      * @return The open.
      */
     public double getOpen() {
       return open_;
     }
 
-    public static final int PRECLOSE_FIELD_NUMBER = 10;
+    public static final int PRECLOSE_FIELD_NUMBER = 8;
     private double preClose_;
     /**
-     * <code>double preClose = 10;</code>
+     * <code>double preClose = 8;</code>
      * @return The preClose.
      */
     public double getPreClose() {
       return preClose_;
     }
 
-    public static final int LASTPRICE_FIELD_NUMBER = 11;
+    public static final int LASTPRICE_FIELD_NUMBER = 9;
     private double lastPrice_;
     /**
-     * <code>double lastPrice = 11;</code>
+     * <code>double lastPrice = 9;</code>
      * @return The lastPrice.
      */
     public double getLastPrice() {
       return lastPrice_;
     }
 
-    public static final int HIGH_FIELD_NUMBER = 12;
+    public static final int HIGH_FIELD_NUMBER = 10;
     private double high_;
     /**
-     * <code>double high = 12;</code>
+     * <code>double high = 10;</code>
      * @return The high.
      */
     public double getHigh() {
       return high_;
     }
 
-    public static final int LOW_FIELD_NUMBER = 13;
+    public static final int LOW_FIELD_NUMBER = 11;
     private double low_;
     /**
-     * <code>double low = 13;</code>
+     * <code>double low = 11;</code>
      * @return The low.
      */
     public double getLow() {
       return low_;
     }
 
-    public static final int CHANGE_FIELD_NUMBER = 14;
-    private double change_;
+    public static final int BUYPRICELIST_FIELD_NUMBER = 12;
+    private com.google.protobuf.Internal.DoubleList buyPriceList_;
     /**
-     * <code>double change = 14;</code>
-     * @return The change.
+     * <code>repeated double buyPriceList = 12;</code>
+     * @return A list containing the buyPriceList.
      */
-    public double getChange() {
-      return change_;
+    public java.util.List<java.lang.Double>
+        getBuyPriceListList() {
+      return buyPriceList_;
     }
+    /**
+     * <code>repeated double buyPriceList = 12;</code>
+     * @return The count of buyPriceList.
+     */
+    public int getBuyPriceListCount() {
+      return buyPriceList_.size();
+    }
+    /**
+     * <code>repeated double buyPriceList = 12;</code>
+     * @param index The index of the element to return.
+     * @return The buyPriceList at the given index.
+     */
+    public double getBuyPriceList(int index) {
+      return buyPriceList_.getDouble(index);
+    }
+    private int buyPriceListMemoizedSerializedSize = -1;
 
-    public static final int CHANGEPER_FIELD_NUMBER = 15;
-    private double changePer_;
+    public static final int BUYQTYLIST_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.LongList buyQtyList_;
     /**
-     * <code>double changePer = 15;</code>
-     * @return The changePer.
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @return A list containing the buyQtyList.
      */
-    public double getChangePer() {
-      return changePer_;
+    public java.util.List<java.lang.Long>
+        getBuyQtyListList() {
+      return buyQtyList_;
     }
+    /**
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @return The count of buyQtyList.
+     */
+    public int getBuyQtyListCount() {
+      return buyQtyList_.size();
+    }
+    /**
+     * <code>repeated sint64 buyQtyList = 13;</code>
+     * @param index The index of the element to return.
+     * @return The buyQtyList at the given index.
+     */
+    public long getBuyQtyList(int index) {
+      return buyQtyList_.getLong(index);
+    }
+    private int buyQtyListMemoizedSerializedSize = -1;
 
-    public static final int BUYPRICELIST_FIELD_NUMBER = 16;
-    private volatile java.lang.Object buyPriceList_;
+    public static final int SELLPRICELIST_FIELD_NUMBER = 14;
+    private com.google.protobuf.Internal.DoubleList sellPriceList_;
     /**
-     * <code>string buyPriceList = 16;</code>
-     * @return The buyPriceList.
+     * <code>repeated double sellPriceList = 14;</code>
+     * @return A list containing the sellPriceList.
      */
-    public java.lang.String getBuyPriceList() {
-      java.lang.Object ref = buyPriceList_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        buyPriceList_ = s;
-        return s;
-      }
+    public java.util.List<java.lang.Double>
+        getSellPriceListList() {
+      return sellPriceList_;
     }
     /**
-     * <code>string buyPriceList = 16;</code>
-     * @return The bytes for buyPriceList.
+     * <code>repeated double sellPriceList = 14;</code>
+     * @return The count of sellPriceList.
      */
-    public com.google.protobuf.ByteString
-        getBuyPriceListBytes() {
-      java.lang.Object ref = buyPriceList_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        buyPriceList_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getSellPriceListCount() {
+      return sellPriceList_.size();
     }
+    /**
+     * <code>repeated double sellPriceList = 14;</code>
+     * @param index The index of the element to return.
+     * @return The sellPriceList at the given index.
+     */
+    public double getSellPriceList(int index) {
+      return sellPriceList_.getDouble(index);
+    }
+    private int sellPriceListMemoizedSerializedSize = -1;
 
-    public static final int BUYQTYLIST_FIELD_NUMBER = 17;
-    private volatile java.lang.Object buyQtyList_;
+    public static final int SELLQTYLIST_FIELD_NUMBER = 15;
+    private com.google.protobuf.Internal.LongList sellQtyList_;
     /**
-     * <code>string buyQtyList = 17;</code>
-     * @return The buyQtyList.
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @return A list containing the sellQtyList.
      */
-    public java.lang.String getBuyQtyList() {
-      java.lang.Object ref = buyQtyList_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        buyQtyList_ = s;
-        return s;
-      }
+    public java.util.List<java.lang.Long>
+        getSellQtyListList() {
+      return sellQtyList_;
     }
     /**
-     * <code>string buyQtyList = 17;</code>
-     * @return The bytes for buyQtyList.
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @return The count of sellQtyList.
      */
-    public com.google.protobuf.ByteString
-        getBuyQtyListBytes() {
-      java.lang.Object ref = buyQtyList_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        buyQtyList_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getSellQtyListCount() {
+      return sellQtyList_.size();
     }
+    /**
+     * <code>repeated sint64 sellQtyList = 15;</code>
+     * @param index The index of the element to return.
+     * @return The sellQtyList at the given index.
+     */
+    public long getSellQtyList(int index) {
+      return sellQtyList_.getLong(index);
+    }
+    private int sellQtyListMemoizedSerializedSize = -1;
 
-    public static final int SELLPRICELIST_FIELD_NUMBER = 18;
-    private volatile java.lang.Object sellPriceList_;
-    /**
-     * <code>string sellPriceList = 18;</code>
-     * @return The sellPriceList.
-     */
-    public java.lang.String getSellPriceList() {
-      java.lang.Object ref = sellPriceList_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sellPriceList_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sellPriceList = 18;</code>
-     * @return The bytes for sellPriceList.
-     */
-    public com.google.protobuf.ByteString
-        getSellPriceListBytes() {
-      java.lang.Object ref = sellPriceList_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sellPriceList_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SELLQTYLIST_FIELD_NUMBER = 19;
-    private volatile java.lang.Object sellQtyList_;
-    /**
-     * <code>string sellQtyList = 19;</code>
-     * @return The sellQtyList.
-     */
-    public java.lang.String getSellQtyList() {
-      java.lang.Object ref = sellQtyList_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sellQtyList_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string sellQtyList = 19;</code>
-     * @return The bytes for sellQtyList.
-     */
-    public com.google.protobuf.ByteString
-        getSellQtyListBytes() {
-      java.lang.Object ref = sellQtyList_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sellQtyList_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TOTALVOLUME_FIELD_NUMBER = 20;
+    public static final int TOTALVOLUME_FIELD_NUMBER = 16;
     private long totalVolume_;
     /**
-     * <code>sint64 totalVolume = 20;</code>
+     * <code>sint64 totalVolume = 16;</code>
      * @return The totalVolume.
      */
     public long getTotalVolume() {
       return totalVolume_;
     }
 
-    public static final int TOTALAMONT_FIELD_NUMBER = 21;
+    public static final int TOTALAMONT_FIELD_NUMBER = 17;
     private double totalAmont_;
     /**
-     * <code>double totalAmont = 21;</code>
+     * <code>double totalAmont = 17;</code>
      * @return The totalAmont.
      */
     public double getTotalAmont() {
@@ -924,14 +740,12 @@ public final class MdStockSnapshotBO_PRO {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (!getUuidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uuid_);
       }
       if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
-      }
-      if (!getDestinationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
       }
       if (!getSecurityCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityCode_);
@@ -939,53 +753,57 @@ public final class MdStockSnapshotBO_PRO {
       if (!getExchBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, exch_);
       }
-      if (!getSecurityTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, securityType_);
-      }
-      if (!getCnNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cnName_);
-      }
-      if (!getDateTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, dateTime_);
+      if (dateTime_ != 0L) {
+        output.writeSInt64(6, dateTime_);
       }
       if (open_ != 0D) {
-        output.writeDouble(9, open_);
+        output.writeDouble(7, open_);
       }
       if (preClose_ != 0D) {
-        output.writeDouble(10, preClose_);
+        output.writeDouble(8, preClose_);
       }
       if (lastPrice_ != 0D) {
-        output.writeDouble(11, lastPrice_);
+        output.writeDouble(9, lastPrice_);
       }
       if (high_ != 0D) {
-        output.writeDouble(12, high_);
+        output.writeDouble(10, high_);
       }
       if (low_ != 0D) {
-        output.writeDouble(13, low_);
+        output.writeDouble(11, low_);
       }
-      if (change_ != 0D) {
-        output.writeDouble(14, change_);
+      if (getBuyPriceListList().size() > 0) {
+        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(buyPriceListMemoizedSerializedSize);
       }
-      if (changePer_ != 0D) {
-        output.writeDouble(15, changePer_);
+      for (int i = 0; i < buyPriceList_.size(); i++) {
+        output.writeDoubleNoTag(buyPriceList_.getDouble(i));
       }
-      if (!getBuyPriceListBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, buyPriceList_);
+      if (getBuyQtyListList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(buyQtyListMemoizedSerializedSize);
       }
-      if (!getBuyQtyListBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, buyQtyList_);
+      for (int i = 0; i < buyQtyList_.size(); i++) {
+        output.writeSInt64NoTag(buyQtyList_.getLong(i));
       }
-      if (!getSellPriceListBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sellPriceList_);
+      if (getSellPriceListList().size() > 0) {
+        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(sellPriceListMemoizedSerializedSize);
       }
-      if (!getSellQtyListBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, sellQtyList_);
+      for (int i = 0; i < sellPriceList_.size(); i++) {
+        output.writeDoubleNoTag(sellPriceList_.getDouble(i));
+      }
+      if (getSellQtyListList().size() > 0) {
+        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(sellQtyListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < sellQtyList_.size(); i++) {
+        output.writeSInt64NoTag(sellQtyList_.getLong(i));
       }
       if (totalVolume_ != 0L) {
-        output.writeSInt64(20, totalVolume_);
+        output.writeSInt64(16, totalVolume_);
       }
       if (totalAmont_ != 0D) {
-        output.writeDouble(21, totalAmont_);
+        output.writeDouble(17, totalAmont_);
       }
       unknownFields.writeTo(output);
     }
@@ -1003,71 +821,93 @@ public final class MdStockSnapshotBO_PRO {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
       }
-      if (!getDestinationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
-      }
       if (!getSecurityCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityCode_);
       }
       if (!getExchBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, exch_);
       }
-      if (!getSecurityTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, securityType_);
-      }
-      if (!getCnNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cnName_);
-      }
-      if (!getDateTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, dateTime_);
+      if (dateTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSInt64Size(6, dateTime_);
       }
       if (open_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(9, open_);
+          .computeDoubleSize(7, open_);
       }
       if (preClose_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(10, preClose_);
+          .computeDoubleSize(8, preClose_);
       }
       if (lastPrice_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, lastPrice_);
+          .computeDoubleSize(9, lastPrice_);
       }
       if (high_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, high_);
+          .computeDoubleSize(10, high_);
       }
       if (low_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(13, low_);
+          .computeDoubleSize(11, low_);
       }
-      if (change_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(14, change_);
+      {
+        int dataSize = 0;
+        dataSize = 8 * getBuyPriceListList().size();
+        size += dataSize;
+        if (!getBuyPriceListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        buyPriceListMemoizedSerializedSize = dataSize;
       }
-      if (changePer_ != 0D) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(15, changePer_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < buyQtyList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeSInt64SizeNoTag(buyQtyList_.getLong(i));
+        }
+        size += dataSize;
+        if (!getBuyQtyListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        buyQtyListMemoizedSerializedSize = dataSize;
       }
-      if (!getBuyPriceListBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, buyPriceList_);
+      {
+        int dataSize = 0;
+        dataSize = 8 * getSellPriceListList().size();
+        size += dataSize;
+        if (!getSellPriceListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        sellPriceListMemoizedSerializedSize = dataSize;
       }
-      if (!getBuyQtyListBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, buyQtyList_);
-      }
-      if (!getSellPriceListBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sellPriceList_);
-      }
-      if (!getSellQtyListBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, sellQtyList_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sellQtyList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeSInt64SizeNoTag(sellQtyList_.getLong(i));
+        }
+        size += dataSize;
+        if (!getSellQtyListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        sellQtyListMemoizedSerializedSize = dataSize;
       }
       if (totalVolume_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeSInt64Size(20, totalVolume_);
+          .computeSInt64Size(16, totalVolume_);
       }
       if (totalAmont_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(21, totalAmont_);
+          .computeDoubleSize(17, totalAmont_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1088,18 +928,12 @@ public final class MdStockSnapshotBO_PRO {
           .equals(other.getUuid())) return false;
       if (getBoid()
           != other.getBoid()) return false;
-      if (!getDestination()
-          .equals(other.getDestination())) return false;
       if (!getSecurityCode()
           .equals(other.getSecurityCode())) return false;
       if (!getExch()
           .equals(other.getExch())) return false;
-      if (!getSecurityType()
-          .equals(other.getSecurityType())) return false;
-      if (!getCnName()
-          .equals(other.getCnName())) return false;
-      if (!getDateTime()
-          .equals(other.getDateTime())) return false;
+      if (getDateTime()
+          != other.getDateTime()) return false;
       if (java.lang.Double.doubleToLongBits(getOpen())
           != java.lang.Double.doubleToLongBits(
               other.getOpen())) return false;
@@ -1115,20 +949,14 @@ public final class MdStockSnapshotBO_PRO {
       if (java.lang.Double.doubleToLongBits(getLow())
           != java.lang.Double.doubleToLongBits(
               other.getLow())) return false;
-      if (java.lang.Double.doubleToLongBits(getChange())
-          != java.lang.Double.doubleToLongBits(
-              other.getChange())) return false;
-      if (java.lang.Double.doubleToLongBits(getChangePer())
-          != java.lang.Double.doubleToLongBits(
-              other.getChangePer())) return false;
-      if (!getBuyPriceList()
-          .equals(other.getBuyPriceList())) return false;
-      if (!getBuyQtyList()
-          .equals(other.getBuyQtyList())) return false;
-      if (!getSellPriceList()
-          .equals(other.getSellPriceList())) return false;
-      if (!getSellQtyList()
-          .equals(other.getSellQtyList())) return false;
+      if (!getBuyPriceListList()
+          .equals(other.getBuyPriceListList())) return false;
+      if (!getBuyQtyListList()
+          .equals(other.getBuyQtyListList())) return false;
+      if (!getSellPriceListList()
+          .equals(other.getSellPriceListList())) return false;
+      if (!getSellQtyListList()
+          .equals(other.getSellQtyListList())) return false;
       if (getTotalVolume()
           != other.getTotalVolume()) return false;
       if (java.lang.Double.doubleToLongBits(getTotalAmont())
@@ -1150,18 +978,13 @@ public final class MdStockSnapshotBO_PRO {
       hash = (37 * hash) + BOID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBoid());
-      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDestination().hashCode();
       hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityCode().hashCode();
       hash = (37 * hash) + EXCH_FIELD_NUMBER;
       hash = (53 * hash) + getExch().hashCode();
-      hash = (37 * hash) + SECURITY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getSecurityType().hashCode();
-      hash = (37 * hash) + CNNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getCnName().hashCode();
       hash = (37 * hash) + DATETIME_FIELD_NUMBER;
-      hash = (53 * hash) + getDateTime().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDateTime());
       hash = (37 * hash) + OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getOpen()));
@@ -1177,20 +1000,22 @@ public final class MdStockSnapshotBO_PRO {
       hash = (37 * hash) + LOW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getLow()));
-      hash = (37 * hash) + CHANGE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getChange()));
-      hash = (37 * hash) + CHANGEPER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getChangePer()));
-      hash = (37 * hash) + BUYPRICELIST_FIELD_NUMBER;
-      hash = (53 * hash) + getBuyPriceList().hashCode();
-      hash = (37 * hash) + BUYQTYLIST_FIELD_NUMBER;
-      hash = (53 * hash) + getBuyQtyList().hashCode();
-      hash = (37 * hash) + SELLPRICELIST_FIELD_NUMBER;
-      hash = (53 * hash) + getSellPriceList().hashCode();
-      hash = (37 * hash) + SELLQTYLIST_FIELD_NUMBER;
-      hash = (53 * hash) + getSellQtyList().hashCode();
+      if (getBuyPriceListCount() > 0) {
+        hash = (37 * hash) + BUYPRICELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getBuyPriceListList().hashCode();
+      }
+      if (getBuyQtyListCount() > 0) {
+        hash = (37 * hash) + BUYQTYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getBuyQtyListList().hashCode();
+      }
+      if (getSellPriceListCount() > 0) {
+        hash = (37 * hash) + SELLPRICELIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSellPriceListList().hashCode();
+      }
+      if (getSellQtyListCount() > 0) {
+        hash = (37 * hash) + SELLQTYLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSellQtyListList().hashCode();
+      }
       hash = (37 * hash) + TOTALVOLUME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotalVolume());
@@ -1334,17 +1159,11 @@ public final class MdStockSnapshotBO_PRO {
 
         boid_ = 0L;
 
-        destination_ = "";
-
         securityCode_ = "";
 
         exch_ = "";
 
-        securityType_ = "";
-
-        cnName_ = "";
-
-        dateTime_ = "";
+        dateTime_ = 0L;
 
         open_ = 0D;
 
@@ -1356,18 +1175,14 @@ public final class MdStockSnapshotBO_PRO {
 
         low_ = 0D;
 
-        change_ = 0D;
-
-        changePer_ = 0D;
-
-        buyPriceList_ = "";
-
-        buyQtyList_ = "";
-
-        sellPriceList_ = "";
-
-        sellQtyList_ = "";
-
+        buyPriceList_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        buyQtyList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sellPriceList_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sellQtyList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         totalVolume_ = 0L;
 
         totalAmont_ = 0D;
@@ -1398,24 +1213,36 @@ public final class MdStockSnapshotBO_PRO {
       @java.lang.Override
       public com.purefun.fams.md.pro.MdStockSnapshotBO_PRO.MdStockSnapshotBO buildPartial() {
         com.purefun.fams.md.pro.MdStockSnapshotBO_PRO.MdStockSnapshotBO result = new com.purefun.fams.md.pro.MdStockSnapshotBO_PRO.MdStockSnapshotBO(this);
+        int from_bitField0_ = bitField0_;
         result.uuid_ = uuid_;
         result.boid_ = boid_;
-        result.destination_ = destination_;
         result.securityCode_ = securityCode_;
         result.exch_ = exch_;
-        result.securityType_ = securityType_;
-        result.cnName_ = cnName_;
         result.dateTime_ = dateTime_;
         result.open_ = open_;
         result.preClose_ = preClose_;
         result.lastPrice_ = lastPrice_;
         result.high_ = high_;
         result.low_ = low_;
-        result.change_ = change_;
-        result.changePer_ = changePer_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          buyPriceList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
         result.buyPriceList_ = buyPriceList_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          buyQtyList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
         result.buyQtyList_ = buyQtyList_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          sellPriceList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
         result.sellPriceList_ = sellPriceList_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          sellQtyList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
         result.sellQtyList_ = sellQtyList_;
         result.totalVolume_ = totalVolume_;
         result.totalAmont_ = totalAmont_;
@@ -1474,10 +1301,6 @@ public final class MdStockSnapshotBO_PRO {
         if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
         }
-        if (!other.getDestination().isEmpty()) {
-          destination_ = other.destination_;
-          onChanged();
-        }
         if (!other.getSecurityCode().isEmpty()) {
           securityCode_ = other.securityCode_;
           onChanged();
@@ -1486,17 +1309,8 @@ public final class MdStockSnapshotBO_PRO {
           exch_ = other.exch_;
           onChanged();
         }
-        if (!other.getSecurityType().isEmpty()) {
-          securityType_ = other.securityType_;
-          onChanged();
-        }
-        if (!other.getCnName().isEmpty()) {
-          cnName_ = other.cnName_;
-          onChanged();
-        }
-        if (!other.getDateTime().isEmpty()) {
-          dateTime_ = other.dateTime_;
-          onChanged();
+        if (other.getDateTime() != 0L) {
+          setDateTime(other.getDateTime());
         }
         if (other.getOpen() != 0D) {
           setOpen(other.getOpen());
@@ -1513,26 +1327,44 @@ public final class MdStockSnapshotBO_PRO {
         if (other.getLow() != 0D) {
           setLow(other.getLow());
         }
-        if (other.getChange() != 0D) {
-          setChange(other.getChange());
-        }
-        if (other.getChangePer() != 0D) {
-          setChangePer(other.getChangePer());
-        }
-        if (!other.getBuyPriceList().isEmpty()) {
-          buyPriceList_ = other.buyPriceList_;
+        if (!other.buyPriceList_.isEmpty()) {
+          if (buyPriceList_.isEmpty()) {
+            buyPriceList_ = other.buyPriceList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureBuyPriceListIsMutable();
+            buyPriceList_.addAll(other.buyPriceList_);
+          }
           onChanged();
         }
-        if (!other.getBuyQtyList().isEmpty()) {
-          buyQtyList_ = other.buyQtyList_;
+        if (!other.buyQtyList_.isEmpty()) {
+          if (buyQtyList_.isEmpty()) {
+            buyQtyList_ = other.buyQtyList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureBuyQtyListIsMutable();
+            buyQtyList_.addAll(other.buyQtyList_);
+          }
           onChanged();
         }
-        if (!other.getSellPriceList().isEmpty()) {
-          sellPriceList_ = other.sellPriceList_;
+        if (!other.sellPriceList_.isEmpty()) {
+          if (sellPriceList_.isEmpty()) {
+            sellPriceList_ = other.sellPriceList_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureSellPriceListIsMutable();
+            sellPriceList_.addAll(other.sellPriceList_);
+          }
           onChanged();
         }
-        if (!other.getSellQtyList().isEmpty()) {
-          sellQtyList_ = other.sellQtyList_;
+        if (!other.sellQtyList_.isEmpty()) {
+          if (sellQtyList_.isEmpty()) {
+            sellQtyList_ = other.sellQtyList_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureSellQtyListIsMutable();
+            sellQtyList_.addAll(other.sellQtyList_);
+          }
           onChanged();
         }
         if (other.getTotalVolume() != 0L) {
@@ -1569,6 +1401,7 @@ public final class MdStockSnapshotBO_PRO {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object uuid_ = "";
       /**
@@ -1672,82 +1505,6 @@ public final class MdStockSnapshotBO_PRO {
       public Builder clearBoid() {
         
         boid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object destination_ = "";
-      /**
-       * <code>string destination = 3;</code>
-       * @return The destination.
-       */
-      public java.lang.String getDestination() {
-        java.lang.Object ref = destination_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          destination_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return The bytes for destination.
-       */
-      public com.google.protobuf.ByteString
-          getDestinationBytes() {
-        java.lang.Object ref = destination_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          destination_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestination(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        destination_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDestination() {
-        
-        destination_ = getDefaultInstance().getDestination();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The bytes for destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestinationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        destination_ = value;
         onChanged();
         return this;
       }
@@ -1904,244 +1661,46 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
 
-      private java.lang.Object securityType_ = "";
+      private long dateTime_ ;
       /**
-       * <code>string security_type = 6;</code>
-       * @return The securityType.
-       */
-      public java.lang.String getSecurityType() {
-        java.lang.Object ref = securityType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          securityType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string security_type = 6;</code>
-       * @return The bytes for securityType.
-       */
-      public com.google.protobuf.ByteString
-          getSecurityTypeBytes() {
-        java.lang.Object ref = securityType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          securityType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string security_type = 6;</code>
-       * @param value The securityType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSecurityType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        securityType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string security_type = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSecurityType() {
-        
-        securityType_ = getDefaultInstance().getSecurityType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string security_type = 6;</code>
-       * @param value The bytes for securityType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSecurityTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        securityType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object cnName_ = "";
-      /**
-       * <code>string cnName = 7;</code>
-       * @return The cnName.
-       */
-      public java.lang.String getCnName() {
-        java.lang.Object ref = cnName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          cnName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string cnName = 7;</code>
-       * @return The bytes for cnName.
-       */
-      public com.google.protobuf.ByteString
-          getCnNameBytes() {
-        java.lang.Object ref = cnName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          cnName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cnName = 7;</code>
-       * @param value The cnName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCnName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        cnName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cnName = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCnName() {
-        
-        cnName_ = getDefaultInstance().getCnName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cnName = 7;</code>
-       * @param value The bytes for cnName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCnNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        cnName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object dateTime_ = "";
-      /**
-       * <code>string dateTime = 8;</code>
+       * <code>sint64 dateTime = 6;</code>
        * @return The dateTime.
        */
-      public java.lang.String getDateTime() {
-        java.lang.Object ref = dateTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dateTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getDateTime() {
+        return dateTime_;
       }
       /**
-       * <code>string dateTime = 8;</code>
-       * @return The bytes for dateTime.
-       */
-      public com.google.protobuf.ByteString
-          getDateTimeBytes() {
-        java.lang.Object ref = dateTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dateTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string dateTime = 8;</code>
+       * <code>sint64 dateTime = 6;</code>
        * @param value The dateTime to set.
        * @return This builder for chaining.
        */
-      public Builder setDateTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setDateTime(long value) {
+        
         dateTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string dateTime = 8;</code>
+       * <code>sint64 dateTime = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearDateTime() {
         
-        dateTime_ = getDefaultInstance().getDateTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string dateTime = 8;</code>
-       * @param value The bytes for dateTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDateTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dateTime_ = value;
+        dateTime_ = 0L;
         onChanged();
         return this;
       }
 
       private double open_ ;
       /**
-       * <code>double open = 9;</code>
+       * <code>double open = 7;</code>
        * @return The open.
        */
       public double getOpen() {
         return open_;
       }
       /**
-       * <code>double open = 9;</code>
+       * <code>double open = 7;</code>
        * @param value The open to set.
        * @return This builder for chaining.
        */
@@ -2152,7 +1711,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double open = 9;</code>
+       * <code>double open = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpen() {
@@ -2164,14 +1723,14 @@ public final class MdStockSnapshotBO_PRO {
 
       private double preClose_ ;
       /**
-       * <code>double preClose = 10;</code>
+       * <code>double preClose = 8;</code>
        * @return The preClose.
        */
       public double getPreClose() {
         return preClose_;
       }
       /**
-       * <code>double preClose = 10;</code>
+       * <code>double preClose = 8;</code>
        * @param value The preClose to set.
        * @return This builder for chaining.
        */
@@ -2182,7 +1741,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double preClose = 10;</code>
+       * <code>double preClose = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreClose() {
@@ -2194,14 +1753,14 @@ public final class MdStockSnapshotBO_PRO {
 
       private double lastPrice_ ;
       /**
-       * <code>double lastPrice = 11;</code>
+       * <code>double lastPrice = 9;</code>
        * @return The lastPrice.
        */
       public double getLastPrice() {
         return lastPrice_;
       }
       /**
-       * <code>double lastPrice = 11;</code>
+       * <code>double lastPrice = 9;</code>
        * @param value The lastPrice to set.
        * @return This builder for chaining.
        */
@@ -2212,7 +1771,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double lastPrice = 11;</code>
+       * <code>double lastPrice = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPrice() {
@@ -2224,14 +1783,14 @@ public final class MdStockSnapshotBO_PRO {
 
       private double high_ ;
       /**
-       * <code>double high = 12;</code>
+       * <code>double high = 10;</code>
        * @return The high.
        */
       public double getHigh() {
         return high_;
       }
       /**
-       * <code>double high = 12;</code>
+       * <code>double high = 10;</code>
        * @param value The high to set.
        * @return This builder for chaining.
        */
@@ -2242,7 +1801,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double high = 12;</code>
+       * <code>double high = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearHigh() {
@@ -2254,14 +1813,14 @@ public final class MdStockSnapshotBO_PRO {
 
       private double low_ ;
       /**
-       * <code>double low = 13;</code>
+       * <code>double low = 11;</code>
        * @return The low.
        */
       public double getLow() {
         return low_;
       }
       /**
-       * <code>double low = 13;</code>
+       * <code>double low = 11;</code>
        * @param value The low to set.
        * @return This builder for chaining.
        */
@@ -2272,7 +1831,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double low = 13;</code>
+       * <code>double low = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearLow() {
@@ -2282,380 +1841,332 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
 
-      private double change_ ;
-      /**
-       * <code>double change = 14;</code>
-       * @return The change.
-       */
-      public double getChange() {
-        return change_;
+      private com.google.protobuf.Internal.DoubleList buyPriceList_ = emptyDoubleList();
+      private void ensureBuyPriceListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          buyPriceList_ = mutableCopy(buyPriceList_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
-       * <code>double change = 14;</code>
-       * @param value The change to set.
-       * @return This builder for chaining.
+       * <code>repeated double buyPriceList = 12;</code>
+       * @return A list containing the buyPriceList.
        */
-      public Builder setChange(double value) {
-        
-        change_ = value;
-        onChanged();
-        return this;
+      public java.util.List<java.lang.Double>
+          getBuyPriceListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(buyPriceList_) : buyPriceList_;
       }
       /**
-       * <code>double change = 14;</code>
-       * @return This builder for chaining.
+       * <code>repeated double buyPriceList = 12;</code>
+       * @return The count of buyPriceList.
        */
-      public Builder clearChange() {
-        
-        change_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double changePer_ ;
-      /**
-       * <code>double changePer = 15;</code>
-       * @return The changePer.
-       */
-      public double getChangePer() {
-        return changePer_;
+      public int getBuyPriceListCount() {
+        return buyPriceList_.size();
       }
       /**
-       * <code>double changePer = 15;</code>
-       * @param value The changePer to set.
-       * @return This builder for chaining.
+       * <code>repeated double buyPriceList = 12;</code>
+       * @param index The index of the element to return.
+       * @return The buyPriceList at the given index.
        */
-      public Builder setChangePer(double value) {
-        
-        changePer_ = value;
-        onChanged();
-        return this;
+      public double getBuyPriceList(int index) {
+        return buyPriceList_.getDouble(index);
       }
       /**
-       * <code>double changePer = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChangePer() {
-        
-        changePer_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object buyPriceList_ = "";
-      /**
-       * <code>string buyPriceList = 16;</code>
-       * @return The buyPriceList.
-       */
-      public java.lang.String getBuyPriceList() {
-        java.lang.Object ref = buyPriceList_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          buyPriceList_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string buyPriceList = 16;</code>
-       * @return The bytes for buyPriceList.
-       */
-      public com.google.protobuf.ByteString
-          getBuyPriceListBytes() {
-        java.lang.Object ref = buyPriceList_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          buyPriceList_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string buyPriceList = 16;</code>
+       * <code>repeated double buyPriceList = 12;</code>
+       * @param index The index to set the value at.
        * @param value The buyPriceList to set.
        * @return This builder for chaining.
        */
       public Builder setBuyPriceList(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        buyPriceList_ = value;
+          int index, double value) {
+        ensureBuyPriceListIsMutable();
+        buyPriceList_.setDouble(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>string buyPriceList = 16;</code>
+       * <code>repeated double buyPriceList = 12;</code>
+       * @param value The buyPriceList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBuyPriceList(double value) {
+        ensureBuyPriceListIsMutable();
+        buyPriceList_.addDouble(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double buyPriceList = 12;</code>
+       * @param values The buyPriceList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBuyPriceList(
+          java.lang.Iterable<? extends java.lang.Double> values) {
+        ensureBuyPriceListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, buyPriceList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double buyPriceList = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuyPriceList() {
-        
-        buyPriceList_ = getDefaultInstance().getBuyPriceList();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string buyPriceList = 16;</code>
-       * @param value The bytes for buyPriceList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuyPriceListBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        buyPriceList_ = value;
+        buyPriceList_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private java.lang.Object buyQtyList_ = "";
-      /**
-       * <code>string buyQtyList = 17;</code>
-       * @return The buyQtyList.
-       */
-      public java.lang.String getBuyQtyList() {
-        java.lang.Object ref = buyQtyList_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          buyQtyList_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.Internal.LongList buyQtyList_ = emptyLongList();
+      private void ensureBuyQtyListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          buyQtyList_ = mutableCopy(buyQtyList_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>string buyQtyList = 17;</code>
-       * @return The bytes for buyQtyList.
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @return A list containing the buyQtyList.
        */
-      public com.google.protobuf.ByteString
-          getBuyQtyListBytes() {
-        java.lang.Object ref = buyQtyList_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          buyQtyList_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public java.util.List<java.lang.Long>
+          getBuyQtyListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(buyQtyList_) : buyQtyList_;
       }
       /**
-       * <code>string buyQtyList = 17;</code>
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @return The count of buyQtyList.
+       */
+      public int getBuyQtyListCount() {
+        return buyQtyList_.size();
+      }
+      /**
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @param index The index of the element to return.
+       * @return The buyQtyList at the given index.
+       */
+      public long getBuyQtyList(int index) {
+        return buyQtyList_.getLong(index);
+      }
+      /**
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @param index The index to set the value at.
        * @param value The buyQtyList to set.
        * @return This builder for chaining.
        */
       public Builder setBuyQtyList(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        buyQtyList_ = value;
+          int index, long value) {
+        ensureBuyQtyListIsMutable();
+        buyQtyList_.setLong(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>string buyQtyList = 17;</code>
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @param value The buyQtyList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addBuyQtyList(long value) {
+        ensureBuyQtyListIsMutable();
+        buyQtyList_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sint64 buyQtyList = 13;</code>
+       * @param values The buyQtyList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllBuyQtyList(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureBuyQtyListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, buyQtyList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sint64 buyQtyList = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuyQtyList() {
-        
-        buyQtyList_ = getDefaultInstance().getBuyQtyList();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string buyQtyList = 17;</code>
-       * @param value The bytes for buyQtyList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBuyQtyListBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        buyQtyList_ = value;
+        buyQtyList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
 
-      private java.lang.Object sellPriceList_ = "";
-      /**
-       * <code>string sellPriceList = 18;</code>
-       * @return The sellPriceList.
-       */
-      public java.lang.String getSellPriceList() {
-        java.lang.Object ref = sellPriceList_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sellPriceList_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.Internal.DoubleList sellPriceList_ = emptyDoubleList();
+      private void ensureSellPriceListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          sellPriceList_ = mutableCopy(sellPriceList_);
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
-       * <code>string sellPriceList = 18;</code>
-       * @return The bytes for sellPriceList.
+       * <code>repeated double sellPriceList = 14;</code>
+       * @return A list containing the sellPriceList.
        */
-      public com.google.protobuf.ByteString
-          getSellPriceListBytes() {
-        java.lang.Object ref = sellPriceList_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sellPriceList_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public java.util.List<java.lang.Double>
+          getSellPriceListList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(sellPriceList_) : sellPriceList_;
       }
       /**
-       * <code>string sellPriceList = 18;</code>
+       * <code>repeated double sellPriceList = 14;</code>
+       * @return The count of sellPriceList.
+       */
+      public int getSellPriceListCount() {
+        return sellPriceList_.size();
+      }
+      /**
+       * <code>repeated double sellPriceList = 14;</code>
+       * @param index The index of the element to return.
+       * @return The sellPriceList at the given index.
+       */
+      public double getSellPriceList(int index) {
+        return sellPriceList_.getDouble(index);
+      }
+      /**
+       * <code>repeated double sellPriceList = 14;</code>
+       * @param index The index to set the value at.
        * @param value The sellPriceList to set.
        * @return This builder for chaining.
        */
       public Builder setSellPriceList(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sellPriceList_ = value;
+          int index, double value) {
+        ensureSellPriceListIsMutable();
+        sellPriceList_.setDouble(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>string sellPriceList = 18;</code>
+       * <code>repeated double sellPriceList = 14;</code>
+       * @param value The sellPriceList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSellPriceList(double value) {
+        ensureSellPriceListIsMutable();
+        sellPriceList_.addDouble(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double sellPriceList = 14;</code>
+       * @param values The sellPriceList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSellPriceList(
+          java.lang.Iterable<? extends java.lang.Double> values) {
+        ensureSellPriceListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, sellPriceList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated double sellPriceList = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearSellPriceList() {
-        
-        sellPriceList_ = getDefaultInstance().getSellPriceList();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sellPriceList = 18;</code>
-       * @param value The bytes for sellPriceList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSellPriceListBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sellPriceList_ = value;
+        sellPriceList_ = emptyDoubleList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
 
-      private java.lang.Object sellQtyList_ = "";
-      /**
-       * <code>string sellQtyList = 19;</code>
-       * @return The sellQtyList.
-       */
-      public java.lang.String getSellQtyList() {
-        java.lang.Object ref = sellQtyList_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sellQtyList_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.Internal.LongList sellQtyList_ = emptyLongList();
+      private void ensureSellQtyListIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          sellQtyList_ = mutableCopy(sellQtyList_);
+          bitField0_ |= 0x00000008;
+         }
       }
       /**
-       * <code>string sellQtyList = 19;</code>
-       * @return The bytes for sellQtyList.
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @return A list containing the sellQtyList.
        */
-      public com.google.protobuf.ByteString
-          getSellQtyListBytes() {
-        java.lang.Object ref = sellQtyList_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sellQtyList_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+      public java.util.List<java.lang.Long>
+          getSellQtyListList() {
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(sellQtyList_) : sellQtyList_;
       }
       /**
-       * <code>string sellQtyList = 19;</code>
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @return The count of sellQtyList.
+       */
+      public int getSellQtyListCount() {
+        return sellQtyList_.size();
+      }
+      /**
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @param index The index of the element to return.
+       * @return The sellQtyList at the given index.
+       */
+      public long getSellQtyList(int index) {
+        return sellQtyList_.getLong(index);
+      }
+      /**
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @param index The index to set the value at.
        * @param value The sellQtyList to set.
        * @return This builder for chaining.
        */
       public Builder setSellQtyList(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sellQtyList_ = value;
+          int index, long value) {
+        ensureSellQtyListIsMutable();
+        sellQtyList_.setLong(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>string sellQtyList = 19;</code>
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @param value The sellQtyList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSellQtyList(long value) {
+        ensureSellQtyListIsMutable();
+        sellQtyList_.addLong(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sint64 sellQtyList = 15;</code>
+       * @param values The sellQtyList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSellQtyList(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureSellQtyListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, sellQtyList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sint64 sellQtyList = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearSellQtyList() {
-        
-        sellQtyList_ = getDefaultInstance().getSellQtyList();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string sellQtyList = 19;</code>
-       * @param value The bytes for sellQtyList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSellQtyListBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sellQtyList_ = value;
+        sellQtyList_ = emptyLongList();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
 
       private long totalVolume_ ;
       /**
-       * <code>sint64 totalVolume = 20;</code>
+       * <code>sint64 totalVolume = 16;</code>
        * @return The totalVolume.
        */
       public long getTotalVolume() {
         return totalVolume_;
       }
       /**
-       * <code>sint64 totalVolume = 20;</code>
+       * <code>sint64 totalVolume = 16;</code>
        * @param value The totalVolume to set.
        * @return This builder for chaining.
        */
@@ -2666,7 +2177,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>sint64 totalVolume = 20;</code>
+       * <code>sint64 totalVolume = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalVolume() {
@@ -2678,14 +2189,14 @@ public final class MdStockSnapshotBO_PRO {
 
       private double totalAmont_ ;
       /**
-       * <code>double totalAmont = 21;</code>
+       * <code>double totalAmont = 17;</code>
        * @return The totalAmont.
        */
       public double getTotalAmont() {
         return totalAmont_;
       }
       /**
-       * <code>double totalAmont = 21;</code>
+       * <code>double totalAmont = 17;</code>
        * @param value The totalAmont to set.
        * @return This builder for chaining.
        */
@@ -2696,7 +2207,7 @@ public final class MdStockSnapshotBO_PRO {
         return this;
       }
       /**
-       * <code>double totalAmont = 21;</code>
+       * <code>double totalAmont = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalAmont() {
@@ -2772,19 +2283,16 @@ public final class MdStockSnapshotBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027MdStockSnapshotBO.proto\"\222\003\n\021MdStockSna" +
-      "pshotBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022\023\n\013d" +
-      "estination\030\003 \001(\t\022\025\n\rsecurity_code\030\004 \001(\t\022" +
-      "\014\n\004exch\030\005 \001(\t\022\025\n\rsecurity_type\030\006 \001(\t\022\016\n\006" +
-      "cnName\030\007 \001(\t\022\020\n\010dateTime\030\010 \001(\t\022\014\n\004open\030\t" +
-      " \001(\001\022\020\n\010preClose\030\n \001(\001\022\021\n\tlastPrice\030\013 \001(" +
-      "\001\022\014\n\004high\030\014 \001(\001\022\013\n\003low\030\r \001(\001\022\016\n\006change\030\016" +
-      " \001(\001\022\021\n\tchangePer\030\017 \001(\001\022\024\n\014buyPriceList\030" +
-      "\020 \001(\t\022\022\n\nbuyQtyList\030\021 \001(\t\022\025\n\rsellPriceLi" +
-      "st\030\022 \001(\t\022\023\n\013sellQtyList\030\023 \001(\t\022\023\n\013totalVo" +
-      "lume\030\024 \001(\022\022\022\n\ntotalAmont\030\025 \001(\001B0\n\027com.pu" +
-      "refun.fams.md.proB\025MdStockSnapshotBO_PRO" +
-      "b\006proto3"
+      "\n\027MdStockSnapshotBO.proto\"\263\002\n\021MdStockSna" +
+      "pshotBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022\025\n\rs" +
+      "ecurity_code\030\004 \001(\t\022\014\n\004exch\030\005 \001(\t\022\020\n\010date" +
+      "Time\030\006 \001(\022\022\014\n\004open\030\007 \001(\001\022\020\n\010preClose\030\010 \001" +
+      "(\001\022\021\n\tlastPrice\030\t \001(\001\022\014\n\004high\030\n \001(\001\022\013\n\003l" +
+      "ow\030\013 \001(\001\022\024\n\014buyPriceList\030\014 \003(\001\022\022\n\nbuyQty" +
+      "List\030\r \003(\022\022\025\n\rsellPriceList\030\016 \003(\001\022\023\n\013sel" +
+      "lQtyList\030\017 \003(\022\022\023\n\013totalVolume\030\020 \001(\022\022\022\n\nt" +
+      "otalAmont\030\021 \001(\001B0\n\027com.purefun.fams.md.p" +
+      "roB\025MdStockSnapshotBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2795,7 +2303,7 @@ public final class MdStockSnapshotBO_PRO {
     internal_static_MdStockSnapshotBO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MdStockSnapshotBO_descriptor,
-        new java.lang.String[] { "Uuid", "Boid", "Destination", "SecurityCode", "Exch", "SecurityType", "CnName", "DateTime", "Open", "PreClose", "LastPrice", "High", "Low", "Change", "ChangePer", "BuyPriceList", "BuyQtyList", "SellPriceList", "SellQtyList", "TotalVolume", "TotalAmont", });
+        new java.lang.String[] { "Uuid", "Boid", "SecurityCode", "Exch", "DateTime", "Open", "PreClose", "LastPrice", "High", "Low", "BuyPriceList", "BuyQtyList", "SellPriceList", "SellQtyList", "TotalVolume", "TotalAmont", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

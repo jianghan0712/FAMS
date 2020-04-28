@@ -6,7 +6,6 @@ option java_package = "com.purefun.fams.trade.exec.pro";
 message ExecutedOrderBO {
      string uuid = 1;
      sint64 boid = 2;
-     string destination = 3;
     string account = 4;
     string security_code = 5;
     string exch = 6;

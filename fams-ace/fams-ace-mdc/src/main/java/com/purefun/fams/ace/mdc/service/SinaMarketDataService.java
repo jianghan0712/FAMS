@@ -4,6 +4,8 @@
  */
 package com.purefun.fams.ace.mdc.service;
 
+import java.util.HashSet;
+
 /**
  * @Classname: SinaMarketDataService
  * @Description:
@@ -12,4 +14,12 @@ package com.purefun.fams.ace.mdc.service;
  */
 public interface SinaMarketDataService {
 
+	/**
+	 * 
+	 * @MethodName: initSet
+	 * @author jianghan
+	 * @date 2020-04-28 22:41:43
+	 * @param stockSet
+	 */
+	public void initSet(HashSet<String> stockSet);
 }

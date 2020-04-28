@@ -15,7 +15,6 @@ public class OrderBO_OTW implements ICommon_OTW {
         bo= new OrderBO();
         builder.setUuid(bo.uuid);
         builder.setBoid(bo.boid);
-        builder.setDestination(bo.destination);
     }
 
     public OrderBO_OTW(byte[] message) throws InvalidProtocolBufferException {
@@ -39,7 +38,6 @@ public class OrderBO_OTW implements ICommon_OTW {
         setWithdrawVolume(receive.getWithdrawVolume());
         setUuid(receive.getUuid());
         setBoid(receive.getBoid());
-        setDestination(receive.getDestination());
     }
 
     public OrderBO_OTW(OrderBO bofrom){
@@ -62,7 +60,6 @@ public class OrderBO_OTW implements ICommon_OTW {
         setWithdrawVolume(bofrom.withdrawVolume);
         setUuid(bofrom.uuid);
         setBoid(bofrom.boid);
-        setDestination(bofrom.destination);
     }
 
     public byte[] serial() {
@@ -232,20 +229,10 @@ public class OrderBO_OTW implements ICommon_OTW {
         builder.setBoid(boid);
     }
 
-    public java.lang.String getDestination() {
-        return builder.getDestination();
-    }
-
-    public void setDestination(java.lang.String destination) {
-        bo.destination = destination;
-        builder.setDestination(destination);
-    }
-
     public String toString() {
         return "OrderBO_OTW ["+
             "uuid = " + getUuid() +"," +
             "boid = " + getBoid() +"," +
-            "destination = " + getDestination() +"," +
             "account = " + getAccount() +"," +
             "security_code = " + getSecurity_code() +"," +
             "exch = " + getExch() +"," +

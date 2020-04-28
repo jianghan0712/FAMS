@@ -6,7 +6,6 @@ option java_package = "com.purefun.fams.core.bo.pro";
 message TestBO2 {
      string uuid = 1;
      sint64 boid = 2;
-     string destination = 3;
     string workid = 4;
     string homeaddress = 5;
 }

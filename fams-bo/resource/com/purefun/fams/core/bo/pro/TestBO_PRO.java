@@ -37,18 +37,6 @@ public final class TestBO_PRO {
     long getBoid();
 
     /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    java.lang.String getDestination();
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    com.google.protobuf.ByteString
-        getDestinationBytes();
-
-    /**
      * <code>string username = 4;</code>
      * @return The username.
      */
@@ -80,7 +68,6 @@ public final class TestBO_PRO {
     }
     private TestBO() {
       uuid_ = "";
-      destination_ = "";
       username_ = "";
     }
 
@@ -123,12 +110,6 @@ public final class TestBO_PRO {
             case 16: {
 
               boid_ = input.readSInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destination_ = s;
               break;
             }
             case 34: {
@@ -220,42 +201,6 @@ public final class TestBO_PRO {
       return boid_;
     }
 
-    public static final int DESTINATION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object destination_;
-    /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    public java.lang.String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        destination_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    public com.google.protobuf.ByteString
-        getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int USERNAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object username_;
     /**
@@ -322,9 +267,6 @@ public final class TestBO_PRO {
       if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (!getDestinationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
-      }
       if (!getUsernameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, username_);
       }
@@ -346,9 +288,6 @@ public final class TestBO_PRO {
       if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
-      }
-      if (!getDestinationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
       if (!getUsernameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, username_);
@@ -376,8 +315,6 @@ public final class TestBO_PRO {
           .equals(other.getUuid())) return false;
       if (getBoid()
           != other.getBoid()) return false;
-      if (!getDestination()
-          .equals(other.getDestination())) return false;
       if (!getUsername()
           .equals(other.getUsername())) return false;
       if (getAge()
@@ -398,8 +335,6 @@ public final class TestBO_PRO {
       hash = (37 * hash) + BOID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBoid());
-      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDestination().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + AGE_FIELD_NUMBER;
@@ -541,8 +476,6 @@ public final class TestBO_PRO {
 
         boid_ = 0L;
 
-        destination_ = "";
-
         username_ = "";
 
         age_ = 0;
@@ -575,7 +508,6 @@ public final class TestBO_PRO {
         com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO result = new com.purefun.fams.core.bo.pro.TestBO_PRO.TestBO(this);
         result.uuid_ = uuid_;
         result.boid_ = boid_;
-        result.destination_ = destination_;
         result.username_ = username_;
         result.age_ = age_;
         onBuilt();
@@ -632,10 +564,6 @@ public final class TestBO_PRO {
         }
         if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
-        }
-        if (!other.getDestination().isEmpty()) {
-          destination_ = other.destination_;
-          onChanged();
         }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
@@ -775,82 +703,6 @@ public final class TestBO_PRO {
       public Builder clearBoid() {
         
         boid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object destination_ = "";
-      /**
-       * <code>string destination = 3;</code>
-       * @return The destination.
-       */
-      public java.lang.String getDestination() {
-        java.lang.Object ref = destination_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          destination_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return The bytes for destination.
-       */
-      public com.google.protobuf.ByteString
-          getDestinationBytes() {
-        java.lang.Object ref = destination_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          destination_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestination(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        destination_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDestination() {
-        
-        destination_ = getDefaultInstance().getDestination();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The bytes for destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestinationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        destination_ = value;
         onChanged();
         return this;
       }
@@ -1027,10 +879,10 @@ public final class TestBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014TestBO.proto\"X\n\006TestBO\022\014\n\004uuid\030\001 \001(\t\022\014" +
-      "\n\004boid\030\002 \001(\022\022\023\n\013destination\030\003 \001(\t\022\020\n\010use" +
-      "rname\030\004 \001(\t\022\013\n\003age\030\005 \001(\021B*\n\034com.purefun." +
-      "fams.core.bo.proB\nTestBO_PROb\006proto3"
+      "\n\014TestBO.proto\"C\n\006TestBO\022\014\n\004uuid\030\001 \001(\t\022\014" +
+      "\n\004boid\030\002 \001(\022\022\020\n\010username\030\004 \001(\t\022\013\n\003age\030\005 " +
+      "\001(\021B*\n\034com.purefun.fams.core.bo.proB\nTes" +
+      "tBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1041,7 +893,7 @@ public final class TestBO_PRO {
     internal_static_TestBO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TestBO_descriptor,
-        new java.lang.String[] { "Uuid", "Boid", "Destination", "Username", "Age", });
+        new java.lang.String[] { "Uuid", "Boid", "Username", "Age", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

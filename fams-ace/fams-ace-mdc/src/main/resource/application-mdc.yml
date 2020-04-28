@@ -29,4 +29,8 @@ fams:
             account: 53191000937
             password: OUr8sGgh
             clientid: 18
-            log: log/                  
+            log: log/    
+        sina:
+            url: http://hq.sinajs.cn/
+            interval: 30
+            maxnum: 500             

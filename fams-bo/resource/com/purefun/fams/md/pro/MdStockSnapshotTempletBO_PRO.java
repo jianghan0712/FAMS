@@ -37,18 +37,6 @@ public final class MdStockSnapshotTempletBO_PRO {
     long getBoid();
 
     /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    java.lang.String getDestination();
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    com.google.protobuf.ByteString
-        getDestinationBytes();
-
-    /**
      * <code>string security_code = 4;</code>
      * @return The securityCode.
      */
@@ -254,7 +242,6 @@ public final class MdStockSnapshotTempletBO_PRO {
     }
     private MdStockSnapshotTempletBO() {
       uuid_ = "";
-      destination_ = "";
       securityCode_ = "";
       exch_ = "";
     }
@@ -298,12 +285,6 @@ public final class MdStockSnapshotTempletBO_PRO {
             case 16: {
 
               boid_ = input.readSInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destination_ = s;
               break;
             }
             case 34: {
@@ -534,42 +515,6 @@ public final class MdStockSnapshotTempletBO_PRO {
      */
     public long getBoid() {
       return boid_;
-    }
-
-    public static final int DESTINATION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object destination_;
-    /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    public java.lang.String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        destination_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    public com.google.protobuf.ByteString
-        getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int SECURITY_CODE_FIELD_NUMBER = 4;
@@ -944,9 +889,6 @@ public final class MdStockSnapshotTempletBO_PRO {
       if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (!getDestinationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
-      }
       if (!getSecurityCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, securityCode_);
       }
@@ -1052,9 +994,6 @@ public final class MdStockSnapshotTempletBO_PRO {
       if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
-      }
-      if (!getDestinationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
       if (!getSecurityCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, securityCode_);
@@ -1193,8 +1132,6 @@ public final class MdStockSnapshotTempletBO_PRO {
           .equals(other.getUuid())) return false;
       if (getBoid()
           != other.getBoid()) return false;
-      if (!getDestination()
-          .equals(other.getDestination())) return false;
       if (!getSecurityCode()
           .equals(other.getSecurityCode())) return false;
       if (!getExch()
@@ -1287,8 +1224,6 @@ public final class MdStockSnapshotTempletBO_PRO {
       hash = (37 * hash) + BOID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBoid());
-      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDestination().hashCode();
       hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityCode().hashCode();
       hash = (37 * hash) + EXCH_FIELD_NUMBER;
@@ -1514,8 +1449,6 @@ public final class MdStockSnapshotTempletBO_PRO {
 
         boid_ = 0L;
 
-        destination_ = "";
-
         securityCode_ = "";
 
         exch_ = "";
@@ -1604,7 +1537,6 @@ public final class MdStockSnapshotTempletBO_PRO {
         com.purefun.fams.md.pro.MdStockSnapshotTempletBO_PRO.MdStockSnapshotTempletBO result = new com.purefun.fams.md.pro.MdStockSnapshotTempletBO_PRO.MdStockSnapshotTempletBO(this);
         result.uuid_ = uuid_;
         result.boid_ = boid_;
-        result.destination_ = destination_;
         result.securityCode_ = securityCode_;
         result.exch_ = exch_;
         result.dateTime_ = dateTime_;
@@ -1689,10 +1621,6 @@ public final class MdStockSnapshotTempletBO_PRO {
         }
         if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
-        }
-        if (!other.getDestination().isEmpty()) {
-          destination_ = other.destination_;
-          onChanged();
         }
         if (!other.getSecurityCode().isEmpty()) {
           securityCode_ = other.securityCode_;
@@ -1917,82 +1845,6 @@ public final class MdStockSnapshotTempletBO_PRO {
       public Builder clearBoid() {
         
         boid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object destination_ = "";
-      /**
-       * <code>string destination = 3;</code>
-       * @return The destination.
-       */
-      public java.lang.String getDestination() {
-        java.lang.Object ref = destination_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          destination_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return The bytes for destination.
-       */
-      public com.google.protobuf.ByteString
-          getDestinationBytes() {
-        java.lang.Object ref = destination_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          destination_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestination(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        destination_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDestination() {
-        
-        destination_ = getDefaultInstance().getDestination();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The bytes for destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestinationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        destination_ = value;
         onChanged();
         return this;
       }
@@ -3055,24 +2907,24 @@ public final class MdStockSnapshotTempletBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036MdStockSnapshotTempletBO.proto\"\353\004\n\030MdS" +
+      "\n\036MdStockSnapshotTempletBO.proto\"\326\004\n\030MdS" +
       "tockSnapshotTempletBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004b" +
-      "oid\030\002 \001(\022\022\023\n\013destination\030\003 \001(\t\022\025\n\rsecuri" +
-      "ty_code\030\004 \001(\t\022\014\n\004exch\030\005 \001(\t\022\020\n\010dateTime\030" +
-      "\006 \001(\022\022\014\n\004open\030\007 \001(\001\022\020\n\010preClose\030\010 \001(\001\022\021\n" +
-      "\tlastPrice\030\t \001(\001\022\014\n\004high\030\n \001(\001\022\013\n\003low\030\013 " +
-      "\001(\001\022\021\n\tbuy1Price\030\014 \001(\001\022\017\n\007buy1Qty\030\r \001(\022\022" +
-      "\021\n\tbuy2Price\030\016 \001(\001\022\017\n\007buy2Qty\030\017 \001(\022\022\021\n\tb" +
-      "uy3Price\030\020 \001(\001\022\017\n\007buy3Qty\030\021 \001(\022\022\021\n\tbuy4P" +
-      "rice\030\022 \001(\001\022\017\n\007buy4Qty\030\023 \001(\022\022\021\n\tbuy5Price" +
-      "\030\024 \001(\001\022\017\n\007buy5Qty\030\025 \001(\022\022\022\n\nsell1Price\030\026 " +
-      "\001(\001\022\020\n\010sell1Qty\030\027 \001(\022\022\022\n\nsell2Price\030\030 \001(" +
-      "\001\022\020\n\010sell2Qty\030\031 \001(\022\022\022\n\nsell3Price\030\032 \001(\001\022" +
-      "\020\n\010sell3Qty\030\033 \001(\022\022\022\n\nsell4Price\030\034 \001(\001\022\020\n" +
-      "\010sell4Qty\030\035 \001(\022\022\022\n\nsell5Price\030\036 \001(\001\022\020\n\010s" +
-      "ell5Qty\030\037 \001(\022\022\023\n\013totalVolume\030  \001(\022\022\022\n\nto" +
-      "talAmont\030! \001(\001B7\n\027com.purefun.fams.md.pr" +
-      "oB\034MdStockSnapshotTempletBO_PROb\006proto3"
+      "oid\030\002 \001(\022\022\025\n\rsecurity_code\030\004 \001(\t\022\014\n\004exch" +
+      "\030\005 \001(\t\022\020\n\010dateTime\030\006 \001(\022\022\014\n\004open\030\007 \001(\001\022\020" +
+      "\n\010preClose\030\010 \001(\001\022\021\n\tlastPrice\030\t \001(\001\022\014\n\004h" +
+      "igh\030\n \001(\001\022\013\n\003low\030\013 \001(\001\022\021\n\tbuy1Price\030\014 \001(" +
+      "\001\022\017\n\007buy1Qty\030\r \001(\022\022\021\n\tbuy2Price\030\016 \001(\001\022\017\n" +
+      "\007buy2Qty\030\017 \001(\022\022\021\n\tbuy3Price\030\020 \001(\001\022\017\n\007buy" +
+      "3Qty\030\021 \001(\022\022\021\n\tbuy4Price\030\022 \001(\001\022\017\n\007buy4Qty" +
+      "\030\023 \001(\022\022\021\n\tbuy5Price\030\024 \001(\001\022\017\n\007buy5Qty\030\025 \001" +
+      "(\022\022\022\n\nsell1Price\030\026 \001(\001\022\020\n\010sell1Qty\030\027 \001(\022" +
+      "\022\022\n\nsell2Price\030\030 \001(\001\022\020\n\010sell2Qty\030\031 \001(\022\022\022" +
+      "\n\nsell3Price\030\032 \001(\001\022\020\n\010sell3Qty\030\033 \001(\022\022\022\n\n" +
+      "sell4Price\030\034 \001(\001\022\020\n\010sell4Qty\030\035 \001(\022\022\022\n\nse" +
+      "ll5Price\030\036 \001(\001\022\020\n\010sell5Qty\030\037 \001(\022\022\023\n\013tota" +
+      "lVolume\030  \001(\022\022\022\n\ntotalAmont\030! \001(\001B7\n\027com" +
+      ".purefun.fams.md.proB\034MdStockSnapshotTem" +
+      "pletBO_PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3083,7 +2935,7 @@ public final class MdStockSnapshotTempletBO_PRO {
     internal_static_MdStockSnapshotTempletBO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MdStockSnapshotTempletBO_descriptor,
-        new java.lang.String[] { "Uuid", "Boid", "Destination", "SecurityCode", "Exch", "DateTime", "Open", "PreClose", "LastPrice", "High", "Low", "Buy1Price", "Buy1Qty", "Buy2Price", "Buy2Qty", "Buy3Price", "Buy3Qty", "Buy4Price", "Buy4Qty", "Buy5Price", "Buy5Qty", "Sell1Price", "Sell1Qty", "Sell2Price", "Sell2Qty", "Sell3Price", "Sell3Qty", "Sell4Price", "Sell4Qty", "Sell5Price", "Sell5Qty", "TotalVolume", "TotalAmont", });
+        new java.lang.String[] { "Uuid", "Boid", "SecurityCode", "Exch", "DateTime", "Open", "PreClose", "LastPrice", "High", "Low", "Buy1Price", "Buy1Qty", "Buy2Price", "Buy2Qty", "Buy3Price", "Buy3Qty", "Buy4Price", "Buy4Qty", "Buy5Price", "Buy5Qty", "Sell1Price", "Sell1Qty", "Sell2Price", "Sell2Qty", "Sell3Price", "Sell3Qty", "Sell4Price", "Sell4Qty", "Sell5Price", "Sell5Qty", "TotalVolume", "TotalAmont", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

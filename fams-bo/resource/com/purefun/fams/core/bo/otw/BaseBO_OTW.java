@@ -15,7 +15,6 @@ public class BaseBO_OTW implements ICommon_OTW {
         bo= new BaseBO();
         builder.setUuid(bo.uuid);
         builder.setBoid(bo.boid);
-        builder.setDestination(bo.destination);
     }
 
     public BaseBO_OTW(byte[] message) throws InvalidProtocolBufferException {
@@ -24,7 +23,6 @@ public class BaseBO_OTW implements ICommon_OTW {
         BaseBO_PRO.BaseBO receive = BaseBO_PRO.BaseBO.parseFrom(message);
         setUuid(receive.getUuid());
         setBoid(receive.getBoid());
-        setDestination(receive.getDestination());
     }
 
     public BaseBO_OTW(BaseBO bofrom){
@@ -32,7 +30,6 @@ public class BaseBO_OTW implements ICommon_OTW {
         bo= new BaseBO();
         setUuid(bofrom.uuid);
         setBoid(bofrom.boid);
-        setDestination(bofrom.destination);
     }
 
     public byte[] serial() {
@@ -67,20 +64,10 @@ public class BaseBO_OTW implements ICommon_OTW {
         builder.setBoid(boid);
     }
 
-    public java.lang.String getDestination() {
-        return builder.getDestination();
-    }
-
-    public void setDestination(java.lang.String destination) {
-        bo.destination = destination;
-        builder.setDestination(destination);
-    }
-
     public String toString() {
         return "BaseBO_OTW ["+
             "uuid = " + getUuid() +"," +
             "boid = " + getBoid() +"," +
-            "destination = " + getDestination() +"," +
          "]";
     }
 }

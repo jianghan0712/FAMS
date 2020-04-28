@@ -15,7 +15,6 @@ public class TestBO2_OTW implements ICommon_OTW {
         bo= new TestBO2();
         builder.setUuid(bo.uuid);
         builder.setBoid(bo.boid);
-        builder.setDestination(bo.destination);
     }
 
     public TestBO2_OTW(byte[] message) throws InvalidProtocolBufferException {
@@ -26,7 +25,6 @@ public class TestBO2_OTW implements ICommon_OTW {
         setHomeaddress(receive.getHomeaddress());
         setUuid(receive.getUuid());
         setBoid(receive.getBoid());
-        setDestination(receive.getDestination());
     }
 
     public TestBO2_OTW(TestBO2 bofrom){
@@ -36,7 +34,6 @@ public class TestBO2_OTW implements ICommon_OTW {
         setHomeaddress(bofrom.homeaddress);
         setUuid(bofrom.uuid);
         setBoid(bofrom.boid);
-        setDestination(bofrom.destination);
     }
 
     public byte[] serial() {
@@ -89,20 +86,10 @@ public class TestBO2_OTW implements ICommon_OTW {
         builder.setBoid(boid);
     }
 
-    public java.lang.String getDestination() {
-        return builder.getDestination();
-    }
-
-    public void setDestination(java.lang.String destination) {
-        bo.destination = destination;
-        builder.setDestination(destination);
-    }
-
     public String toString() {
         return "TestBO2_OTW ["+
             "uuid = " + getUuid() +"," +
             "boid = " + getBoid() +"," +
-            "destination = " + getDestination() +"," +
             "workid = " + getWorkid() +"," +
             "homeaddress = " + getHomeaddress() +"," +
          "]";

@@ -11,15 +11,6 @@ package com.purefun.fams.core.bo.commom;
  * @date 2020-02-06 14:19:00
  */
 public interface ICommon_OTW {
-	/**
-	 * 
-	 * @MethodName: getDestination
-	 * @Description:
-	 * @author jiang
-	 * @date 2020-02-06 14:20:33
-	 * @return 该bo的destination,即topic
-	 */
-	String getDestination();
 
 	/**
 	 * 

@@ -6,7 +6,6 @@ option java_package = "com.purefun.fams.md.pro";
 message MdBarDataBO {
      string uuid = 1;
      sint64 boid = 2;
-     string destination = 3;
     string security_code = 4;
     string exch = 5;
     string security_type = 6;

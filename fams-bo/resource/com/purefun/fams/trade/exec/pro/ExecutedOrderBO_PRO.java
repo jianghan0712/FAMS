@@ -37,18 +37,6 @@ public final class ExecutedOrderBO_PRO {
     long getBoid();
 
     /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    java.lang.String getDestination();
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    com.google.protobuf.ByteString
-        getDestinationBytes();
-
-    /**
      * <code>string account = 4;</code>
      * @return The account.
      */
@@ -170,7 +158,6 @@ public final class ExecutedOrderBO_PRO {
     }
     private ExecutedOrderBO() {
       uuid_ = "";
-      destination_ = "";
       account_ = "";
       securityCode_ = "";
       exch_ = "";
@@ -220,12 +207,6 @@ public final class ExecutedOrderBO_PRO {
             case 16: {
 
               boid_ = input.readSInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destination_ = s;
               break;
             }
             case 34: {
@@ -362,42 +343,6 @@ public final class ExecutedOrderBO_PRO {
      */
     public long getBoid() {
       return boid_;
-    }
-
-    public static final int DESTINATION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object destination_;
-    /**
-     * <code>string destination = 3;</code>
-     * @return The destination.
-     */
-    public java.lang.String getDestination() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        destination_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string destination = 3;</code>
-     * @return The bytes for destination.
-     */
-    public com.google.protobuf.ByteString
-        getDestinationBytes() {
-      java.lang.Object ref = destination_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        destination_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int ACCOUNT_FIELD_NUMBER = 4;
@@ -728,9 +673,6 @@ public final class ExecutedOrderBO_PRO {
       if (boid_ != 0L) {
         output.writeSInt64(2, boid_);
       }
-      if (!getDestinationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destination_);
-      }
       if (!getAccountBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, account_);
       }
@@ -776,9 +718,6 @@ public final class ExecutedOrderBO_PRO {
       if (boid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt64Size(2, boid_);
-      }
-      if (!getDestinationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destination_);
       }
       if (!getAccountBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, account_);
@@ -831,8 +770,6 @@ public final class ExecutedOrderBO_PRO {
           .equals(other.getUuid())) return false;
       if (getBoid()
           != other.getBoid()) return false;
-      if (!getDestination()
-          .equals(other.getDestination())) return false;
       if (!getAccount()
           .equals(other.getAccount())) return false;
       if (!getSecurityCode()
@@ -870,8 +807,6 @@ public final class ExecutedOrderBO_PRO {
       hash = (37 * hash) + BOID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getBoid());
-      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDestination().hashCode();
       hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAccount().hashCode();
       hash = (37 * hash) + SECURITY_CODE_FIELD_NUMBER;
@@ -1031,8 +966,6 @@ public final class ExecutedOrderBO_PRO {
 
         boid_ = 0L;
 
-        destination_ = "";
-
         account_ = "";
 
         securityCode_ = "";
@@ -1081,7 +1014,6 @@ public final class ExecutedOrderBO_PRO {
         com.purefun.fams.trade.exec.pro.ExecutedOrderBO_PRO.ExecutedOrderBO result = new com.purefun.fams.trade.exec.pro.ExecutedOrderBO_PRO.ExecutedOrderBO(this);
         result.uuid_ = uuid_;
         result.boid_ = boid_;
-        result.destination_ = destination_;
         result.account_ = account_;
         result.securityCode_ = securityCode_;
         result.exch_ = exch_;
@@ -1146,10 +1078,6 @@ public final class ExecutedOrderBO_PRO {
         }
         if (other.getBoid() != 0L) {
           setBoid(other.getBoid());
-        }
-        if (!other.getDestination().isEmpty()) {
-          destination_ = other.destination_;
-          onChanged();
         }
         if (!other.getAccount().isEmpty()) {
           account_ = other.account_;
@@ -1320,82 +1248,6 @@ public final class ExecutedOrderBO_PRO {
       public Builder clearBoid() {
         
         boid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object destination_ = "";
-      /**
-       * <code>string destination = 3;</code>
-       * @return The destination.
-       */
-      public java.lang.String getDestination() {
-        java.lang.Object ref = destination_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          destination_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return The bytes for destination.
-       */
-      public com.google.protobuf.ByteString
-          getDestinationBytes() {
-        java.lang.Object ref = destination_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          destination_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestination(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        destination_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDestination() {
-        
-        destination_ = getDefaultInstance().getDestination();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string destination = 3;</code>
-       * @param value The bytes for destination to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDestinationBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        destination_ = value;
         onChanged();
         return this;
       }
@@ -2134,15 +1986,15 @@ public final class ExecutedOrderBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025ExecutedOrderBO.proto\"\206\002\n\017ExecutedOrde" +
-      "rBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022\023\n\013desti" +
-      "nation\030\003 \001(\t\022\017\n\007account\030\004 \001(\t\022\025\n\rsecurit" +
-      "y_code\030\005 \001(\t\022\014\n\004exch\030\006 \001(\t\022\025\n\rsecurity_t" +
-      "ype\030\007 \001(\t\022\021\n\tdirection\030\010 \001(\t\022\017\n\007orderId\030" +
-      "\t \001(\t\022\021\n\ttradeDate\030\n \001(\t\022\021\n\texecuteId\030\013 " +
-      "\001(\t\022\024\n\014executePrice\030\014 \001(\001\022\025\n\rexecuteVolu" +
-      "me\030\r \001(\022B6\n\037com.purefun.fams.trade.exec." +
-      "proB\023ExecutedOrderBO_PROb\006proto3"
+      "\n\025ExecutedOrderBO.proto\"\361\001\n\017ExecutedOrde" +
+      "rBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030\002 \001(\022\022\017\n\007accou" +
+      "nt\030\004 \001(\t\022\025\n\rsecurity_code\030\005 \001(\t\022\014\n\004exch\030" +
+      "\006 \001(\t\022\025\n\rsecurity_type\030\007 \001(\t\022\021\n\tdirectio" +
+      "n\030\010 \001(\t\022\017\n\007orderId\030\t \001(\t\022\021\n\ttradeDate\030\n " +
+      "\001(\t\022\021\n\texecuteId\030\013 \001(\t\022\024\n\014executePrice\030\014" +
+      " \001(\001\022\025\n\rexecuteVolume\030\r \001(\022B6\n\037com.puref" +
+      "un.fams.trade.exec.proB\023ExecutedOrderBO_" +
+      "PROb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2153,7 +2005,7 @@ public final class ExecutedOrderBO_PRO {
     internal_static_ExecutedOrderBO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExecutedOrderBO_descriptor,
-        new java.lang.String[] { "Uuid", "Boid", "Destination", "Account", "SecurityCode", "Exch", "SecurityType", "Direction", "OrderId", "TradeDate", "ExecuteId", "ExecutePrice", "ExecuteVolume", });
+        new java.lang.String[] { "Uuid", "Boid", "Account", "SecurityCode", "Exch", "SecurityType", "Direction", "OrderId", "TradeDate", "ExecuteId", "ExecutePrice", "ExecuteVolume", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

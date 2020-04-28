@@ -3,6 +3,9 @@
  */
 package com.purefun.fams.md;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
 
 import com.purefun.fams.core.bo.BaseBO;
@@ -18,7 +21,6 @@ import com.purefun.fams.core.bo.tool.fstpbo;
  */
 @fstpbo(boid = 1101L, destination = "fams.md.snapshot.stock")
 public class MdStockSnapshotBO extends BaseBO {
-
 	/** @Fields: */
 	private static final long serialVersionUID = 1183593459149813531L;
 
@@ -28,34 +30,25 @@ public class MdStockSnapshotBO extends BaseBO {
 	@QuerySqlField
 	public String exch;
 
-	@QuerySqlField
-	public String security_type;
-
-	public String cnName;
-
-	public String dateTime;// yyyyMMddhhmmss
+	public long dateTime;// yyyyMMddhhmmss
 
 	public double open;
 
 	public double preClose;
 
-	public double lastPrice;
+	public double lastPrice;// 最新价格
 
 	public double high;
 
 	public double low;
 
-	public double change;// 与前收盘价的变化即：lastPrice-preClose
+	public List<Double> buyPriceList = new ArrayList<Double>();// 五档买行情，买一->买五
 
-	public double changePer;// 变动百分比：(lastPrice-preClose)/preClose *100%
+	public List<Long> buyQtyList = new ArrayList<Long>();// 五档买挂单量，买一->买五
 
-	public String buyPriceList;// 五档买行情，买一->买五，以^做隔断
+	public List<Double> sellPriceList = new ArrayList<Double>();// 五档买行情，卖1->卖5
 
-	public String buyQtyList;// 五档买挂单量，买一->买五，以^做隔断
-
-	public String sellPriceList;// 五档买行情，卖五->卖一，以^做隔断
-
-	public String sellQtyList;// 五档卖挂单量，卖五->卖一，以^做隔断
+	public List<Long> sellQtyList = new ArrayList<Long>();// 五档卖挂单量，卖1->卖5
 
 	public long totalVolume;// 已成交量，以手为单位
 

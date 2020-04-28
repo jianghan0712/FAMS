@@ -26,7 +26,7 @@ public class BoFactory {
 	 * @param c1 bo的模板类
 	 * @return
 	 */
-	public static Object createBo(Class<?> c1) {
+	public static Object createBo(Class<?> c1, boolean useUuid) {
 		fstpbo annotation = (fstpbo) c1.getAnnotation(fstpbo.class);
 		if (annotation == null) {
 			return null;
@@ -45,15 +45,14 @@ public class BoFactory {
 			Object bo = c1.newInstance();
 			Field boid = c1.getField("boid");
 			boid.set(bo, annotation.boid());
-			Field des = c1.getField("destination");
-			des.set(bo, annotation.destination());
-			Field uuid = c1.getField("uuid");
-			uuid.set(bo, UuidUtil.createUuid());
+//			Field des = c1.getField("destination");
+//			des.set(bo, annotation.destination());
 
+//			uuid.set(bo, UuidUtil.createUuid());
+//			|| e.getName().equalsIgnoreCase("uuid")
 			Field[] fileds = c1.getFields();
 			for (Field e : fileds) {
-				if (e.getName().equalsIgnoreCase("boid") || e.getName().equalsIgnoreCase("destination")
-						|| e.getName().equalsIgnoreCase("uuid"))
+				if (e.getName().equalsIgnoreCase("boid") || e.getName().equalsIgnoreCase("destination"))
 					continue;
 				Class<?> type = e.getType();
 				if (type.equals(java.lang.String.class)) {
@@ -63,6 +62,10 @@ public class BoFactory {
 				} else if (type.equals(int.class)) {
 					e.set(bo, -1);
 				}
+			}
+			if (useUuid) {
+				Field uuid = c1.getField("uuid");
+				uuid.set(bo, UuidUtil.createUuid());
 			}
 			Class c2 = Class.forName(otwBoName.toString());
 			ret = c2.getConstructor(c1).newInstance(bo);

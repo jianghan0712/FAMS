@@ -30,9 +30,8 @@ public class ApplicationInit implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		pool.execute(commondThread);
-
-		server.subMarketDate();
-//		mdService.subscribeMarketData(new String[] { "600000" }, 1, 1);
+		server.start();
 
 	}
+
 }

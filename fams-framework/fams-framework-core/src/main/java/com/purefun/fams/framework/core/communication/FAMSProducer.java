@@ -4,6 +4,9 @@
  */
 package com.purefun.fams.framework.core.communication;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -13,7 +16,9 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.SuccessCallback;
 
 import com.purefun.fams.core.bo.commom.ICommon_OTW;
+import com.purefun.fams.core.bo.tool.fstpbo;
 import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
+import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 
 /**
@@ -26,6 +31,8 @@ public class FAMSProducer {
 	private static final Logger logger = LogManager.getLogger(FAMSProducer.class);
 	private KafkaTemplate<String, byte[]> kafkaTemplate;
 
+	private Map<Long, String> topicMap = null;// <boid, topic>
+
 	/**
 	 * 初始化生产模块
 	 * 
@@ -37,6 +44,7 @@ public class FAMSProducer {
 	 */
 	public void initProducer(KafkaTemplate<String, byte[]> kafkaTemplate) {
 		this.kafkaTemplate = kafkaTemplate;
+		topicMap = new HashMap<Long, String>();
 	}
 
 	/**
@@ -51,7 +59,21 @@ public class FAMSProducer {
 	public void publish(ICommon_OTW bo) {
 		AssertUtil.assertNotNull(bo, ErrorCodeEnum.UNKNOWN_EXCEPTION);
 
-		ListenableFuture<SendResult<String, byte[]>> listenableFuture = kafkaTemplate.send(bo.getDestination(),
+		Class<?> boClass = bo.getBo().getClass();
+		fstpbo annotation = (fstpbo) boClass.getAnnotation(fstpbo.class);
+		if (annotation == null) {
+			throw new FAMSException(ErrorCodeEnum.BOANNOTION_EXCEPTION);
+		}
+
+		String topic = null;
+		if (topicMap.containsKey(annotation.boid())) {
+			topic = topicMap.get(annotation.boid());
+		} else {
+			topic = annotation.destination();
+			topicMap.put(annotation.boid(), topic);
+		}
+
+		ListenableFuture<SendResult<String, byte[]>> listenableFuture = kafkaTemplate.send(topic,
 				bo.getBuilder().build().toByteArray());
 
 		SuccessCallback<SendResult> successCallback = new SuccessCallback<SendResult>() {

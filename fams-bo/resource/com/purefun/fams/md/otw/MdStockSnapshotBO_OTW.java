@@ -15,7 +15,6 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         bo= new MdStockSnapshotBO();
         builder.setUuid(bo.uuid);
         builder.setBoid(bo.boid);
-        builder.setDestination(bo.destination);
     }
 
     public MdStockSnapshotBO_OTW(byte[] message) throws InvalidProtocolBufferException {
@@ -24,25 +23,20 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         MdStockSnapshotBO_PRO.MdStockSnapshotBO receive = MdStockSnapshotBO_PRO.MdStockSnapshotBO.parseFrom(message);
         setSecurity_code(receive.getSecurityCode());
         setExch(receive.getExch());
-        setSecurity_type(receive.getSecurityType());
-        setCnName(receive.getCnName());
         setDateTime(receive.getDateTime());
         setOpen(receive.getOpen());
         setPreClose(receive.getPreClose());
         setLastPrice(receive.getLastPrice());
         setHigh(receive.getHigh());
         setLow(receive.getLow());
-        setChange(receive.getChange());
-        setChangePer(receive.getChangePer());
-        setBuyPriceList(receive.getBuyPriceList());
-        setBuyQtyList(receive.getBuyQtyList());
-        setSellPriceList(receive.getSellPriceList());
-        setSellQtyList(receive.getSellQtyList());
+        setBuyPriceList(receive.getBuyPriceListList());
+        setBuyQtyList(receive.getBuyQtyListList());
+        setSellPriceList(receive.getSellPriceListList());
+        setSellQtyList(receive.getSellQtyListList());
         setTotalVolume(receive.getTotalVolume());
         setTotalAmont(receive.getTotalAmont());
         setUuid(receive.getUuid());
         setBoid(receive.getBoid());
-        setDestination(receive.getDestination());
     }
 
     public MdStockSnapshotBO_OTW(MdStockSnapshotBO bofrom){
@@ -50,16 +44,12 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         bo= new MdStockSnapshotBO();
         setSecurity_code(bofrom.security_code);
         setExch(bofrom.exch);
-        setSecurity_type(bofrom.security_type);
-        setCnName(bofrom.cnName);
         setDateTime(bofrom.dateTime);
         setOpen(bofrom.open);
         setPreClose(bofrom.preClose);
         setLastPrice(bofrom.lastPrice);
         setHigh(bofrom.high);
         setLow(bofrom.low);
-        setChange(bofrom.change);
-        setChangePer(bofrom.changePer);
         setBuyPriceList(bofrom.buyPriceList);
         setBuyQtyList(bofrom.buyQtyList);
         setSellPriceList(bofrom.sellPriceList);
@@ -68,7 +58,6 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         setTotalAmont(bofrom.totalAmont);
         setUuid(bofrom.uuid);
         setBoid(bofrom.boid);
-        setDestination(bofrom.destination);
     }
 
     public byte[] serial() {
@@ -103,29 +92,11 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         builder.setExch(exch);
     }
 
-    public java.lang.String getSecurity_type() {
-        return builder.getSecurityType();
-    }
-
-    public void setSecurity_type(java.lang.String security_type) {
-        bo.security_type = security_type;
-        builder.setSecurityType(security_type);
-    }
-
-    public java.lang.String getCnName() {
-        return builder.getCnName();
-    }
-
-    public void setCnName(java.lang.String cnName) {
-        bo.cnName = cnName;
-        builder.setCnName(cnName);
-    }
-
-    public java.lang.String getDateTime() {
+    public long getDateTime() {
         return builder.getDateTime();
     }
 
-    public void setDateTime(java.lang.String dateTime) {
+    public void setDateTime(long dateTime) {
         bo.dateTime = dateTime;
         builder.setDateTime(dateTime);
     }
@@ -175,58 +146,40 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         builder.setLow(low);
     }
 
-    public double getChange() {
-        return builder.getChange();
+    public java.util.List getBuyPriceList() {
+        return builder.getBuyPriceListList();
     }
 
-    public void setChange(double change) {
-        bo.change = change;
-        builder.setChange(change);
-    }
-
-    public double getChangePer() {
-        return builder.getChangePer();
-    }
-
-    public void setChangePer(double changePer) {
-        bo.changePer = changePer;
-        builder.setChangePer(changePer);
-    }
-
-    public java.lang.String getBuyPriceList() {
-        return builder.getBuyPriceList();
-    }
-
-    public void setBuyPriceList(java.lang.String buyPriceList) {
+    public void setBuyPriceList(java.util.List buyPriceList) {
         bo.buyPriceList = buyPriceList;
-        builder.setBuyPriceList(buyPriceList);
+        builder.addAllBuyPriceList(buyPriceList);
     }
 
-    public java.lang.String getBuyQtyList() {
-        return builder.getBuyQtyList();
+    public java.util.List getBuyQtyList() {
+        return builder.getBuyQtyListList();
     }
 
-    public void setBuyQtyList(java.lang.String buyQtyList) {
+    public void setBuyQtyList(java.util.List buyQtyList) {
         bo.buyQtyList = buyQtyList;
-        builder.setBuyQtyList(buyQtyList);
+        builder.addAllBuyQtyList(buyQtyList);
     }
 
-    public java.lang.String getSellPriceList() {
-        return builder.getSellPriceList();
+    public java.util.List getSellPriceList() {
+        return builder.getSellPriceListList();
     }
 
-    public void setSellPriceList(java.lang.String sellPriceList) {
+    public void setSellPriceList(java.util.List sellPriceList) {
         bo.sellPriceList = sellPriceList;
-        builder.setSellPriceList(sellPriceList);
+        builder.addAllSellPriceList(sellPriceList);
     }
 
-    public java.lang.String getSellQtyList() {
-        return builder.getSellQtyList();
+    public java.util.List getSellQtyList() {
+        return builder.getSellQtyListList();
     }
 
-    public void setSellQtyList(java.lang.String sellQtyList) {
+    public void setSellQtyList(java.util.List sellQtyList) {
         bo.sellQtyList = sellQtyList;
-        builder.setSellQtyList(sellQtyList);
+        builder.addAllSellQtyList(sellQtyList);
     }
 
     public long getTotalVolume() {
@@ -265,32 +218,18 @@ public class MdStockSnapshotBO_OTW implements ICommon_OTW {
         builder.setBoid(boid);
     }
 
-    public java.lang.String getDestination() {
-        return builder.getDestination();
-    }
-
-    public void setDestination(java.lang.String destination) {
-        bo.destination = destination;
-        builder.setDestination(destination);
-    }
-
     public String toString() {
         return "MdStockSnapshotBO_OTW ["+
             "uuid = " + getUuid() +"," +
             "boid = " + getBoid() +"," +
-            "destination = " + getDestination() +"," +
             "security_code = " + getSecurity_code() +"," +
             "exch = " + getExch() +"," +
-            "security_type = " + getSecurity_type() +"," +
-            "cnName = " + getCnName() +"," +
             "dateTime = " + getDateTime() +"," +
             "open = " + getOpen() +"," +
             "preClose = " + getPreClose() +"," +
             "lastPrice = " + getLastPrice() +"," +
             "high = " + getHigh() +"," +
             "low = " + getLow() +"," +
-            "change = " + getChange() +"," +
-            "changePer = " + getChangePer() +"," +
             "buyPriceList = " + getBuyPriceList() +"," +
             "buyQtyList = " + getBuyQtyList() +"," +
             "sellPriceList = " + getSellPriceList() +"," +
