@@ -49,7 +49,7 @@
 ## 任务列表
 
 - [ ] fams-framework 框架
-  - [ ] fams-framework-core
+  - [x] fams-framework-core
     - [x] 序列化 bo
     - [x] 命令行服务
     - [x] 启动时数据加载服务
@@ -75,11 +75,11 @@
       - [x] ignite
 
 
-- [ ] fams-king 交易中台
-  - [ ] King-Component 交易中台公共组件
+- [ ] fams-middle-service 交易中台	KING
+  - [ ] Middle-Component 交易中台公共组件
     - [x] MarketDataContainer 行情容器
     - [x] StrategyContainer 策略容器
-    - [ ] TradeAnalysisContainer 交易分析容器
+    - [x] TradeAnalysisContainer 交易分析容器
     - [ ] PortfolioContainer 资产组合容器
   - [ ] BacktestService 事件驱动型回测服务
     - [x] 单支证券回测
@@ -91,18 +91,21 @@
   - [ ] MarketDataService 行情服务
 
 
-- [ ] fams-ace 交易前台
+- [ ] fams-ace-service 交易前台 ACE
   - [ ] Ace-Component 交易前台公共组件
-  - [ ] OrderManagerService 订单管理服务
+  - [ ] OrderManagerService 订单管理服务（OMS）
+  - [ ] MarketDataCenter 行情中心 (MDC)
+    - [x] Sina 新浪行情中心
+    - [ ] XTP 中泰量化
 
 
-- [ ] fams-queen 交易后台
-  - [ ] Queen-Component 交易后台公共组件
+- [ ] fams-back-service 交易后台	QUEEN
+  - [ ] Back-Component 交易后台公共组件
   - [ ] ProductService 产品库
   - [ ] AcctService 客户账户管理服务
   - [ ] OrderFlowService 指令流转服务
 
 
 - [ ] Python服务
-  - [ ] TushareService 数据拉取服务
+  - [x] TushareService 数据拉取服务
   - [x] BacktestService 向量型回测服务
