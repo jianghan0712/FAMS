@@ -151,7 +151,7 @@ public abstract class StrategyContainer implements Observer {
 	 * @param securityCoe
 	 */
 	protected void signalNotify(DirectionEnum side, String securityCoe) {
-		OrderBO_OTW order = (OrderBO_OTW) BoFactory.createBo(OrderBO.class);
+		OrderBO_OTW order = (OrderBO_OTW) BoFactory.createBo(OrderBO.class, true);
 		order.setSecurity_code(securityCoe);
 		order.setDirection(side.getCode());
 		order.setOrderId(order.getUuid());

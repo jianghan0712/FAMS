@@ -36,7 +36,7 @@ public class BacktestExecutorContainer extends OrderExecutor {
 	public void handlerOrder(OrderBO_OTW order) {
 		String direction = order.getDirection();
 
-		ExecutedOrderBO_OTW execOrder = (ExecutedOrderBO_OTW) BoFactory.createBo(ExecutedOrderBO.class);
+		ExecutedOrderBO_OTW execOrder = (ExecutedOrderBO_OTW) BoFactory.createBo(ExecutedOrderBO.class, true);
 		execOrder.setExecutePrice(order.getOrderPrice());
 		execOrder.setExecuteVolume(order.getOrderVolume());
 		execOrder.setSecurity_code(order.getSecurity_code());
