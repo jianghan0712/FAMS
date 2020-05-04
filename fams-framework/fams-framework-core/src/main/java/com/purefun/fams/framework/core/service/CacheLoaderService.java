@@ -47,6 +47,7 @@ public abstract class CacheLoaderService implements DataLoaderService {
 			List<V> result = ClassHandleUtil.executeMybatisProxy(sqlSession, mapperName, methodName, null, null);
 			loadData2Cache(result, cacheName, keyFildName);
 		} catch (RuntimeException | ReflectiveOperationException e) {
+			e.printStackTrace();
 			logger.error("从db加载数据到cache失败，mapper:{},cacheName:{},e:{}", mapperName, cacheName, e);
 		}
 	}

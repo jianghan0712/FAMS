@@ -34,7 +34,7 @@ spring:
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer 
     datasource:
-        url: jdbc:mysql://122.51.159.32:3306/fams?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+        url: jdbc:mysql://127.0.0.1:3306/fams?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
         username: root
         password: jianghan0712
         driver-class-name: com.mysql.jdbc.Driver

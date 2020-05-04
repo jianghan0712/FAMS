@@ -67,6 +67,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getInterceptors().add(new LogInterceptor());
 		this.sinaTemplate = restTemplate;
+		start();
 	}
 
 	/**

@@ -15,7 +15,6 @@ import com.purefun.fams.framework.core.service.CacheService;
 import com.purefun.fams.framework.core.service.impl.RedisCacheLoaderServiceImpl;
 import com.purefun.fams.framework.core.thread.CommondThread;
 import com.purefun.fams.framework.core.thread.FAMSCoreThreadPool;
-import com.purefun.fams.framework.core.util.constant.RedisConstant;
 
 @Component
 public class ApplicationInit implements ApplicationRunner {
@@ -39,8 +38,8 @@ public class ApplicationInit implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		pool.execute(commondThread);
-		service.loadDataFromDB2Cache("com.purefun.fams.framework.core.dao.FamsGlobalParamMapper", "getAllValue",
-				RedisConstant.RedisCacheTableName.GLOBAL_PARAM_TABLE, "paramScope", "paramName");
+//		service.loadDataFromDB2Cache("com.purefun.fams.framework.core.dao.FamsGlobalParamMapper", "getAllValue",
+//				RedisConstant.RedisCacheTableName.GLOBAL_PARAM_TABLE, "paramScope", "paramName");
 		cache.set("test", instance);
 		System.out.println(cache.get("test"));
 

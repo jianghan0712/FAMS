@@ -16,6 +16,46 @@ import java.util.Set;
  */
 public interface CacheService extends ExposeService {
 	/**
+	 * 取global的cache
+	 * 
+	 * @MethodName: globalCacheGet
+	 * @author jianghan
+	 * @date 2020-05-03 13:28:00
+	 * @param key
+	 * @return
+	 */
+	public Object globalCacheGet(String key);
+
+	/**
+	 * globalCacheHGet
+	 * 
+	 * @param key  键 不能为null
+	 * @param item 项 不能为null
+	 * @return 值
+	 */
+	public Object globalCacheHGet(String key, String item);
+
+	/**
+	 * 分页取global的值
+	 * 
+	 * @param <T>
+	 * 
+	 * @param key  键 不能为null
+	 * @param item 项 不能为null
+	 * @return 值
+	 */
+	public <T> List<T> globalCacheHMGet(String key, int page, int pagesize);
+
+	/**
+	 * global hash的总数
+	 * 
+	 * @param key  键 不能为null
+	 * @param item 项 不能为null
+	 * @return 值
+	 */
+	public int globalCacheHSize(String key);
+
+	/**
 	 * 指定服务缓存失效时间
 	 * 
 	 * @param time 时间(秒)
@@ -71,6 +111,14 @@ public interface CacheService extends ExposeService {
 	 * @return 值
 	 */
 	public Object hget(String key, String item);
+
+	/**
+	 * 获取hashKey对应的所有键值
+	 * 
+	 * @param key 键
+	 * @return 对应的多个键值
+	 */
+	public Map<String, Object> hmget(String key);
 
 	/**
 	 * HashSet

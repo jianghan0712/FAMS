@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.purefun.fams.common.util.ClassHandleUtil;
 import com.purefun.fams.common.util.CommonUtil;
-import com.purefun.fams.framework.common.enums.ExpireEnum;
 import com.purefun.fams.framework.core.service.CacheLoaderService;
 import com.purefun.fams.framework.core.service.RedisService;
 
@@ -49,7 +48,7 @@ public class RedisCacheLoaderServiceImpl extends CacheLoaderService {
 					key.append(keyValue.toString()).append(CommonUtil.CharUtil.caret);
 				}
 				key.deleteCharAt(key.length() - 1);
-				redisOp.hset(cacheName, key.toString(), eachValue, ExpireEnum.REDIS_CACHE_EXPIRE.getTime());
+				redisOp.hset(cacheName, key.toString(), eachValue);
 				key.delete(0, key.length());
 			}
 

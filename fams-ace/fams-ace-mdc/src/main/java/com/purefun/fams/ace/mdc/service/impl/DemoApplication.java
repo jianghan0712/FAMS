@@ -33,12 +33,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-//	@RequestMapping("/{ip}")
-//	public ArrayOfString searchIp(@PathVariable("ip") String ip) {
-//		ArrayOfString response = soap.getCountryCityByIp(ip);
-//		return response;
-//	}
-
 	@RequestMapping("/{stock}")
 	public ArrayOfString stockInfo(@PathVariable("stock") String stock) {
 		ArrayOfString response = stockSoap.getStockInfoByCode(stock);

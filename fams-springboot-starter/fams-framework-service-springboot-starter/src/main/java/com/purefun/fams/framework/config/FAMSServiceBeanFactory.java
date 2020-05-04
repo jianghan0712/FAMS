@@ -7,6 +7,7 @@ package com.purefun.fams.framework.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
+import com.purefun.fams.framework.core.component.FAMSApplicationRunner;
 import com.purefun.fams.framework.core.domain.ServiceInstance;
 import com.purefun.fams.framework.core.service.CacheService;
 import com.purefun.fams.framework.core.service.impl.CacheServiceImpl;
@@ -34,7 +35,7 @@ public class FAMSServiceBeanFactory {
 	 * @return
 	 */
 	@Bean
-	public RedisCacheLoaderServiceImpl getIgniteLoader() {
+	public RedisCacheLoaderServiceImpl getRedisLoader() {
 		return new RedisCacheLoaderServiceImpl();
 	}
 
@@ -89,6 +90,11 @@ public class FAMSServiceBeanFactory {
 	@Bean
 	public CacheService cacheService() {
 		return new CacheServiceImpl();
+	}
+
+	@Bean
+	public FAMSApplicationRunner createApplicationRunner() {
+		return new FAMSApplicationRunner();
 	}
 
 }

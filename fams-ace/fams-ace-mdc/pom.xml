@@ -19,13 +19,15 @@
 	  	  <groupId>com.purefun</groupId>
 	  	  <artifactId>fams-framework-service-springboot-starter</artifactId>
 	</dependency>
+	<!--  
 	<dependency>
       <groupId>com.zts.xtp</groupId>
       <artifactId>xtpapi</artifactId>
       <version>1.1.18.13</version>
       <scope>system</scope>
       <systemPath>C:/Users/A/Downloads/xtp_api_java-master/build/libs/xtpapi-1.1.19.2.jar</systemPath>
-    </dependency><!--$NO-MVN-MAN-VER$-->
+    </dependency>
+    -->
   </dependencies>
   
   <build>

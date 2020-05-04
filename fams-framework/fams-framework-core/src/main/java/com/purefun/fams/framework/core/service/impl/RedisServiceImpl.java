@@ -185,6 +185,7 @@ public class RedisServiceImpl implements RedisService {
 	 * @return 对应的多个键值
 	 */
 	public Map<Object, Object> hmget(String key) {
+
 		return redisTemplate.opsForHash().entries(key);
 	}
 
@@ -634,7 +635,5 @@ public class RedisServiceImpl implements RedisService {
 		BoundListOperations<String, Object> boundValueOperations = redisTemplate.boundListOps(listKey);
 		return boundValueOperations.rightPop();
 	}
-
-	// =========BoundListOperations 用法 End============
 
 }

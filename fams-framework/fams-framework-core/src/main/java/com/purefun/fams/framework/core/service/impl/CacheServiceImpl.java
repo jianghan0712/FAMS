@@ -4,6 +4,7 @@
  */
 package com.purefun.fams.framework.core.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -94,6 +95,19 @@ public class CacheServiceImpl implements CacheService {
 		}
 
 		return obj;
+	}
+
+	/**
+	 * (non-Javadoc)
+	 * 
+	 * @see com.purefun.fams.framework.core.service.CacheService#hmget(java.lang.String)
+	 * @param key
+	 * @return
+	 */
+
+	@Override
+	public Map<String, Object> hmget(String key) {
+		return getInnerMap(key);
 	}
 
 	@Override
@@ -287,4 +301,84 @@ public class CacheServiceImpl implements CacheService {
 		}
 		return (List<Object>) cache.hget(serviceCacheName, listName);
 	}
+
+	/**
+	 * (non-Javadoc)
+	 * 
+	 * @see com.purefun.fams.framework.core.service.CacheService#globalCacheGet(java.lang.String)
+	 * @param key
+	 * @return
+	 */
+
+	@Override
+	public Object globalCacheGet(String key) {
+		// TODO Auto-generated method stub
+		return cache.get(key);
+	}
+
+	/**
+	 * (non-Javadoc)
+	 * 
+	 * @see com.purefun.fams.framework.core.service.CacheService#globalCacheHGet(java.lang.String,
+	 *      java.lang.String)
+	 * @param key
+	 * @param item
+	 * @return
+	 */
+
+	@Override
+	public Object globalCacheHGet(String key, String item) {
+		// TODO Auto-generated method stub
+		return cache.hget(key, item);
+	}
+
+	/**
+	 * (non-Javadoc)
+	 * 
+	 * @see com.purefun.fams.framework.core.service.CacheService#globalCacheHMGet(java.lang.String)
+	 * @param key
+	 * @return
+	 */
+
+	@Override
+	public <T> List<T> globalCacheHMGet(String key, int page, int pagesize) {
+		// TODO Auto-generated method stub
+		Map<Object, Object> total = cache.hmget(key);
+		List<T> ret = new ArrayList<T>();
+		int begin = (page - 1) * pagesize;// 该次请求的起始
+		int end = (page) * pagesize;// 该次请求的结束
+		int i = 0;
+		if (page <= 0) {// 不需要分页的请求
+			end = total.size();
+		}
+
+		for (Map.Entry<Object, Object> each : total.entrySet()) {
+			if (i <= begin) {
+				i++;
+				continue;
+			} else if (i > end) {
+				break;
+			}
+			ret.add((T) each.getValue());
+			i++;
+		}
+
+		return ret;
+	}
+
+	/**
+	 * (non-Javadoc)
+	 * 
+	 * @see com.purefun.fams.framework.core.service.CacheService#globalCacheHSize(java.lang.String)
+	 * @param key
+	 * @return
+	 */
+
+	@Override
+	public int globalCacheHSize(String key) {
+		// TODO Auto-generated method stub
+		Map<Object, Object> total = cache.hmget(key);
+		return total == null ? 0 : total.size();
+	}
+
 }
