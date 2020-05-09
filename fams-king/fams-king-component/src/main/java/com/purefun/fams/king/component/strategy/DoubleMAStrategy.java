@@ -73,8 +73,8 @@ public class DoubleMAStrategy extends StrategyContainer {
 					"select avg(close) from (select close from MdBarDataBO  order by date desc limit 6)");
 			List<List<?>> longMA = cache.getBySQL("MdBarDataBO",
 					"select avg(close) from (select close from MdBarDataBO  order by date desc limit 12)");
-			double shortK = (double) shortMA.get(0).get(0);
-			double longK = (double) longMA.get(0).get(0);
+			Double shortK = (double) shortMA.get(0).get(0);
+			Double longK = (double) longMA.get(0).get(0);
 			// 只有一天的数据时
 			if (lastDay == null) {
 				lastDay = longK > shortK ? true : false;

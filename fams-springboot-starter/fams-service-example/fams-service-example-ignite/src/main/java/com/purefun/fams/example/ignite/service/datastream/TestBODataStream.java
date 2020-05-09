@@ -27,7 +27,7 @@ public class TestBODataStream extends IgniteDataStream<String, TestBO> {
 	public boolean receiveDataToStream(IgniteDataStreamer<String, TestBO> stmr) throws IOException {
 		stmr.allowOverwrite(true);
 		for (int i = 0; i < 100; i++) {
-			TestBO_OTW bo = (TestBO_OTW) BoFactory.createBo(TestBO.class);
+			TestBO_OTW bo = (TestBO_OTW) BoFactory.createBo(TestBO.class, true);
 			bo.setAge(i);
 			bo.setUsername("test");
 			stmr.addData(bo.getUuid(), bo.getBo());

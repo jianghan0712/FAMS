@@ -12,6 +12,11 @@
   <url>http://maven.apache.org</url>
   <packaging>pom</packaging>
   
+  <modules>
+    <module>fams-service-example-rpc</module>
+    <module>fams-service-example-register</module>
+    <module>fams-service-example-ignite</module>
+  </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -67,9 +72,20 @@
 			<version>${spring-framework-boot.version}</version>
       </dependency>
   </dependencies>
-  <modules>
-    <module>fams-service-example-rpc</module>
-    <module>fams-service-example-register</module>
-    <module>fams-service-example-ignite</module>
-  </modules>
+
+  <build>  
+        <plugins> 
+          	<plugin>
+			    <groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-maven-plugin</artifactId>
+			    <executions>
+			        <execution>
+			            <goals>
+			                <goal>repackage</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin> 
+		</plugins>
+	</build>
 </project>
