@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.alibaba.fastjson.JSON;
 import com.purefun.fams.ace.mdc.config.SinaConfig;
 import com.purefun.fams.ace.mdc.service.SinaMarketDataService;
 import com.purefun.fams.common.util.CommonUtil;
@@ -61,6 +62,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	ScheduledExecutorService pool = Executors.newScheduledThreadPool(1);
 
 	long size = 0l;
+	long size2 = 0l;
 
 	@PostConstruct
 	public void init() {
@@ -108,6 +110,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 */
 	public void subMarketDate() {
 		size = 0;
+		size2 = 0;
 		StringBuffer stockList = null;
 		/** 如果调用方还没有初始化codelist，则默认为订阅全部行情 */
 		if (stockSet == null || stockSet.size() == 0) {
@@ -135,7 +138,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 				for (String e : body) {
 					parseMDAndPublish(e.substring(e.indexOf("str_") + 4).split(","));
 				}
-				logger.info("条数：{}，字节长度：{}", body.length, size);
+				logger.info("条数：{}，bo字节长度：{}，json字节长度：{}", body.length, size, size2);
 			} catch (Exception e) {
 				// TODO: handle exception
 				logger.error("行情请求失败：{}", e.getMessage());
@@ -187,6 +190,9 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 				+ Long.valueOf(eachDetail[++i].replace(CommonUtil.CharUtil.colon, "")));
 		byte[] bytes = bo.getBuilder().build().toByteArray();
 		size += bytes.length;
+
+		byte[] a = JSON.toJSONBytes(bo.getBo());
+		size2 += a.length;
 //		producer.publish(bo);
 	}
 
