@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.purefun.fams.md;
+package com.purefun.fams.ace.md;
 
 import org.apache.ignite.cache.query.annotations.QuerySqlField;
 
@@ -58,4 +58,5 @@ public class MdBarDataBO extends BaseBO {
 
 	@QuerySqlField
 	public double amount;
+
 }

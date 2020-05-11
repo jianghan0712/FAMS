@@ -5,6 +5,7 @@ import com.purefun.fams.core.bo.pro.BaseBO_PRO;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.purefun.fams.core.bo.commom.ICommon_OTW;
 import com.google.protobuf.Any;
+import com.google.protobuf.util.Timestamps;
 
 public class BaseBO_OTW implements ICommon_OTW {
     BaseBO_PRO.BaseBO.Builder builder = null;

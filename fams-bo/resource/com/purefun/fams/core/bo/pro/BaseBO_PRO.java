@@ -663,13 +663,15 @@ public final class BaseBO_PRO {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014BaseBO.proto\"$\n\006BaseBO\022\014\n\004uuid\030\001 \001(\t\022\014" +
-      "\n\004boid\030\002 \001(\022B*\n\034com.purefun.fams.core.bo" +
-      ".proB\nBaseBO_PROb\006proto3"
+      "\n\014BaseBO.proto\032\037google/protobuf/timestam" +
+      "p.proto\"$\n\006BaseBO\022\014\n\004uuid\030\001 \001(\t\022\014\n\004boid\030" +
+      "\002 \001(\022B*\n\034com.purefun.fams.core.bo.proB\nB" +
+      "aseBO_PROP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         });
     internal_static_BaseBO_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -677,6 +679,7 @@ public final class BaseBO_PRO {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BaseBO_descriptor,
         new java.lang.String[] { "Uuid", "Boid", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

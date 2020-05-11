@@ -4,21 +4,21 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo;
+import com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO;
 
 @Mapper
 public interface FamsSecurityBasicinfoMapper {
 	int deleteByPrimaryKey(Long id);
 
-	int insert(FamsSecurityBasicinfo record);
+	int insert(FamsSecurityBasicinfoBO record);
 
-	int insertSelective(FamsSecurityBasicinfo record);
+	int insertSelective(FamsSecurityBasicinfoBO record);
 
-	FamsSecurityBasicinfo selectByPrimaryKey(Long id);
+	FamsSecurityBasicinfoBO selectByPrimaryKey(Long id);
 
-	int updateByPrimaryKeySelective(FamsSecurityBasicinfo record);
+	int updateByPrimaryKeySelective(FamsSecurityBasicinfoBO record);
 
-	int updateByPrimaryKey(FamsSecurityBasicinfo record);
+	int updateByPrimaryKey(FamsSecurityBasicinfoBO record);
 
-	List<FamsSecurityBasicinfo> selectAll();
+	List<FamsSecurityBasicinfoBO> selectAll();
 }

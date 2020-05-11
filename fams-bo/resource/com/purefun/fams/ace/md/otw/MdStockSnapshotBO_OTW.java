@@ -1,10 +1,11 @@
-package com.purefun.fams.md.otw;
+package com.purefun.fams.ace.md.otw;
 
-import com.purefun.fams.md.MdStockSnapshotBO;
-import com.purefun.fams.md.pro.MdStockSnapshotBO_PRO;
+import com.purefun.fams.ace.md.MdStockSnapshotBO;
+import com.purefun.fams.ace.md.pro.MdStockSnapshotBO_PRO;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.purefun.fams.core.bo.commom.ICommon_OTW;
 import com.google.protobuf.Any;
+import com.google.protobuf.util.Timestamps;
 
 public class MdStockSnapshotBO_OTW implements ICommon_OTW {
     MdStockSnapshotBO_PRO.MdStockSnapshotBO.Builder builder = null;

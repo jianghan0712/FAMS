@@ -1,0 +1,24 @@
+syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "MdStockSnapshotBO_PRO";
+option java_package = "com.purefun.fams.ace.md.pro";
+
+message MdStockSnapshotBO {
+     string uuid = 1;
+     sint64 boid = 2;
+    string security_code = 3;
+    string exch = 4;
+    sint64 dateTime = 5;
+    double open = 6;
+    double preClose = 7;
+    double lastPrice = 8;
+    double high = 9;
+    double low = 10;
+    repeated  double buyPriceList = 11;
+    repeated  sint64 buyQtyList = 12;
+    repeated  double sellPriceList = 13;
+    repeated  sint64 sellQtyList = 14;
+    sint64 totalVolume = 15;
+    double totalAmont = 16;
+}

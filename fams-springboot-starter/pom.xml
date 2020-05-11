@@ -16,6 +16,7 @@
     <module>fams-framework-service-springboot-starter</module>
   </modules>
   
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <fams.framework.version>0.0.1-SNAPSHOT</fams.framework.version>

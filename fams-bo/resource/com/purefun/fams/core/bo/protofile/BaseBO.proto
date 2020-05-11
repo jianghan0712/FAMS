@@ -1,4 +1,5 @@
 syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
 
 option java_outer_classname = "BaseBO_PRO";
 option java_package = "com.purefun.fams.core.bo.pro";

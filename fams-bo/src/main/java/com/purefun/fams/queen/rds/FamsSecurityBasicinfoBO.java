@@ -1,44 +1,46 @@
-package com.purefun.fams.framework.core.domain;
+package com.purefun.fams.queen.rds;
 
 import java.util.Date;
 
-import com.purefun.fams.common.domain.BaseDomain;
+import com.purefun.fams.core.bo.BaseBO;
+import com.purefun.fams.core.bo.tool.fstpbo;
 
-public class FamsSecurityBasicinfo extends BaseDomain {
+@fstpbo(boid = 1102L, destination = "fams.core.basicinfo")
+public class FamsSecurityBasicinfoBO extends BaseBO {
 	/**
 	 * @Fields:
 	 */
 	private static final long serialVersionUID = 1459342589399023674L;
 
-	private Long id;
+	public Long id;
 
-	private String exch;
+	public String exch;
 
-	private String securityId;
+	public String securityId;
 
-	private String tsId;
+	public String tsId;
 
-	private String exchangeId;
+	public String exchangeId;
 
-	private String securityName;
+	public String securityName;
 
-	private String area;
+	public String area;
 
-	private String industry;
+	public String industry;
 
-	private String marketType;
+	public String marketType;
 
-	private String currency;
+	public String currency;
 
-	private String status;
+	public String status;
 
-	private String listDate;
+	public String listDate;
 
-	private String htFlag;
+	public String htFlag;
 
-	private Date modifyTime;
+	public Date modifyTime;
 
-	private Date createTime;
+	public Date createTime;
 
 	public Long getId() {
 		return id;

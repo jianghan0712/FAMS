@@ -1,4 +1,5 @@
 syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
 
 option java_outer_classname = "ExecutedOrderBO_PRO";
 option java_package = "com.purefun.fams.trade.exec.pro";
@@ -6,14 +7,14 @@ option java_package = "com.purefun.fams.trade.exec.pro";
 message ExecutedOrderBO {
      string uuid = 1;
      sint64 boid = 2;
-    string account = 4;
-    string security_code = 5;
-    string exch = 6;
-    string security_type = 7;
-    string direction = 8;
-    string orderId = 9;
-    string tradeDate = 10;
-    string executeId = 11;
-    double executePrice = 12;
-    sint64 executeVolume = 13;
+    string account = 3;
+    string security_code = 4;
+    string exch = 5;
+    string security_type = 6;
+    string direction = 7;
+    string orderId = 8;
+    string tradeDate = 9;
+    string executeId = 10;
+    double executePrice = 11;
+    sint64 executeVolume = 12;
 }

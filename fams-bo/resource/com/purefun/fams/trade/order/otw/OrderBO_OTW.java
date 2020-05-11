@@ -5,6 +5,7 @@ import com.purefun.fams.trade.order.pro.OrderBO_PRO;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.purefun.fams.core.bo.commom.ICommon_OTW;
 import com.google.protobuf.Any;
+import com.google.protobuf.util.Timestamps;
 
 public class OrderBO_OTW implements ICommon_OTW {
     OrderBO_PRO.OrderBO.Builder builder = null;

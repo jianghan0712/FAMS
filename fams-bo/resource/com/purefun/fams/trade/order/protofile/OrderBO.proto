@@ -1,4 +1,5 @@
 syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
 
 option java_outer_classname = "OrderBO_PRO";
 option java_package = "com.purefun.fams.trade.order.pro";
@@ -6,19 +7,19 @@ option java_package = "com.purefun.fams.trade.order.pro";
 message OrderBO {
      string uuid = 1;
      sint64 boid = 2;
-    string account = 4;
-    string security_code = 5;
-    string exch = 6;
-    string security_type = 7;
-    string tradeDate = 8;
-    string orderId = 9;
-    string orderStatus = 10;
-    string orderRejectedReson = 11;
-    string orderType = 12;
-    double orderPrice = 13;
-    sint64 orderVolume = 14;
-    string direction = 15;
-    string execStatus = 16;
-    bool withdrawFlag = 17;
-    sint64 withdrawVolume = 18;
+    string account = 3;
+    string security_code = 4;
+    string exch = 5;
+    string security_type = 6;
+    string tradeDate = 7;
+    string orderId = 8;
+    string orderStatus = 9;
+    string orderRejectedReson = 10;
+    string orderType = 11;
+    double orderPrice = 12;
+    sint64 orderVolume = 13;
+    string direction = 14;
+    string execStatus = 15;
+    bool withdrawFlag = 16;
+    sint64 withdrawVolume = 17;
 }

@@ -207,6 +207,11 @@
 	    	<artifactId>protobuf-java</artifactId>
 	    	<version>${protobuf.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>com.google.protobuf</groupId>
+		    <artifactId>protobuf-java-util</artifactId>
+		    <version>${protobuf.version}</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.ignite/ignite-spring -->
 		<dependency>
 		    <groupId>org.apache.ignite</groupId>

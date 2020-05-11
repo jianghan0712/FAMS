@@ -54,7 +54,7 @@ public class LoginController {
 
 	}
 
-	@RequestMapping(value = "/user/info")
+	@RequestMapping(value = "/info")
 	public ResponseResult<Userinfo> getUserInfo(@RequestParam String token) {
 
 		Userinfo userinfo = userMapper.selectByEntity(null, token);

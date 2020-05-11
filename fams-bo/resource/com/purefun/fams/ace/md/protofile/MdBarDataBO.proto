@@ -1,0 +1,23 @@
+syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "MdBarDataBO_PRO";
+option java_package = "com.purefun.fams.ace.md.pro";
+
+message MdBarDataBO {
+     string uuid = 1;
+     sint64 boid = 2;
+    string security_code = 3;
+    string exch = 4;
+    string security_type = 5;
+    string date = 6;
+    double open = 7;
+    double high = 8;
+    double low = 9;
+    double close = 10;
+    sint64 volume = 11;
+    double change = 12;
+    double pre_close = 13;
+    double pct_chg = 14;
+    double amount = 15;
+}

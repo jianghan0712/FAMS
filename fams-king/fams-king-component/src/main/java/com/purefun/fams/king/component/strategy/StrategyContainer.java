@@ -15,6 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.purefun.fams.ace.md.MdBarDataBO;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.core.bo.tool.BoFactory;
 import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
@@ -30,7 +31,6 @@ import com.purefun.fams.king.constant.DirectionEnum;
 import com.purefun.fams.king.constant.EventTypeEnum;
 import com.purefun.fams.king.constant.KingConstant;
 import com.purefun.fams.king.constant.OrderStatusEnum;
-import com.purefun.fams.md.MdBarDataBO;
 import com.purefun.fams.trade.order.OrderBO;
 import com.purefun.fams.trade.order.otw.OrderBO_OTW;
 

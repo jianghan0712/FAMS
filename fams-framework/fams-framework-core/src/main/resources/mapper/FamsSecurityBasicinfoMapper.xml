@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper">
-  <resultMap id="BaseResultMap" type="com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo">
+  <resultMap id="BaseResultMap" type="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="exch" jdbcType="VARCHAR" property="exch" />
     <result column="security_id" jdbcType="VARCHAR" property="securityId" />
@@ -32,7 +32,7 @@
     delete from fams_security_basicinfo
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo">
+  <insert id="insert" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
     insert into fams_security_basicinfo (id, exch, security_id, 
       ts_id, exchange_id, security_name, 
       area, industry, market_type, 
@@ -46,7 +46,7 @@
       #{htFlag,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo">
+  <insert id="insertSelective" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
     insert into fams_security_basicinfo
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -143,7 +143,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
     update fams_security_basicinfo
     <set>
       <if test="exch != null">
@@ -191,7 +191,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo">
+  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
     update fams_security_basicinfo
     set exch = #{exch,jdbcType=VARCHAR},
       security_id = #{securityId,jdbcType=VARCHAR},

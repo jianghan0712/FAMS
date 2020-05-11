@@ -23,6 +23,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.alibaba.fastjson.JSON;
+import com.purefun.fams.ace.md.MdStockSnapshotBO;
+import com.purefun.fams.ace.md.otw.MdStockSnapshotBO_OTW;
 import com.purefun.fams.ace.mdc.config.SinaConfig;
 import com.purefun.fams.ace.mdc.service.SinaMarketDataService;
 import com.purefun.fams.common.util.CommonUtil;
@@ -31,10 +33,8 @@ import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.core.communication.FAMSProducer;
 import com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper;
-import com.purefun.fams.framework.core.domain.FamsSecurityBasicinfo;
 import com.purefun.fams.framework.core.http.LogInterceptor;
-import com.purefun.fams.md.MdStockSnapshotBO;
-import com.purefun.fams.md.otw.MdStockSnapshotBO_OTW;
+import com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO;
 
 /**
  * @Classname: SinaMarketDataServiceImpl
@@ -81,8 +81,8 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 */
 	public void initSet(HashSet<String> stockSet) {
 		if (stockSet == null || stockSet.size() == 0) {
-			List<FamsSecurityBasicinfo> list = mapper.selectAll();
-			for (FamsSecurityBasicinfo each : list) {
+			List<FamsSecurityBasicinfoBO> list = mapper.selectAll();
+			for (FamsSecurityBasicinfoBO each : list) {
 				this.stockSet.add(each.getExch() + each.getExchangeId());
 			}
 		} else {
