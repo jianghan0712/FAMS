@@ -1,0 +1,25 @@
+
+server:
+    port: 10101
+    #port: ${random.int[10000,19999]}
+
+eureka:
+    instance:
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 20
+        instance-id: ${spring.application.name}-${Instance}:${server.port}
+    client:
+        registerWithEureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+
+fams:
+    framework:
+        ignite:
+            path: classpath:ignite-oms.xml
+            cache:
+                cacheList:
+                    - {name: FamsSecurityBasicinfoBO, atomicityMode: TRANSACTIONAL, cacheMode: PARTITIONED, indexedTypes: [java.lang.String, com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO]}
+                   

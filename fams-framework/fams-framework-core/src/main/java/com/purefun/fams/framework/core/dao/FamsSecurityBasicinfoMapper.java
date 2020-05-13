@@ -16,6 +16,8 @@ public interface FamsSecurityBasicinfoMapper {
 
 	FamsSecurityBasicinfoBO selectByPrimaryKey(Long id);
 
+	FamsSecurityBasicinfoBO selectBySecurityId(String securityId);
+
 	int updateByPrimaryKeySelective(FamsSecurityBasicinfoBO record);
 
 	int updateByPrimaryKey(FamsSecurityBasicinfoBO record);

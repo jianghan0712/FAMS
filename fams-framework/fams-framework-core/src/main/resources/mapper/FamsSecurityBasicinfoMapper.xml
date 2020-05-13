@@ -215,4 +215,12 @@
   		<include refid="Base_Column_List" /> 
   	 from fams_security_basicinfo
   </select>
+  
+  <select id="selectBySecurityId" resultMap="BaseResultMap">
+  	 select 
+  		<include refid="Base_Column_List" /> 
+  	 from fams_security_basicinfo where security_id=#{securityId,jdbcType=VARCHAR} 
+  </select>
+  
+ 
 </mapper>

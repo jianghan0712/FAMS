@@ -4,6 +4,8 @@
  */
 package com.purefun.fams.framework.core.thread;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -58,6 +60,10 @@ public class FAMSCoreThreadPool {
 	 */
 	public void execute(Runnable thread) {
 		taskExecutor.execute(thread);
+	}
+
+	public Future<?> submit(Callable<?> thread) {
+		return taskExecutor.submit(thread);
 	}
 
 	public int getCorePoolSize() {

@@ -2,6 +2,8 @@ package com.purefun.fams.queen.rds;
 
 import java.util.Date;
 
+import org.apache.ignite.cache.query.annotations.QuerySqlField;
+
 import com.purefun.fams.core.bo.BaseBO;
 import com.purefun.fams.core.bo.tool.fstpbo;
 
@@ -13,25 +15,25 @@ public class FamsSecurityBasicinfoBO extends BaseBO {
 	private static final long serialVersionUID = 1459342589399023674L;
 
 	public Long id;
-
+	@QuerySqlField
 	public String exch;
-
+	@QuerySqlField
 	public String securityId;
-
+	@QuerySqlField
 	public String tsId;
-
+	@QuerySqlField
 	public String exchangeId;
-
+	@QuerySqlField
 	public String securityName;
-
+	@QuerySqlField
 	public String area;
-
+	@QuerySqlField
 	public String industry;
-
+	@QuerySqlField
 	public String marketType;
 
 	public String currency;
-
+	@QuerySqlField
 	public String status;
 
 	public String listDate;

@@ -1,6 +1,5 @@
-<?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.purefun</groupId>
@@ -15,6 +14,7 @@
   
   <modules>
   	<module>fams-ace-mdc</module>
+    <module>fams-ace-oms</module>
   </modules>
   
   <properties>
@@ -30,7 +30,11 @@
 	  	  <artifactId>fams-framework-service-springboot-starter</artifactId>
 	  	  <version>${fams.framework.version}</version>
 	  </dependency>
-
+	  <dependency>
+	       <groupId>com.purefun</groupId>
+		   <artifactId>fams-framework-ignite-springboot-starter</artifactId>
+		   <version>${fams.framework.version}</version>
+      </dependency>
       <dependency>
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-starter-test</artifactId>

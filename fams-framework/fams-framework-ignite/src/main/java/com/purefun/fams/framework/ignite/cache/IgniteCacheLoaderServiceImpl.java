@@ -48,11 +48,11 @@ public class IgniteCacheLoaderServiceImpl extends CacheLoaderService {
 		}
 		V first = list.get(0);
 		Class<?> vClass = first.getClass();
-		try {
+		try (IgniteDataStreamer streamer = ignite.dataStreamer(cacheName)) {
 			// 取出keyFieldName数组，并检查
 			checkKeyFields(keyFieldName, vClass);
 			StringBuilder key = new StringBuilder();
-			IgniteDataStreamer streamer = ignite.dataStreamer(cacheName);
+
 			// key=各个keyFieldName之间用^拼接，如 paramScope^paramName
 			for (V eachValue : list) {
 				for (String eachKey : keyFieldName) {
