@@ -12,7 +12,7 @@ import com.purefun.fams.core.bo.tool.fstpbo;
  * @author 015979
  * @date 2020-03-27 11:39:46
  */
-@fstpbo(boid = 1101L, destination = "fams.trade.order")
+@fstpbo(boid = 1101L, destination = "fams.ace.oms.trade.order")
 public class OrderBO extends BaseBO {
 
 	/**

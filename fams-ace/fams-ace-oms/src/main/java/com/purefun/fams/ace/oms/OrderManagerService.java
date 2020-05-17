@@ -12,7 +12,7 @@ import com.purefun.fams.framework.ignite.cache.EnableIgniteCache;
 @EnableFAMS
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.purefun.fams.ace.*" })
-@MapperScan(basePackages = { "com.purefun.fams.framework.core.dao" })
+@MapperScan(basePackages = { "com.purefun.fams.framework.core.dao", "com.purefun.fams.ace.oms.dao" })
 public class OrderManagerService {
 
 	public static void main(String[] args) {

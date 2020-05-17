@@ -12,7 +12,7 @@ import com.purefun.fams.core.bo.tool.fstpbo;
  * @author jiang
  *
  */
-@fstpbo(boid = 1001L, destination = "fams.md.bar.stock")
+@fstpbo(boid = 15L, destination = "fams.md.bar.stock")
 public class MdBarDataBO extends BaseBO {
 
 	/**

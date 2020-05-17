@@ -7,42 +7,42 @@ import org.apache.ignite.cache.query.annotations.QuerySqlField;
 import com.purefun.fams.core.bo.BaseBO;
 import com.purefun.fams.core.bo.tool.fstpbo;
 
-@fstpbo(boid = 1102L, destination = "fams.core.basicinfo")
-public class FamsSecurityBasicinfoBO extends BaseBO {
+@fstpbo(boid = 3001L, destination = "fams.queen.rds.stock")
+public class QueenRdsStockBO extends BaseBO {
 	/**
 	 * @Fields:
 	 */
-	private static final long serialVersionUID = 1459342589399023674L;
+	private static final long serialVersionUID = -4236011581033976573L;
 
-	public Long id;
+	private Long id;
 	@QuerySqlField
-	public String exch;
+	private String exch;
 	@QuerySqlField
-	public String securityId;
+	private String securityId;
 	@QuerySqlField
-	public String tsId;
+	private String tsId;
 	@QuerySqlField
-	public String exchangeId;
-	@QuerySqlField
-	public String securityName;
-	@QuerySqlField
-	public String area;
-	@QuerySqlField
-	public String industry;
-	@QuerySqlField
-	public String marketType;
+	private String exchangeId;
 
-	public String currency;
+	private String securityName;
 	@QuerySqlField
-	public String status;
+	private String area;
+	@QuerySqlField
+	private String industry;
+	@QuerySqlField
+	private String marketType;
 
-	public String listDate;
+	private String currency;
+	@QuerySqlField
+	private String status;
 
-	public String htFlag;
+	private String listDate;
 
-	public Date modifyTime;
+	private String htFlag;
 
-	public Date createTime;
+	private Date modifyTime;
+
+	private Date createTime;
 
 	public Long getId() {
 		return id;

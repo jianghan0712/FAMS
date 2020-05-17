@@ -8,7 +8,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper;
 import com.purefun.fams.framework.core.service.CacheService;
 import com.purefun.fams.framework.ignite.cache.IgniteCacheLoaderServiceImpl;
 import com.purefun.fams.framework.ignite.expose.IgniteCache;
@@ -19,9 +18,6 @@ public class ApplicationInit implements ApplicationRunner {
 
 	@Autowired
 	private IgniteCacheLoaderServiceImpl service;
-
-	@Autowired
-	private FamsSecurityBasicinfoMapper mapper;
 
 	@Autowired
 	private IgniteCache cache;

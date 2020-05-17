@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper">
-  <resultMap id="BaseResultMap" type="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
+<mapper namespace="com.purefun.fams.queen.dao.QueenRdsStockMapper">
+  <resultMap id="BaseResultMap" type="com.purefun.fams.queen.rds.QueenRdsStockBO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="exch" jdbcType="VARCHAR" property="exch" />
     <result column="security_id" jdbcType="VARCHAR" property="securityId" />
@@ -25,15 +25,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from fams_security_basicinfo
+    from queen_rds_stock
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from fams_security_basicinfo
+    delete from queen_rds_stock
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
-    insert into fams_security_basicinfo (id, exch, security_id, 
+  <insert id="insert" parameterType="com.purefun.fams.queen.rds.QueenRdsStockBO">
+    insert into queen_rds_stock (id, exch, security_id, 
       ts_id, exchange_id, security_name, 
       area, industry, market_type, 
       currency, status, list_date, 
@@ -46,8 +46,8 @@
       #{htFlag,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
-    insert into fams_security_basicinfo
+  <insert id="insertSelective" parameterType="com.purefun.fams.queen.rds.QueenRdsStockBO">
+    insert into queen_rds_stock
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -143,8 +143,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
-    update fams_security_basicinfo
+  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.queen.rds.QueenRdsStockBO">
+    update queen_rds_stock
     <set>
       <if test="exch != null">
         exch = #{exch,jdbcType=VARCHAR},
@@ -191,8 +191,8 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO">
-    update fams_security_basicinfo
+  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.queen.rds.QueenRdsStockBO">
+    update queen_rds_stock
     set exch = #{exch,jdbcType=VARCHAR},
       security_id = #{securityId,jdbcType=VARCHAR},
       ts_id = #{tsId,jdbcType=VARCHAR},
@@ -213,14 +213,12 @@
   <select id="selectAll" resultMap="BaseResultMap">
   	 select 
   		<include refid="Base_Column_List" /> 
-  	 from fams_security_basicinfo
+  	 from queen_rds_stock
   </select>
   
   <select id="selectBySecurityId" resultMap="BaseResultMap">
   	 select 
   		<include refid="Base_Column_List" /> 
-  	 from fams_security_basicinfo where security_id=#{securityId,jdbcType=VARCHAR} 
+  	 from queen_rds_stock where security_id=#{securityId,jdbcType=VARCHAR} 
   </select>
-  
- 
 </mapper>

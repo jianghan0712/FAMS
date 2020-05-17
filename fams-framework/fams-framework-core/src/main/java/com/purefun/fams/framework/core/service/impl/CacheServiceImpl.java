@@ -345,6 +345,7 @@ public class CacheServiceImpl implements CacheService {
 		// TODO Auto-generated method stub
 		Map<Object, Object> total = cache.hmget(key);
 		List<T> ret = new ArrayList<T>();
+
 		int begin = (page - 1) * pagesize;// 该次请求的起始
 		int end = (page) * pagesize;// 该次请求的结束
 		int i = 0;

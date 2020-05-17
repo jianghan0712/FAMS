@@ -5,7 +5,7 @@ import org.apache.ignite.cache.query.annotations.QuerySqlField;
 import com.purefun.fams.core.bo.BaseBO;
 import com.purefun.fams.core.bo.tool.fstpbo;
 
-@fstpbo(boid = 1501L, destination = "fams.trade.execute")
+@fstpbo(boid = 1102L, destination = "fams.ace.oms.trade.execute")
 public class ExecutedOrderBO extends BaseBO {
 
 	/**

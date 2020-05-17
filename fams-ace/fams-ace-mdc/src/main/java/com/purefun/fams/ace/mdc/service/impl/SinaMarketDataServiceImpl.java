@@ -32,9 +32,10 @@ import com.purefun.fams.core.bo.tool.BoFactory;
 import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.core.communication.FAMSProducer;
-import com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper;
 import com.purefun.fams.framework.core.http.LogInterceptor;
-import com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO;
+import com.purefun.fams.framework.core.service.CacheService;
+import com.purefun.fams.framework.core.util.constant.RedisConstant;
+import com.purefun.fams.queen.rds.QueenRdsStockBO;
 
 /**
  * @Classname: SinaMarketDataServiceImpl
@@ -52,7 +53,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	private SinaConfig config;
 
 	@Autowired
-	private FamsSecurityBasicinfoMapper mapper;
+	private CacheService redisCache;
 
 	private HashSet<String> stockSet = new HashSet<String>();
 
@@ -81,8 +82,9 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 */
 	public void initSet(HashSet<String> stockSet) {
 		if (stockSet == null || stockSet.size() == 0) {
-			List<FamsSecurityBasicinfoBO> list = mapper.selectAll();
-			for (FamsSecurityBasicinfoBO each : list) {
+			List<QueenRdsStockBO> list = redisCache.globalCacheHMGet(
+					RedisConstant.RedisCacheTableName.GLOBAL_QUEEN_RDS_STOCK_TABLE, 0, Integer.MAX_VALUE);
+			for (QueenRdsStockBO each : list) {
 				this.stockSet.add(each.getExch() + each.getExchangeId());
 			}
 		} else {
@@ -97,7 +99,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 	 * @author jianghan
 	 * @date 2020-04-28 22:31:49
 	 */
-	public void start() {
+	private void start() {
 		pool.scheduleAtFixedRate(new QueryMDThread(), 0, config.getInterval(), TimeUnit.SECONDS);
 	}
 

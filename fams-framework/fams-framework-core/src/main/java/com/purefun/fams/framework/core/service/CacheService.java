@@ -36,7 +36,7 @@ public interface CacheService extends ExposeService {
 	public Object globalCacheHGet(String key, String item);
 
 	/**
-	 * 分页取global的值
+	 * 分页取global的值,如果不需要分页，填pagesize=Integer.MAX_VALUE
 	 * 
 	 * @param <T>
 	 * 

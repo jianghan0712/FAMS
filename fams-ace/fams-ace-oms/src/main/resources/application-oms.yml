@@ -1,0 +1,35 @@
+
+server:
+    port: 10101
+    #port: ${random.int[10000,19999]}
+
+eureka:
+    instance:
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10
+        lease-expiration-duration-in-seconds: 20
+        instance-id: ${spring.application.name}-${Instance}:${server.port}
+    client:
+        registerWithEureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+
+spring:
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/ace?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+        username: root
+        password: jianghan0712
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        initial-size: 5
+        
+fams:
+    framework:
+        ignite:
+            path: classpath:ignite-oms.xml
+            cache:
+                cacheList:
+                    - {name: FamsSecurityBasicinfoBO, atomicityMode: TRANSACTIONAL, cacheMode: PARTITIONED, indexedTypes: [java.lang.String, com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO]}
+                   

@@ -16,6 +16,7 @@
     <module>fams-king</module>
     <module>fams-ace</module>
     <module>fams-upstream</module>
+    <module>fams-queen</module>
   </modules>
   
    <properties>

@@ -14,7 +14,7 @@ public interface RedisConstant {
 	interface RedisCacheTableName {
 		/** 全局配置表 */
 		String GLOBAL_PARAM_TABLE = "GLOBAL_PARAM_TABLE";
-		/** 全局证券信息表，之后再queen的rds维护，暂时由monitor维护 */
-		String GLOBAL_SECURITY_INFO_TABLE = "GLOBAL_SECURITY_INFO_TABLE";
+		/** stock RDS */
+		String GLOBAL_QUEEN_RDS_STOCK_TABLE = "GLOBAL_QUEEN_RDS_STOCK_TABLE";
 	}
 }

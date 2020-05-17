@@ -1,0 +1,10 @@
+syntax = "proto3";
+import public "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "QueenRdsStockBO_PRO";
+option java_package = "com.purefun.fams.queen.rds.pro";
+
+message QueenRdsStockBO {
+     string uuid = 1;
+     sint64 boid = 2;
+}

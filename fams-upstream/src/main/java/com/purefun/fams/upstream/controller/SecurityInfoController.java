@@ -19,7 +19,7 @@ import com.purefun.fams.framework.core.service.CacheService;
 import com.purefun.fams.framework.core.service.impl.GlobalParamServiceImpl;
 import com.purefun.fams.framework.core.service.impl.RedisCacheLoaderServiceImpl;
 import com.purefun.fams.framework.core.util.constant.RedisConstant;
-import com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO;
+import com.purefun.fams.queen.rds.QueenRdsStockBO;
 import com.purefun.fams.upstream.enums.ResponseEnum;
 import com.purefun.fams.upstream.response.ResponseResult;
 
@@ -41,16 +41,16 @@ public class SecurityInfoController {
 	private GlobalParamServiceImpl configService;
 
 	@GetMapping("/list")
-	public ResponseResult<Page<FamsSecurityBasicinfoBO>> paging(
+	public ResponseResult<Page<QueenRdsStockBO>> paging(
 			@RequestParam(value = "pageNo", required = false, defaultValue = "1") Integer pageNo,
 			@RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
-		Page<FamsSecurityBasicinfoBO> page = new Page<FamsSecurityBasicinfoBO>();
-		ResponseResult<Page<FamsSecurityBasicinfoBO>> ret = new ResponseResult<Page<FamsSecurityBasicinfoBO>>();
+		Page<QueenRdsStockBO> page = new Page<QueenRdsStockBO>();
+		ResponseResult<Page<QueenRdsStockBO>> ret = new ResponseResult<Page<QueenRdsStockBO>>();
 		try {
-			int size = cache.globalCacheHSize(RedisConstant.RedisCacheTableName.GLOBAL_SECURITY_INFO_TABLE);
+			int size = cache.globalCacheHSize(RedisConstant.RedisCacheTableName.GLOBAL_QUEEN_RDS_STOCK_TABLE);
 
-			List<FamsSecurityBasicinfoBO> record = cache
-					.globalCacheHMGet(RedisConstant.RedisCacheTableName.GLOBAL_SECURITY_INFO_TABLE, pageNo, pageSize);
+			List<QueenRdsStockBO> record = cache
+					.globalCacheHMGet(RedisConstant.RedisCacheTableName.GLOBAL_QUEEN_RDS_STOCK_TABLE, pageNo, pageSize);
 
 			page.setTotal(size);
 			page.setSize(size / pageSize + 1);

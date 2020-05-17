@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.purefun.fams.ace.dao.AceApcPositionStatementMapper">
+  <resultMap id="BaseResultMap" type="com.purefun.fams.ace.oms.AceApcPositionStatementBO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="related_order_id" jdbcType="VARCHAR" property="relatedOrderId" />
+    <result column="security_id" jdbcType="VARCHAR" property="securityId" />
+    <result column="security_name" jdbcType="VARCHAR" property="securityName" />
+    <result column="exch" jdbcType="VARCHAR" property="exch" />
+    <result column="change_type" jdbcType="VARCHAR" property="changeType" />
+    <result column="change_qty" jdbcType="BIGINT" property="changeQty" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, account, related_order_id, security_id, security_name, exch, change_type, change_qty, 
+    modify_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from ace_apc_position_statement
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from ace_apc_position_statement
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.purefun.fams.ace.oms.AceApcPositionStatementBO">
+    insert into ace_apc_position_statement (id, account, related_order_id, 
+      security_id, security_name, exch, 
+      change_type, change_qty, modify_time, 
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{account,jdbcType=VARCHAR}, #{relatedOrderId,jdbcType=VARCHAR}, 
+      #{securityId,jdbcType=VARCHAR}, #{securityName,jdbcType=VARCHAR}, #{exch,jdbcType=VARCHAR}, 
+      #{changeType,jdbcType=VARCHAR}, #{changeQty,jdbcType=BIGINT}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.purefun.fams.ace.oms.AceApcPositionStatementBO">
+    insert into ace_apc_position_statement
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="account != null">
+        account,
+      </if>
+      <if test="relatedOrderId != null">
+        related_order_id,
+      </if>
+      <if test="securityId != null">
+        security_id,
+      </if>
+      <if test="securityName != null">
+        security_name,
+      </if>
+      <if test="exch != null">
+        exch,
+      </if>
+      <if test="changeType != null">
+        change_type,
+      </if>
+      <if test="changeQty != null">
+        change_qty,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="account != null">
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="relatedOrderId != null">
+        #{relatedOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="securityId != null">
+        #{securityId,jdbcType=VARCHAR},
+      </if>
+      <if test="securityName != null">
+        #{securityName,jdbcType=VARCHAR},
+      </if>
+      <if test="exch != null">
+        #{exch,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeQty != null">
+        #{changeQty,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.purefun.fams.ace.oms.AceApcPositionStatementBO">
+    update ace_apc_position_statement
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="relatedOrderId != null">
+        related_order_id = #{relatedOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="securityId != null">
+        security_id = #{securityId,jdbcType=VARCHAR},
+      </if>
+      <if test="securityName != null">
+        security_name = #{securityName,jdbcType=VARCHAR},
+      </if>
+      <if test="exch != null">
+        exch = #{exch,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        change_type = #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeQty != null">
+        change_qty = #{changeQty,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.purefun.fams.ace.oms.AceApcPositionStatementBO">
+    update ace_apc_position_statement
+    set account = #{account,jdbcType=VARCHAR},
+      related_order_id = #{relatedOrderId,jdbcType=VARCHAR},
+      security_id = #{securityId,jdbcType=VARCHAR},
+      security_name = #{securityName,jdbcType=VARCHAR},
+      exch = #{exch,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_qty = #{changeQty,jdbcType=BIGINT},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
