@@ -28,8 +28,32 @@ spring:
 fams:
     framework:
         ignite:
-            path: classpath:ignite-oms.xml
+            path: classpath:ignite-oms2.xml
             cache:
                 cacheList:
-                    - {name: FamsSecurityBasicinfoBO, atomicityMode: TRANSACTIONAL, cacheMode: PARTITIONED, indexedTypes: [java.lang.String, com.purefun.fams.queen.rds.FamsSecurityBasicinfoBO]}
+                    - {
+                        name: AceApcAccountBO,
+                        atomicityMode: TRANSACTIONAL, 
+                        cacheMode: PARTITIONED, 
+                        readThrough: true, 
+                        writeThrough: true, 
+                        persistence: true,
+                        indexedTypes: [java.lang.String, com.purefun.fams.ace.oms.AceApcAccountBO]
+                       }
+                    - {
+                        name: AceApcCashBO, 
+                        atomicityMode: TRANSACTIONAL, 
+                        cacheMode: PARTITIONED, 
+                        readThrough: true, 
+                        writeThrough: true, 
+                        indexedTypes: [java.lang.String, com.purefun.fams.ace.oms.AceApcCashBO]
+                      }
+                    - {
+                        name: AceApcPositionBO, 
+                        atomicityMode: TRANSACTIONAL, 
+                        cacheMode: PARTITIONED, 
+                        readThrough: true, 
+                        writeThrough: true, 
+                        indexedTypes: [java.lang.String, com.purefun.fams.ace.oms.AceApcPositionBO]
+                      }
                    

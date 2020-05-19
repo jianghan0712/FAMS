@@ -18,7 +18,6 @@ import org.springframework.context.annotation.ImportResource;
  * @author jiang
  * @date 2020-02-21 00:20:56
  */
-//@ImportResource(locations="classpath:Ignite.xml")
 @ImportResource(locations = "${fams.framework.ignite.path}")
 @Configuration
 public class IgniteAutoConfigure {
@@ -36,6 +35,7 @@ public class IgniteAutoConfigure {
 	 */
 	@Bean
 	public Ignite getIgnite() {
-		return Ignition.start(config);
+//		return Ignition.start(config);
+		return Ignition.start("classpath:ignite-oms2.xml");
 	}
 }

@@ -8,78 +8,53 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.purefun.fams.framework.core.service.CacheService;
-import com.purefun.fams.framework.ignite.cache.IgniteCacheLoaderServiceImpl;
-import com.purefun.fams.framework.ignite.expose.IgniteCache;
-
 @Component
 public class ApplicationInit implements ApplicationRunner {
 	private static final Logger logger = LogManager.getLogger(ApplicationInit.class);
 
-	@Autowired
-	private IgniteCacheLoaderServiceImpl service;
-
-	@Autowired
-	private IgniteCache cache;
-
+//	@Autowired
+//	private IgniteCacheLoaderServiceImpl service;
+//
+//	@Autowired
+//	private IgniteCache cache;
+//
 	@Autowired
 	private Ignite ignite;
-
-	@Autowired
-	private CacheService redis;
+//
+//	@Autowired
+//	private CacheService redis;
+//	@Autowired
+//	com.mysql.cj.jdbc.MysqlDataSource datasource;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+//		service.loadDataFromDB2Cache("com.purefun.fams.ace.dao.AceApcCashMapper", "selectAll", "AceApcCashBO",
+//				"account", "currency");
+//		service.loadDataFromDB2Cache("com.purefun.fams.ace.dao.AceApcAccountMapper", "selectAll", "AceApcAccountBO",
+//				"account");
+//		service.loadDataFromDB2Cache("com.purefun.fams.ace.dao.AceApcPositionMapper", "selectAll", "AceApcPositionBO",
+//				"account", "securityId");
+//		service.loadDataFromDB2Cache("com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper", "selectAll",
+//				"FamsSecurityBasicinfoBO", "securityId");
 
-		service.loadDataFromDB2Cache("com.purefun.fams.framework.core.dao.FamsSecurityBasicinfoMapper", "selectAll",
-				"FamsSecurityBasicinfoBO", "securityId");
-//		int count = 10000;
-//		logger.info("sql start");
-//		long startTime = System.currentTimeMillis();
-//		for (int i = 0; i < count; i++) {
-//			List<List<?>> t = cache.getBySQL("FamsSecurityBasicinfoBO",
-//					"select * from FamsSecurityBasicinfoBO where securityId='300632.sz'");
-//			System.out.println(i);
+//		System.out.println(datasource);
+
+//		try (Ignite ignite = Ignition.start("classpath:ignite-oms2.xml")) {
+//			// Load data from person table into PersonCache.
+		ignite.getOrCreateCache("AccountCache").loadCache(null);
+		AceApcAccountBO bo = new AceApcAccountBO();
+		bo.setAccount("000003");
+		bo.setAccountType("common");
+		bo.setAccountJobid("015979");
+		bo.setAccountName("jianghan-test");
+		bo.setAccountLevel(2);
+		ignite.cache("AccountCache").put("000003", bo);
+//			AceApcAccountBO bo = (AceApcAccountBO) ignite.cache("AccountCache").get("000001");
+//			bo.setAccountLevel(3);
+//			ignite.cache("AccountCache").put(2, bo);
+		System.out.println(ignite.cache("AccountCache").get("000003"));
 //		}
-//		long end = System.currentTimeMillis();
-//		logger.info("sql end:{}", end - startTime);
-//
-////		logger.info("query start");
-//		startTime = System.currentTimeMillis();
-//		for (int i = 0; i < count; i++) {
-//			FamsSecurityBasicinfoBO bo = (FamsSecurityBasicinfoBO) cache.get("300632.sz");
-//		}
-//		end = System.currentTimeMillis();
-//		logger.info("query end:{}", end - startTime);
-//
-//		List<FamsSecurityBasicinfoBO> list = mapper.selectAll();
-//		Map<String, FamsSecurityBasicinfoBO> map = new HashMap<String, FamsSecurityBasicinfoBO>();
-//		for (FamsSecurityBasicinfoBO each : list) {
-//			map.put(each.getSecurityId(), each);
-//		}
-//		startTime = System.currentTimeMillis();
-//		for (int i = 0; i < count; i++) {
-//			FamsSecurityBasicinfoBO bo2 = map.get("300632.sz");
-//		}
-//		end = System.currentTimeMillis();
-//		logger.info("map end:{}", end - startTime);
-//
-//		startTime = System.currentTimeMillis();
-//		for (int i = 0; i < count; i++) {
-//			FamsSecurityBasicinfoBO bo3 = mapper.selectBySecurityId("300651.sz");
-//			System.out.println(i);
-//		}
-//		end = System.currentTimeMillis();
-//		logger.info("mybatis end:{}", end - startTime);
-//
-//		startTime = System.currentTimeMillis();
-//		for (int i = 0; i < count; i++) {
-//			Object redisValue = redis.globalCacheHGet(RedisConstant.RedisCacheTableName.GLOBAL_SECURITY_INFO_TABLE,
-//					"300651.sz");
-//			System.out.println(i);
-//		}
-//		end = System.currentTimeMillis();
-//		logger.info("redis end :{}", end - startTime);
+
 	}
 
 }

@@ -8,7 +8,12 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
     <!--  <bean parent="ignite.cfg"/>-->
-    
+	<bean id="dsMySQL_Test" class="com.mysql.cj.jdbc.MysqlDataSource">
+	  <property name="URL" value="jdbc:mysql://127.0.0.1:3306/ace"/>
+	  <property name="user" value="root"/>
+	  <property name="password" value="jianghan0712"/>
+	</bean>
+	
   	<bean id="igniteConfiguration" class="org.apache.ignite.configuration.IgniteConfiguration">
 	  	<property name="gridLogger">
 		    <bean class="org.apache.ignite.logger.log4j2.Log4J2Logger">

@@ -4,6 +4,9 @@
  */
 package com.purefun.fams.ace.oms.apc.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.purefun.fams.ace.oms.apc.request.CashOpRequest;
 import com.purefun.fams.ace.oms.apc.request.CashRequest;
 import com.purefun.fams.ace.oms.apc.request.DealRequest;
@@ -21,6 +24,7 @@ import com.purefun.fams.ace.oms.apc.service.APCService;
  * @date 2020-05-17 20:49:32
  */
 public class APCServiceImpl implements APCService {
+	private static final Logger logger = LogManager.getLogger(APCServiceImpl.class);
 
 	/**
 	 * (non-Javadoc)

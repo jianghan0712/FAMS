@@ -139,4 +139,8 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  
+  <select id="selectAll" resultMap="BaseResultMap">
+  	select * from ace_apc_cash
+  </select>
 </mapper>

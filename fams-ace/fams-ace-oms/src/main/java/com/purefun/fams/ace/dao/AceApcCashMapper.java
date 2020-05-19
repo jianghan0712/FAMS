@@ -1,5 +1,7 @@
 package com.purefun.fams.ace.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.purefun.fams.ace.oms.AceApcCashBO;
@@ -17,4 +19,6 @@ public interface AceApcCashMapper {
 	int updateByPrimaryKeySelective(AceApcCashBO record);
 
 	int updateByPrimaryKey(AceApcCashBO record);
+
+	List<AceApcCashBO> selectAll();
 }

@@ -1,5 +1,7 @@
 package com.purefun.fams.ace.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.purefun.fams.ace.oms.AceApcAccountBO;
@@ -17,4 +19,6 @@ public interface AceApcAccountMapper {
 	int updateByPrimaryKeySelective(AceApcAccountBO record);
 
 	int updateByPrimaryKey(AceApcAccountBO record);
+
+	List<AceApcAccountBO> selectAll();
 }
