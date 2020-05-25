@@ -8,11 +8,97 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
     <!--  <bean parent="ignite.cfg"/>-->
-	<bean id="dsMySQL_Test" class="com.mysql.cj.jdbc.MysqlDataSource">
-	  <property name="URL" value="jdbc:mysql://127.0.0.1:3306/ace"/>
+
+	<bean id="ace_datasource" class="com.mysql.cj.jdbc.MysqlDataSource">
+	  <property name="URL" value="jdbc:mysql://127.0.0.1:3306/ace?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC&amp;useSSL=false"/>
 	  <property name="user" value="root"/>
 	  <property name="password" value="jianghan0712"/>
 	</bean>
+	  
+	<util:list id="igniteCacheConfig"  list-class="java.util.ArrayList">
+	    <bean class="org.apache.ignite.configuration.CacheConfiguration">
+	        <property name="name" value="AccountCache"/>
+	        <property name="cacheMode" value="PARTITIONED"/>
+	        <property name="atomicityMode" value="ATOMIC"/>
+	
+	        <property name="cacheStoreFactory">
+	          <bean class="org.apache.ignite.cache.store.jdbc.CacheJdbcPojoStoreFactory">
+	            <property name="dataSourceBean" value="ace_datasource"/>
+
+	            <property name="dialect">
+	              <bean class="org.apache.ignite.cache.store.jdbc.dialect.MySQLDialect"/>
+	        	</property>
+	
+	            <property name="types">
+	              <list>
+	                 <bean class="org.apache.ignite.cache.store.jdbc.JdbcType">
+	                    <property name="cacheName" value="AccountCache"/>
+	                    <property name="keyType" value="java.lang.String"/>
+	                    <property name="valueType" value="com.purefun.fams.ace.oms.AceApcAccountBO"/>
+	                    <property name="databaseSchema" value="ace"/>
+	                    <property name="databaseTable" value="ace_apc_account"/>
+	
+	                    <property name="keyFields">
+	                      <list>
+	                        <bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.VARCHAR"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="account"/>
+	                          <constructor-arg value="java.lang.String"/>
+	                          <constructor-arg value="account"/>
+	                        </bean>
+	                      </list>
+	                    </property>
+	
+	                    <property name="valueFields">
+	                      <list>
+	                        <bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.VARCHAR"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="account_type"/>
+	                          <constructor-arg value="java.lang.String"/>
+	                          <constructor-arg value="accountType"/>
+	                        </bean>
+							
+							<bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.VARCHAR"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="account_name"/>
+	                          <constructor-arg value="java.lang.String"/>
+	                          <constructor-arg value="accountName"/>
+	                        </bean>
+							
+							<bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.VARCHAR"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="account_jobid"/>
+	                          <constructor-arg value="java.lang.String"/>
+	                          <constructor-arg value="accountJobid"/>
+	                        </bean>
+							
+							<bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.INTEGER"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="account_level"/>
+	                          <constructor-arg value="java.lang.Integer"/>
+	                          <constructor-arg value="accountLevel"/>
+	                        </bean>
+	                      </list>
+	                    </property>
+	                  </bean>
+	                </list>
+	              </property>
+              </bean>
+          </property>
+          <property name="readThrough" value="true"/>
+          <property name="writeThrough" value="true"/>
+	    </bean>
+	</util:list>
 	
   	<bean id="igniteConfiguration" class="org.apache.ignite.configuration.IgniteConfiguration">
 	  	<property name="gridLogger">

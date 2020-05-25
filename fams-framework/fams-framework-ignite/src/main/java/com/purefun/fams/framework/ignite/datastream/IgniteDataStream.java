@@ -5,6 +5,7 @@
 package com.purefun.fams.framework.ignite.datastream;
 
 import java.io.IOException;
+import java.util.Collections;
 
 import org.apache.ignite.Ignite;
 import org.apache.ignite.IgniteDataStreamer;
@@ -42,7 +43,7 @@ public abstract class IgniteDataStream<K, V> implements ExposeService {
 	 * @throws IOException
 	 */
 	public void start(CacheConfiguration<K, V> cacheConfig) throws IOException {
-		cache.initCache(ignite, cacheConfig);
+		cache.initCache(ignite, Collections.singletonList(cacheConfig));
 		this.stmr = ignite.dataStreamer(cacheConfig.getName());
 		try (IgniteDataStreamer<K, V> stmr = ignite.dataStreamer(cacheConfig.getName())) {
 			receiveDataToStream(stmr);

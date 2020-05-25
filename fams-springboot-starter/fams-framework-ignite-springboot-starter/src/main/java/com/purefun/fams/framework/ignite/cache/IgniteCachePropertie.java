@@ -54,4 +54,5 @@ public class IgniteCachePropertie {
 	public void setIndexedTypes(Class<?>[] indexedTypes) {
 		this.indexedTypes = indexedTypes;
 	}
+
 }

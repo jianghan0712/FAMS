@@ -21,7 +21,7 @@ public interface IgniteCache<K, V> {
 	 * @param ignite   主ignite
 	 * @param cacheCfg cache config
 	 */
-	public void initCache(Ignite ignite, CacheConfiguration<K, V>... cacheCfg);
+	public void initCache(Ignite ignite, List<CacheConfiguration<K, V>> cacheCfg);
 
 	/**
 	 ** 输出底层cache

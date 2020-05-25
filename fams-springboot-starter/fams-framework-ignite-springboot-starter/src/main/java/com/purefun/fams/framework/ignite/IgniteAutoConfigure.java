@@ -8,6 +8,7 @@ import org.apache.ignite.Ignite;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.configuration.IgniteConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -25,6 +26,9 @@ public class IgniteAutoConfigure {
 	@Autowired
 	private IgniteConfiguration config;
 
+	@Value("${fams.framework.ignite.path}")
+	private String configPath;
+
 	/**
 	 * 生成主ignite的容器
 	 * 
@@ -35,7 +39,6 @@ public class IgniteAutoConfigure {
 	 */
 	@Bean
 	public Ignite getIgnite() {
-//		return Ignition.start(config);
-		return Ignition.start("classpath:ignite-oms2.xml");
+		return Ignition.start(configPath);
 	}
 }

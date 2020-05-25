@@ -34,14 +34,15 @@ public class IgniteCacheImpl<K, V> implements IgniteCache<K, V> {
 
 	@Override
 	/** {@inheritDoc} */
-	public void initCache(Ignite ignite, CacheConfiguration<K, V>... cacheCfg) {
+	public void initCache(Ignite ignite, List<CacheConfiguration<K, V>> cacheCfg) {
 		this.ignite = ignite;
-		if (cacheCfg == null || cacheCfg.length == 0) {
+		if (cacheCfg == null || cacheCfg.size() == 0) {
 			return;
 		}
 		for (CacheConfiguration<K, V> each : cacheCfg) {
-			org.apache.ignite.IgniteCache<K, V> cache = ignite.getOrCreateCache(each);
-			cacheMap.put(cache.getName(), cache);
+//			org.apache.ignite.IgniteCache<K, V> cache = ignite.getOrCreateCache(each);
+			ignite.getOrCreateCache(each).loadCache(null);
+//			cacheMap.put(cache.getName(), cache);
 		}
 	}
 

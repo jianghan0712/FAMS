@@ -5,6 +5,7 @@
 package com.purefun.fams.framework.ignite.cache;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ignite.Ignite;
@@ -12,6 +13,7 @@ import org.apache.ignite.configuration.CacheConfiguration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,10 +41,15 @@ public class IgniteCacheAutoConfigure {
 	@Autowired
 	private Ignite mainIgniteContainer;
 
+	@Autowired(required = false)
+	@Qualifier("igniteCacheConfig")
+	private List<CacheConfiguration> igniteCacheConfig;
+
 	@Bean
 	public IgniteCache getCache() {
 		IgniteCache cache = new IgniteCacheImpl();
-		cache.initCache(mainIgniteContainer, getCacheConfigs());
+		cache.initCache(mainIgniteContainer, getCacheConfigs(igniteCacheConfig));
+
 		return cache;
 	}
 
@@ -54,29 +61,27 @@ public class IgniteCacheAutoConfigure {
 	 * @date 2020-02-23 14:34:28
 	 * @return
 	 */
-	private CacheConfiguration[] getCacheConfigs() {
+	private List<CacheConfiguration> getCacheConfigs(List<CacheConfiguration> xmlCacheList) {
 		if (cacheProperties == null || cacheProperties.getCacheList() == null
 				|| cacheProperties.getCacheList().size() == 0) {
 			logger.error("配置文件中未设置fams.framework.ignite.cache.cacheList");
-			return null;
+			return xmlCacheList;
 		}
 		int size = cacheProperties.getCacheList().size();
-		CacheConfiguration[] cfg = new CacheConfiguration[size];
+		List<CacheConfiguration> cfg = xmlCacheList == null ? new ArrayList<CacheConfiguration>() : xmlCacheList;
 
 		List<IgniteCachePropertie> cacheList = cacheProperties.getCacheList();
 		for (int i = 0; i < size; i++) {
 			IgniteCachePropertie each = cacheList.get(i);
 			Field[] fileds = each.getClass().getDeclaredFields();
-			cfg[i] = new CacheConfiguration();
+			CacheConfiguration config = new CacheConfiguration();
 			try {
 				for (Field field : fileds) {
 					String fieldName = field.getName();
-					ClassHandleUtil.setFieldValue(cfg[i], fieldName, ClassHandleUtil.getFieldValue(each, fieldName));
+					ClassHandleUtil.setFieldValue(config, fieldName, ClassHandleUtil.getFieldValue(each, fieldName));
 				}
-			} catch (RuntimeException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ReflectiveOperationException e) {
+				cfg.add(config);
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

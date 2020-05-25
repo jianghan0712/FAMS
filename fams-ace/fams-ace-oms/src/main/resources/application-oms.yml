@@ -24,11 +24,12 @@ spring:
         max-idle: 10
         max-wait: 10000
         initial-size: 5
+        name: testDataSource
         
 fams:
     framework:
         ignite:
-            path: classpath:ignite-oms2.xml
+            path: classpath:ignite-oms.xml
             cache:
                 cacheList:
                     - {
