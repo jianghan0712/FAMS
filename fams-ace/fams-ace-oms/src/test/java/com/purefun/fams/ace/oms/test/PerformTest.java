@@ -12,13 +12,14 @@ import java.util.concurrent.Future;
 import org.apache.ignite.Ignite;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.purefun.fams.ace.oms.ApplicationInit;
+import com.purefun.fams.ace.compent.ApplicationInit;
 import com.purefun.fams.framework.core.service.CacheService;
 import com.purefun.fams.framework.core.thread.FAMSCoreThreadPool;
 import com.purefun.fams.framework.core.util.constant.RedisConstant;
@@ -57,6 +58,11 @@ public class PerformTest {
 
 	int totalSize = 10000;// 查询的数据量总数，多线程时，每个线程分配到的任务=totalSize/threadSize
 
+	@BeforeClass
+	public static void init() {
+		org.apache.catalina.webresources.TomcatURLStreamHandlerFactory.getInstance();
+	}
+
 	@Test
 	public void testPerform() throws InterruptedException, ExecutionException {
 		String[] typeArray = { "IgniteCacheRead", "RedisRead", "MybatisRead" };
@@ -74,7 +80,6 @@ public class PerformTest {
 		logger.info("单线程-{}-执行{}次耗时：{} ms", TYPE, totalSize, ret.get());
 	}
 
-//	@Test
 	public void testPerformMulThread() throws InterruptedException, ExecutionException {
 		CountDownLatch countDownLatch = new CountDownLatch(threadSize);
 		int eachThreadTaskSize = totalSize / threadSize;

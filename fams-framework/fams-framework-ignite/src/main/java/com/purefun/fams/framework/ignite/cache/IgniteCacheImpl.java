@@ -40,9 +40,12 @@ public class IgniteCacheImpl<K, V> implements IgniteCache<K, V> {
 			return;
 		}
 		for (CacheConfiguration<K, V> each : cacheCfg) {
-//			org.apache.ignite.IgniteCache<K, V> cache = ignite.getOrCreateCache(each);
-			ignite.getOrCreateCache(each).loadCache(null);
-//			cacheMap.put(cache.getName(), cache);
+			org.apache.ignite.IgniteCache<K, V> cache = ignite.getOrCreateCache(each);
+			if (each.getCacheStoreFactory() != null) {
+				cache.loadCache(null);
+			}
+
+			cacheMap.put(cache.getName(), cache);
 		}
 	}
 

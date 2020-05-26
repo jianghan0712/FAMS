@@ -1,4 +1,4 @@
-package com.purefun.fams.ace.oms;
+package com.purefun.fams.ace;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
