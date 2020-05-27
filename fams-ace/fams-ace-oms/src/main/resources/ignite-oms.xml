@@ -331,6 +331,14 @@
 	                          <constructor-arg value="java.math.BigDecimal"/>
 	                          <constructor-arg value="aveCostPrice"/>
 	                        </bean>	
+	                        <bean class="org.apache.ignite.cache.store.jdbc.JdbcTypeField">
+	                          <constructor-arg>
+	                            <util:constant static-field="java.sql.Types.DECIMAL"/>
+	                          </constructor-arg>
+	                          <constructor-arg value="market_value"/>
+	                          <constructor-arg value="java.math.BigDecimal"/>
+	                          <constructor-arg value="marketValue"/>
+	                        </bean>	
 	                      </list>
 	                    </property>
 	                  </bean>	                  

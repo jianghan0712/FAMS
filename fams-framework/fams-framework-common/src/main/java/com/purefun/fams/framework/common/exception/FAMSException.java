@@ -24,6 +24,10 @@ public class FAMSException extends RuntimeException {
 		super();
 	}
 
+	public FAMSException(String errMsg) {
+		super(errMsg);
+	}
+
 	public FAMSException(ErrorCodeEnum errorCodeEnum) {
 		super();
 		this.errorCodeEnum = errorCodeEnum;

@@ -34,6 +34,8 @@ public class AceApcPositionBO extends BaseBO {
 
 	private BigDecimal aveCostPrice;
 
+	private BigDecimal marketValue;
+
 	private Date modifyTime;
 
 	private Date createTime;
@@ -116,6 +118,25 @@ public class AceApcPositionBO extends BaseBO {
 
 	public void setAveCostPrice(BigDecimal aveCostPrice) {
 		this.aveCostPrice = aveCostPrice;
+	}
+
+	/**
+	 * Getter method for property <tt>marketValue</tt>.
+	 * 
+	 * @return property value of marketValue
+	 */
+
+	public BigDecimal getMarketValue() {
+		return marketValue;
+	}
+
+	/**
+	 * Setter method for property <tt>marketValue</tt>.
+	 * 
+	 * @param marketValue value to be assigned to property marketValue
+	 */
+	public void setMarketValue(BigDecimal marketValue) {
+		this.marketValue = marketValue;
 	}
 
 	public Date getModifyTime() {

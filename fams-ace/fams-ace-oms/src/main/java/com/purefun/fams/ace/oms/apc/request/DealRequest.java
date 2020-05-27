@@ -4,6 +4,8 @@
  */
 package com.purefun.fams.ace.oms.apc.request;
 
+import java.math.BigDecimal;
+
 import com.purefun.fams.common.domain.BaseRequest;
 
 /**
@@ -21,29 +23,18 @@ public class DealRequest extends BaseRequest {
 	private String account;
 	/** 资金币种 */
 	private String currency;
-	/** 资金币种 */
+	/** 证券id */
 	private String securityId;
+	/** 证券名称 */
+	private String securityName;
 	/** 市场 */
 	private String exch;
 	/** 冻结/解冻数量 */
 	private long volume;
-
-	/**
-	 * @param account
-	 * @param currency
-	 * @param securityId
-	 * @param exch
-	 * @param volume
-	 */
-
-	public DealRequest(String account, String currency, String securityId, String exch, long volume) {
-		super();
-		this.account = account;
-		this.currency = currency;
-		this.securityId = securityId;
-		this.exch = exch;
-		this.volume = volume;
-	}
+	/** 成交价格 */
+	private BigDecimal price;
+	/** 金额 */
+	private BigDecimal cash;
 
 	/**
 	 * Getter method for property <tt>account</tt>.
@@ -137,6 +128,30 @@ public class DealRequest extends BaseRequest {
 	 */
 	public void setVolume(long volume) {
 		this.volume = volume;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public BigDecimal getCash() {
+		return cash;
+	}
+
+	public void setCash(BigDecimal cash) {
+		this.cash = cash;
+	}
+
+	public String getSecurityName() {
+		return securityName;
+	}
+
+	public void setSecurityName(String securityName) {
+		this.securityName = securityName;
 	}
 
 }
