@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.purefun.fams.ace.constant.AceCacheConstant;
+import com.purefun.fams.ace.enums.CashAccountType;
 import com.purefun.fams.ace.key.AceApcCashKeyEntity;
 import com.purefun.fams.ace.oms.AceApcCashBO;
 import com.purefun.fams.ace.oms.apc.request.CashOpRequest;
@@ -26,7 +27,7 @@ import com.purefun.fams.framework.common.util.AssertUtil;
 /**
  * 
  * @Classname: CashServiceImpl
- * @Description:
+ * @Description: 资金类操作
  * @author JiangHan
  * @date 2020-05-27 16:49:16
  */
@@ -47,6 +48,10 @@ public class CashServiceImpl implements CashService {
 
 	@Override
 	public CashRespond freezeCash(CashRequest request) {
+		AssertUtil.assertNotNull(request);
+
+		logger.info("收到同时冻结资金请求：{}", request);
+
 		CashRespond respond = new CashRespond();
 		StringBuilder errorMessage = new StringBuilder("冻结资金失败 ！");
 
@@ -78,6 +83,7 @@ public class CashServiceImpl implements CashService {
 			cashCache.replace(key, bo);
 		} catch (Exception e) {
 			// TODO: handle exception
+			logger.error(errorMessage.toString());
 			respond.setResultCode(RespondEnums.FAIL.getCode());
 			respond.setResultMsg(errorMessage.toString());
 		} finally {
@@ -87,6 +93,10 @@ public class CashServiceImpl implements CashService {
 
 	@Override
 	public CashRespond unfreezeCash(CashRequest request) {
+		AssertUtil.assertNotNull(request);
+
+		logger.info("收到同时解冻资金请求：{}", request);
+
 		CashRespond respond = new CashRespond();
 		StringBuilder errorMessage = new StringBuilder("解冻资金失败 ！");
 		try {
@@ -117,6 +127,7 @@ public class CashServiceImpl implements CashService {
 			cashCache.replace(key, bo);
 		} catch (Exception e) {
 			// TODO: handle exception
+			logger.error(errorMessage.toString());
 			respond.setResultCode(RespondEnums.FAIL.getCode());
 			respond.setResultMsg(errorMessage.toString());
 		} finally {
@@ -126,17 +137,186 @@ public class CashServiceImpl implements CashService {
 
 	@Override
 	public CashOpRespond cashIn(CashOpRequest request) {
-		return null;
+		AssertUtil.assertNotNull(request);
+
+		logger.info("收到同时入金请求：{}", request);
+		CashOpRespond respond = new CashOpRespond();
+		StringBuilder errorMessage = new StringBuilder("cashIn资金失败 ！");
+
+		try {
+			checkCashOpRequest(request);
+			String account = request.getAccount();
+			String currency = request.getCurrency();
+			BigDecimal amount = request.getAmount();
+			CashAccountType cashIn = request.getInAccountType();
+
+			AceApcCashKeyEntity key = new AceApcCashKeyEntity(account, currency);
+			AceApcCashBO bo = cashCache.get(key);
+
+			if (bo == null) {
+				errorMessage.append("账户资金类型不存在！").append("account=").append(account).append(", currency=")
+						.append(currency);
+				throw new FAMSException(errorMessage.toString());
+			}
+
+			addOpAmount(bo, cashIn, amount);
+
+			cashCache.replace(key, bo);
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error(errorMessage.toString());
+			respond.setResultCode(RespondEnums.FAIL.getCode());
+			respond.setResultMsg(errorMessage.toString());
+		} finally {
+			return respond;
+		}
 	}
 
 	@Override
 	public CashOpRespond cashOut(CashOpRequest request) {
-		return null;
+		AssertUtil.assertNotNull(request);
+
+		logger.info("收到出金请求：{}", request);
+		CashOpRespond respond = new CashOpRespond();
+		StringBuilder errorMessage = new StringBuilder("cashOut资金失败 ！");
+
+		try {
+			checkCashOpRequest(request);
+			String account = request.getAccount();
+			String currency = request.getCurrency();
+			BigDecimal amount = request.getAmount();
+			CashAccountType cashOut = request.getOutAccountType();
+
+			AceApcCashKeyEntity key = new AceApcCashKeyEntity(account, currency);
+			AceApcCashBO bo = cashCache.get(key);
+
+			if (bo == null) {
+				errorMessage.append("账户资金类型不存在！").append("account=").append(account).append(", currency=")
+						.append(currency);
+				throw new FAMSException(errorMessage.toString());
+			}
+
+			BigDecimal outAvailabAmount = getOpAmount(bo, cashOut);
+			if (amount.compareTo(outAvailabAmount) > 0) {
+				errorMessage.append("可用资金不足:account=").append(account).append(", currency=").append(currency)
+						.append(", 库中Amount=").append(outAvailabAmount).append(", 需要操作的金额=").append(amount);
+				throw new FAMSException(errorMessage.toString());
+			}
+			cutOpAmount(bo, cashOut, amount);
+
+			cashCache.replace(key, bo);
+		} catch (Exception e) {
+			logger.error(errorMessage.toString());
+			respond.setResultCode(RespondEnums.FAIL.getCode());
+			respond.setResultMsg(errorMessage.toString());
+		} finally {
+			return respond;
+		}
 	}
 
 	@Override
 	public CashOpRespond cashInAndCashOut(CashOpRequest request) {
-		return null;
+		AssertUtil.assertNotNull(request);
+
+		logger.info("收到同时出金入金请求：{}", request);
+		CashOpRespond respond = new CashOpRespond();
+		StringBuilder errorMessage = new StringBuilder("cashIn/cashOut资金失败 ！");
+
+		try {
+			checkCashOpRequest(request);
+			String account = request.getAccount();
+			String currency = request.getCurrency();
+			BigDecimal amount = request.getAmount();
+			CashAccountType cashIn = request.getInAccountType();
+			CashAccountType cashOut = request.getOutAccountType();
+
+			if (cashIn == cashOut) {
+				return respond;
+			}
+			AceApcCashKeyEntity key = new AceApcCashKeyEntity(account, currency);
+			AceApcCashBO bo = cashCache.get(key);
+
+			if (bo == null) {
+				errorMessage.append("账户资金类型不存在！").append("account=").append(account).append(", currency=")
+						.append(currency);
+				throw new FAMSException(errorMessage.toString());
+			}
+
+			BigDecimal outAvailabAmount = getOpAmount(bo, cashOut);
+			if (amount.compareTo(outAvailabAmount) > 0) {
+				errorMessage.append("可用资金不足:account=").append(account).append(", currency=").append(currency)
+						.append(", 库中Amount=").append(outAvailabAmount).append(", 需要操作的金额=").append(amount);
+				throw new FAMSException(errorMessage.toString());
+			}
+			cutOpAmount(bo, cashOut, amount);
+			addOpAmount(bo, cashIn, amount);
+
+			cashCache.replace(key, bo);
+		} catch (Exception e) {
+			logger.error(errorMessage.toString());
+			respond.setResultCode(RespondEnums.FAIL.getCode());
+			respond.setResultMsg(errorMessage.toString());
+		} finally {
+			return respond;
+		}
+
+	}
+
+	/**
+	 * @MethodName: addOpAmount
+	 * @author jianghan
+	 * @date 2020-05-29 23:49:43
+	 * @param bo     表中数据
+	 * @param cashIn 类型
+	 * @param amount 增加的金额
+	 */
+	private void addOpAmount(AceApcCashBO bo, CashAccountType cashIn, BigDecimal amount) {
+		if (cashIn == CashAccountType.AVAILABLE) {
+			bo.setAvailableAmount(bo.getAvailableAmount().add(amount));
+		} else if (cashIn == CashAccountType.FREEZE) {
+			bo.setFreezeAmount(bo.getFreezeAmount().add(amount));
+		} else if (cashIn == CashAccountType.ONWAY) {
+			bo.setOnwayAmount(bo.getOnwayAmount().add(amount));
+		}
+	}
+
+	/**
+	 * @MethodName: cutOpAmount
+	 * @author jianghan
+	 * @date 2020-05-29 23:49:41
+	 * @param bo      表中数据
+	 * @param cashOut 类型
+	 * @param amount  增加的金额
+	 */
+	private void cutOpAmount(AceApcCashBO bo, CashAccountType cashOut, BigDecimal amount) {
+		if (cashOut == CashAccountType.AVAILABLE) {
+			bo.setAvailableAmount(bo.getAvailableAmount().subtract(amount));
+		} else if (cashOut == CashAccountType.FREEZE) {
+			bo.setFreezeAmount(bo.getFreezeAmount().subtract(amount));
+		} else if (cashOut == CashAccountType.ONWAY) {
+			bo.setOnwayAmount(bo.getOnwayAmount().subtract(amount));
+		}
+	}
+
+	/**
+	 * @MethodName: getOpAmount
+	 * @author jianghan
+	 * @date 2020-05-29 22:23:24
+	 * @param bo
+	 * @param cashOut
+	 * @return
+	 */
+	private BigDecimal getOpAmount(AceApcCashBO bo, CashAccountType cashOut) {
+		BigDecimal ret = null;
+		if (cashOut == CashAccountType.AVAILABLE) {
+			ret = bo.getAvailableAmount();
+		} else if (cashOut == CashAccountType.FREEZE) {
+			ret = bo.getFreezeAmount();
+		} else if (cashOut == CashAccountType.ONWAY) {
+			ret = bo.getOnwayAmount();
+		}
+
+		return ret;
 	}
 
 	/**
@@ -148,6 +328,18 @@ public class CashServiceImpl implements CashService {
 	 * @param request
 	 */
 	private void checkCashRequest(CashRequest request) {
+		AssertUtil.assertNotBlank(request.getAccount(), ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(request.getCurrency(), ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, ErrorCodeEnum.PARAM_EXCEPTION);
+	}
+
+	/**
+	 * @MethodName: checkCashOpRequest
+	 * @author jianghan
+	 * @date 2020-05-29 22:14:01
+	 * @param request
+	 */
+	private void checkCashOpRequest(CashOpRequest request) {
 		AssertUtil.assertNotBlank(request.getAccount(), ErrorCodeEnum.PARAM_EXCEPTION);
 		AssertUtil.assertNotBlank(request.getCurrency(), ErrorCodeEnum.PARAM_EXCEPTION);
 		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, ErrorCodeEnum.PARAM_EXCEPTION);

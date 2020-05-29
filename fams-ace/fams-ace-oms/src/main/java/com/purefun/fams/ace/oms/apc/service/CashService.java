@@ -11,7 +11,7 @@ import com.purefun.fams.ace.oms.apc.response.CashRespond;
 
 /**
  * @Classname: CashService
- * @Description:
+ * @Description: 资金类操作
  * @author JiangHan
  * @date 2020-05-27 16:27:18
  */
@@ -41,7 +41,7 @@ public interface CashService {
 	CashRespond unfreezeCash(CashRequest request);
 
 	/**
-	 * 单向入金操作，默认入金账户为available
+	 * 单向入金操作
 	 * 
 	 * @MethodName: cashIn
 	 * @author jianghan
@@ -52,7 +52,7 @@ public interface CashService {
 	CashOpRespond cashIn(CashOpRequest request);
 
 	/**
-	 * 单向出金操作，默认出金账户为available
+	 * 单向出金操作
 	 * 
 	 * @MethodName: cashOut
 	 * @author jianghan
