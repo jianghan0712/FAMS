@@ -17,7 +17,6 @@ import org.springframework.util.concurrent.SuccessCallback;
 
 import com.purefun.fams.core.bo.commom.ICommon_OTW;
 import com.purefun.fams.core.bo.tool.fstpbo;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 
@@ -57,12 +56,12 @@ public class FAMSProducer {
 	 * @return
 	 */
 	public void publish(ICommon_OTW bo) {
-		AssertUtil.assertNotNull(bo, ErrorCodeEnum.UNKNOWN_EXCEPTION);
+		AssertUtil.assertNotNull(bo, 100001);
 
 		Class<?> boClass = bo.getBo().getClass();
 		fstpbo annotation = (fstpbo) boClass.getAnnotation(fstpbo.class);
 		if (annotation == null) {
-			throw new FAMSException(ErrorCodeEnum.BOANNOTION_EXCEPTION);
+			throw new FAMSException(110001);
 		}
 
 		String topic = null;

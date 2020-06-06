@@ -29,7 +29,6 @@ import com.purefun.fams.ace.mdc.config.SinaConfig;
 import com.purefun.fams.ace.mdc.service.SinaMarketDataService;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.core.bo.tool.BoFactory;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.core.communication.FAMSProducer;
 import com.purefun.fams.framework.core.http.LogInterceptor;
@@ -133,7 +132,7 @@ public class SinaMarketDataServiceImpl implements SinaMarketDataService {
 				ResponseEntity<String> response = sinaTemplate
 						.getForEntity(config.getUrl() + "list=" + stockList.toString(), String.class);
 				if (response == null) {
-					throw new FAMSException(ErrorCodeEnum.ACE_MARKETDATA_SUBSCRIBE_FAIL);
+					throw new FAMSException(200001);
 				}
 				String body[] = response.getBody().trim().replace("\n", "").replace("\"", "").replace("=", ",")
 						.split(";");

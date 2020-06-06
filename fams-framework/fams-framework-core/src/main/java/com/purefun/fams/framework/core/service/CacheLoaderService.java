@@ -13,7 +13,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.purefun.fams.common.util.ClassHandleUtil;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 
 /**
@@ -66,11 +65,11 @@ public abstract class CacheLoaderService implements DataLoaderService {
 	protected void checkKeyFields(String[] keyFieldName, Class<?> vClass)
 			throws NoSuchFieldException, SecurityException {
 		if (keyFieldName == null || keyFieldName.length == 0)
-			throw new FAMSException("由于keyFileName非法，无法加载到cache中", ErrorCodeEnum.PARAM_EXCEPTION);
+			throw new FAMSException("由于keyFileName非法，无法加载到cache中", 100002);
 
 		for (String eachKey : keyFieldName) {
 			if (StringUtils.isBlank(eachKey) || vClass.getDeclaredField(eachKey) == null) {
-				throw new FAMSException("由于keyFileName非法，无法加载到cache中", ErrorCodeEnum.PARAM_EXCEPTION);
+				throw new FAMSException("由于keyFileName非法，无法加载到cache中", 100002);
 			}
 		}
 	}

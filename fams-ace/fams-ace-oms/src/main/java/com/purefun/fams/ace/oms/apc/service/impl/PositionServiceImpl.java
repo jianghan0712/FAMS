@@ -19,7 +19,6 @@ import com.purefun.fams.ace.oms.apc.request.PositionRequest;
 import com.purefun.fams.ace.oms.apc.response.PositionRespond;
 import com.purefun.fams.ace.oms.apc.service.PositionService;
 import com.purefun.fams.common.enums.RespondEnums;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 
@@ -103,9 +102,9 @@ public class PositionServiceImpl implements PositionService {
 	 * @param request
 	 */
 	private void checkPositionRequest(PositionRequest request) {
-		AssertUtil.assertNotBlank(request.getAccount(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotBlank(request.getExch(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotBlank(request.getSecurityId(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertTrue(request.getVolume() <= 0, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(request.getAccount(), 100002);
+		AssertUtil.assertNotBlank(request.getExch(), 100002);
+		AssertUtil.assertNotBlank(request.getSecurityId(), 100002);
+		AssertUtil.assertTrue(request.getVolume() <= 0, 100002);
 	}
 }

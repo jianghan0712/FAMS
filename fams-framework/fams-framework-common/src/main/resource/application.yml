@@ -8,6 +8,7 @@ fams:
     framework:
         service:
             serviceName: ${ServiceName}-${Env}
+        error: classpath:errorCode.txt
 
 management:
   endpoints:

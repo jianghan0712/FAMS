@@ -18,7 +18,7 @@ import com.purefun.fams.ace.oms.apc.response.CashRespond;
 public interface CashService {
 
 	/**
-	 * 冻结资金接口，available账户出金，freeze入金
+	 * 冻结资金接口，available账户出金，freeze入金，适用于下买单
 	 * 
 	 * @MethodName: freezeCash
 	 * @author jianghan
@@ -30,7 +30,7 @@ public interface CashService {
 	CashRespond freezeCash(CashRequest request);
 
 	/**
-	 * 解冻资金接口，available账户入金，freeze出金
+	 * 解冻资金接口，available账户入金，freeze出金，适用于撤买单
 	 * 
 	 * @MethodName: unfreezeCash
 	 * @author jianghan
@@ -41,7 +41,7 @@ public interface CashService {
 	CashRespond unfreezeCash(CashRequest request);
 
 	/**
-	 * 单向入金操作
+	 * 单向入金操作，增加available账户资金，适用于交易账户的资金增加操作
 	 * 
 	 * @MethodName: cashIn
 	 * @author jianghan
@@ -52,7 +52,7 @@ public interface CashService {
 	CashOpRespond cashIn(CashOpRequest request);
 
 	/**
-	 * 单向出金操作
+	 * 单向出金操作，减少available账户资金，适用于交易账户的资金减少操作
 	 * 
 	 * @MethodName: cashOut
 	 * @author jianghan

@@ -11,7 +11,6 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.king.component.strategy.model.Account;
 
@@ -67,7 +66,7 @@ public class AccountContainer {
 		Account account = accountMap.get(acct);
 		if (account == null) {
 			logger.error("资金账户不存在！acct={}", acct);
-			throw new FAMSException(ErrorCodeEnum.KING_ACCOUNT_NOT_FOUNT);
+			throw new FAMSException(300002);
 		}
 		return account;
 	}
@@ -87,7 +86,7 @@ public class AccountContainer {
 		BigDecimal available = account.getAvailableCapital();
 		if (available.compareTo(money) < 0) {
 			logger.error("资金余额不足，无法完成冻结，acct={},AvailableCapital={},freeze={}", acct, available, money);
-			throw new FAMSException(ErrorCodeEnum.KING_ACCOUNT_CAPITAL_NOT_ENOUGH);
+			throw new FAMSException(300003);
 		}
 		account.setAvailableCapital(available.subtract(money));
 		account.setFreezeCapital(account.getFreezeCapital().add(money));
@@ -110,7 +109,7 @@ public class AccountContainer {
 		BigDecimal freeze = account.getFreezeCapital();
 		if (freeze.compareTo(money) < 0) {
 			logger.error("已冻结资金不足以用于解冻，acct={},freeze={},unfreeze={}", acct, freeze, money);
-			throw new FAMSException(ErrorCodeEnum.KING_ACCOUNT_CAPITAL_NOT_ENOUGH);
+			throw new FAMSException(300003);
 		}
 		if (isDeal) {
 			account.setTotalCapital(account.getTotalCapital().subtract(money));

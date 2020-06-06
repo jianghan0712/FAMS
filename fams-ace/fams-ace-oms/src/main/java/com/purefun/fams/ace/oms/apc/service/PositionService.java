@@ -16,7 +16,7 @@ import com.purefun.fams.ace.oms.apc.response.PositionRespond;
 public interface PositionService {
 
 	/**
-	 * 冻结股份接口
+	 * 冻结股份接口，将available股份移动到freeze,适用于下卖单
 	 * 
 	 * @MethodName: freezePosition
 	 * @author jianghan
@@ -27,7 +27,7 @@ public interface PositionService {
 	PositionRespond freezePosition(PositionRequest request);
 
 	/**
-	 * 解冻股份接口
+	 * 解冻股份接口，将freeze移动到available,适用于撤卖单
 	 * 
 	 * @MethodName: unfreezeCash
 	 * @author jianghan

@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.purefun.fams.ace.md.MdBarDataBO;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.core.bo.tool.BoFactory;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.king.component.account.AccountContainer;
 import com.purefun.fams.king.component.strategy.analysis.BacktestExecutorContainer;
@@ -118,7 +117,7 @@ public abstract class StrategyContainer implements Observer {
 				List<TradeDetail> positionList = orderEecutor.getPositionMap().get(order.getSecurity_code());
 				if (positionList == null || positionList.isEmpty()) {
 					logger.error("账户没有持仓，无法进行卖出操作，stockcode={}", order.getSecurity_code());
-					throw new FAMSException(ErrorCodeEnum.KING_ILLEGAL_TRADE);
+					throw new FAMSException(300001);
 				}
 				// 计算可用数量，默认全部卖出
 				long totalVolume = 0l;
@@ -131,7 +130,7 @@ public abstract class StrategyContainer implements Observer {
 				}
 				if (totalVolume <= 0) {
 					logger.error("账户股份均已冻结，无法进行卖出操作");
-					throw new FAMSException(ErrorCodeEnum.KING_ILLEGAL_TRADE);
+					throw new FAMSException(300001);
 				}
 				// 设置交易量
 				order.setOrderVolume(totalVolume);

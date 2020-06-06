@@ -4,7 +4,8 @@
  */
 package com.purefun.fams.framework.common.exception;
 
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
+import com.purefun.fams.framework.common.util.ErrorCode;
+import com.purefun.fams.framework.common.util.ErrorCodeUtil;
 
 /**
  * @Classname: FAMSException
@@ -18,51 +19,55 @@ public class FAMSException extends RuntimeException {
 	private static final long serialVersionUID = 4932613288872401908L;
 
 	/** 默认错误码 */
-	private ErrorCodeEnum errorCodeEnum = ErrorCodeEnum.UNKNOWN_EXCEPTION;
+	private ErrorCode errorCode = null;
 
 	public FAMSException() {
 		super();
+		errorCode = ErrorCodeUtil.error();
 	}
 
 	public FAMSException(String errMsg) {
 		super(errMsg);
+		errorCode = ErrorCodeUtil.error();
 	}
 
-	public FAMSException(ErrorCodeEnum errorCodeEnum) {
+	public FAMSException(int errorId) {
 		super();
-		this.errorCodeEnum = errorCodeEnum;
+		this.errorCode = ErrorCodeUtil.error(errorId);
 	}
 
-	public FAMSException(String message, ErrorCodeEnum errorCodeEnum) {
+	public FAMSException(String message, int errorId) {
 		super(message);
-		this.errorCodeEnum = errorCodeEnum;
+		this.errorCode = ErrorCodeUtil.error(errorId);
 	}
 
-	public FAMSException(String message, Throwable cause, ErrorCodeEnum errorCodeEnum) {
+	public FAMSException(String message, Throwable cause, int errorId) {
 		super(message, cause);
-		this.errorCodeEnum = errorCodeEnum;
+		this.errorCode = ErrorCodeUtil.error(errorId);
 	}
 
-	public FAMSException(Throwable cause, ErrorCodeEnum errorCodeEnum) {
+	public FAMSException(Throwable cause, int errorId) {
 		super(cause);
-		this.errorCodeEnum = errorCodeEnum;
+		this.errorCode = ErrorCodeUtil.error(errorId);
 	}
 
 	/**
-	 * Getter method for property errorCodeEnum.
-	 *
-	 * @return property value of errorCodeEnum
+	 * Getter method for property <tt>errorCode</tt>.
+	 * 
+	 * @return property value of errorCode
 	 */
-	public ErrorCodeEnum getErrorCodeEnum() {
-		return errorCodeEnum;
+
+	public ErrorCode getErrorCode() {
+		return errorCode;
 	}
 
 	/**
-	 * Setter method for property errorCodeEnum.
-	 *
-	 * @param errorCodeEnum value to be assigned to property errorCodeEnum
+	 * Setter method for property <tt>errorCode</tt>.
+	 * 
+	 * @param errorCode value to be assigned to property errorCode
 	 */
-	public void setErrorCodeEnum(ErrorCodeEnum errorCodeEnum) {
-		this.errorCodeEnum = errorCodeEnum;
+	public void setErrorCode(ErrorCode errorCode) {
+		this.errorCode = errorCode;
 	}
+
 }

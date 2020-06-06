@@ -20,7 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.common.util.StringUtil;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.util.AssertUtil;
 import com.purefun.fams.framework.core.domain.ServiceInstance;
 import com.purefun.fams.framework.core.service.CacheService;
@@ -68,13 +67,13 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public void del(String... key) {
-		AssertUtil.assertNotNull(key, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotNull(key, 100002);
 		cache.hdel(serviceCacheName, key);
 	}
 
 	@Override
 	public Object get(String key) {
-		AssertUtil.assertNotNull(key, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotNull(key, 100002);
 		return cache.hget(serviceCacheName, key);
 	}
 
@@ -214,7 +213,7 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public Object lGetIndex(String key, int index) {
-		AssertUtil.assertNotBlank(key, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(key, 100002);
 
 		List<Object> list = getInnerList(key);
 		if (list == null)
@@ -229,8 +228,8 @@ public class CacheServiceImpl implements CacheService {
 
 	@Override
 	public boolean lSet(String key, Object... value) {
-		AssertUtil.assertNotBlank(key, ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotNull(value, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(key, 100002);
+		AssertUtil.assertNotNull(value, 100002);
 
 		List<Object> list = getInnerList(key);
 		if (list == null)

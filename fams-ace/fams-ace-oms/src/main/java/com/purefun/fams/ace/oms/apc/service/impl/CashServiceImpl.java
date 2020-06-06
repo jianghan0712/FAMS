@@ -20,7 +20,6 @@ import com.purefun.fams.ace.oms.apc.response.CashOpRespond;
 import com.purefun.fams.ace.oms.apc.response.CashRespond;
 import com.purefun.fams.ace.oms.apc.service.CashService;
 import com.purefun.fams.common.enums.RespondEnums;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 
@@ -328,9 +327,9 @@ public class CashServiceImpl implements CashService {
 	 * @param request
 	 */
 	private void checkCashRequest(CashRequest request) {
-		AssertUtil.assertNotBlank(request.getAccount(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotBlank(request.getCurrency(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(request.getAccount(), 100002);
+		AssertUtil.assertNotBlank(request.getCurrency(), 100002);
+		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, 100002);
 	}
 
 	/**
@@ -340,8 +339,8 @@ public class CashServiceImpl implements CashService {
 	 * @param request
 	 */
 	private void checkCashOpRequest(CashOpRequest request) {
-		AssertUtil.assertNotBlank(request.getAccount(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotBlank(request.getCurrency(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(request.getAccount(), 100002);
+		AssertUtil.assertNotBlank(request.getCurrency(), 100002);
+		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, 100002);
 	}
 }

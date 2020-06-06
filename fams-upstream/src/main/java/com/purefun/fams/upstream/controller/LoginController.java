@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.util.AssertUtil;
 import com.purefun.fams.upstream.dao.UserinfoMapper;
 import com.purefun.fams.upstream.domain.Userinfo;
@@ -36,8 +35,8 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseResult<String> getLogin(@RequestBody LoginVO user) {
-		AssertUtil.assertNotBlank(user.getUsername(), ErrorCodeEnum.PARAM_EXCEPTION);
-		AssertUtil.assertNotBlank(user.getPassword(), ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotBlank(user.getUsername(), 100002);
+		AssertUtil.assertNotBlank(user.getPassword(), 100002);
 
 		Userinfo userinfo = userMapper.selectByEntity(user.getUsername(), null);
 		ResponseResult<String> ret = new ResponseResult<String>();

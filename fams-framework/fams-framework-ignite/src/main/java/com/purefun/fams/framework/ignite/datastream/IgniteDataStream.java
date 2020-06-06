@@ -12,7 +12,6 @@ import org.apache.ignite.IgniteDataStreamer;
 import org.apache.ignite.configuration.CacheConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.core.service.ExposeService;
 import com.purefun.fams.framework.ignite.expose.IgniteCache;
@@ -61,7 +60,7 @@ public abstract class IgniteDataStream<K, V> implements ExposeService {
 	 */
 	public void start(String cacheName) throws FAMSException, IOException {
 		if (!cache.contain(cacheName))
-			throw new FAMSException(ErrorCodeEnum.IGNITE_NO_CACHE);
+			throw new FAMSException(110003);
 		stmr = ignite.dataStreamer(cacheName);
 		receiveDataToStream(stmr);
 	}

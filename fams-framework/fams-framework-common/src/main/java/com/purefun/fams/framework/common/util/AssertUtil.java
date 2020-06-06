@@ -6,7 +6,6 @@ package com.purefun.fams.framework.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 
 /**
@@ -23,7 +22,7 @@ public class AssertUtil {
 	 * @param expValue      断言表达式
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertTrue(boolean expValue, ErrorCodeEnum errorCodeEnum) {
+	public static void assertTrue(boolean expValue, int errorCodeEnum) {
 
 		if (!expValue) {
 			throw new FAMSException(errorCodeEnum);
@@ -36,7 +35,7 @@ public class AssertUtil {
 	 * @param expValue      断言表达式
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertFalse(boolean expValue, ErrorCodeEnum errorCodeEnum) {
+	public static void assertFalse(boolean expValue, int errorCodeEnum) {
 
 		if (expValue) {
 
@@ -51,7 +50,7 @@ public class AssertUtil {
 	 * @param obj2
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertEquals(Object obj1, Object obj2, ErrorCodeEnum errorCodeEnum) {
+	public static void assertEquals(Object obj1, Object obj2, int errorCodeEnum) {
 
 		if (obj1 == null) {
 
@@ -72,7 +71,7 @@ public class AssertUtil {
 	 * @param obj2
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertNotEquals(Object obj1, Object obj2, ErrorCodeEnum errorCodeEnum) {
+	public static void assertNotEquals(Object obj1, Object obj2, int errorCodeEnum) {
 
 		if (obj1 == null) {
 
@@ -93,7 +92,7 @@ public class AssertUtil {
 	 * @param objects
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertEqualsAny(Object obj1, Object[] objects, ErrorCodeEnum errorCodeEnum) {
+	public static void assertEqualsAny(Object obj1, Object[] objects, int errorCodeEnum) {
 
 		if (null == objects) {
 
@@ -127,7 +126,7 @@ public class AssertUtil {
 	 * @param objects
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertEqualsAnyString(String obj1, String[] objects, ErrorCodeEnum errorCodeEnum) {
+	public static void assertEqualsAnyString(String obj1, String[] objects, int errorCodeEnum) {
 
 		if (null == objects) {
 
@@ -161,7 +160,7 @@ public class AssertUtil {
 	 * @param obj2
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertIs(Object obj1, Object obj2, ErrorCodeEnum errorCodeEnum) {
+	public static void assertIs(Object obj1, Object obj2, int errorCodeEnum) {
 
 		if (obj1 != obj2) {
 
@@ -176,7 +175,7 @@ public class AssertUtil {
 	 * @param obj2
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertIsNot(Object obj1, Object obj2, ErrorCodeEnum errorCodeEnum) {
+	public static void assertIsNot(Object obj1, Object obj2, int errorCodeEnum) {
 
 		if (obj1 == obj2) {
 
@@ -191,7 +190,7 @@ public class AssertUtil {
 	 * @param objs
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertIn(Object obj1, Object[] objs, ErrorCodeEnum errorCodeEnum) {
+	public static void assertIn(Object obj1, Object[] objs, int errorCodeEnum) {
 
 		if (null == objs) {
 
@@ -215,7 +214,7 @@ public class AssertUtil {
 	 * @param str           断言字符串
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertEmpty(String str, ErrorCodeEnum errorCodeEnum) {
+	public static void assertEmpty(String str, int errorCodeEnum) {
 
 		if (StringUtils.isNotEmpty(str)) {
 
@@ -229,7 +228,7 @@ public class AssertUtil {
 	 * @param str           断言字符串
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertNotEmpty(String str, ErrorCodeEnum errorCodeEnum) {
+	public static void assertNotEmpty(String str, int errorCodeEnum) {
 
 		if (StringUtils.isEmpty(str)) {
 
@@ -243,7 +242,7 @@ public class AssertUtil {
 	 * @param str           断言字符串
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertBlank(String str, ErrorCodeEnum errorCodeEnum) {
+	public static void assertBlank(String str, int errorCodeEnum) {
 
 		if (StringUtils.isNotBlank(str)) {
 
@@ -257,7 +256,7 @@ public class AssertUtil {
 	 * @param str           断言字符串
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertNotBlank(String str, ErrorCodeEnum errorCodeEnum) {
+	public static void assertNotBlank(String str, int errorCodeEnum) {
 
 		if (StringUtils.isBlank(str)) {
 
@@ -271,7 +270,7 @@ public class AssertUtil {
 	 * @param object        断言对象
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertNull(Object object, ErrorCodeEnum errorCodeEnum) {
+	public static void assertNull(Object object, int errorCodeEnum) {
 
 		if (object != null) {
 
@@ -285,7 +284,7 @@ public class AssertUtil {
 	 * @param object        断言对象
 	 * @param errorCodeEnum 异常描述
 	 */
-	public static void assertNotNull(Object object, ErrorCodeEnum errorCodeEnum) {
+	public static void assertNotNull(Object object, int errorCodeEnum) {
 
 		if (null == object) {
 

@@ -17,7 +17,6 @@ import org.springframework.web.client.RestTemplate;
 import com.purefun.fams.common.util.CommonUtil;
 import com.purefun.fams.common.util.StringUtil;
 import com.purefun.fams.framework.common.enums.CommondEnum;
-import com.purefun.fams.framework.common.enums.ErrorCodeEnum;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 import com.purefun.fams.framework.core.http.LogInterceptor;
@@ -82,8 +81,8 @@ public class CommondServiceImpl implements CommondService {
 	 */
 	private void checkCommond(CommondEnum commondInstance, String[] commondLine) {
 		// TODO Auto-generated method stub
-		AssertUtil.assertNotNull(commondInstance, ErrorCodeEnum.COMMOND_UNKNOWN);
-		AssertUtil.assertEquals(commondInstance.getParamSize(), commondLine.length - 1, ErrorCodeEnum.PARAM_EXCEPTION);
+		AssertUtil.assertNotNull(commondInstance, 110002);
+		AssertUtil.assertEquals(commondInstance.getParamSize(), commondLine.length - 1, 100002);
 	}
 
 	/********************** 命令的实际执行方法 ***********************************/
