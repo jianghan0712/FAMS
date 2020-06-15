@@ -94,6 +94,10 @@
 - [ ] fams-ace-service 交易前台 ACE
   - [ ] Ace-Component 交易前台公共组件
   - [ ] OrderManagerService 订单管理服务（OMS）
+    - [x] APC 账户持仓资金服务
+    - [ ] TRADE 交易服务
+    - [ ] QUERY 对外查询服务
+    
   - [ ] MarketDataCenter 行情中心 (MDC)
     - [x] Sina 新浪行情中心
     - [ ] XTP 中泰量化
@@ -101,8 +105,7 @@
 
 - [ ] fams-back-service 交易后台	QUEEN
   - [ ] Back-Component 交易后台公共组件
-  - [ ] ProductService 产品库
-  - [ ] AcctService 客户账户管理服务
+  - [ ] RDS 基础参考数据服务
   - [ ] OrderFlowService 指令流转服务
 
 
