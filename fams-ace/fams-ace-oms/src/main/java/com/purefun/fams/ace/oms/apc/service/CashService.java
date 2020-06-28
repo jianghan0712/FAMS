@@ -4,10 +4,10 @@
  */
 package com.purefun.fams.ace.oms.apc.service;
 
-import com.purefun.fams.ace.oms.apc.request.CashOpRequest;
-import com.purefun.fams.ace.oms.apc.request.CashRequest;
-import com.purefun.fams.ace.oms.apc.response.CashOpRespond;
-import com.purefun.fams.ace.oms.apc.response.CashRespond;
+import com.purefun.fams.framework.common.ace.oms.apc.request.CashOpRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.request.CashRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.CashOpRespond;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.CashRespond;
 
 /**
  * @Classname: CashService

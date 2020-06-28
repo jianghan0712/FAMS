@@ -4,8 +4,8 @@
  */
 package com.purefun.fams.ace.oms.apc.service;
 
-import com.purefun.fams.ace.oms.apc.request.DealRequest;
-import com.purefun.fams.ace.oms.apc.response.DealRespond;
+import com.purefun.fams.framework.common.ace.oms.apc.request.DealRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.DealRespond;
 
 /**
  * @Classname: PostTradeService

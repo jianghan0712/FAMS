@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 import com.purefun.fams.ace.constant.AceCacheConstant;
 import com.purefun.fams.ace.key.AceApcPositionKeyEntity;
 import com.purefun.fams.ace.oms.AceApcPositionBO;
-import com.purefun.fams.ace.oms.apc.request.PositionRequest;
-import com.purefun.fams.ace.oms.apc.response.PositionRespond;
 import com.purefun.fams.ace.oms.apc.service.PositionService;
 import com.purefun.fams.common.enums.RespondEnums;
+import com.purefun.fams.framework.common.ace.oms.apc.request.PositionRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.PositionRespond;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 

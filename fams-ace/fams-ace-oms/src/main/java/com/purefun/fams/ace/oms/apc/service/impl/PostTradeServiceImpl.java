@@ -25,12 +25,12 @@ import com.purefun.fams.ace.key.AceApcCashKeyEntity;
 import com.purefun.fams.ace.key.AceApcPositionKeyEntity;
 import com.purefun.fams.ace.oms.AceApcCashBO;
 import com.purefun.fams.ace.oms.AceApcPositionBO;
-import com.purefun.fams.ace.oms.apc.request.CashOpRequest;
-import com.purefun.fams.ace.oms.apc.request.DealRequest;
-import com.purefun.fams.ace.oms.apc.response.DealRespond;
 import com.purefun.fams.ace.oms.apc.service.CashService;
 import com.purefun.fams.ace.oms.apc.service.PostTradeService;
 import com.purefun.fams.common.util.MathUtil;
+import com.purefun.fams.framework.common.ace.oms.apc.request.CashOpRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.request.DealRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.DealRespond;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.ResponseUtil;
 
@@ -194,7 +194,7 @@ public class PostTradeServiceImpl implements PostTradeService {
 				cashRequest.setAccount(account);
 				cashRequest.setCurrency(currency);
 				cashRequest.setAmount(cash);
-				cashRequest.setInAccountType(CashAccountType.AVAILABLE);
+				cashRequest.setInAccountType(CashAccountType.AVAILABLE.getCode());
 
 				cashService.cashIn(cashRequest);
 				positionCache.replace(positionKey, positionBo);

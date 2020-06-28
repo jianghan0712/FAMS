@@ -2,7 +2,7 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.ace.oms.apc.request;
+package com.purefun.fams.framework.common.ace.oms.apc.request;
 
 import java.math.BigDecimal;
 
@@ -32,12 +32,14 @@ public class CashRequest extends BaseDomain {
 	 * @param currency
 	 * @param amount
 	 */
-
 	public CashRequest(String account, String currency, BigDecimal amount) {
 		super();
 		this.account = account;
 		this.currency = currency;
 		this.amount = amount;
+	}
+
+	public CashRequest() {
 	}
 
 	/**

@@ -2,7 +2,7 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.ace.oms.apc.response;
+package com.purefun.fams.framework.common.ace.oms.apc.respond;
 
 import com.purefun.fams.common.domain.BaseRespond;
 
@@ -19,4 +19,6 @@ public class CashRespond extends BaseRespond {
 	 */
 	private static final long serialVersionUID = -3619069171355961046L;
 
+	public CashRespond() {
+	}
 }

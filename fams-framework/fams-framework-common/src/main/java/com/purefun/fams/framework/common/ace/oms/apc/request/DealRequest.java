@@ -2,7 +2,7 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.ace.oms.apc.request;
+package com.purefun.fams.framework.common.ace.oms.apc.request;
 
 import java.math.BigDecimal;
 
@@ -35,6 +35,10 @@ public class DealRequest extends BaseRequest {
 	private BigDecimal price;
 	/** 金额 */
 	private BigDecimal cash;
+
+	public DealRequest() {
+
+	}
 
 	/**
 	 * Getter method for property <tt>account</tt>.

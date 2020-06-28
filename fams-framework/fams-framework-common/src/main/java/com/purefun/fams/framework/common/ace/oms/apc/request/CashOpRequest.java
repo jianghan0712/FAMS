@@ -2,11 +2,10 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.ace.oms.apc.request;
+package com.purefun.fams.framework.common.ace.oms.apc.request;
 
 import java.math.BigDecimal;
 
-import com.purefun.fams.ace.enums.CashAccountType;
 import com.purefun.fams.common.domain.BaseRequest;
 
 /**
@@ -29,9 +28,13 @@ public class CashOpRequest extends BaseRequest {
 	/** 操作金额 */
 	private BigDecimal amount;
 	/** 入金账户类型 */
-	private CashAccountType inAccountType;
+	private String inAccountType;
 	/** 出金账户类型 */
-	private CashAccountType outAccountType;
+	private String outAccountType;
+
+	public CashOpRequest() {
+
+	}
 
 	/**
 	 * Getter method for property <tt>account</tt>.
@@ -96,7 +99,7 @@ public class CashOpRequest extends BaseRequest {
 	 * @return property value of inAccountType
 	 */
 
-	public CashAccountType getInAccountType() {
+	public String getInAccountType() {
 		return inAccountType;
 	}
 
@@ -105,7 +108,7 @@ public class CashOpRequest extends BaseRequest {
 	 * 
 	 * @param inAccountType value to be assigned to property inAccountType
 	 */
-	public void setInAccountType(CashAccountType inAccountType) {
+	public void setInAccountType(String inAccountType) {
 		this.inAccountType = inAccountType;
 	}
 
@@ -115,7 +118,7 @@ public class CashOpRequest extends BaseRequest {
 	 * @return property value of outAccountType
 	 */
 
-	public CashAccountType getOutAccountType() {
+	public String getOutAccountType() {
 		return outAccountType;
 	}
 
@@ -124,7 +127,7 @@ public class CashOpRequest extends BaseRequest {
 	 * 
 	 * @param outAccountType value to be assigned to property outAccountType
 	 */
-	public void setOutAccountType(CashAccountType outAccountType) {
+	public void setOutAccountType(String outAccountType) {
 		this.outAccountType = outAccountType;
 	}
 

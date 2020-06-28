@@ -4,8 +4,8 @@
  */
 package com.purefun.fams.ace.oms.apc.service;
 
-import com.purefun.fams.ace.oms.apc.request.PositionRequest;
-import com.purefun.fams.ace.oms.apc.response.PositionRespond;
+import com.purefun.fams.framework.common.ace.oms.apc.request.PositionRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.PositionRespond;
 
 /**
  * @Classname: PositionService

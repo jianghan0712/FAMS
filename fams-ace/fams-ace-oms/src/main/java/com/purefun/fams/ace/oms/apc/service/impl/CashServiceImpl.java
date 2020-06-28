@@ -14,12 +14,12 @@ import com.purefun.fams.ace.constant.AceCacheConstant;
 import com.purefun.fams.ace.enums.CashAccountType;
 import com.purefun.fams.ace.key.AceApcCashKeyEntity;
 import com.purefun.fams.ace.oms.AceApcCashBO;
-import com.purefun.fams.ace.oms.apc.request.CashOpRequest;
-import com.purefun.fams.ace.oms.apc.request.CashRequest;
-import com.purefun.fams.ace.oms.apc.response.CashOpRespond;
-import com.purefun.fams.ace.oms.apc.response.CashRespond;
 import com.purefun.fams.ace.oms.apc.service.CashService;
 import com.purefun.fams.common.enums.RespondEnums;
+import com.purefun.fams.framework.common.ace.oms.apc.request.CashOpRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.request.CashRequest;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.CashOpRespond;
+import com.purefun.fams.framework.common.ace.oms.apc.respond.CashRespond;
 import com.purefun.fams.framework.common.exception.FAMSException;
 import com.purefun.fams.framework.common.util.AssertUtil;
 
@@ -49,7 +49,7 @@ public class CashServiceImpl implements CashService {
 	public CashRespond freezeCash(CashRequest request) {
 		AssertUtil.assertNotNull(request);
 
-		logger.info("收到同时冻结资金请求：{}", request);
+		logger.info("收到冻结资金请求：{}", request);
 
 		CashRespond respond = new CashRespond();
 		StringBuilder errorMessage = new StringBuilder("冻结资金失败 ！");
@@ -94,7 +94,7 @@ public class CashServiceImpl implements CashService {
 	public CashRespond unfreezeCash(CashRequest request) {
 		AssertUtil.assertNotNull(request);
 
-		logger.info("收到同时解冻资金请求：{}", request);
+		logger.info("收到解冻资金请求：{}", request);
 
 		CashRespond respond = new CashRespond();
 		StringBuilder errorMessage = new StringBuilder("解冻资金失败 ！");
@@ -138,7 +138,7 @@ public class CashServiceImpl implements CashService {
 	public CashOpRespond cashIn(CashOpRequest request) {
 		AssertUtil.assertNotNull(request);
 
-		logger.info("收到同时入金请求：{}", request);
+		logger.info("收到入金请求：{}", request);
 		CashOpRespond respond = new CashOpRespond();
 		StringBuilder errorMessage = new StringBuilder("cashIn资金失败 ！");
 
@@ -147,7 +147,7 @@ public class CashServiceImpl implements CashService {
 			String account = request.getAccount();
 			String currency = request.getCurrency();
 			BigDecimal amount = request.getAmount();
-			CashAccountType cashIn = request.getInAccountType();
+			CashAccountType cashIn = CashAccountType.getByCode(request.getInAccountType());
 
 			AceApcCashKeyEntity key = new AceApcCashKeyEntity(account, currency);
 			AceApcCashBO bo = cashCache.get(key);
@@ -184,7 +184,7 @@ public class CashServiceImpl implements CashService {
 			String account = request.getAccount();
 			String currency = request.getCurrency();
 			BigDecimal amount = request.getAmount();
-			CashAccountType cashOut = request.getOutAccountType();
+			CashAccountType cashOut = CashAccountType.getByCode(request.getOutAccountType());
 
 			AceApcCashKeyEntity key = new AceApcCashKeyEntity(account, currency);
 			AceApcCashBO bo = cashCache.get(key);
@@ -226,8 +226,8 @@ public class CashServiceImpl implements CashService {
 			String account = request.getAccount();
 			String currency = request.getCurrency();
 			BigDecimal amount = request.getAmount();
-			CashAccountType cashIn = request.getInAccountType();
-			CashAccountType cashOut = request.getOutAccountType();
+			CashAccountType cashIn = CashAccountType.getByCode(request.getInAccountType());
+			CashAccountType cashOut = CashAccountType.getByCode(request.getOutAccountType());
 
 			if (cashIn == cashOut) {
 				return respond;
@@ -262,6 +262,8 @@ public class CashServiceImpl implements CashService {
 	}
 
 	/**
+	 * 增加cashIn类型账户的资金
+	 * 
 	 * @MethodName: addOpAmount
 	 * @author jianghan
 	 * @date 2020-05-29 23:49:43
@@ -280,12 +282,14 @@ public class CashServiceImpl implements CashService {
 	}
 
 	/**
+	 * 减少cashOut类型账户的资金
+	 * 
 	 * @MethodName: cutOpAmount
 	 * @author jianghan
 	 * @date 2020-05-29 23:49:41
 	 * @param bo      表中数据
 	 * @param cashOut 类型
-	 * @param amount  增加的金额
+	 * @param amount  减少的金额
 	 */
 	private void cutOpAmount(AceApcCashBO bo, CashAccountType cashOut, BigDecimal amount) {
 		if (cashOut == CashAccountType.AVAILABLE) {
@@ -298,6 +302,8 @@ public class CashServiceImpl implements CashService {
 	}
 
 	/**
+	 * 获取cashOut类型账户的资金
+	 * 
 	 * @MethodName: getOpAmount
 	 * @author jianghan
 	 * @date 2020-05-29 22:23:24
@@ -342,5 +348,7 @@ public class CashServiceImpl implements CashService {
 		AssertUtil.assertNotBlank(request.getAccount(), 100002);
 		AssertUtil.assertNotBlank(request.getCurrency(), 100002);
 		AssertUtil.assertTrue(BigDecimal.ZERO.compareTo(request.getAmount()) <= 0, 100002);
+		AssertUtil.assertNotNull(CashAccountType.getByCode(request.getInAccountType()));
+		AssertUtil.assertNotNull(CashAccountType.getByCode(request.getOutAccountType()));
 	}
 }

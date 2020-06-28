@@ -2,7 +2,7 @@
  * FAMS
  * Copyright (c) 1990-2020 All Rights Reserved.
  */
-package com.purefun.fams.ace.oms.apc.request;
+package com.purefun.fams.framework.common.ace.oms.apc.request;
 
 import com.purefun.fams.common.domain.BaseDomain;
 
@@ -39,6 +39,10 @@ public class PositionRequest extends BaseDomain {
 		this.securityId = securityId;
 		this.exch = exch;
 		this.volume = volume;
+	}
+
+	public PositionRequest() {
+
 	}
 
 	/**
