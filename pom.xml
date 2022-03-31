@@ -22,7 +22,7 @@
 	  	<spring-framework-data.version>2.0.8.RELEASE</spring-framework-data.version>	
 	  	<mybatis-spring.version>1.3.0</mybatis-spring.version>
 	  	<!-- Spring-boot -->
-	  	<spring-framework-boot.version>2.2.0.RELEASE</spring-framework-boot.version>
+	  	<spring-framework-boot.version>2.5.12</spring-framework-boot.version>
 	  	<!-- spring cloud -->
         <spring-cloud-eureka-server.version>2.2.0.RELEASE</spring-cloud-eureka-server.version>
 	  	<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
